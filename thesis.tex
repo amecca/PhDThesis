@@ -76,7 +76,9 @@
 %%CAPTIONS
 \usepackage{caption}
 %% BIBLIOGRAPHY
-\usepackage[babel]{csquotes}
+%% \usepackage[babel]{csquotes}
+\usepackage{biblatex}
+\addbibresource{bibliography/bibThesis.bib}
 %% CODE LISTINGS
 \usepackage{listings}		%%allow to use code listings
 
@@ -136,9 +138,10 @@
 \clearemptydoublepage
 %bibliography
 \addcontentsline{toc}{chapter}{Bibliography}
-\bibliography{bibliography/bibThesis}
+\printbibliography
+%% \bibliography{bibliography/bibThesis}
 %\bibliographystyle{ieeetr}
-\bibliographystyle{utphys}
+%% \bibliographystyle{utphys}
 \clearemptydoublepage
 
 
