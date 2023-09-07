@@ -1,6 +1,6 @@
 # PhD Thesis
 
-### Compiling instructions
+### Compilation instructions
 Run make with default target to generate the PDF:
 ```
 make
@@ -17,7 +17,7 @@ make unused-refs
 ```
 There is also a script to print only erors and warnings from the (verbose) output from pdflatex:
 ```
-make summay-log
+make summary-log
 ```
 
 ### Folder structure
