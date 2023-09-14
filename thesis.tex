@@ -11,8 +11,8 @@
 
 %% DOCUMENT CLASS (alternative to book is 'report')
 % Print just right page or both sides (comment the other one)
-\documentclass[12pt,a4paper,openright,oneside]{book}	%%One sided
-%\documentclass[12pt,a4paper,openright,twoside]{book}	%%Double sided
+%\documentclass[12pt,a4paper,openright,oneside]{book}	%%One sided
+\documentclass[12pt,a4paper,openright,twoside]{book}	%%Double sided
 
 
 %% SET MARGINS OF THE PAGES
@@ -34,6 +34,7 @@
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
+\setlength{\headheight}{15pt}
 %% CLEAR PAGE WITHOUT NUMBER AT THE BEGINNING OF CHAPTERS
 \let\origdoublepage\cleardoublepage
 \newcommand{\clearemptydoublepage}{%
@@ -54,10 +55,10 @@
 }
 %% PDF SETTINGS
 \hypersetup{
-    pdfauthor={AuthorName},
-    pdftitle={shortTitle},
-    pdfsubject={subject},
-    pdfkeywords={keyword1, keyword2}
+    pdfauthor={Alberto Mecca},
+    pdftitle={Triboson Production ZZG},
+    pdfsubject={},
+    pdfkeywords={CMS, Triboson, lepton, photon, HEP}
 }
 %% FONTS AND SYMBOLS
 \usepackage[utf8]{inputenc}	%%input font setting
@@ -76,14 +77,14 @@
 %%CAPTIONS
 \usepackage{caption}
 %% BIBLIOGRAPHY
-%% \usepackage[babel]{csquotes}
+\usepackage[babel]{csquotes}
 \usepackage{biblatex}
 \addbibresource{bibliography/bibThesis.bib}
 %% CODE LISTINGS
 \usepackage{listings}		%%allow to use code listings
 
 %% HYPENATON
-\hyphenation{te-si pip-po paperino}	%manual hyphenation
+\hyphenation{te-si}	%manual hyphenation
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
