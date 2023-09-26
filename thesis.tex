@@ -1,19 +1,7 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%	MSc THESIS TEMPLATE
-%	developed for my master thesis at the Universita' di Torino
-%
-%	by Eugenio Senes (eugenio.senes@gmail.com)
-%
-%	released under MIT license, so share, modify and enjoy, but quoting the author !
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %% DOCUMENT CLASS (alternative to book is 'report')
 % Print just right page or both sides (comment the other one)
 %\documentclass[12pt,a4paper,openright,oneside]{book}	%%One sided
 \documentclass[12pt,a4paper,openright,twoside]{book}	%%Double sided
-
 
 %% SET MARGINS OF THE PAGES
 \usepackage{geometry}
@@ -95,55 +83,44 @@
 \frontmatter
 %%FRONT PAGE
 \input{head/cover_1stpage.tex}
-\clearemptydoublepage
+%% \clearemptydoublepage
 %%DEDICATION (the initial quote)
 \input{head/dedication}
-\clearemptydoublepage
+%% \clearemptydoublepage
 %%ABSTRACT
 \input{head/abstract}
 \input{head/abstractITA}
-\clearemptydoublepage
+%% \clearemptydoublepage
 %%INDEXES
 %summary
 \tableofcontents
-\clearemptydoublepage
+%% \clearemptydoublepage
 
 %%%%%% BODY OF THE DOCUMENT
 \mainmatter
 %%INTRODUCTION
 \input{body/introduction.tex}
-\clearemptydoublepage
+%% \clearemptydoublepage
 %% CHAPTERS
 % add any further chapter file here
-\input{body/chapter1.tex}
-\clearemptydoublepage
-\input{body/chapter2.tex}
-\clearemptydoublepage
-\input{body/chapter3.tex}
-\clearemptydoublepage
-\input{body/chapter4.tex}
-\clearemptydoublepage
-\input{body/chapter5.tex}
-\clearemptydoublepage
-\input{body/chapter6.tex}
-\clearemptydoublepage
-
+\input{body/reconstruction.tex}
+%% \clearemptydoublepage
 
 %%%% TAIL OF THE DOCUMENT
 \backmatter
 %list of figures
-\listoffigures
-\clearemptydoublepage
+%% \listoffigures
+%% \clearemptydoublepage
 %list of tables
-\listoftables
-\clearemptydoublepage
+%% \listoftables
+%% \clearemptydoublepage
 %bibliography
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
 %% \bibliography{bibliography/bibThesis}
 %\bibliographystyle{ieeetr}
 %% \bibliographystyle{utphys}
-\clearemptydoublepage
+%% \clearemptydoublepage
 
 
 \end{document}
