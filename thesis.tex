@@ -33,21 +33,21 @@
 \usepackage{lscape}
 
 %% HYPERTEXT SETUP
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-}
+%% \usepackage{hyperref}
+%% \hypersetup{
+%%     colorlinks,
+%%     citecolor=black,
+%%     filecolor=black,
+%%     linkcolor=black,
+%%     urlcolor=black
+%% }
 %% PDF SETTINGS
-\hypersetup{
-    pdfauthor={Alberto Mecca},
-    pdftitle={Triboson Production ZZG},
-    pdfsubject={},
-    pdfkeywords={CMS, Triboson, lepton, photon, HEP}
-}
+%% \hypersetup{
+%%     pdfauthor={Alberto Mecca},
+%%     pdftitle={Triboson Production ZZG},
+%%     pdfsubject={},
+%%     pdfkeywords={CMS, Triboson, lepton, photon, HEP}
+%% }
 %% FONTS AND SYMBOLS
 \usepackage[utf8]{inputenc}	%%input font setting
 \usepackage[T1]{fontenc} 		%%font for automatic recognition of letters with the accent
@@ -82,29 +82,29 @@
 %%%%%% HEAD  OF THE DOCUMENT
 \frontmatter
 %%FRONT PAGE
-\input{head/cover_1stpage.tex}
-%% \clearemptydoublepage
+\include{head/cover_1stpage.tex}
+\clearemptydoublepage
 %%DEDICATION (the initial quote)
-\input{head/dedication}
-%% \clearemptydoublepage
+\include{head/dedication}
+\clearemptydoublepage
 %%ABSTRACT
-\input{head/abstract}
-\input{head/abstractITA}
-%% \clearemptydoublepage
+\include{head/abstract}
+\include{head/abstractITA}
+\clearemptydoublepage
 %%INDEXES
 %summary
 \tableofcontents
-%% \clearemptydoublepage
+\clearemptydoublepage
 
 %%%%%% BODY OF THE DOCUMENT
-\mainmatter
+%% \mainmatter
 %%INTRODUCTION
-\input{body/introduction.tex}
-%% \clearemptydoublepage
+\include{body/introduction.tex}
+\clearemptydoublepage
 %% CHAPTERS
 % add any further chapter file here
-\input{body/reconstruction.tex}
-%% \clearemptydoublepage
+\include{body/reconstruction.tex}
+\clearemptydoublepage
 
 %%%% TAIL OF THE DOCUMENT
 \backmatter
