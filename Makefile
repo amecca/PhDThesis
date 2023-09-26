@@ -3,7 +3,7 @@ outputdir=output
 sources=$(shell find . -type d -name utils -prune -o -type d -name $(outputdir) -prune -o -type f -name "*.tex" -print)
 bibliography=$(shell find . -type d -name utils -prune -o -type d -name $(outputdir) -prune -o -type f -name "*.bib" -print)
 LATEX=latexmk
-LATEXOPT=--pdf --pdflatex="pdflatex -interaction=nonstopmode -file-line-error" --output-directory=$(outputdir) --use-make --bibtex --quiet
+LATEXOPT=--pdf --pdflatex="pdflatex -interaction=nonstopmode -file-line-error -output-directory $(outputdir) -aux-directory=$(outputdir)" --output-directory=$(outputdir) --aux-directory=$(outputdir) --use-make --bibtex --quiet
 
 .PHONY: $(AN)
 $(AN): $(outputdir)/$(AN).pdf ;
@@ -11,12 +11,20 @@ $(AN): $(outputdir)/$(AN).pdf ;
 # Do not search for rules to make a tex file
 %.tex: ;
 
-$(outputdir)/$(AN).pdf: $(sources) $(bibliography)
+$(outputdir)/body:
+	mkdir -p $@
+
+$(outputdir)/head:
+	mkdir -p $@
+
+$(outputdir)/$(AN).pdf: $(sources) $(bibliography) $(outputdir)/head $(outputdir)/body
 	$(LATEX) $(LATEXOPT) $(AN).tex
 
 .PHONY: clean
 clean:
-	$(LATEX) -C --output-directory=$(outputdir)
+	$(LATEX) -C --output-directory=$(outputdir) --aux-directory=$(outputdir)
+	-rm $(outputdir)/head/*aux
+	-rm $(outputdir)/body/*aux
 
 .PHONY: undefined-refs
 undefined-refs:
