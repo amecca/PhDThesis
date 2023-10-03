@@ -3,7 +3,7 @@ outputdir=output
 sources=$(shell find . -type d -name utils -prune -o -type d -name $(outputdir) -prune -o -type f -name "*.tex" -print)
 bibliography=$(shell find . -type d -name utils -prune -o -type d -name $(outputdir) -prune -o -type f -name "*.bib" -print)
 LATEX=latexmk
-LATEXOPT=--pdf --pdflatex="pdflatex -interaction=nonstopmode -file-line-error -output-directory $(outputdir) -aux-directory=$(outputdir)" --output-directory=$(outputdir) --aux-directory=$(outputdir) --use-make --bibtex --quiet
+LATEXOPT=--pdf --pdflatex="pdflatex -interaction=nonstopmode -file-line-error -output-directory $(outputdir)" --output-directory=$(outputdir) --aux-directory=$(outputdir) --use-make --bibtex --quiet
 
 .PHONY: $(AN)
 $(AN): $(outputdir)/$(AN).pdf ;
