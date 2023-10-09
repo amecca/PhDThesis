@@ -1,8 +1,9 @@
 %\chapter[Name in the PDF menu]{Name in the text (and index)}
 \chapter{Reconstruction}
 
+\section{Issues}
 \subsection{APV25 preamplifier saturation}
-In late 2015 and early 2016, the strip tracker of a research instrument encountered signal-to-noise ratio deterioration and a loss of hit detection on tracks, particularly as instantaneous luminosity increased.
+In late 2015 and early 2016, the CMS strip tracker encountered a signal-to-noise ratio deterioration and a loss of hit detection on tracks, particularly as instantaneous luminosity increased.
 Investigation revealed that the problem stemmed from saturation in the preamplifier of the APV25 chip under high occupancies.
 The preamplifier's response was linear up to 3 MIPs, but nonlinear beyond.
 Lowering the operating temperature in Run 2 unexpectedly prolonged preamplifier discharge time, resulting in charge buildup and a nonlinear response.
@@ -10,3 +11,9 @@ This issue was resolved by adjusting the preamplifier voltage bias.
 
 A model for preamplifier saturation was developed and integrated into simulations, improving agreement with data.
 Muon reconstruction efficiency was also affected by preamplifier saturation, with adjustments yielding better data-model agreement.
+
+\todo{cite Tracker Run2 paper}
+
+As a consequence of these changes, for the year 2016, the detector simulations before and after the adjustment differ substantially.
+The two periods, which correspond to luminosity of around \todo{lumi 2016preVFP} and \todo{lumi 2016preVFP} fb${}^{-1}$,
+are therefore analyzed separately and are referred to as ``2016preVFP'' and ``2016postVFP''.
