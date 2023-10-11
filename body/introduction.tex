@@ -1,1 +1,90 @@
-\chapter{Introduction and overview}
+\chapter{Theoretical framework}
+\section{The Standard Model of particle physics}
+The Standard Model of particle physics is a quantum field theory based on gauge invariance principles.
+At its core, the Standard Model postulates a set of elementary particles, divided into fermions, with half-integer spin and bosons, with integer spin, which interact through three of the four fundamental forces: electromagnetism, the weak nuclear force, and the strong nuclear force.
+
+The fundamental interactions obey a local gauge symmetry, which is associated to a Lie group $U(1)_Y \otimes SU(2)_T \otimes SU(3)_C$, where Y, T and C denote hypercharge, weak isospin and colour.
+
+The interactions are mediated by bosons such as the photon, the W and Z bosons and the gluons.
+Gluons correspond to the generators of the SU(3)$_C$ gauge symmetry, while the photon and W$^+$, W$^-$ and Z$^0$ come from the mixing of the generators of the combined U(1)$_Y$ $\otimes$ SU(2)$_T$, as explained later in Section \ref{EWSB}.
+The fundamental bosons all have spin 1, except for the Higgs Boson, which is the only known fundamental particle with spin 0.
+
+All of the fundamental fermions have spin $\frac{1}{2}$ and include quarks, which constitute protons and neutrons, as well as leptons like electrons and neutrinos.
+Quarks and leptons are further divided into three generations, each with two particles with different weak isospin, for a total of twelve elementary particles, as detailed in Table \ref{tab:fermions}; each fermion has a corresponding antiparticle.
+Fermions belonging to different generations have different masses, which are not predicted by the model and must be determined experimentally.
+
+The colour charge is exclusive to quarks, that carry a colour, and antiquarks, which carry an anticolour, while leptons and bound states with no net colour charge are called ``white''.
+Similarly, gluons carry both a colour and an anticolour charge, while all the other bosons are white.
+Colour charge can exist in three states, arbitrarily labeled blue, green, and red, complemented by an anticolour, antiblue, antigreen, and antired.
+
+Only the W$^+$ and the W$^-$ bosons carry electromagnetic charge, while the others are neutral.
+Only left-handed fermions and right handed antifermions can be engaged in charged weak interactions, while the neutral weak interaction can involve both types, although with different couplings.
+
+The Standard Model has not only successfully described a wide range of experimental observations but has also guided the discovery of new particles, like the Higgs boson, which was observed at the Large Hadron Collider in 2012 \todo{cite higgs}.
+This framework plays a pivotal role in our comprehension of the universe, spanning from the conditions just moments after the Big Bang to the inner workings of atomic nuclei.
+
+\begin{table}[tbh]
+	\centering
+	\caption{Fundamental fermions, classified by family.}
+	\label{tab:fermions}
+	\begin{tabular}{ c c c c }
+		\hline
+		 & 1$^{\text{st}}$ gen. & 2$^{\text{nd}}$ gen. & 3$^{\text{rd}}$ gen. \\%& Electric charge\\
+		\hline
+		\multirow{2}{*}{Quarks}  & u       & c         & t          \\%& +$\dfrac{2}{3}$ \\
+		                         & d       & s         & b          \\%& -$\dfrac{1}{3}$ \\
+		\hline
+		\multirow{2}{*}{Leptons} & $\nu_e$ & $\nu_\mu$ & $\nu_\tau$ \\%& 0              \\
+		                         & e$^-$   & $\mu$$^-$ & $\tau$$^-$ \\%& -1             \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\section{Electroweak Symmetry Breaking}
+\label{EWSB}
+Electromagnetic and weak interactions can be described as a unified electroweak interaction at high energies, mediated by massless bosons B, that generates U(1)$_Y$, and W$^{1, 2, 3}$, generators of SU(2)$_T$.
+However, while experiments show that weak interactions are mediated by massive bosons, the inclusion of a mass term of the form $-\frac{1}{2} M^2 W^a_\mu W^{a\, \mu}$ violates the U(1) $\otimes$ SU(2) gauge invariance.
+Moreover, the addition in the Lagrangian of a mass term to fermions in the form $-m_q \bar\psi \psi$ would violate the SU(2) invariance, since the left and right handed components of the field $\psi$ behave differently under such gauge transformation.
+
+In the SM, the Electroweak Symmetry Breaking (EWSB), through the Brout-Englert-Higgs Mechanism \todo{cite Higgs, Brout and Englert}, is responsible for the masses of the W and Z gauge bosons.
+The EWSB, causes also a mixing of the gauge boson fields, resulting in:
+\begin{equation}
+\begin{split}
+  W^\pm = \dfrac{1}{\sqrt{2}} \left( W^1 \mp W^2 \right)
+  \\
+  \begin{pmatrix} \gamma \\ Z^0 \end{pmatrix} = \begin{pmatrix} \cos\theta_W & \sin\theta_W \\ -\sin\theta_W & \cos\theta_W \end{pmatrix} \begin{pmatrix} B \\ W^3\end{pmatrix}
+\end{split}
+\end{equation}
+The only field that remains massless is the photon, while the other three become massive by interacting with three of the four components of the Higgs field $\psi$ through the Brout-Englert-Higgs Mechanism. The W mass is 80.38 GeV/c$^2$ and the Z mass is 91.19 GeV/c$^2$ \todo{cite PDG}.
+From the broken symmetry a new particle emerges, corresponding to the fourth component of the Higgs field: the Higgs Boson.
+The remaining (unbroken) symmetry is U(1)$_Q$ $\otimes$ SU(2)$_L$.
+
+Because of the mixing, the resulting electric charge of the fermions, that is the coupling to the photon field, is a combination of the hypercharge and weak isospin.
+
+\section{Triboson production}
+The simultaneous production of three electroweak bosons is a class of extremely rare processes that offer an interesting insight into the mechanisms of the electroweak sector of the Standard Model.
+Triboson events are extremely rare which involve the simultaneous emission of three electroweak gauge bosons -- photons, W and Z bosons.
+Due to the strikingly low cross section the study of these processes is extremely challenging,
+although some have final states with a very low background.
+This offers the opportunity to test the predictions of the Standard Model with unparalled precision in a complementary way with respect to the study of the Higgs Boson.
+
+%
+% CMS
+% SMP-15-008 & WGG, ZGG           &  8 TeV & http://dx.doi.org/10.1007/JHEP10(2017)072
+% SMP-17-013 & WWW                & 13 TeV & http://dx.doi.org/10.1103/PhysRevD.100.012004
+% SMP-19-014 & WWW, WWZ, WZZ, ZZZ & 13 TeV & http://dx.doi.org/10.1103/PhysRevLett.125.151802
+% SMP-19-013 & WGG, ZGG           & 13 TeV & http://dx.doi.org/10.1007/JHEP10(2021)174
+% SMP-22-006 & WWG, HG            & 13 TeV & https://cds.cern.ch/record/2875047
+%
+% ATLAS
+% STDM-2013-05 & WGG           &  8 TeV & https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.115.031802
+% STDM-2019-17 & WZG           & 13 TeV & submitted https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/STDM-2019-17
+% STDM-2014-01 & ZG, ZZG       & 13 TeV & https://journals.aps.org/prd/abstract/10.1103/PhysRevD.93.112002
+% STDM-2021-09 & ZGG           & 13 TeV & https://link.springer.com/article/10.1140/epjc/s10052-023-11579-8
+% STDM-2016-05 & WWG, WZG      & 13 TeV & https://link.springer.com/article/10.1140/epjc/s10052-017-5180-3
+% STDM-2015-07 & WWW           &  8 TeV & https://link.springer.com/article/10.1140/epjc/s10052-017-4692-1
+% STDM-2016-06 & GGG           &  8 TeV & https://www.sciencedirect.com/science/article/pii/S0370269318302533
+% STDM-2017-22 & WWW, WWZ, WZZ & 13 TeV & https://www.sciencedirect.com/science/article/pii/S0370269319306355
+% HDBS-2019-16 & WWW           & 13 TeV & https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.061803
+% STDM-2018-33 & WGG           & 13 TeV & submitted https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/STDM-2018-33
+%
