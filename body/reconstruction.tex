@@ -1,7 +1,33 @@
 %\chapter[Name in the PDF menu]{Name in the text (and index)}
-\chapter{Reconstruction}
+\chapter{Experimental setup}
+This thesis uses data obtained through the CMS experiment, which is one of the four major experiments operating at the CERN Large Hadron Collider (LHC).
+CERN, the European Organisation for Nuclear Research, was founded in 1954 by a consortium of 12 European countries and its original programme was the study of atomic nuclei.
+Over time, CERN's scientific endeavours have extended in parallel with the understanding of matter, and its current main research area is particle physics: the fundamental constituents and the forces that govern them.
+To investigate fundamental interactions, particles are accelerated through a chain of of particle accelerators culminating (at the present day) with the LHC.
+The collision products are observed and recorded by particle detectors, such as the CMS experiment.
 
-\section{Issues}
+\section{The Large Hadron Collider}
+The Large Hadron Collider (LHC) \cite{CERN-AC-93-03-LHC}, situated at the European Organisation for Nuclear Research (CERN) in Geneva, is a massive, two-ring superconducting accelerator designed for high-energy particle collisions.
+It operates within a circular underground tunnel spanning 26.7 kilometers, originally excavated to accommodate the LEP electron-positron collider, operating from 1989 to 2000.
+
+The LHC accelerates two counter-rotating beams, primarily composed of protons but also capable of collision with heavy nuclei like lead (Pb) at varying energies.
+The acceleration process involves a sequence of pre-accelerators, shown in Figure \ref{fig:CERNaccelerators}: the protons are isolated from a duoplasmatron source, accelerated through Linac2 to 50 MeV, further pushed in the Proton Syncrotron Booster (PSB) to 1.4 GeV, accelerated to 25 GeV in the Proton Synchrotron (PS), and finally reach an energy of 450 GeV in the Super Proton Synchrotron (SPS) before entering the LHC rings.
+It was designed to accelerate protons up to 7 TeV ($\sqrt{s} = 14 TeV$), and has succesfully done so at 3.5 and 4 TeV during Run 1, at 6.5 TeV during Run 2 and 6.8 TeV during the ongoing Run 3.
+Operation at 7 TeV is scheduled for the upcoming High Luminiosity LHC (HL-LHC) after Long Shutdown 3.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{pictures/CCC-v2017.png}
+\end{center}
+\caption{The CERN accelearator complex \cite{OPEN-PHO-ACCEL-2016-009}. The protons start from the LINAC2 and are accelerated by the Booster, the PS and SPS before reaching the LHC.}
+\label{fig:CERNaccelerators}
+\end{figure}
+
+The LHC's design incorporates various types and sizes of magnets, each serving specific functions: dipole magnets bend the beams, quadrupole magnets focus the beams, and sextupole magnets compress the beams closer to the intersection points to increase the likelihood of particle interactions.
+This highly sophisticated accelerator operates at temperatures as low as 1.9 K (-271.25 $^\circ$C) by utilizing superfluid helium to cool and maintain the superconducting electromagnets capable of producing magnetic fields of 8.65 T.
+
+\section{The Compact Muon Solenoid experiment}
+
 \subsection{APV25 preamplifier saturation}
 In late 2015 and early 2016, the CMS strip tracker encountered a signal-to-noise ratio deterioration and a loss of hit detection on tracks, particularly as instantaneous luminosity increased.
 Investigation revealed that the problem stemmed from saturation in the preamplifier of the APV25 chip under high occupancies.
@@ -16,4 +42,4 @@ Muon reconstruction efficiency was also affected by preamplifier saturation, wit
 
 As a consequence of these changes, for the year 2016, the detector simulations before and after the adjustment differ substantially.
 The two periods, which correspond to luminosity of around \todo{lumi 2016preVFP} and \todo{lumi 2016preVFP} fb${}^{-1}$,
-are therefore analyzed separately and are referred to as ``2016preVFP'' and ``2016postVFP''.
+are therefore analysed separately and are referred to as ``2016preVFP'' and ``2016postVFP''.
