@@ -1,0 +1,16 @@
+\chapter{Results}
+\section{Yields and kinematic distributions}
+\section{Statistical analysis}
+\subsection{Treatment of nuisance parameters}
+Systematics uncertainties can be categorized into two main classes: the ones that affect only the event yield, and those that have an impact also on the shape of the predicted distributions.
+Most of the uncertainties of the first class are parametrised with a log-normal distribution:
+\begin{equation}
+  \label{eq:lnNdef}
+  p(\tilde{\theta}|\theta) = \frac{1}{\sqrt{2 \pi} \text{ln} K} \cdot \frac{1}{\tilde{\theta}} \cdot \text{exp} \left( -\frac{(\text{ln}(\tilde{\theta}/\theta_m))^2}{2 \text{ln}^2 K} \right)
+\end{equation}
+where the parameters $k = e^{\tilde{\sigma}}$ and $\theta_m = e^{\tilde{\theta}}$ are the equivalent of the width and mean of a gaussian distribution.
+The log-normal is used instead of a gaussian because it enforces the positive-definite normalization for the nuisance modeled, which is usually multiplying an event yield and thus cannot be negative.
+
+\todo{Gamma}
+
+\todo{Shape}
