@@ -1,16 +1,69 @@
 \chapter{Results}
 \section{Yields and kinematic distributions}
 \section{Statistical analysis}
+The likelihood function is defined as the Probability Density Function for a set of parameters of a model, given a certain set of experimental observables (data).
+The model adopted for this analysis defines a signal strength modifier $\mu$, that multiplies the cross section of the $ZZ\gamma$ signal and leaves all the other processes unchanged.
+Each independent source of systematic uncertainty descrbed in \todo{ref{sec:systematics}} is assigned a nuisance parameter $\theta_i$, and the full set is denoted $\vec\theta$.
+They are of no direct interest for this analysis, but must be considered in the fitting procedure to extract correct results.
+They enter the model through their PDF $p_i(\tilde{\theta_i}|\theta_i)$, which is the probability of measuring a certain value of the parameter given that the true value is $\theta_i$.
+Furthermore, the expected yields of background, $b$, and signal, $s$, depend on the value of the nusance parameters.
+
+The global likelihood function is thus defined as:
+\begin{equation}
+  \label{eq:likelihood_full}
+  \mathcal{L}(data\, |\, \mu, \vec\theta\,) = \prod_c \mathcal{L}_c(data\, |\, \mu \cdot s(\vec\theta\,) + b(\vec\theta\,)) \cdot \prod_i p_i(\tilde{\theta_i}\, |\, \theta_i)
+\end{equation}
+where c runs over all the channels, which are the four data-taking periods (2016preVFP, 2016postVFP, 2017, 2018).
+The extraction of the signal strength proceeds through the maximization of the complete likelihood function by varying the parameter of interest $\mu$ and the nuisances.
+The $\mathcal{L}_c$ functions are the PDF of the binned distributions in each channel, and are given by the product of Poisson probabilities for every bin $j$ to observe $n_j$ events:
+\begin{equation}
+  \label{eq:likelihood_bin}
+  \mathcal{L}_c(data\, |\, \mu \cdot s(\vec\theta\,) + b(\vec\theta\,)) = \prod_j \frac{\mu \cdot s_j(\vec\theta\,) + b_j(\vec\theta\,)}{n_j!} e^{-(\mu \cdot s_j(\vec\theta\,) + b_j(\vec\theta\,))}
+\end{equation}
+
 \subsection{Treatment of nuisance parameters}
 Systematics uncertainties can be categorized into two main classes: the ones that affect only the event yield, and those that have an impact also on the shape of the predicted distributions.
 Most of the uncertainties of the first class are parametrised with a log-normal distribution:
 \begin{equation}
   \label{eq:lnNdef}
-  p(\tilde{\theta}|\theta) = \frac{1}{\sqrt{2 \pi} \text{ln} K} \cdot \frac{1}{\tilde{\theta}} \cdot \text{exp} \left( -\frac{(\text{ln}(\tilde{\theta}/\theta_m))^2}{2 \text{ln}^2 K} \right)
+  p(\tilde{\theta}\,|\,\theta) = \frac{1}{\sqrt{2 \pi} \text{ln} k} \cdot \frac{1}{\tilde{\theta}} \cdot \text{exp} \left( -\frac{(\text{ln}(\tilde{\theta}/\theta_m))^2}{2 \text{ln}^2 k} \right)
 \end{equation}
-where the parameters $k = e^{\tilde{\sigma}}$ and $\theta_m = e^{\tilde{\theta}}$ are the equivalent of the width and mean of a gaussian distribution.
+which is the distribution of a random variable whose logarithm is normally distributed, with mean $\mu$ = $\text{ln}(\theta_m)$ and standard deviation $\sigma$ = $\text{ln}(k)$.
+%% where the parameters $theta_s$ and $k$ can be defined in terms of the mean and standard deviation of a normally distributed variable: $\theta_m = e^{\mu}$ and $k = e^{\sigma}$.
 The log-normal is used instead of a gaussian because it enforces the positive-definite normalization for the nuisance modeled, which is usually multiplying an event yield and thus cannot be negative.
 
-\todo{Gamma}
+The remaining systematics in the first class are those that represent a background coming from a statistically limited control region, such as the fake leptons and photons.
+These are dominated by the statistically uncertainty in the control region and are modelled with a Gamma distribution:
+\begin{equation}
+  \label{eq:gammadef}
+  f(\theta\,|\,N\alpha) = \frac{1}{\Gamma(N) \alpha^N} \theta^{N-1} e^{-\theta/\alpha}
+\end{equation}
+where $N$ is the number of events in the control region, $\theta$ is the average transfer factor and $\Gamma(x)$ is the Gamma function.
 
-\todo{Shape}
+The shape uncertainties of the second class are accounted for by interpolating the event fraction for each bin of three histograms: the one obtained for the central value, and the two obtained by shifting the nuisance parameter up and down by one standard deviation.
+
+\subsection{Quantifying an excess}
+To quatify the statistical significance of an excess of events over the background-only hypotesis, the following test statistic is used:
+\begin{equation}
+  \label{eq:test_statistic}
+  t_0 = -2\text{ln} \frac {\mathcal{L}(data\,|\,0,\widehat{\vec{\theta_0}}\,)} {\mathcal{L}(data\,|\,\hat\mu,\widehat{\vec\theta}\,)}\,,\quad \text{with}\, \hat\mu \ge 0
+\end{equation}
+
+The numerator is evaluated under the background-only hypothesis ($\mu$ = 0), and $\widehat{\vec{\theta_0}}$ is the set of values of nuisance parameters that maximises it under this null hypothesis.
+The denominator is evaluated under the alternative signal + background hypothesis, and the values $\hat{\mu}$ and $\hat{\vec{\theta}}$ are those that maximise the likelihood in this hypotesis.
+This quantity is positive for a signal-like excess ($\mu$ > 0) and becomes 0 in the absence of an excess ($\mu$ = 0).
+
+The significativity of an excess is expressed in terms of the local \textit{p-value}, which is the probability to obtain a value of the test statistic $t_0$ greater than or equal to the one observed in experimental data, under the background-only hypothesis:
+\begin{equation}
+  \label{eq:pvalue}
+  p_0 = \mathcal{P}(q_0 \ge q_0^{obs}\, |\, \mu = 0)
+\end{equation}
+That is, $p_0$ is the probability that a local statistical fluctuation of the background resembles the signal at least as much as the observed data do.
+
+The p-value is usually expressed as a \textit{significance} $Z$ using the Gaussian one-sided integral:
+\begin{equation}
+  \label{eq:significance}
+  p_0 = \int_Z^\infty \frac{1}{\sqrt{2\pi}}e^{-x^2/2}dx
+\end{equation}
+
+The conventional values of $Z$ = 3$\sigma$ and $Z$ = 5$\sigma$, corresponding to p-values of $1.3 \cdot 10^{-3}$ and $2.8 \cdot 10^{-7}$, are used to claim evidence for and the discovery of a new phenomenon.
