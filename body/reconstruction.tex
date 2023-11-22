@@ -1,2 +1,27 @@
-\chapter{Event reconstruction}
-NOTE: the content of this chapter will be taken (and adapted) from teh Analysis Note
+\chapter{Reconstruction}
+
+Collision events registered by the CMS detector are reconstructed by combining information from the different subdetectors.
+This process aims to improve the identification of final state particles and the reconstruction precision of their properties.
+The global reconstruction strategy is implemented through the particle-flow (PF) algorithm \cite{ParticleFlow}.
+Originally applied in the ALEPH experiment at LEP, this algorithm combines raw data from CMS subsystems to reconstruct physics objects and achieving a comprehensive event reconstruction.
+The resulting physics objects include charged and neutral hadrons, photons, electrons, and muons, serving as the starting inputs for all subsequent data analyses.
+Additionally, PF candidates are used to construct more advanced objects such as jets and missing transverse energy.
+
+The algorithm relies on precise track reconstruction and clustering techniques that efficiently distinguish between overlapping showers.
+A robust linking procedure is used to combine information related to energy deposits associated with a single particle across different sub-detectors.
+The PF sequence begins with identifying tracks of charged particles, followed by extrapolating these tracks to compatible calorimeter energy deposits.
+To prevent double counting of leptons as individual particles and jet constituents, isolated leptons are excluded from the jet clustering sequence.
+
+Neutral hadrons and photons are identified through \textit{Charged Hadron Subtraction}, which removes the energy deposits that can be linked to tracks from charged hadrons.
+The remaining deposits in ECAL and HCAL are attributed to photons and neutral hadrons,
+provided that the cluster energies of neutral hadron candidates exceed their track momentum, accounting for detector resolution effects.
+
+The CMS detector's exceptional performance with the PF algorithm is attributed to the high granularity of the electromagnetic calorimeter, hermiticity of the hadron calorimeter, and a large magnetic field integral.
+
+% Primary Vertex
+The pp collision vertices in an event are reconstructed by grouping tracks consistent with originating at a common point in the luminous region.
+The candidate vertex with the largest value of summed physics-object $p^2_T$ is taken to be the primary pp interaction vertex.
+The physics objects are the jets, clustered using the anti-kT jet finding algorithm \cite{Cacciari:2008gp, Cacciari:2011ma} with all the tracks assigned to candidate vertices as inputs,
+and the associated missing transverse momentum, taken as the negative vector $p_T$ sum of those jets.
+
+\todo{NOTE: the content of this chapter will be taken (and adapted) from the Analysis Note}
