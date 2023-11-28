@@ -18,6 +18,7 @@ $(outputdir)/head:
 	mkdir -p $@
 
 $(outputdir)/$(AN).pdf: $(sources) $(bibliography) $(outputdir)/head $(outputdir)/body
+	$(MAKE) -C standalone
 	$(LATEX) $(LATEXOPT) $(AN).tex
 
 .PHONY: clean
@@ -25,6 +26,7 @@ clean:
 	$(LATEX) -C --output-directory=$(outputdir) --aux-directory=$(outputdir)
 	-rm $(outputdir)/head/*aux
 	-rm $(outputdir)/body/*aux
+	# -cd standalone && $(MAKE) clean
 
 .PHONY: undefined-refs
 undefined-refs:
