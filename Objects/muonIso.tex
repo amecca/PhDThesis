@@ -1,0 +1,13 @@
+Particle-Flow based isolation is  used for the muons.
+%described for electrons in section~\ref{sec:eleiso},  
+The so-called $\Delta\beta$ correction is applied in order to subtract the pileup contribution for the muons, 
+%The only difference with electrons is the way the pileup contribution is subtracted: for the muons,  
+whereby $\Delta\beta = \frac{1}{2} \sum^\text{charged had.}_\text{PU} \pt$  gives an estimate of the energy deposit of neutral particles (hadrons and photons) from pile-up vertices. 
+The relative isolation for muons is then defined as:
+\begin{equation}
+\text{RelPFiso} = \frac{\sum^\text{charged had.} \pt + \max(\sum^\text{neutral had.} \ET 
++ \sum^\text{photon} \ET - \Delta \beta, 0)}{\pt^\text{lepton}}
+\label{eqn:mupfiso}
+\end{equation}
+
+The isolation cone for muons was optimized and the working point was chosen to be $\text{RelPFiso}(\Delta R = 0.3) < 0.35$. 

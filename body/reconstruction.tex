@@ -24,4 +24,58 @@ The candidate vertex with the largest value of summed physics-object $p^2_T$ is 
 The physics objects are the jets, clustered using the anti-kT jet finding algorithm \cite{Cacciari:2008gp, Cacciari:2011ma} with all the tracks assigned to candidate vertices as inputs,
 and the associated missing transverse momentum, taken as the negative vector $p_T$ sum of those jets.
 
-\todo{NOTE: the content of this chapter will be taken (and adapted) from the Analysis Note}
+% NOTE: the content of this chapter is taken (and adapted) from the Analysis Note
+
+%% Electrons and muons are considered candidates for the reconstruction of ZZ final states
+%% (``signal leptons'') if  their transverse momentum,
+%% $\pt^\ell$, is greater than 7(5)~\GeV and their pseudorapidity,
+%% $\left| \eta^\ell \right|$, is less than 2.5 (2.4) for electrons (muons).
+%% The physics objects and the ZZ candidate selections used in this analysis are those of the $H \rightarrow ZZ \rightarrow 4\ell$~\cite{HiggsAN,HiggsLegacyPaper} analysis, with minor changes. Here, we just report the main features, referring to that material for control plots/tables etc.
+
+\section{Objects}
+\subsection{Electrons}
+\subsubsection{Electron Reconstruction}
+\label{sec:eleReco}
+\input{Objects/eleReco}
+\subsubsection{Electron Identification}
+\label{sec:eleID}
+\input{Objects/ele_MVA.tex}
+\subsubsection{Electron Impact Parameter Selection}
+\label{sec:eleSIP}
+\input{Objects/eleIP.tex}
+%\subsubsection{Electron Isolation Optimization}
+%\label{sec:eleiso}
+%\input{Objects/eleIso}
+\subsubsection{Electron Energy Calibrations}
+\input{Objects/eleCalib}
+\subsubsection{Electron Efficiency Measurements}
+\label{sec:eleEffMeas}
+\input{Objects/eleEffMeas}
+\subsection{Muons}
+% \textbf{FIXME: This section will be moved to the AN-16-359 of the ZZ inclusive analysis in a future version.}
+\subsubsection{Muon Reconstruction and Identification}
+\label{sec:muonReco}
+\input{Objects/muonReco}
+\subsubsection{Muon Isolation}
+\label{sec:muoniso}
+\input{Objects/muonIso}
+ \subsubsection{Muon Impact Parameter Selection}
+ \label{sec:muSIP}
+ \input{Objects/muIP.tex}
+\subsubsection{Muon Energy Calibrations}
+\input{Objects/muCalib}
+\subsubsection{Muon Efficiency Measurements}
+\label{sec:muonEffMeas}
+%\textbf{To be done for full 2016 dataset.}
+\input{Objects/muonEffMeas}
+%\subsection{Lepton Momentum Scale and Resolution validation using \texorpdfstring{\Zllll}{}}
+%\input{Objects/scaleresoZ4l}
+\subsection{Photons for FSR recovery}
+\label{sec:FSRphotons}
+\input{Objects/FSR}
+\subsection{Jets}
+\input{Objects/jets.tex}
+
+\subsection{Photons}
+\label{sec:photons}
+\input{Objects/photons.tex}
