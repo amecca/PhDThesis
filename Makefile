@@ -10,6 +10,7 @@ $(AN): $(outputdir)/$(AN).pdf ;
 
 # Do not search for rules to make a tex file
 %.tex: ;
+%.sty: ;
 
 $(outputdir)/body:
 	mkdir -p $@
