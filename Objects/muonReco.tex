@@ -1,0 +1,26 @@
+Muons are reconstructed in the CMS detector with high efficiency and purity,
+thanks to the clear signature they leave in the muon spectrometer and in the inner tracking system.
+The purity is granted by the upstream calorimeters and the steel return yoke that absorb other particles (except neutrinos),
+while the inner tracker provides a precise measurement of the muon momentum.
+Muon physics objects are reconstructed with dedicated algorithms combining information from different subsystems.
+The final collection is composed by three different muon types:
+
+\begin{itemize}
+\item Standalone muons, built from the information provided by the outer Muon System.
+      One or more segments, each built from hits in a single DT or CSC chamber are combined
+      with RPC hits and fitted to build a standalone-muon track.
+\item Tracker muons, built by propagating tracks from the inner tracker outward,
+      requiring a match with at least one segmant made of hits in the DT or CSC.
+      The high probability that a tracker muon to have one single matched segment in the muon system
+      makes this algorithm very efficient at low momentum ($\PT < 5 \GeV$)
+\item Global muons, built by propagating standalone-muon tracks inward to the inner tracker.
+      In case of match, the hits from the two different tracks are fitted jointly into a global-muon track.
+\end{itemize}
+
+Global and tracker muons that share the same inner track are merged into a single muon object.
+The charge and momentum are extracted from the tracker track for muons of \PT $< 200$ \GeV,
+since multiple scattering limits the precision of the muon system at low momentum.
+Above that threshold, charge and momentum are extracted from the global fit.
+
+The efficiency of muon reconstruction is very high, around 99 \% within the detector acceptance,
+thanks to the high efficiency of both the inner track and muon system reconstruction.
