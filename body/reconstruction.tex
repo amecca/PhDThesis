@@ -18,12 +18,6 @@ provided that the cluster energies of neutral hadron candidates exceed their tra
 
 The CMS detector's exceptional performance with the PF algorithm is attributed to the high granularity of the electromagnetic calorimeter, hermiticity of the hadron calorimeter, and a large magnetic field integral.
 
-% Primary Vertex
-The pp collision vertices in an event are reconstructed by grouping tracks consistent with originating at a common point in the luminous region.
-The candidate vertex with the largest value of summed physics-object $p^2_T$ is taken to be the primary pp interaction vertex.
-The physics objects are the jets, clustered using the anti-kT jet finding algorithm \cite{Cacciari:2008gp, Cacciari:2011ma} with all the tracks assigned to candidate vertices as inputs,
-and the associated missing transverse momentum, taken as the negative vector $p_T$ sum of those jets.
-
 % NOTE: the content of this chapter is taken (and adapted) from the Analysis Note
 
 %% Electrons and muons are considered candidates for the reconstruction of ZZ final states
@@ -33,6 +27,9 @@ and the associated missing transverse momentum, taken as the negative vector $p_
 %% The physics objects and the ZZ candidate selections used in this analysis are those of the $H \rightarrow ZZ \rightarrow 4\ell$~\cite{HiggsAN,HiggsLegacyPaper} analysis, with minor changes. Here, we just report the main features, referring to that material for control plots/tables etc.
 
 \section{Objects}
+\subsection{Tracks}
+\label{sec:tracks}
+\input{Objects/tracks.tex}
 Electron and Muon identification criteria, energy/momentum calibrations, and efficiency measurements, as well as the Final State Radiation (FSR) recovery, follow the same strategy used in Reference \todo{cite HiggsAN}. % and CMS_AN_2016-442 CMS_AN_2017-342
 \subsection{Electrons}
 \subsubsection{Electron Reconstruction}

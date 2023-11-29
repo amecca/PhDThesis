@@ -1,0 +1,28 @@
+The reconstruction of the trajectory of charged particles with high precision at the CMS detector
+is a complex task because of the large combinatorics from the high multiplicity of particles and the large number of readout channels.
+Additional systematic effects having an impact on the track reconstruction may arise from possible distortions in the tracking
+material, inhomegeneities in the magnetic field and misalignment of the detector components.
+First local charge clusters are converted to hits using the digitised output from the tracking system
+The local track reconstruction output is then buffered for the global track reconstruction, which aims at identifying
+hit combinations that match to possible trajectories of the charged particles present in the event.
+All steps of the reconstruction are performed using an iterative pattern recognition technique, a Kalman-like fitting procedure adapted for the CMS framework in the Combinatorial Track Finder \cite{billoir.qian:simultaneous} (CTF) algorithm.
+At each iteration of CTF, positional information from the hits used in the previous step is discarded and the set of requirements are gradually relaxed.
+The tracking algorithm carries out three main substasks.
+\begin{description}
+\item[seed finding] involving the generation of the starting points of the iterative sequence, namely pairs or triplets of hits.
+\item[pattern recognition] iteratively performs the following steps:
+  \begin{enumerate}
+  \item navigation: the current track parameters are used to determine which adjacent layers of the detector can be interseted by extrapolation
+  \item a search is performed within the layer for modules which are compatible with the trajectory
+  \item groups of hits are formed for each module, and a $\chi^2$ test is used to determine their compatibility with the trajectory
+  \item the trajectory is updated using the information from the hits collected in the current iteration
+  \end{enumerate}
+  at each iteration, track candidates must satisfy a series of quality criteria, based on cuts on the track impact parameter significance with respect to the beamspot, the number of hits in the inner tracking system and the normalised $\chi^2$ of the track trajectory, and a maximum of 5 candidates is retained.
+\item[final fit] the best-fit value of the track parameters and the covariance matrix are determined by means of a least-squares fit;
+\end{description}
+
+% Primary Vertex
+The pp collision vertices in an event are reconstructed by grouping tracks consistent with originating at a common point in the luminous region.
+The candidate vertex with the largest value of summed physics-object $p^2_T$ is taken to be the primary pp interaction vertex.
+The physics objects are the jets, clustered using the anti-kT jet finding algorithm \cite{Cacciari:2008gp, Cacciari:2011ma} with all the tracks assigned to candidate vertices as inputs,
+and the associated missing transverse momentum, taken as the negative vector $p_T$ sum of those jets.
