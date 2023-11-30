@@ -1,7 +1,7 @@
 SRCDIR=.
 OBJDIR=../Figures
 PDF=pdflatex
-PDFOPT=-interaction=batchmode -aux-directory=.
+PDFOPT=-interaction=batchmode # -aux-directory=. # pdflatex does not support it
 SOURCES=$(shell find $(SRCDIR) -maxdepth 1 -type f -name "*.tex")
 OBJECTS=$(patsubst $(SRCDIR)/%.tex,$(OBJDIR)/%.pdf,$(SOURCES))
 
@@ -16,4 +16,4 @@ $(OBJDIR)/%.pdf: $(SRCDIR)/%.tex
 
 .PHONY: clean
 clean:
-	-rm *.aux *.log $(OBJECTS)
+	-rm $(OBJDIR)/*.aux $(OBJDIR)/*.log $(OBJECTS)
