@@ -1,0 +1,28 @@
+\documentclass[tikz, border=1mm]{standalone}
+
+%% FEYNMAN DIAGRAMS
+\usepackage[compat=1.1.0]{tikz-feynman}
+\tikzfeynmanset{warn luatex=false}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex                    (a);
+    \vertex [below=of a]       (b);
+    \vertex [right=of a]       (c);
+    \vertex [left=of a]        (i1) {\(q\)};
+    \vertex [left=of b]        (i2) {\(\bar{q}\)};
+    \vertex [above right=of c] (f1) {\(V_{1}\)};
+    \vertex [below right=of c] (f2) {\(V_{2}\)};
+    \vertex [right=of b]       (f3) {\(V_{3}\)};
+
+    \diagram* {
+      (i1) -- [fermion] (a) -- [fermion] (b) -- [fermion] (i2),
+      (a) -- [boson, edge label=\(V^{*}\)] (c),
+      (c) -- [boson] (f1),
+      (c) -- [boson] (f2),
+      (b) -- [boson] (f3),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{document}
