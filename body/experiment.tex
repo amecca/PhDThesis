@@ -59,6 +59,7 @@ The measurement of muons relies on a combination of inner tracking and informati
 which are gas-ionization detectors embedded in the steel flux-return yoke outside the solenoid.
 A detailed description of the CMS detector can be found in Reference \cite{CMS:2008}.
 
+\subsubsection{Coordinate system}
 CMS adopts a right-handed Cartesian coordinate system, with the origin defined in the center of the detector; more precisely, the barycenter of the modules of the Tracker Outer Barrel.
 The axes are oriented such that the x-axis points to the center of the LHC ring, the y-axis is orthogonal to the LHC plane pointing up, and the the z-axis lies along the anticlockwise beam direction.
 
@@ -81,6 +82,34 @@ They are used to define a type of angular distance between two physica objects:
   \Delta R = \sqrt{ \Delta \eta^2 + \Delta \phi^2 }
 \end{equation}
 
+\subsection{The silicon tracker}
+The CMS inner silicon tracker is the innermost subdetector of the CMS experiment, surrounding the interaction point, measuring 5.8 m in length and 2.5 m in diameter
+It provides precise measurement of the trajectories of the charged particles emerging from the LHC collisions.
+These tracks are reconstructed by combining electrical signals (hits) from the outgoing charged particles as they traverse the tracker's layers.
+Thanks to the uniform magnetic field within its volume, which bends the trajectories, it is able to provide a measurement of the associated momentum and charge sign from the track parameters.
+
+The accuracy of track reconstruction is crucial for determining the position of the hard scattering, the primary vertex, as well as in-flight decays resultin in secondary vertices.
+This in turns allows the suppression of the background from pileup interactions, and a handle for measuring particle lifetimes.
+
+The CMS tracker uses silicon pixel and strip sensors to cover $|\eta| < 2.5$, with a total area of $200 m^2$,
+operating at temperatures of around -15 \Celsius and -20 \Celsius, respectively, to minimize ionizing radiation damage.
+To meet spatial measurement requirements amid particle flux, the finely segmented tracking detector with fast readout electronics minimizes the material to reduce multiple scattering.
+Silicon's benefits include high charge carrier mobility, rapid signal processing, optimal energy resolution sensitivity, and excellent spatial resolution due to segmentation.
+Local hit reconstruction involves clustering, noise calibration, and hit candidate conversion, providing cluster charge profiles and hit positions.
+
+In 2017, the pixel detector underwent an upgrade, enhancing performances with additional layers in both barrel and endcaps \todo{reference}.
+The tracker's overall layout, shown in Figure \todo{2.3}, optimally addresses the challenges posed by the LHC collisions.
+
+\paragraph{The silicon pixel detector\\}
+\paragraph{The silicon strip detector\\}
+
+\subsection{The electromagnetic calorimeter}
+
+\subsection{The hadronic calorimeter}
+
+\subsection{The muon system}
+
+\subsection{The trigger system}
 
 \subsection{APV25 preamplifier saturation}
 In late 2015 and early 2016, the CMS strip tracker encountered a signal-to-noise ratio deterioration and a loss of hit detection on tracks, particularly as instantaneous luminosity increased.
