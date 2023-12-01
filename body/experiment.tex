@@ -97,21 +97,188 @@ To meet spatial measurement requirements amid particle flux, the finely segmente
 Silicon's benefits include high charge carrier mobility, rapid signal processing, optimal energy resolution sensitivity, and excellent spatial resolution due to segmentation.
 Local hit reconstruction involves clustering, noise calibration, and hit candidate conversion, providing cluster charge profiles and hit positions.
 
-In 2017, the pixel detector underwent an upgrade, enhancing performances with additional layers in both barrel and endcaps \todo{reference}.
+In 2017, the pixel detector underwent an upgrade, enhancing performances with additional layers in both barrel and endcaps \cite{CMS-TDR-11}.
 The tracker's overall layout, shown in Figure \todo{2.3}, optimally addresses the challenges posed by the LHC collisions.
 
-\paragraph{The silicon pixel detector\\}
-\paragraph{The silicon strip detector\\}
+\subsubsection{The silicon pixel detector}
+The Pixel detector is the innermost tracking subsystem and it consists of two parts, the Barrel Pixel (BPIX) and the Forward Pixel (FPIX) detectors.
+The description of the Phase-I pixel follows, and a comparison with the Phase-0 is shown in Figure \ref{fig:PIX_Phase_comparison}.
+
+The BPIX is composed of four coaxial barrel layers located at a radial distance of 2.9, 6.8, 10.9 and 16.0\cm.
+The FPIX consists of three end cap disks per side constituted by several blades positioned at a distance of 29.1, 39.6 and 51.6\cm from the nominal interaction point (IP).
+The BPIX modules are parallel to the beamline, while the FPIX sensors are arranged into blades, oriented with a tilt of 20$^{\circ}$ with respect to normal incidence in order to exploit the Lorentz drift effect\footnote{
+Charge carriers in the sensors, migrating along an electric field that is not parallel to the magnetic field, will have their trajectories deflected by a small angle $\theta_{LA}$.
+This Lorentz drift effect broadens the charge cluster to neighboring sensors (charge sharing), thereby improving the hit resolution.
+}.
+
+The 124 million pixels, around double the amount of the Phase-0 version, have an individual size of $100 \times 150 \mum^2$.
+The front-end modules of the data acquisition (DAQ) system are powered by 1200 DC-DC converters that deliver the necessary voltage in the range of 2.4-3.3 V,
+which were installed during the upgrade to cope with the increased number of channels while maintaining the existing cabling \cite{Feld_2015}.
+During the last period of data taking of 2017, called era F, 5 \% of the converter had failed and 35 \% were damaged (but working) due to the radiation damage aggravated by a design problem, and were succesfully replaced during the 2017-2018 end-of-year technical stop \cite{CMS:dcdc-failure-short}.
+
+\begin{figure}[thb]
+  \centering
+  \includegraphics[width=0.85\textwidth]{PIX_Phase_comparison.jpg}
+  \caption{A comparison of the different BPIX layers and FPIX disks between the Phase-0 and Phase-1 pixel detectors.}
+  \label{fig:PIX_Phase_comparison}
+\end{figure}
+
+\subsubsection{The silicon strip detector}
+The strip silicon tracker is located outside of the pixel detector at a radial distance comprised between $20 and 116 \cm$.
+It consists of 15148 silicon modules, with approximately 9.3 million strips and it extends over a pseudorapidity range up to $|\eta| < 2.5$.
+The strip subsystem features an analogous barrel-endcap partition as in the case of the pixel detector.
+The barrel region is subdivided into the Tracker Inner Barrel (TIB) and the Tracker Outer Barrel (TOB),
+while the end-cap system is partitioned into the Tracker Inner Disks (TID) and the Tracker End Cap (TEC).
+
+The inside of the tracker barrel is occupied by the four cylindrical layers of the TIB subdetector,
+extending up to $\pm 65 \cm$ along the z axis, and the three TID disks covering up to a radius of $55 \cm$.
+The double-sided modules arranged back-to-back present in the first two TIB layers allow for a hit measurement both in cylindrical coordinates
+with a $23-34 \mum$ spatial resolution in the $r - \phi$ plane and of $530 \mum$ in the z-direction.
+The TIB/TID system is enclosed by the six barrel layers of the TOB, which extends to a radius of $116 \cm$ and up to $\pm 118 \cm$ in the direction of the proton beam.
+The TOB sensors are almost a factor two wider than the TIB due to the expected lower fluence.
+Coverage in the z region $124 \le |z| \le 282 \cm$ is ensured by the TEC subdetector, composed of nine disks of various sizes,
+providing hit positional information in the $r - \phi$ plane with a resolution in the range $18 - 47 \mum$.
 
 \subsection{The electromagnetic calorimeter}
+The electromagnetic calorimeter (ECAL) \cite{CERN-LHCC-97-033} provides a measurement of the energy of incoming electrons and photons.
+It is a hermetic, homogeneus calorimeter made of scintillating crystals of lead tungstate ($\mathrm{PbWO_4}$).
+The material was chosen because of its short radiation lenght (0.89\cm) and high density,
+which allow the absorption of electromagnetic showers within the short lenght;
+its small Moli\`ere radius (2.2\cm) allows a good shower separation.
+Its response time is fast, and 80 \% of the scintillation light is emitted within the 25 ns between the LHC bunch crossings.
+The general structure is shown in Figure \ref{fig:ECAL_3D_colour}.
+
+\begin{figure}[thb]
+  \centering
+  \includegraphics[width=0.85\textwidth]{ECAL_3D_colour.png}
+  \caption{A 3D render of ECAL with the main components highlighted \cite{siddireddy2018cms}.}
+  \label{fig:ECAL_3D_colour}
+\end{figure}
+
+ECAL is composed of Electromagnetic Barrel (EB), Electromagnetic Endacp (EE) and Encap Preshower (PS).
+EB is made of 61200 crystals with a quasi-projective geometry, and each endcap has 7324 crystals.
+The EB has an inner radius of $129 \cm$, and it is structured as 36 identical ``Supermodules'',
+each covering 20 $^{\circ}$ in $\phi$ and half the barrel length, corresponding to a pseudorapidity interval of $0 < |\eta| < 1.479$.
+Each supermodule contains four modules with 400 or 500 crystals apiece, each with a length of 230 mm and a cross section of $22 \times 22 \mathrm{mm}^2$.
+The EE is at a distance of $314 \cm$ from the vertex and covering a pseudorapidity range of $1.479 < |\eta| < 3.0$,
+and is made of crystals with a length of 220 mm and a cross section of $28.62 \times 28.62 \mathrm{mm}^2$.
+
+The crystals have a quasi-projective geometry, with an angle of 3 $^{\circ}$ from the nominal interaction point in both $\theta$ and $\phi$ directions,
+to avoid the alignment of inter crystal gaps with particle trajectories.
+
+The scintillation light from ECAL crystals is read by fast, radiation-tolerant photodetectors which can operate inside the CMS magnetic field
+and are insensitive to particles traversing them.
+Two preshower detectors are installed at each end of the tracker detector, in front of the ECAL endcaps,
+in order to help distinguishing $\Pgpz \rightarrow \PGg PGg$ decays from single photons and identifying electrons against minimum ionizing particles.
+These sampling calorimeters are made of a lead radiator layer which initiates electromagnetic showers from incoming particles,
+followed by silicon strip sensors that measure the deposited energy.
+Although lead tungstate crystals are radiation resistant, they undergo a limited but rapid loss of optical transmission under irradiation.
+This phenomenon depends on the luminosity and crystal pseudorapidity, and is partly balanced by an annealing effect.
+This effect is measured and it is taken into account by time-dependent corrections applied to the measured particle energies.
+
+The ECAL energy resolution $\sigma_E/E$ for electrons was obtained in a test beam measurement \cite{CMS-NOTE-2006-148}, and has the following energy dependency:
+\begin{equation}
+  \frac{\sigma_E}{E} = frac{2.8\%}{\sqrt{E\small{(GeV)}}} \oplus frac{12\%}{E\small{(GeV)}} \oplus 0.3\%
+\end{equation}
+where the $\oplus$ symbol denotes the sum in quadrature of the individual contributions.
+The first term represents the stochastic part which dominates for energy deposits of photoelectrons below 100 GeV;
+the second term stands for the noise contribution;
+the constant accounts predominantly for calibration inaccuracies and additionally for the non-uniform response of the photodetectors.
 
 \subsection{The hadronic calorimeter}
+The HCAL calorimeter is a sampling detector employed for the measurement of the energy deposits of hadrons.
+The central part of the HCAL covers a pseudorapidity range up to $|\eta| < 1.3$ and it consists of two distinct subdetectors:
+the inner barrel part with brass absorbing layers and plastic scintillator tiles (HB)
+and the outer hadronic calorimeter entirely composed of plastic scintillators (HO) installed outside the solenoid.
+Because of the limitations in size of the CMS calorimeter, some of the most-energetic hadronic tails may leak outside the full volume of the HB detector.
+Thus, the HO subdetector has been installed to extend the depth of the HCAL to 11.8 hadronic interaction lengths
+in order to catch the most energetic hadronic shower tails, utilising the magnet coil as an absorber.
+The hadron forward calorimeter extends the pseudorapidity range to $|\eta| = 5.0$ and it is located at a distance of 11 m from the beamspot.
+Since it is affected by hadronic energy depositions seven times more intense than in the rest of the HCAL,
+it is composed of iron absorbers and quartz fiber as active material, due to their higher more radiation-hardness.
+It is further equipped with a set of photomultipiers, which detect the cone of Cherenkov light emitted by charged particles passing through the material.
+%% The relative HCAL energy response curve for isolated charged pions is illustrated in Figure 2.8.
+%% A broader response curve is an indicator of a larger pile-up contamination.
+%% Out-of-time pile-up mitigation helps reduce the latter, thereby improving the quality of pion isolation.
+HCAL is instrumental in recognisign hadrons and their decay products,
+and provides a crucial measurement of the missing transverse energy exploiting its extensive coverage in $\eta$, a property referred to as hermiticity.
+
+\begin{figure}[thb]
+  \centering
+  \includegraphics[width=0.85\textwidth]{HCAL_2Dquarter.png}
+  \caption{Longitudinal view of the CMS detector showing the locations of the hadron barrel (HB), endcap (HE), outer (HO) and forward (HF) calorimeters. \cite{CMS:2008}.}
+  \label{fig:HCAL_2Dquarter}
+\end{figure}
 
 \subsection{The muon system}
+Muons produced in collisions at the LHC usually traverse the Tracker, ECAL, HCAL,
+and the solenoid volumes without being stopped and are identified and measured in the muon detectors located in the outermost part of CMS.
+The muon system is made of muon chambers embedded in the iron return yoke of the CMS magnetic field
+and is divided into a cilindrical barrel section and two planar endcaps.
+It uses three types of gas-ionization chambers: Drift Tubes (DT), Cathode Strip Chambers (CSC) and Resistive Plate Chambers (RPC).
+The layout of the three subsystems is shown in Figure \ref{fig:MUON_2Dquarter}.
+
+\begin{figure}[thb]
+  \centering
+  \includegraphics[width=0.85\textwidth]{MUON_2Dquarter.png}
+  \caption{Longitudinal layout of one quadrant of the CMS detector.
+    The four DT stations in the barrel (MB1–MB4, green),
+    the four CSC stations in the endcap (ME1–ME4, blue),
+    and the RPC stations (red) are shown \cite{collaboration_2012}.}
+  \label{fig:MUON_2Dquarter}
+\end{figure}
+
+\subsubsection{Drift Tubes}
+The Drift Tubes (DTs) are located in the barrel region, where the muon rate is lower and the magnetic field is quite uniform,
+and cover a pseudorapidity range of $|\eta| < 1.2$.
+The DTs are organized into four stations interspersed among the layers of the flux return plates.
+Their basic constituents are rectangular drift cells bounded by two parallel aluminium planes, which serve as cathodes.
+Anodes are 80\mum stainless steel wires located in the centre of each cell.
+A muon passing through a cell ionises the gas mixture that fills the cell volume.
+The drift time of the resulting electrons is then used to measure the distance between the muon track and the wire.
+Each chamber has a resolution of 100 µm in the $r - \phi$ plane.
+
+\subsubsection{Cathode Strip Chambers}
+The Cathode Strip Chambers (CSCs) are used in the endcaps, where the the muon rates and background levels are higher and the magnetic field is large and non uniform,
+and cover a pseudorapidity range of $0.9 < |\eta| < 2.4$.
+The CSCs are multiwire proportional chambers, made of 6 anode wire planes interleaved among 7 cathode panels,
+with the wires running approximately perpendicular to the strips.
+A muon passing through a chamber generates an avalanche, inducing a charge on several cathode strips.
+The ensuing interpolation allows a spatial resolution of 50\mum to be obtained.
+Four stations of CSCs are located in each endcap.
+The chambers are positioned perpendicular to the beam line and interspersed between the magnetic field flux return plates.
+
+\subsubsection{The Resistive Plate Chambers}
+The Resistive Plate Chambers (RPCs) are located both in the barrel and in the endcaps and cover the pseudorapidity range $|\eta| < 1.6$.
+The RPCs are double-gap chambers which operate in avalanche mode and are disposed in six layers in the barrel and three layers in the endcaps.
+They provide a complementary trigger system with moderate spatial resolution but excellent time resolution (of the order of 1 ns),
+which helps measuring the correct beam-crossing time.
 
 \subsection{The trigger system}
+The enormous LHC proton-proton collision rate of 40 MHz with a characteristic event size of approximately 1 MB
+is a serious challenge to the CMS Data Acquisition (DAQ) system.
+However most of the data refers to low-energy interactions, rather than hard scattering and rare processes.
+Thus the need for a system that is able to reduce the huge data flow to a manageable rate prior to storage on disk,
+whilst selecting efficiently the interesting events is necessary.
+These requirements are met by the so-called CMS triggering system,
+which reduces the initial bandwidth by over three orders of magnitude.
+The CMS triggering system adopts a sophisticated two-stage approach,
+consisting of a \Lone trigger (L1) fully implemented in hardware logic and a high-level trigger (HLT) software farm.
+The L1 trigger achieves a rate reduction down to the level of 100 kHz, which is subsequently downscaled to around 1 kHz at HLT level.
+
+\subsubsection{Level-1 Trigger}
+
+\begin{figure}[thb]
+  \centering
+  \includegraphics[width=0.85\textwidth]{L1trigger-block-diagram.png}
+  \caption{Main dataflow diagram for the Phase-1 \Lone \cite{CMS-TDR-12}.}
+  \label{fig:L1trigger-block-diagram}
+\end{figure}
+
+\subsubsection{High-level Trigger}
 
 \subsection{APV25 preamplifier saturation}
+\todo{Maybe move to chapter Dataset, as this is only needed to justify the division of year 2016.}\\
 In late 2015 and early 2016, the CMS strip tracker encountered a signal-to-noise ratio deterioration and a loss of hit detection on tracks, particularly as instantaneous luminosity increased.
 Investigation revealed that the problem stemmed from saturation in the preamplifier of the strip readout chip (APV25) under high occupancies.
 Lowering the operating temperature in Run 2 unexpectedly prolonged preamplifier discharge time, resulting in charge buildup and a nonlinear response.
