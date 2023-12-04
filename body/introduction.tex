@@ -1,15 +1,17 @@
 \chapter{Theoretical framework}
 \section{The Standard Model of particle physics}
 The Standard Model of particle physics is a renormalisable quantum field theory based on gauge invariance principles.
-At its core, the Standard Model postulates a set of elementary particles, divided into fermions, with half-integer spin and bosons, with integer spin,
-and describes their interactions through three of the four fundamental forces: electromagnetism, the weak nuclear force, and the strong nuclear force.
+The underlying principle is the quantization of the elementary constituents of matter and force carriers,
+as excitations of the corresponding quantum fields.
+At its core, the Standard Model postulates a set of elementary particles, divided into fermions, with half-integer spin and bosons, with integer spin.
+It describes three of the four known fundamental interactions: electromagnetism, the weak nuclear force, and the strong nuclear force.
 
 The fundamental interactions obey a local gauge symmetry, which is associated to a Lie group $U(1)_Y \otimes SU(2)_T \otimes SU(3)_C$, where Y, T and C denote hypercharge, weak isospin and colour.
 
 The interactions are mediated by gauge bosons such as the photon, the W and Z bosons and the gluons.
 The strong interaction is governed by quantum chromodynamics (QCD), a gauge field theory based on colour symmetry group $SU(3)_C$,
 and its eight generators correspond to the gluons.
-The electroweak interaction is described by a gauge filed theory that is invariant under both weak isospin $I_3$ and hypercharge $Y$,
+The electroweak interaction is described by a gauge field theory that is invariant under both weak isospin $I_3$ and hypercharge $Y$,
 corresponding to the group $U(1)_Y$ $\otimes SU(2)_T$;
 the electroweak interaction encompasses both electromagnetic and weak nuclear interactions,
 mediated by the photon and by the W$^+$, W$^-$ and Z$^0$ boson respectively,
@@ -262,3 +264,105 @@ $\sigma_{WZZ} = 200 ^{+160}_{-110} \text{(stat)} {}^{+70}_{-20 } \text{(syst)}~\
 and for $ZZZ$ only an upper limit of $\sigma_{ZZZ} < 200~\text{fb}$ at 95 \% CL could be placed.
 % WWW
 In another paper, ATLAS observed $WWW$ production \cite{HDBS-2019-16}, with a small excess, measuring an inclusive cross-section of $820 \pm 100 \text{(stat)} \pm 80 \text{(syst)}~\text{fb}$.
+
+The strategy for the measurement of three yet unexplored channels of triboson production will be described in this thesis.
+
+\section{Choice of the final state}
+This thesis a study of triboson production with two massive bosons and a photon is presented.
+
+Vector bosons are unstable particles and, according to the Standard Model, can decay into a pair of leptons or quarks,
+which build up the final state observed in the detectors.
+In Table \ref{tab:VB-BR} the branching ratios (BR) of W and Z are reported.
+
+\begin{table}
+  \centering
+  \caption{Branching ratios of vector bosons \cite{Workman:2022ynf}. Note: $\ell$ = e, $\mu$.}
+  \label{tab:VB-BR}
+  \begin{tabular}{ l r } % l -> divide intermediate and final state
+    \hline
+    Process & Branching ratio \\
+    \hline
+    $W \rightarrow e^+ \nu               $ &         (10.71 $\pm$ 0.16) \% \\
+    $W \rightarrow \mu^+ \nu             $ &         (10.63 $\pm$ 0.15) \% \\
+    $W \rightarrow \tau^+ \nu            $ &         (11.38 $\pm$ 0.21) \% \\
+    \boldmath$W \rightarrow \ell \nu     $ & \textbf{(21.34 $\pm$ 0.22) \%}\\
+    \boldmath$W \rightarrow q\bar{q}     $ & \textbf{(67.41 $\pm$ 0.27) \%}\\
+    \hline
+    $Z \rightarrow e^+ e^-               $ &         (3.363 $\pm$ 0.004) \% \\
+    $Z \rightarrow \mu^+ \mu^-           $ &         (3.366 $\pm$ 0.007) \% \\
+    $Z \rightarrow \tau^+ \tau^-         $ &         (3.370 $\pm$ 0.008) \% \\
+    $Z \rightarrow \nu^+ \nu^-           $ &         (20.00 $\pm$ 0.050) \% \\
+    \boldmath$Z \rightarrow \ell^+ \ell^-$ & \textbf{(6.729 $\pm$ 0.008) \%}\\
+    \boldmath$Z \rightarrow q\bar{q}     $ & \textbf{(69.91 $\pm$ 0.060) \%}\\
+    \hline
+  \end{tabular}
+\end{table}
+
+Hadronic branching ratios are much greater than the leptonic ones: the hadronic BR for the W boson is three times the one containing at least an electron or a muon, while for Z it is 10 times larger.
+Triboson production is an extremely rare process, as highlighted by the cross sections reported in Table \ref{tab:xsection-inclusive}.
+On one hand we would like to use the decays with larger BR, but on the other hand with a clean fully leptonic final state it would be easier to separate the signal from the background.
+However, the small BR (V $\rightarrow$ leptons) translates into very low production and decay cross section of $\PZ\PZ\PGg$ and $\PW\PZ\PGg$ into leptons (Table \ref{tab:xsection-exclusive}).
+In addition the leptonic decay of a W boson produces a charged lepton and a neutrino, but the latter cannot be detected in any current particle collider experiment.
+Its presence may only be deduced from the existence of an unbalance in the sum in the transverse plane of the momenta of all the particles coming from a collision,
+called ``missing transverse momentum'' ($\overrightarrow{\slashed{p}_T}$), ``missing transverse energy'', or sometimes just ``missing energy'' ($\slashed{E}_T$), abbreviated as MET.
+Since the measurement of the MET is by its nature indirect, the errors associated with it are higher than for every other reconstructed entity.
+As a result, any search for leptonic decays of W bosons must deal with MET, that increases the complexity of the reconstruction,
+especially in the case of two W, and is present in many different processes besides triboson production, thus increasing the background sources.
+
+In this analysis three channels are considered, with 4, 3, and 2 charged leptons (electrons or muons) in the final state, corresponding to
+$pp \rightarrow \PZ\PZ\PGg \rightarrow 4\Pl \PGg$,
+$pp \rightarrow \PW\PZ\PGg \rightarrow 3\Pl \PGn \PGg$ and
+$pp \rightarrow V\PZ\PGg \rightarrow 2\Pl \PGg\ 2j$ (where $V$ is either \PZ or \PW)
+respectivley.
+
+\begin{table}
+  \centering
+  \caption{Cross sections of triboson production and prediction of the number of events in a scenario where the integrated luminosity is 137 fb$^{-1}$.}
+  \label{tab:xsection-inclusive}
+  \begin{tabular}{ l c r }
+    \toprule
+    Process & Cross section  & \renewcommand{\arraystretch}{1.}\begin{tabular}{@{}c@{}} Events \\ $\Lumi = 137 fb^{-1}$\end{tabular} \\
+    \midrule
+    $pp \rightarrow ZZ\gamma$ & \todo{xx.x} fb & \todo{xxxx} \\
+    $pp \rightarrow WZ\gamma$ & \todo{xx.x} fb & \todo{xxxx} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Exclusive cross sections of triboson production in the leptonic and semileptonic final states.}
+  \label{tab:xsection-exclusive}
+  \begin{tabular}{ l l c r } % l -> divide intermediate and final state
+    \toprule
+    \multicolumn{2}{c}{Process} & Branching ratio & Cross section \\ %total x BR\\
+    \midrule
+    $pp \rightarrow \PZ\PZ\PGg$ & $\rightarrow 4\Pl \PGg$      & x.xx \% & x.xxx fb \\
+    $pp \rightarrow \PW\PZ\PGg$ & $\rightarrow 3\Pl \PGn \PGg$ & x.xx \% & x.xxx fb \\
+    $pp \rightarrow \PZ\PZ\PGg$ & $\rightarrow 2\Pl \PGg\ 2j$  & x.xx \% & x.xxx fb \\
+    $pp \rightarrow \PW\PZ\PGg$ & $\rightarrow 2\Pl \PGg\ 2j$  & x.xx \% & x.xxx fb \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The quarks coming from the decay of the bosons hadronize in timescales comparable to 10$^\text{-15}$ s, producing a spray of particles known as a jet.
+The reconstruction and identification of such objects is explained in detail in Section \ref{sec:jets}.
+The main drawback of the hadronic channels is that, in an hadron collider, jets are produced with a much higher frequency than leptons,
+both as initial/final state radiation, higher order QCD corrections, and by pile-up events,
+which translates into a much higher number of background events.
+The precise reconstruction of jet properties is also more difficult, and it is not possible to distinguish the flavour of the light quark that originated a jet,
+and thus separating a Z from a W becomes a very challenging task, compared to leptonic decays.
+
+Figure \ref{fig:triboson_feynman_finalstate} shows three illustrative Feynman diagrams for each of the three channels.
+It is worth noting that in the Standard Model the $\PW\PZ\PGg$ (regardless of the decay of the \PW and \PZ) production
+has a leading order contribution from triple and quartic gauge couplings,
+while that is not the case for $\PZ\PZ\PGg$, due to the absence of neutral TGC and QGC.
+
+\begin{figure}[th]
+  \centering
+  \subfigure[] {\includegraphics[width=.32\linewidth]{triboson_4LG.pdf}}
+  \subfigure[] {\includegraphics[width=.32\linewidth]{triboson_3LNuG.pdf}}
+  \subfigure[] {\includegraphics[width=.32\linewidth]{triboson_2L2jG.pdf}}
+  \caption{Representative Feynman diagrams for the production of three vector bosons with a photon and 4, 3 or 2 charged lepton in the final state.}
+  \label{fig:triboson_feynman_finalstate}
+\end{figure}
