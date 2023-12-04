@@ -1,0 +1,44 @@
+\documentclass[tikz, border=1mm]{standalone}
+
+%% FEYNMAN DIAGRAMS
+\usepackage[compat=1.1.0]{tikz-feynman}
+\tikzfeynmanset{warn luatex=false}
+%% CMS COMMANDS (slightly modified since I could not fix some ifthenelse with booleans)
+\usepackage{ptdr-definitions}
+\usepackage{heppennames2}
+% CUSTOM COMMANDS
+\input{../lib/definitions}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex                    (a);
+    \vertex [below=of a]       (b);
+    \vertex [right=of a]       (c);
+    \vertex [left=of a]        (i1) {\(\PQq\)};
+    \vertex [left=of b]        (i2) {\(\PAQq\)};
+    \vertex [right=2 of b]     (d); 
+    \vertex [above right=of c] (e);
+
+    \vertex [above right=of e] (f2) {\(\PQq\)};
+    \vertex [below=1.3 of f2]  (f3) {\(\PAQq\)};
+
+    \vertex [below=1.7 of f3]  (f1) {\(\PGg\)};
+
+
+    \vertex [below=0.7 of f1] (f4) {\(\Pl\)};
+    \vertex [below=1.3 of f4] (f5) {\(\PAl\)};
+
+
+    \diagram* {
+      (i1) -- [fermion] (a) -- [fermion] (b) -- [fermion] (i2),
+      (a) -- [boson, edge label=\(\PW^{*}\)] (c),
+      (c) -- [boson, edge label=\(\PW\)] (e),
+      (c) -- [boson] (f1),
+      (b) -- [boson, edge label=\(\PZ\)] (d),
+      (f2) -- [fermion] (e) -- [fermion] (f3),
+      (f4) -- [fermion] (d) -- [fermion] (f5),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{document}

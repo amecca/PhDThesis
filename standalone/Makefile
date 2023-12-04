@@ -12,6 +12,7 @@ Makefile: ;
 %.tex: ;
 
 $(OBJDIR)/%.pdf: $(SRCDIR)/%.tex
+	TEXINPUTS=".:../lib:" \
 	$(PDF) $(PDFOPT) -output-directory=$(OBJDIR) $<
 
 .PHONY: clean
