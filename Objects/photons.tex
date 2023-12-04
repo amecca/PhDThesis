@@ -70,10 +70,10 @@ The cut-based loose photon ID, described in ~\cite{CMS:EGM-17-001} and shown in 
 The corresponding ID scale factors, shown in Figure \ref{fig:phEffSF} are applied following the recommendations provided by the CMS experts on electrons and photons reconstruction.
 
 \begin{figure}
-\subfigure [2016preVFP ] {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{Figures/phEffSF_2016preVFP.pdf} }}
-\subfigure [2016postVFP] {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{Figures/phEffSF_2016postVFP.pdf}}}\\
-\subfigure [2017]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{Figures/phEffSF_2017.pdf}}}
-\subfigure [2018]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{Figures/phEffSF_2018.pdf}}}
+\subfigure [2016preVFP ] {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2016preVFP.pdf} }}
+\subfigure [2016postVFP] {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2016postVFP.pdf}}}\\
+\subfigure [2017]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2017.pdf}}}
+\subfigure [2018]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2018.pdf}}}
 \caption{Photon efficiency scale factors for the POG cut-based Loose ID.}
 \label{fig:phEffSF}
 \end{figure}
@@ -112,6 +112,8 @@ The full list is shown in Table \ref{tab:MVAvariables}.
 The version used is \texttt{RunIIFall17v2}.
 
 \begin{table}[ht]
+\caption[.]{Variables used by the MVA-based ID, version \texttt{RunIIFall17v2}}
+\label{tab:MVAvariables}
 \centering
 \begin{tabular}{l|l}
 Name & variable\\
@@ -131,23 +133,40 @@ phoIso03           & photonIso                                                  
 chgIsoWrtChosenVtx & chargedHadronIso                                                     \\
 chgIsoWrtWorstVtx  & chargedHadronWorstVtxIso                                             \\
 \end{tabular}
-\caption[.]{Variables used by the MVA-based ID, version \texttt{RunIIFall17v2}}
-\label{tab:MVAvariables}
 \end{table}
 
 Two working points are provided centrally by the EGamma POG: \texttt{wp90} and \texttt{wp80}, corresponding to 90 \% and 80 \% prompt photon efficiency respectively.
 The cuts on the MVA estimator value that define the two working points are detailed in Table \ref{tab:MVAwpCuts}.
 
 \begin{table}[ht]
+\caption[.]{Working points of the photon MVA-based ID, version \texttt{RunIIFall17v2}}
+\label{tab:MVAwpCuts}
 \centering
 \begin{tabular}{|l|c|c|}
 \hline
 Name & Barrel & Endcap \\
 \hline
-\texttt{wp90} & -0.02 & -0.26 \\
+\texttt{wp80} & -0.02 & -0.26 \\
 \texttt{wp90} &  0.42 &  0.14 \\
 \hline
 \end{tabular}
-\caption[.]{Working points of the photon MVA-based ID, version \texttt{RunIIFall17v2}}
-\label{tab:MVAwpCuts}
 \end{table}
+
+\begin{figure}
+\begin{center}
+\subfigure [2016preVFP ] {\includegraphics[width=.5\textwidth]{SF/2016_PhotonsMVAwp80_SF2D.pdf}}%
+\subfigure [2017]        {\includegraphics[width=.5\textwidth]{SF/2017_PhotonsMVAwp80_SF2D.pdf}}\\
+\subfigure [2018]        {\includegraphics[width=.5\textwidth]{SF/2018_PhotonsMVAwp80_SF2D.pdf}}
+\end{center}
+\caption{Photon efficiency scale factors for the POG MVA-based ID with working point \texttt{wp80}.}
+\label{fig:phEffMVASF_wp80}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfigure [2016preVFP ] {\includegraphics[width=.5\textwidth]{SF/2016_PhotonsMVAwp90_SF2D.pdf}}%
+\subfigure [2017]        {\includegraphics[width=.5\textwidth]{SF/2017_PhotonsMVAwp90_SF2D.pdf}}\\
+\subfigure [2018]        {\includegraphics[width=.5\textwidth]{SF/2018_PhotonsMVAwp90_SF2D.pdf}}
+\caption{Photon efficiency scale factors for the POG MVA-based ID with working point \texttt{wp90}.}
+\label{fig:phEffMVASF_wp90}
+\end{figure}
