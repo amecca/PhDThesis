@@ -3,3 +3,9 @@
 \newcommand{\Likelihood}{\mathcal{L}}
 \newcommand{\Probability}{p}%{\mathbb{P}}
 \newcommand{\Celsius}{\ensuremath{^{\circ}C}}
+
+%% Overwrite some definitions
+%% Note: \DeclareRobustCommand does not check for previous definitions
+\DeclareRobustCommand{\Pl}{{\HepParticle{\mathrm{\ell}}{}{}}\Xspace} % lepton
+\DeclareRobustCommand{\PGnl}{{\HepParticle{\PGn}{\mathrm{\ell}}{}}\Xspace} % neutrino (for lepton l)
+\DeclareRobustCommand{\PAGnl}{{\HepAntiParticle{\PGn}{\mathrm{\ell}}{}}\Xspace} % anti-neutrino (for lepton l)
