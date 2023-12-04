@@ -2,7 +2,7 @@
 
 errors=( "Error" "LaTeX" "Package" "Compilation" )
 patterns=( "LaTeX(?= Error)" "LaTeX(?= Warning)" "(?<=Package )[^ ]+(?= Warning)" "^l.[\d]+")
-options=( "" "" "" "-A2" )
+options=( "" "" "" "-A3" )
 logfile=${1:-output/AN-21-207_temp.log}
 
 [ -f $logfile ] || { echo "ERROR file not found:" $logfile >&2 ; exit 1; }
