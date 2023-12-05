@@ -264,20 +264,41 @@ These requirements are met by the so-called CMS triggering system,
 which reduces the initial bandwidth by over three orders of magnitude.
 The CMS triggering system adopts a sophisticated two-stage approach,
 consisting of a \Lone trigger (L1) fully implemented in hardware logic and a high-level trigger (HLT) software farm.
-The L1 trigger achieves a rate reduction down to the level of 100 kHz, which is subsequently downscaled to around 1 kHz at HLT level.
+%% The L1 trigger achieves a rate reduction down to the level of 100 kHz, which is subsequently downscaled to around 1 kHz at HLT level.
 
 \subsubsection{Level-1 Trigger}
+The L1 trigger achieves a rate reduction down to the level of 100 kHz, with a latency below 4\mus.
+It is implemented in custom hardware, using Field Programmable Gate Arrays (FPGAs) which are generic and easily customisable,
+and Application Specific Integrated Circuits (ASICs), which are more resilient to high pile-up conditions, albeit not easily reconfigurable.
+The \Lone trigger uses information from the calorimeters and the muon system to construct the so called \textit{trigger primitives},
+which are the base of the trigger logic.
+An overview of the layout of the system is shown in Figure \ref{fig:L1trigger-block-diagram}.
 
 \begin{figure}[thb]
   \centering
   \includegraphics[width=0.85\textwidth]{L1trigger-block-diagram.png}
-  \caption{Main dataflow diagram for the Phase-1 \Lone \cite{CMS-TDR-12}.}
+  \caption{Main dataflow diagram for the Phase-1 \Lone trigger \cite{CMS-TDR-12}.}
   \label{fig:L1trigger-block-diagram}
 \end{figure}
 
 \subsubsection{High-level Trigger}
+The High Level Trigger (HLT) is a sophisticated software-based system which uses tens of thousands of CPU cores
+running multithreaded instances of an optimized version of the CMS reconstruction algorithm.
+This array of commercial CPUs manages the full event reconstruction through several sequential algorithms,
+targeting signature of interest referred to as \textit{trigger path}.
+The goal of the HLT is to reduce the incoming \Lone rate of 100 kHZ to around 1 kHz,
+while maintaining a good efficiency in the variouse phase spaces of interest for physics
+and being as inclusive as possible to enable a broad variety of searches.
 
-\subsection{APV25 preamplifier saturation}
+For this purpose, some paths that would otherwise exceed the available bandwidth are made to only pass the selection after a pre-scale.
+This consists of a random discarding of the event, either at L1 or at HLT, which is then accounted for in the analysis.
+
+Another major constraint of the HLT is the maximum processing time for each event, which is 50 ms.
+To optimize it, the more computationally-intensive algorithms are run at the end of the filtering sequence.
+These modules perform a streamlined version of the standard offline reconstruction.
+
+\begin{subappendices}
+\section{APV25 preamplifier saturation}
 \todo{Maybe move to chapter Dataset, as this is only needed to justify the division of year 2016.}\\
 In late 2015 and early 2016, the CMS strip tracker encountered a signal-to-noise ratio deterioration and a loss of hit detection on tracks, particularly as instantaneous luminosity increased.
 Investigation revealed that the problem stemmed from saturation in the preamplifier of the strip readout chip (APV25) under high occupancies.
@@ -290,3 +311,4 @@ A model for preamplifier saturation was developed and integrated into simulation
 As a consequence of these changes, for the year 2016, the detector simulations before and after the adjustment differ substantially.
 The two periods, which correspond to luminosity of around 19.5 fb$^{-1}$ and 16.8 fb$^{-1}$,
 are therefore analysed separately and are referred to as ``2016preVFP'' and ``2016postVFP''.
+\end{subappendices}
