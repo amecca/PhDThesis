@@ -1,4 +1,39 @@
 %More details on electron reconstruction can be found in Ref.~\cite{ElectronLegacy}. 
+Electrons deposit most of their energy in the ECAL, but they also produce hits in the inner tracker.
+Their reconstruction algorithm combines information from the two subsystems,
+by associating a track to an ECAL cluster and estimating the electron momentum using both pieces of information.
+
+The electron reconstruction is complicated by the presence of the tracker material between the collision point and the ECAL crystals,
+which causes the emission of bremsstrahlung along its trajectory, and the resulting photons have a probability of converting to electron-positron pairs.
+These effects must be taken into account by the reconstruction algorithm.
+
+The energy deposited by the electron is usually spread over several ECAL crystals, so the first step is clustering the energy deposits.
+First, \textit{cluster seeds} are identified as crystals with local energy maximum above a certain threshold.
+Then, \textit{topological clusters} are grown by aggregating crystals with at least one one side in common with one already in the cluster,
+if their energy exceeds a threshold defined as twice the noise level in the crystal.
+An expectation-maximisation algorithm based on a Gaussian-mixture model is then used to reconstruct the \textit{PF clusters} within a topological cluster,
+based on the assumption that the number of PF clusters is equal to the number of seeds.
+Finally, the energy of each cell within a topological cluster is shared among all the associated PF clusters according to the cell-cluster distance,
+with an iterative determination of the cluster energies and positions.
+PF clusters are assembled into \textit{PF superclusters}, starting from a seed cluster and aggregating those that are presumed to come from bremsstrahlung or conversion products.
+
+Electron tracks are reconstructed with a dedicated tracking procedure that differs from the one used for other charged particles,
+because electrons loose a larger amount of energy in the tracker and this causes significant changes in the curvature.
+The standard track seeds (see Section \ref{sec:tracks}) are used to initialise the procedure.
+Then the track building proceeds iteratively from the track parameters provided in each layer, modelling the electron energy loss with a Bethe-Block function.
+To maintain good efficiency in the presence of bremsstrahlung, compatibility requirements between the predicted and the found hits in each layer are quite loose.
+If several hits are compatible with the predicted one, different trajectory candidates are created and developed,
+with a limit of five candidate trajectories for each layer.
+At most one missing hit is allowed per each trajectory.
+Once the hits are collected, the track parameters are estimated with a fit that uses a Gaussian Sum Filter (GSF) \cite{CMS-NOTE-2005-001},
+instead of the Kalman Filter (KF) \cite{billoir.qian:simultaneous} used for non-electron tracks.
+
+Finally, a refining procedure is applied to the PF superclusters
+and some loose requirements are applied to the variables that characterise the geometrical association between the track and the supercluster.
+Charge estimation is then performed and the final step is the estimation of electron momentum,
+which relies on a combination of the energy of the supercluster and the momentum estimate of the GSF track.
+
+\paragraph{Analysis selection for electrons}
 
 Electron candidates are preselected using loose cuts on track-cluster matching observables, so as to preserve the highest possible efficiency while rejecting part of the QCD background. To be considered for the analysis, electrons are required to have a
 transverse momentum $p^e_T >$ 7 GeV, a reconstructed $|\eta^e| <$ 2.5, and to satisfy a loose primary vertex 

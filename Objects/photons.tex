@@ -1,3 +1,20 @@
+The PF reconstruction of isolated photons is conducted together with electron reconstruction.
+This is because the large amount of material in the tracker makes electron emit bremsstrahlung photons, which may convert to \Pep \Pem pairs,
+which may in turn produce bremsstrahlung, and so on.
+
+Photon candidates are seeded by ECAL superclusters with $\ET > 10 \GeV$ with no link to a GSF track.
+As for the electron candidates, the energy sum of the HCAL cells within $\DR = 0.15$ must not exceed 10 \% of the supercluster energy.
+All ECAL clusters linked to the supercluster are associated with the candidate.
+
+To correct for the energy missed in the association process,
+a correction is applied to the total energy of the ECAL clusters with analytical functions of the energy and pseudorapidity, which can be as large as 25 \% at low \pt and maximum tracker thickness ($|\eta| \approx 1.5$).
+The direction of the photon is taken to be that of the supercluster.
+
+Photon candidates are retained if they are isolated from other tracks and calorimeter clusters in the event,
+and if the ECAL cell energy distribution and the ratio between the HCAL and ECAL energies are compatible with those expected from a photon shower.
+The PF selection is looser than the requirements applied at analysis level to select isolated photons.
+
+\paragraph{Analysis selection for photons}
 Photon candidates are reconstructed as Super-Clusters in the ECAL with $E_{T} > 20 GeV$ in the fiducial Barrel region and Endcap region, defined by $|\eta|<1.4442$ and $1.566<|\eta|<2.5$, respectively.
 They are required to satisfy the loose cut-based selection \cite{CMS:EGM-17-001} seen in Table \ref{tab:VPhotonID}, which provides $90\%$ signal selection efficiency:
 
@@ -107,7 +124,7 @@ Besides the identification working points, an electron veto selection (CSEV veto
 
 \paragraph{Multivariate ID}
 The multivariate (MVA) ID employs 14 variables linked to the energy and shower shape of the ECAL supercluster associated with the photon, as well as its isolation from other particles in the event.
-These variables include those utilized by the cut-based ID, so the two are not independent.
+These variables include those utilised by the cut-based ID, so the two are not independent.
 The full list is shown in Table \ref{tab:MVAvariables}.
 The version used is \texttt{RunIIFall17v2}.
 

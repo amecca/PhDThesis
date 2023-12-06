@@ -1,32 +1,26 @@
 %More details on muon reconstruction can be found in Ref.~\cite{AN-15-277}.
-The analysis definition of {\bf loose muons} requires
-$p_T > 5$, $|\eta| < 2.4$, $dxy< 0.5$ cm, $dz < 1$ cm, where $dxy$ and $dz$ are 
-defined w.r.t. the PV and using the 'muonBestTrack'. Muons have to be 
-reconstructed by either the Global Muon or Tracker Muon algorithm. Standalone 
-Muon tracks that are only reconstructed in the muon system are rejected.
-Muons with \verb|muonBestTrackType==2| (standalone) are discarded even if they 
-are marked as global or tracker muons. 
+Muon candidates are selected among global muons and tracker muons.
+Standalone muon tracks that are only reconstructed in the muon system are not used.
 
-Loose muons with $\pt$ below 200\GeV that also pass
-%Muon BDT (see below).
-the PF loose muon ID are considered {\bf tight muons} for this analysis.
-Note that the naming convention used for these IDs differs from the muon POG
-naming scheme, in which the ``tight ID'' used here is called the ``loose ID''.
+Muons are required to have transverse momentum $\pt > 5 \GeV$ and pseudorapidity $|\eta| < 2.4$.
+As for the electrons, the muon track is required to be compatible with the primary vertex,
+to suppress contributions from in-flight decays of hadrons, pileup and cosmic rays.
+This requirement translates into $d_{xy} < 0.5 \cm$, $d_z < 1 \cm$, where $d_{xy}$ and $d_z$ are
+the muon impact parameters with respect to the primary vertex in the transverse plane and longitudinal direction respectively.
+These requirements correspond to the analysis definition of \textbf{loose muons}.
 
-Those with $\pt$ above 200\GeV are considered tight if they pass
-either the PF ID or the Tracker
-High-$\pt$ ID, the definition of which is shown in Table~\ref{tab:highPtID}.
+Loose muons with \pt below 200\GeV that also pass
+the PF loose muon ID \cite{ParticleFlow} are considered \textbf{identified muons} for this analysis.
+Muons with \pt $>$ 200\GeV must pass either the PF identification or the Tracker High-\pt ID,
+whose definition is reported in Table \ref{tab:highPtID}.
 This relaxed definition is used to increase signal efficiency in the high
 centre of mass energy regime.
-% This relaxed definition is used to increase signal efficiency for the high-mass
-% search. When a very heavy resonance decays to two $\cPZ$ bosons, both bosons
-% will be very boosted.
-In the lab frame, the leptons coming from the decay of
+In the laboratory frame of reference, the leptons coming from the decay of
 a highly boosted $\cPZ$ will be nearly collinear, and the PF ID loses 
 efficiency for muons separated by approximately $\Delta R < 0.4$, which roughly 
 corresponds to muons originating from $\cPZ$ bosons with $\pt > 500\GeV$.
 
-\begin{table}[ht]
+\begin{table}
     \begin{small}
     \begin{center}
     \caption{
@@ -43,7 +37,7 @@ corresponds to muons originating from $\cPZ$ bosons with $\pt > 500\GeV$.
                                      & \textbf{NB: this implies the muon is} \\
                                      & \textbf{an arbitrated tracker muon.}  \\
       \hline                                                          
-      Good $\pt$ measurement         & $\frac{\pt}{\sigma_{\pt}} < 0.3$      \\
+      Good $\pt$ measurement         & $\pt / \sigma_{\pt} < 0.3$            \\
       \hline
       Vertex compatibility ($x-y$)   & $d_{xy} < 2$~mm                       \\
       \hline
@@ -59,12 +53,12 @@ corresponds to muons originating from $\cPZ$ bosons with $\pt > 500\GeV$.
     \end{small}
 \end{table}
 
-An additional ``ghost-cleaning'' step is performed to deal with situations when a single muon
+An additional \textit{ghost-cleaning} step is performed to deal with situations when a single muon
 can be incorrectly reconstructed as two or more muons:
 
 \begin{itemize}
 
-\item Tracker Muons that are not Global Muons are required to be arbitrated.
+\item Tracker Muons that are not Global Muons are required to be matched to reconstructed segments in at least two stations of the muon system;
 \item If two muons are sharing 50\% or more of their segments then the muon with lower quality is removed.
 
 \end{itemize}
