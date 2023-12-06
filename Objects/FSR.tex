@@ -1,11 +1,34 @@
-Final State Radiation (FSR) photons emitted by leptons are not included at all in the Particle Flow reconstruction of muon momentum, and may be missed in electron reconstruction, leading to a degradation of the accuracy for the Z bosons momentum and mass.
+High energy leptons inside a strong magnetic filed can emit high energy photons.
+This is the case for the electrons and muons from the decay of the \PZ and \PW bosons.
+The Final State Radiation (FSR) photons emitted by leptons are not included at all in the Particle Flow reconstruction of muon momentum,
+and may be missed in electron reconstruction, leading to a degradation of the accuracy for the Z bosons momentum and mass.
 
-FSR candidates are required to have $p_{T}^{\gamma} >$ 2 GeV, $|\eta^{\gamma}| <$ 2.4, relative isolation $<$ 1.8 (see Equation \ref{eqn:mupfiso}) and $\Delta R(\ell, \gamma) <$ 0.5 with respect to the nearest signal lepton.
+In order to improve the reconstruction of the momentum of the leptons, it is necessary to identify FSR photons and associate them to the parent lepton.
+This is also important in order to suppress the background from diboson ($\PZ\PZ$ for the 4\Pl channel $\PW\PZ$ for the 3\Pl channel respectively),
+where the additional photon does not come from the hard scattering, but is instead radiated by one of the leptons.
+
+The FSR recovery algorithm is designed to discriminate FSR photons from the background from pileup interactions and from Initial State Radiation (ISR).
+This is achieved by exploiting the kinematics of FSR photons, which tend to be collinear to the parent lepton and to be isolated from hadronic activity in the event.
+
+The FSR photons are selected for each lepton, starting from the collection of photons produced by the Particle Flow algorithm.
+FSR candidates are required to have transverse momentum $p_{T}^{\gamma} >$ 2 GeV and pseudorapidity $|\eta^{\gamma}| <$ 2.4 (inside the tracker acceptance).
+It is also required that the relative isolation $I^{\PGg} < 1.8$, which is computed as:
+\begin{equation}
+I^{\PGg} \mathdefined \frac{1}{\pt^\PGg} \left( \sum{\pt^\PGg} + \sum_{i\, \in\, \mathrm{neutral}}{\pt^i} + \sum_{j\, \in\, \mathrm{charged}}{\pt^j} \right)
+\end{equation}
+
+where $\sum{\pt^\PGg}$, $\sum_{i\, \in\, \mathrm{neutral}}{\pt^i}$ and $\sum_{j\, \in\, \mathrm{charged}}{\pt^j}$
+are the scalar sums of the transverse momenta of photons, neutral and charged hadrons inside a cone of radius $\mathrm{R} = 0.3$ around the photon,
+including pileup contributions.
+
+The photons that that passed these selections are associated to the closest lepton, among those that pass the loose ID and SIP cut (see \todo{Section/Equation} \ref{eleSIP}).
 Because the electron reconstruction algorithm already recovers some of the FSR photons, we exclude those that have $\Delta R(e, \gamma) <$ 0.15 or $|\Delta\phi(e, \gamma)| <$ 2 and $|\Delta\eta(e, \gamma)| <$ 0.05 to avoid double counting.
+The FSR candidate are also discarded if they do not satisfy $\Delta R(\ell, \gamma) <$ 0.5 with respect to the associated lepton.
+
 Since FSR photons tend to have higher energies than the ones from pileup, and are expected to be quasi-collinear with the emitting leptons, an FSR candidate is accepted if $\Delta R(\ell, \gamma)^{} / E_{T,\gamma}^{2} <$ 0.012 GeV$^{-2}$.
 Accepted FSR photons have their momentum added to the lepton and are excluded from the computation of its isolation.
-\\
-Since our analysis selection requires signal photons to have at least $\Delta R(\ell, \gamma) > 0.5$ from any signal lepton, there is no double counting.
+
+Since our analysis selection requires signal photons to have at least $\Delta R(\ell, \gamma) > 0.5$ from any signal lepton, there is no risk of double counting photons.
 However, we studied the kinematic distributions of photons passing all the other basic kinematic selections with this cut relaxed.
 For example, their distribution in bins of $\Delta R(\ell, \gamma)$ with respect to the closest lepton
 can be seen in Figure \ref{fig:dRl_fsr_photons}.
