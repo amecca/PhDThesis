@@ -1,12 +1,18 @@
 \chapter{Analysis Strategy}
 
+The analysis aims at observing triboson production of $\PZ\PZ\PGg$ and $\PW\PZ\PGg$, by combining three orthogonal channels.
+The \textit{channels} are defined based on the number of loose leptons in the event.
+Each channel is further divided into several \textit{regions}, based on the number of leptons that pass the tight selection,
+and wether or not there is a photon that passes the tight selection.
+The full scope of the division is illustrated in Table \ref{tab:region_definition}.
+
 \begin{table}
-  \caption{Definition of the analysis regions.}
+  \caption{Definition of the analysis division into channels and regions.}
   \label{tab:region_definition}
   \resizebox{\textwidth}{!}{%
     \begin{tabular}{|c | c|c|c | c|c|c|c | c|}
       \hline
-      channel $\rightarrow$    & \multicolumn{3}{c|}{4 \Pl} & \multicolumn{4}{c|}{3 \Pl $\ (\ptmiss > 30 GeV)$} & 2 \Pl   \\
+      channel $\rightarrow$    & \multicolumn{3}{c|}{4 \Pl} & \multicolumn{4}{c|}{3 \Pl $\ (\ptmiss > 30 \GeV)$} & 2 \Pl   \\
       \hline
       \Pl status $\rightarrow$ & 4P      & 3P1F & 2P2F      & 3P      & 2P1F & 2P2F & 3F                        & 2P      \\
       \hline
@@ -16,7 +22,7 @@
       \cline{1-2} \cline{5-5} \cline{9-9}
       \PGg FAIL                & CR \PGg &      &           & CR \PGg &      &      &                           & CR \PGg \\
       \hline %% \midrule
-      \multicolumn{3}{c}{}                                & & \multicolumn{4}{c|}{3 \Pl $\ (\ptmiss < 30 GeV)$} & \multicolumn{1}{c}{} \\
+      \multicolumn{3}{c}{}                                & & \multicolumn{4}{c|}{3 \Pl $\ (\ptmiss < 30 \GeV)$} & \multicolumn{1}{c}{} \\
       \cline{5-8}
       \multicolumn{3}{c}{}                                & & 3P & 2P1F & 1P2F & 3F                             & \multicolumn{1}{c}{} \\
       \cline{5-8}
@@ -25,6 +31,12 @@
     \end{tabular}
   }
 \end{table}
+
+The 4\Pl channel targets $\PZ\PZ\PGg$ production with fully leptonic decay of the two Z bosons.
+The 3\Pl channel focuses primarily on $\PW\PZ\PGg$, also with fully leptonic decay of the \PW and \PZ bosons,
+but since there is a small contamination of $\PZ\PZ\PGg$ it benefits from a combined fit of the two.
+Finally, the 2\Pl channel targets both $\PZ\PZ\PGg$ and $\PW\PZ\PGg$, where one \PZ decays to leptons,
+and the other massive boson decays to quarks, which hadronize to jets.
 
 \input{body/event_selection}
 \input{body/backgrounds}

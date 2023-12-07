@@ -2,7 +2,7 @@ The PF reconstruction of isolated photons is conducted together with electron re
 This is because the large amount of material in the tracker makes electron emit bremsstrahlung photons, which may convert to \Pep \Pem pairs,
 which may in turn produce bremsstrahlung, and so on.
 
-Photon candidates are seeded by ECAL superclusters with $\ET > 10 \GeV$ with no link to a GSF track.
+Photon candidates are seeded by ECAL superclusters (SC) with $\ET > 10 \GeV$ with no link to a GSF track.
 As for the electron candidates, the energy sum of the HCAL cells within $\DR = 0.15$ must not exceed 10 \% of the supercluster energy.
 All ECAL clusters linked to the supercluster are associated with the candidate.
 
@@ -14,85 +14,133 @@ Photon candidates are retained if they are isolated from other tracks and calori
 and if the ECAL cell energy distribution and the ratio between the HCAL and ECAL energies are compatible with those expected from a photon shower.
 The PF selection is looser than the requirements applied at analysis level to select isolated photons.
 
-\paragraph{Analysis selection for photons}
-Photon candidates are reconstructed as Super-Clusters in the ECAL with $E_{T} > 20 GeV$ in the fiducial Barrel region and Endcap region, defined by $|\eta|<1.4442$ and $1.566<|\eta|<2.5$, respectively.
-They are required to satisfy the loose cut-based selection \cite{CMS:EGM-17-001} seen in Table \ref{tab:VPhotonID}, which provides $90\%$ signal selection efficiency:
-
-\begin{table}[h!]
-\begin{center}
-\scalebox{0.75}{
-\begin{tabular}{|c|c|c|}
-\hline 
-\hline 
-Requirement &  Barrel$\quad$$|\eta|<$1.4442 & Endcap$\quad$ 1.566$<|\eta|<$2.5 \\
-\hline
-%% Medium WP
-%% $H/E<$ & 0.02197 & 0.0326 \\
-%% $\sigma_{i\eta i\eta}<$ & 0.01015 & 0.0272 \\
-%% Rho corrected PF charged hadron isolation $<$ & 1.141\ GeV & 1.051\ GeV\\
-%% Rho corrected PF neutral hadron isolation$<$ & $1.189 + 0.01512*p_{T}^{\gamma} + 2.259e-05*p_{T}^{\gamma 2}$ & $2.718 + 0.0117*p_{T}^{\gamma} + 2.3e-05*p_{T}^{\gamma 2}$\\
-%% Rho corrected PF photon isolation$<$ &$2.08 + 0.004017*p_{T}^{\gamma}$ & $3.867 + 0.0037*p_{T}^{\gamma}$\\
-%% 
-%% Loose WP
-$H/E<$ & 0.04596 & 0.0590 \\
-$\sigma_{i\eta i\eta}<$ & 0.0106 & 0.0272 \\
-Rho corrected PF charged hadron isolation $<$ & 1.694\ GeV & 2.089\ GeV\\
-Rho corrected PF neutral hadron isolation$<$ & $24.032 + 0.01512\, p_{T}^{\gamma} + 2.259 \cdot 10^{-5}\, p_{T}^{\gamma 2}$ & $19.722 + 0.0117\, p_{T}^{\gamma} + 2.3 \cdot 10^{-5}\, p_{T}^{\gamma 2}$\\
-Rho corrected PF photon isolation$<$ & $2.876 + 0.004017\, p_{T}^{\gamma}$ & $4.162 + 0.0037\, p_{T}^{\gamma}$\\
-Pass Conversion safe electron veto & True & True\\
-\hline
-\end{tabular}}
-\caption[.]{Cut-based Loose photon ID for 94X and later samples}
-\label{tab:VPhotonID}
-\end{center}
-\end{table}
-
-%Barrel:
-%
-%\begin{itemize}
-%\item Single tower H/E $<$ 0.0396 
-%\item $\sigma_{i\eta i\eta}<0.01022$ 
-%\item pile-up corrected PF charged hadron isolation $<$ 0.441, which charged hadrons originated from the hard interaction primary vertex.
-%\item pile-up corrected PF neutral hadron isolation $< 2.725 + 0.0148*p_{T}^{\gamma} + 0.000017*p_{T}^{\gamma 2}$ 
-%\item pile-up corrected PF photon isolation $<2.571 + 0.0047*p_{T}^{\gamma}$
-%\item Conversion safe electron veto
-%\end{itemize}
-%
-%Endcap:
-%
-%\begin{itemize}
-%\item Single tower H/E $<$ 0.0219
-%\item $\sigma_{i\eta i\eta}<0.03001$
-%\item pile-up corrected PF charged hadron isolation $<$ 0.442, which charged hadrons originated from the hard interaction primary vertex.
-%\item pile-up corrected PF neutral hadron isolation $< 1.715 + 0.0163*p_{T}^{\gamma} + 0.000014*p_{T}^{\gamma 2}$
-%\item pile-up corrected PF photon isolation $<3.863 + 0.0034*p_{T}^{\gamma}$
-%\item Conversion safe electron veto
-%\end{itemize}
-
-Isolation is performed for a cone of radius 0.3.
-Pile-up corrected PF isolation is calculated using effective area corrections.
-The photon candidates are also required to be separated from the lepton by at least $0.07$ in $\eta-\phi$ space, which highly reduces the contribution from FSR.
-The same separation requirement is imposed between the photon candidates and the jets.
-
 \subsubsection{Photon Identification}
 \label{sec:photonID}
 
-Both a cut-based and a MVA-based ID are employed and compared in the analysis.\\
+Photon candidates are required to have $E_{T} > 20 \GeV$ and be in the fiducial Barrel region or Endcap regions,
+defined by $|\eta|<1.4442$ and $1.566<|\eta|<2.5$, respectively.
+The photon candidates are also required to be separated from the closest lepton (electron or muon) by at least $\DR(\PGg, \Pl) > 0.5$,
+which highly suppresses the contribution from FSR,
+and is orthogonal to the selection used for lepton FSR recovery (see Section \ref{sec:FSRphotons}).
+\todo{The same separation requirement is imposed between the photon candidates and the jets. [Not yet]}
+
+Different strategies are used to identify prompt (produced at the primary vertex) and isolated
+electrons and photons, and separate them from background sources.
+The most important background to prompt photons arises from jets fragmenting mainly into light neutral mesons
+such as \Pgpz or \PGh, which promptly decay to two photons.
+For the energy range of interest, the \Pgpz or \PGh are significantly boosted, such that the two photons from the decay are nearly collinear
+and are difficult to distinguish from a single-photon incident on the calorimeter.
+%% Different working points are defined to identify either electrons or photons,
+%% corresponding to identification efficiencies of approximately 70, 80, and 90 \%, respectively.
+%% In all cases data and simulation efficiencies are compatible within 1-5 \% over the full $\eta$ and \ET ranges for electrons and photons.
+
+Both a cut-based and a MVA-based ID are employed and compared in the analysis.
 Each has its own advantages and disadvantages.
 Due to its nature, the cut-based ID can be easily inverted by reversing only one or a few of its cuts.
 On the other hand, MVA-based ID is more effective at discriminating between signal and background, providing a higher signal-to-noise ratio.
 
-\paragraph{Cut-based ID}
-The cut-based loose photon ID, described in ~\cite{CMS:EGM-17-001} and shown in table~\ref{tab:VPhotonID} is employed.
-The corresponding ID scale factors, shown in Figure \ref{fig:phEffSF} are applied following the recommendations provided by the CMS experts on electrons and photons reconstruction.
+\paragraph{Identification variables\\}
+\todo{Describe sieie, hovere, isolations, iso corrections and friends + whatever is used for the MVA}
+
+One of the most efficient ways to reject photon backgrounds is the use of isolation energy sums,
+a generic class of discriminating variables that are constructed from the sum of the reconstructed energy in a cone around photons in different subdetectors.
+%% For this purpose, it is convenient to define cones in terms of an $\eta-\phi$ metric;
+%% the distance with respect to the reconstructed photon direction is defined by \DR.
+To ensure that the energy from the photon itself is not included in this sum, it is necessary to define a veto region inside the isolation cone, which is excluded from the isolation sum.
+
+Photon isolation exploits the information provided by the PF event reconstruction (Section \ref{sec:ParticleFlow}).
+The isolation variables are obtained by summing the transverse momenta of charged hadrons ($I_{ch}$), photons ($I_\PGg$), and neutral hadrons (In),
+inside an isolation cone of $\DR = 0.3$ with respect to the electron or photon direction.
+The larger the energy of the incoming electrons or photons, the larger the amount of energy spread around its direction in the various subdetectors.
+For this reason, the thresholds applied on the isolation quantities are frequently parameterised as a function of the particle \ET.
+
+The isolation variables are corrected to mitigate the contribution from pileup.
+This contribution in the isolation region is estimated as $\rho A_{eff}$,
+where $\rho$ is the median of the transverse energy density per unit area in the event
+and $A_{eff}$ is the area of the isolation region weighted by a factor that accounts for the dependence of the pileup transverse energy density on the object $\eta$ \cite{CMS:electron-performance-2015}.
+The quantity $\rho A_{eff}$ is subtracted from the isolation quantities.
+
+The distributions of $I_\PGg$ before % after?
+the $\rho$ corrections are shown in Figure \todo{I\_ph in CR3P1F/2P2F} for photons in the EB and EE.
 
 \begin{figure}
-\subfigure [2016preVFP ] {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2016preVFP.pdf} }}
-\subfigure [2016postVFP] {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2016postVFP.pdf}}}\\
-\subfigure [2017]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2017.pdf}}}
-\subfigure [2018]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2018.pdf}}}
-\caption{Photon efficiency scale factors for the POG cut-based Loose ID.}
-\label{fig:phEffSF}
+\subfigure [Barrel] {\includegraphics[width=.5\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR2P2F/kinPh_phIso_EB_pow.pdf}}%
+\subfigure [Endcap] {\includegraphics[width=.5\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR2P2F/kinPh_phIso_EE_pow.pdf}}
+\caption{The $\rho$-corrected PF photon isolation in a cone defined by $\DR = 0.3$ for photons in the EB (left) and in the EE (right).
+The events belong to the leptonic control region CR2P2F.
+The lower panels display the ratio of the data to the simulation.}
+\label{fig:Iph_CR2P2F}
+\end{figure}
+
+Another method to reject jets with high electromagnetic content exploits the shape of the electromagnetic shower in the ECAL.
+Even if the two photons from neutral hadron decays inside a jet cannot be fully resolved, a wider shower profile is expected, on average,
+compared with a single incident electron or photon.
+This is particularly true along the $\eta$ axis of the cluster, since the presence of the material combined with the effect of the magnetic field
+reduce the discriminating power resulting from the $\phi$ profile of the shower. 
+In particular, the following two variables have high discriminating power.
+
+The hadronic over electromagnetic energy ratio ($H/E$) is defined as the ratio between the energy deposited in the HCAL in a cone of radius $\DR = 0.15$
+around the supercluster direction and the energy of the photon candidate.
+\sieie, the second moment of the log-weighted distribution of crystal energies in $\eta$,
+calculated in the $5 \times 5$ matrix around the most energetic crystal in the SC and rescaled to units of crystal size.
+The mathematical expression is given below:
+\begin{equation}
+\label{eq:sieie}
+\sieie \mathdefined \sqrt{ \frac{\sum_i^{5 \times 5} w_i(\eta_i - \bar{\eta}_{5 \times 5})}{\sum_i^{5 \times 5} w_i} }
+\end{equation}
+where $\eta_i$ is the pseudorapidity of the i-th crystal,
+$\bar{\eta}_{5 \times 5}$ is the mean pseudorapidity of the $5 \times 5$ cells
+and $w_i$ is a weight defined as $w_i = \mathrm{max}(0,\, 4.7 + \mathrm{ln}(E_i/E_{5 \times 5}))$,
+which is nonzero if $E_i > 0.9\, \%\; E_{5 \times 5}$.
+Looking at the numerator in Equation \ref{eq:sieie}, it is clear that \sieie is proportional to the distance between adjacent crystals,
+which is 0.0175 in EB and varies from 0.0175 to 0.0 in EE.
+Therefore, the spread of \sieie in EE is twice the one in EB.
+The \sieie distribution is expected to be narrow for isolated electrons or photons, and broad for two-photon showers from meson decays.
+
+The distributions of \sieie are shown in Figure \ref{fig:sieie_CR2P2F} for photons in the EB and EE.
+
+\begin{figure}
+\subfigure [Barrel] {\includegraphics[width=.5\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR2P2F/kinPh_sieie_EB_pow.pdf}}%
+\subfigure [Endcap] {\includegraphics[width=.5\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR2P2F/kinPh_sieie_EE_pow.pdf}}
+\caption{The $\rho$-corrected PF photon isolation in a cone defined by $\DR = 0.3$ for photons in the EB (left) and in the EE (right).
+The events belong to the leptonic control region CR2P2F.
+The lower panels display the ratio of the data to the simulation.}
+\label{fig:sieie_CR2P2F}
+\end{figure}
+
+\paragraph{Cut-based ID\\}
+The cut-based loose photon ID, described in ~\cite{CMS:EGM-17-001} and shown in table~\ref{tab:VPhotonID} is employed.
+Specifically, the Loose working point is selected.
+It provides 90 \% efficiency on signal photons with \todo{how much?} background rejection, as tested by CMS experts on a sample of 
+The corresponding ID scale factors, shown in Figure \ref{fig:phEffSF} are applied following the recommendations provided by the CMS experts on electrons and photons reconstruction.
+
+\begin{table}
+  \resizebox{\textwidth}{!}{
+    \centering
+    \begin{tabular}{c c c}
+    \toprule
+    Variable                 &  Barrel $\quad |\eta| < 1.4442$     & Endcap $\quad 1.566 < |\eta| < 2.5$\\
+    \midrule
+    $H/E$                    & $0.04596$                           & $0.0590$                           \\
+    $\sigma_{i\eta i\eta}$   & $0.0106$                            & $0.0272$                           \\
+    $I_{ch}^{corr} [\GeV]$   & $1.694$                             & $2.089$                            \\
+    $I_{n} ^{corr} [\GeV]$   & $24.032 + 0.01512\, p_{T}^{\gamma} + 2.259 \cdot 10^{-5}\, p_{T}^{\gamma 2}$ & $19.722 + 0.0117\, p_{T}^{\gamma} + 2.3 \cdot 10^{-5}\, p_{T}^{\gamma 2}$\\
+    $I_{\PGg}^{corr} [\GeV]$ & $2.876 + 0.004017\, p_{T}^{\gamma}$ & $4.162 + 0.0037\, p_{T}^{\gamma}$  \\
+    %% Pass Conversion safe electron veto & True & True\\
+    \bottomrule
+    \end{tabular}
+  }
+  \caption[.]{Cut thresholds of the Loose working point cut-based photon ID.}
+  \label{tab:VPhotonID}
+\end{table}
+
+\begin{figure}
+  \subfigure [2016preVFP ] {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2016preVFP.pdf} }}
+  \subfigure [2016postVFP] {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2016postVFP.pdf}}}\\
+  \subfigure [2017]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2017.pdf}}}
+  \subfigure [2018]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2018.pdf}}}
+  \caption{Photon efficiency scale factors for the POG cut-based Loose ID.}
+  \label{fig:phEffSF}
 \end{figure}
 
 Besides the identification working points, an electron veto selection (CSEV veto) is also applied.
@@ -122,7 +170,7 @@ Besides the identification working points, an electron veto selection (CSEV veto
 %  \end{center}
 %\end{figure}
 
-\paragraph{Multivariate ID}
+\paragraph{Multivariate ID\\}
 The multivariate (MVA) ID employs 14 variables linked to the energy and shower shape of the ECAL supercluster associated with the photon, as well as its isolation from other particles in the event.
 These variables include those utilised by the cut-based ID, so the two are not independent.
 The full list is shown in Table \ref{tab:MVAvariables}.
