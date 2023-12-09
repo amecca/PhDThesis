@@ -25,8 +25,11 @@ The photons that that passed these selections are associated to the closest lept
 Because the electron reconstruction algorithm already recovers some of the FSR photons, we exclude those that have $\Delta R(e, \gamma) <$ 0.15 or $|\Delta\phi(e, \gamma)| <$ 2 and $|\Delta\eta(e, \gamma)| <$ 0.05 to avoid double counting.
 The FSR candidate are also discarded if they do not satisfy $\Delta R(\ell, \gamma) <$ 0.5 with respect to the associated lepton.
 
-Since FSR photons tend to have higher energies than the ones from pileup, and are expected to be quasi-collinear with the emitting leptons, an FSR candidate is accepted if $\Delta R(\ell, \gamma)^{} / E_{T,\gamma}^{2} <$ 0.012 GeV$^{-2}$.
+Since FSR photons tend to have higher energies than the ones from pileup, and are expected to be quasi-collinear with the emitting leptons, an FSR candidate is accepted if $\Delta R(\ell, \gamma)^{} / E_{T,\gamma}^{2} < 0.012 \GeV^{-2}$.
+If more than one photon can be associated to a lepton, only the FSR candidate with the smallest $\Delta R(\ell, \gamma)^{} / E_{T,\gamma}^{2}$ is kept.
 Accepted FSR photons have their momentum added to the lepton and are excluded from the computation of its isolation.
+
+A detailed study on the optimization of the FSR recovery algorithm can be found in Reference \cite{Sirunyan2017}.
 
 Since our analysis selection requires signal photons to have at least $\Delta R(\ell, \gamma) > 0.5$ from any signal lepton, there is no risk of double counting photons.
 However, we studied the kinematic distributions of photons passing all the other basic kinematic selections with this cut relaxed.
