@@ -22,7 +22,6 @@ defined by $|\eta|<1.4442$ and $1.566<|\eta|<2.5$, respectively.
 The photon candidates are also required to be separated from the closest lepton (electron or muon) by at least $\DR(\PGg, \Pl) > 0.5$,
 which highly suppresses the contribution from FSR,
 and is orthogonal to the selection used for lepton FSR recovery (see Section \ref{sec:FSRphotons}).
-\todo{The same separation requirement is imposed between the photon candidates and the jets. [Not yet]}
 
 Different strategies are used to identify prompt (produced at the primary vertex) and isolated
 electrons and photons, and separate them from background sources.
@@ -117,6 +116,7 @@ The corresponding ID scale factors, shown in Figure \ref{fig:phEffSF} are applie
 
 \begin{table}
   \centering
+  \renewcommand{\arraystretch}{1.4}
   \begin{tabular}{c c c}
     \toprule
     Variable                 &  Barrel $\quad |\eta| < 1.4442$     & Endcap $\quad 1.566 < |\eta| < 2.5$\\
@@ -124,8 +124,8 @@ The corresponding ID scale factors, shown in Figure \ref{fig:phEffSF} are applie
     $H/E$                    & $0.04596$                           & $0.0590$                           \\
     $\sigma_{i\eta i\eta}$   & $0.0106$                            & $0.0272$                           \\
     $I_{ch}^{corr} [\GeV]$   & $1.694$                             & $2.089$                            \\
-    $I_{n} ^{corr} [\GeV]$   & \begin{tabular}{c} $24.032 + 0.01512\, p_{T}^{\gamma} +$\\$+ 2.259 \cdot 10^{-5}\, p_{T}^{\gamma 2}$ \end{tabular}
-                             & \begin{tabular}{c} $19.722 + 0.0117\, p_{T}^{\gamma} +$ \\$+ 2.3 \cdot 10^{-5}\, p_{T}^{\gamma 2}$   \end{tabular}\\
+    $I_{n} ^{corr} [\GeV]$   & \renewcommand{\arraystretch}{1}\begin{tabular}{c} $24.032 + 0.01512\, p_{T}^{\gamma} +$\\$+ 2.259 \cdot 10^{-5}\, (p_{T}^{\gamma})^2$ \end{tabular}
+                             & \renewcommand{\arraystretch}{1}\begin{tabular}{c} $19.722 + 0.0117\, p_{T}^{\gamma} +$ \\$+ 2.3 \cdot 10^{-5}\, (p_{T}^{\gamma})^2$   \end{tabular}\\
     $I_{\PGg}^{corr} [\GeV]$ & $2.876 + 0.004017\, p_{T}^{\gamma}$ & $4.162 + 0.0037\, p_{T}^{\gamma}$  \\
     \bottomrule
   \end{tabular}
@@ -258,15 +258,16 @@ Cut-based identification is shown for three different working points, loose, med
 \end{figure}
 
 \paragraph{Selections used in the analysis\\}
-\todo{move to event selection?}
 \label{sec:photon_selection}
+\todo{move to event selection?}
+
 A common base selection is applied to all the photons, consisting of
 \pt > 20 \GeV and
 $|\eta| < 1.4442$ OR $1.566 < |\eta| < 2.4$.
 Photons must also pass a conversion safe electron veto (CSEV) \cite{CMS:photon-performance-2015} which requires the absence of charged particle tracks,
 with a hit in the innermost layer of the pixel detector not matched to a reconstructed conversion vertex, pointing to the photon cluster in the ECAL.
 Photons are also rejected in the presence of a seed in the pixel tracker consisting of at least two hits,
-which points to the ECAL within some window defined around the photon SC position. \todo{Run without pixel seed veto!!!}
+which points to the ECAL within some window defined around the photon SC position.
 Photons that pass these selections are called \textbf{kinematic photons}, which is the loosest selection used in this analysis.
 
 Photons that also pass the cut thresholds of the Loose cut-based ID (see Table~\ref{tab:VPhotonID}) for H/E, the neutral ($I_n$) and photon ($I_\PGg$) isolations

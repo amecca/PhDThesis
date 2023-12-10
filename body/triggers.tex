@@ -1,0 +1,92 @@
+Several HLT paths to select events which present a certain number of electrons or muons in the final state.
+Due to the evolution of trigger requirements with instantaneous LHC luminosity,
+the collection of HLT paths used in this analysis is different for each data taking year.
+
+The HLT paths used for collision data are listed in Tables~\ref{tab:triggerpat2016, tab:triggerpat2017, tab:triggerpat2018}, 
+together with their L1 seed, prescale value and the associated primary dataset.
+The trigger paths used ad the disambiguation scheme is the same used in Reference~\cite{HiggsLegacyPaper},
+and they were optimised for the phase space of the $\PH \rightarrow \PZ \PZst \rightarrow 4\Pl$
+
+\begin{table*}
+  \caption{Trigger paths used in 2016 collision data. All triggers have prescale = 1.}
+  \label{tab:trigpat2016}
+  \centering
+  \begin{tabular}{|l|l|c|l|} 
+    \hline %--------------------------------------------------------------------------------------------------------------------------
+    HLT path                                                   & primary dataset \\
+    \hline %--------------------------------------------------------------------------------------------------------------------------
+    \verb| HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ         | & DoubleEG \\
+    \verb| HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ         | & DoubleEG \\
+    \verb| HLT_DoubleEle33_CaloIdL_GsfTrkIdVL                | & DoubleEG \\
+    \verb| HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL             | & DoubleEG \\
+    \verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL                  | & DoubleMuon \\
+    \verb| HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL                | & DoubleMuon \\
+    \verb| HLT_TripleMu_12_10_5                              | & DoubleMuon \\
+    \verb| HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL    | & MuonEG \\
+    \verb| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL    | & MuonEG \\
+    \verb| HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL   | & MuonEG \\
+    \verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL   | & MuonEG \\
+    \verb| HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL    | & MuonEG \\
+    \verb| HLT_Mu8_DiEle12_CaloIdL_TrackIdL                  | & MuonEG \\
+    \verb| HLT_DiMu9_Ele9_CaloIdL_TrackIdL                   | & MuonEG \\
+    \verb| HLT_Ele25_eta2p1_WPTight                          | & SingleElectron \\
+    \verb| HLT_Ele27_WPTight                                 | & SingleElectron \\
+    \verb| HLT_Ele27_eta2p1_WPLoose_Gsf                      | & SingleElectron \\
+    \verb| HLT_IsoMu20 OR HLT_IsoTkMu20                      | & SingleMuon \\
+    \verb| HLT_IsoMu22 OR HLT_IsoTkMu22                      | & SingleMuon \\
+    \hline %--------------------------------------------------------------------------------------------------------------------------
+  \end{tabular}
+\end{table*}
+
+\begin{table*}
+  \caption{Trigger paths used in 2017 collision data. All triggers have prescale = 1.}
+  \label{tab:trigpat2017}
+  \scriptsize
+  \centering  
+  \begin{tabular}{|l|l|c|l|} 
+    \hline %--------------------------------------------------------------------------------------------------------------------------
+    HLT path                                                    & primary dataset \\
+    \hline %--------------------------------------------------------------------------------------------------------------------------
+    \verb| HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_*           | & DoubleEG \\
+    \verb| HLT_DoubleEle33_CaloIdL_GsfTrkIdVL                 | & DoubleEG \\
+    \verb| HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL              | & DoubleEG \\
+    \verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8        | & DoubleMuon \\
+    \verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8          | & DoubleMuon \\
+    \verb| HLT_TripleMu_12_10_5                               | & DoubleMuon \\
+    \verb| HLT_TripleMu_10_5_5_D2                             | & DoubleMuon \\
+    \verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL    | & MuonEG \\
+    \verb| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ  | & MuonEG \\
+    \verb| HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ | & MuonEG \\
+    \verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ | & MuonEG \\
+    \verb| HLT_DiMu9_Ele9_CaloIdL_TrackIdL_DZ                 | & MuonEG \\
+    \verb| HLT_Mu8_DiEle12_CaloIdL_TrackIdL                   | & MuonEG \\
+    \verb| HLT_Mu8_DiEle12_CaloIdL_TrackIdL_DZ                | & MuonEG \\
+    \verb| HLT_Ele35_WPTight_Gsf_v*                           | & SingleElectron \\
+    \verb| HLT_Ele38_WPTight_Gsf_v*                           | & SingleElectron \\
+    \verb| HLT_Ele40_WPTight_Gsf_v*                           | & SingleElectron \\
+    \verb| HLT_IsoMu27                                        | & SingleMuon \\
+    \hline %--------------------------------------------------------------------------------------------------------------------------
+  \end{tabular}
+\end{table*}
+
+\begin{table*}
+  \caption{Trigger paths used in 2018 collision data. All triggers have prescale = 1.}
+  \label{tab:trigpat2018}
+  \centering
+  \begin{tabular}{|l|c|l|} 
+    \hline %--------------------------------------------------------------------------------------------------------------------------
+    HLT path                                                      & primary dataset \\
+    \hline %--------------------------------------------------------------------------------------------------------------------------
+    \verb| HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_v*            | & EGamma \\
+    \verb| HLT_DoubleEle25_CaloIdL_MW_v*                        | & EGamma \\
+    \verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_v*       | & DoubleMuon \\
+    \verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*   | & MuonEG \\
+    \verb| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v* | & MuonEG \\
+    \verb| HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*| & MuonEG \\
+    %\verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*          | & MuonEG \\
+    \verb| HLT_DiMu9_Ele9_CaloIdL_TrackIdL_DZ_v*                | & MuonEG \\
+    \verb| HLT_Ele32_WPTight_Gsf_v*                             | & EGamma \\
+    \verb| HLT_IsoMu24_v*                                       | & SingleMuon \\
+    \hline %--------------------------------------------------------------------------------------------------------------------------
+  \end{tabular}
+\end{table*}

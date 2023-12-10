@@ -1,0 +1,278 @@
+\section{Dataset and samples}
+\label{sec:datasets}
+
+%% \subsection{CMS data}
+This analysis uses a data sample recorded by the CMS experiment at a centre-of-mass energy of 13 \TeV during 2016, 2017 and 2018 corresponding to $\Lumi = 137 \fbinv$ of data.
+Only data that passed the quality certification by all detector subsystems is used in the analysis.
+%% and only luminosity sections included in the respective golden JSONs are used for further analysis.
+The luminosity measurements are carried out by experts within the collaboration according to the metodology described in Ref. \cite{CMS:LUM-17-003}, for each year of data-taking \cite{CMS:LUM-17-004, CMS:LUM-18-002}.
+
+The samples used correspond to the UltraLegacy reprocessing, which contains the most recent calibrations of all the physics objects reconstruction and identification criteria, as well as scale factors and uncertainties.
+%% The MINIAOD format is chosen to perform the analysis.
+
+The analysis relies on five different primary datasets (PD), 
+{\it DoubleEG}, {\it DoubleMu}, {\it MuonEG}, {\it SingleElectron}, and {\it SingleMuon},
+each of which combines a certain collections of HLT paths, whose exact requirements depend on the year of data 
+taking. {\it DoubleEG} and {\it SingleElectron} are merged into {\it EGamma} in 2018.
+To avoid duplicate events from different primary datasets, events are taken:
+
+\begin{itemize}
+\item from DoubleEG if they pass the diEle %(\texttt{HLT\_EleXX\_EleYY\_CaloIdXX\_TrackIdXX\_IsoXX(\_DZ)} )
+  or triEle triggers, %(\texttt{HLT\_EleXX\_EleYY\_EleZZ\_CaloIdXX\_TrackIdXX}) where XX, YY and ZZ are year-dependent thresholds
+\item from DoubleMuon if they pass the diMuon %(\texttt{HLT\_MuXX\_TrkIsoVVL\_MuYY\_TrkIsoVVL})
+  or triMuon %(\texttt{HLT\_TripleMu\_XX\_YY\_ZZ})
+  triggers and fail the diEle and triEle triggers,
+\item from MuEG if they pass the MuEle %(\texttt{HLT\_MuXX\_TrkIsoXX\_EleYY\_CaloIdYY\_TrackIdYY\_IsoYY})
+  or MuDiEle %(\texttt{HLT\_MuXX\_DiEleYY\_CaloIdYY\_TrackIdYY})
+  or DiMuEle %(\texttt{HLT\_DiMuXX\_EleYY\_CaloIdYY\_TrackIdYY})
+  triggers and fail the diEle, triEle, diMuon and triMuon triggers,
+\item from SingleElectron if they pass the singleElectron trigger %(\texttt{HLT\_EleXX\_etaXX\_WPLoose/Tight(\_Gsf)})
+  and fail all the above triggers.
+\item from SingleMuon if they pass the singleMuon trigger %(\texttt{HLT\_IsoMuXX OR HLT\_IsoTkMuXX})
+  and fail all the above triggers. 
+\end{itemize} 
+
+The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the integrated luminosity.
+
+\begin{table*}
+  \caption{List of data samples used in the analysis. All runs for each of the 5 data streams are used, for a total of 76 primary datasets in the MINIAOD format.}
+  \label{tab:datasamples}
+  \centering
+  \begin{tabular}{l l}
+    \toprule
+    \textbf{Data stream} &  \textbf{Run and reconstruction version}\\
+    \midrule
+    \multirow{9}{64pt}{%
+      DoubleMuon\\
+      DoubleEG\\
+      MuonEG\\
+      SingleMuon\\
+      SingleElectron
+    }&
+    \multirow{9}{192pt}{%
+      Run2016B-ver1\_HIPM\_UL2016\\
+      Run2016B-ver2\_HIPM\_UL2016\\
+      Run2016C-HIPM\_UL2016\\
+      Run2016D-HIPM\_UL2016\\
+      Run2016E-HIPM\_UL2016\\
+      Run2016F-HIPM\_UL2016\\
+      Run2016F-UL2016\\
+      Run2016G-UL2016\\
+      Run2016H-UL2016
+    }
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \hline
+    DoubleMuon     & Run2017B-UL2017\\
+    DoubleEG       & Run2017C-UL2017\\
+    MuonEG         & Run2017D-UL2017\\
+    SingleMuon     & Run2017E-UL2017\\
+    SingleElectron & Run2017F-UL2017\\
+    \hline
+    DoubleMuon & Run2018A-UL2018\\
+    MuonEG     & Run2018B-UL2018\\
+    SingleMuon & Run2018C-UL2018\\
+    EGamma     & Run2018D-UL2018\\
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
+%\begin{table}[h]
+%\scriptsize
+%    \centering
+%    \begin{tabular}{l l l l} 
+%\hline \hline%-----------------------------------------------------------------%---------------------------------------------------------
+%HLT path                             & L1 seed        %                  & prescale  & primary dataset \\
+%\hline %-----------------------------------------------------------------------%---------------------------------------------------
+%\verb| HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ       | & \verb| L1_DoubleEG_15_10   |  & 1 & DoubleEG \\
+%\verb| HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ       | & \verb| L1_DoubleEG_22_10   |  & 1 & DoubleEG \\
+%\verb| HLT_DoubleEle33_CaloIdL_GsfTrkIdVL              | & \verb| (Multiple)          |  & 1 & DoubleEG \\
+%\verb| HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL           | & \verb| L1_TripleEG_14_10_8 |  & 1 & DoubleEG \\
+%\verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL                | & \verb| L1_DoubleMu_11_4    |  & 1 & DoubleMuon \\
+%\verb| HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL              | & \verb| L1_DoubleMu_11_4    |  & 1 & DoubleMuon \\
+%\verb| HLT_TripleMu_12_10_5                            | & \verb| L1_TripleMu_5_5_3   |  & 1 & DoubleMuon \\
+%\verb| HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL  | & \verb| L1_Mu5_EG15         |  & 1 & MuonEG \\
+%\verb| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL  | & \verb| L1_Mu5_EG20         |  & 1 & MuonEG \\
+%\verb| HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL | & \verb| L1_Mu12_EG10        |  & 1 & MuonEG \\
+%\verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL | & \verb| L1_Mu20_EG10        |  & 1 & MuonEG \\
+%\verb| HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL  | & \verb| L1_SingleMu*       |  & 1 & MuonEG \\
+%\verb| HLT_Mu8_DiEle12_CaloIdL_TrackIdL                | & \verb| L1_Mu6_DoubleEG10   |  & 1 & MuonEG \\
+%\verb| HLT_DiMu9_Ele9_CaloIdL_TrackIdL                 | & \verb| L1_DoubleMu7_EG7    |  & 1 & MuonEG \\
+%\verb| HLT_Ele25_eta2p1_WPTight                        | & \verb| L1_SingleEG*         |  & 1 & SingleElectron \\
+%\verb| HLT_Ele27_WPTight                               | & \verb| L1_SingleEG*         |  & 1 & SingleElectron \\
+%\verb| HLT_Ele27_eta2p1_WPLoose_Gsf                    | & \verb| L1_SingleEG*         |  & 1 & SingleElectron \\
+%\verb| HLT_IsoMu20 OR HLT_IsoTkMu20                    | & \verb| L1_SingleMu*         |  & 1 & SingleMuon \\
+%\verb| HLT_IsoMu22 OR HLT_IsoTkMu22                    | & \verb| L1_SingleMu*         |  & 1 & SingleMuon \\
+%\hline %--------------------------------------------------------------------------------------------------------------------------
+%    \end{tabular}
+%\small
+%    \caption{Trigger paths used in this analysis.}% 2016 collision data.}
+%    \label{tab:triggerPaths}
+%\end{table}
+
+\subsection{Simulation}
+\texttt{MadGraph5\_aMCatNLO 2.6.2}~\cite{MGatNLO, Frederix_2018} is used to simulate the signal and most of the background contributions.
+The simulation of $\PQq \PQq / \PQq \Pg \to \PZ \PZ \to 4 \Pl$ is done with \texttt{Powheg} \cite{Nason:2004rx, Frixione:2007vw, Alioli:2010xd, Alioli:2008gx},
+while $\Pg \Pg \to \PZ \PZ \to 4 \Pl$ is simulated with \texttt{MCFM} \cite{MCFM}.
+The simulation of the hadronization and parton shower is done by coupling the matrix element generators with \texttt{Pythia8} \cite{bierlich2022comprehensive, Sj_strand_2015} using the \texttt{CP5} tune \cite{CP5}.
+The interaction of the particles with the CMS detector is simulated with \texttt{Geant4} \cite{GEANT}.
+
+The MC samples are employed to optimize the event selection, evaluate the signal efficiency and acceptance, and optimise the search strategy for Triboson production.
+
+\subsubsection{Signal}
+The signal for this analysis is the production of a photon and two massive vector bosons, one of which is a $\Z$ that decays leptonically.
+The hard process of the signal is simulated up to an additional jet at next to leading order (NLO) with FxFx merging.
+Both of the fully leptonic signals ($\PZ\PZ\PGg \to 4\Pl\,\PGg$ and $\PW\PZ\PGg \to 3\Pl\,PGn\,\PGg$)
+are generated without forcing the intermediate vector boson resonances (e.g. \verb|p p > l+ l- l+ l- a|).
+Tau leptons are included in the generation, but are not part of the signal definition, and are suppressed by the kinematic requirements on the Z mass.
+No additional studies were conducted on the contamination of taus into the final state.
+
+For the semileptonic signal samples ($\PZ\mathrm{V}\PGg \to 2\Pl\,2j,\PGg$, $\mathrm{V} = W,\, Z$) an intermediate syntax is used,
+with off-shell contributions for the leptonic decay of the \PZ,
+while forcing the intermediate resonance for the hadronically decaying boson $\mathrm{V}$ (e.g. \verb|p p > z l+ l- a|).
+The decays are performed by \texttt{MadSpin}~\cite{Artoisenet_2013}, in order to preserve the spin correlations between the leptons and, to some extent, off-shell effects.
+The motivation of using the decay chain syntax is twofold, as it allows to speed up the generation and to populate the phase-space probed by the analysis.
+The latter is crucial to ensure sufficient statistics.
+
+\subsubsection{Background}
+The dominant background for the three and four charged lepton final state are the production of $\PW\PZ$ and $\PZ\PZ$.
+$\PW\PZ$ is simulated at NLO with MadGraph with up to 1 additional jet, including off-shell contributions.
+$\PZ\PZ$ has contributions from $\PQq \PAQq \to \PZ\PZ$ and $\Pg \Pg \to \PZ\PZ$ (with a quark loop).
+The former is simulated at NLO with Powheg \todo{ask someone who knows if that's true},
+while the latter is simulated with MCFM \todo{check how} separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm.
+
+%% which are simulated at NLO up to 1-jet using MadGraph with FxFx merging.
+
+% This LO sample is used for the development of the signal extraction MVA and the evaluation of the interference with the electroweak signal. It is not used in the statistical analysis of the VBS search, which uses the NLO FXFX sample described later.
+%(only done in 2016) that only determines interference:
+%include the electroweak and QCD as well as their interference:
+%\begin{verbatim} 
+%generate p p > z z j j QCD^2==2,  z  >  l+ l-
+%\end{verbatim}
+%The cross-sections reported by the generator with 2016 settings are reported in Table \ref{tab:signal_background_xsec}. It can be seen that the interference is positive and amounts to about 0.0426 fb or 10\% of the electroweak signal. The opposing kinematics of the QCD and electroweak production cause the interference to be concentrated in the same phase-space as the QCD background, as is shown in the tagging-jet mass $m_{jj}$ and $|\Delta\eta_{jj}|$ distribution in Fig.~\ref{fig:interference}. 
+%The study of this sample is presented in the Appendix \ref{sec:interf}.
+%\begin{table}[!h]
+%\vspace{0.5cm}
+%    \centering
+%    \topcaption{Cross sections of the electroweak and QCD-induced production of the $4\ell jj$ final state and the interference. The phase space is that of the generation, i.e. $m_{jj}>100$~GeV and includes the branching ratios for the Z decays to electrons or muons.}
+%   \begin{tabular}{c c c c c}
+%   \hline \hline
+%$\sigma_{QCD}$& $\sigma_{electroweak}$ & $\sigma_{sum} = \sigma_{QCD }+ \sigma_{electroweak}$ & $\sigma_{full}$ & $\sigma_{full} - \sigma_{sum}$\\
+   
+ %  \hline  
+%9.335 fb& 0.4404 fb & 9.7754 fb & 9.818 fb & 0.0426 fb\\
+%    \hline
+%   \end{tabular}
+%   \label{tab:signal_background_xsec}
+%\end{table}
+%\begin{figure}[!htb]
+%\begin{center}
+%    \subfigure [] {\resizebox{7.5cm}{!}{\includegraphics{Figures/interference_mjj}}}
+%    \subfigure [] {\resizebox{7.5cm}{!}{\includegraphics{Figures/interference_deta.png}}}\\
+%    \subfigure [] {\resizebox{10cm}{!}{\includegraphics{Figures/interference_bdt.png}}}
+%\caption{
+%Dijet invariant mass (left) and $|\Delta\eta|$ separation (right) distributions at GEN level for the electroweak signal, the QCD background and the interference between the two.
+%}
+%\label{fig:interference}
+%\end{center}
+%\end{figure}
+% The MadGraph samples for signal and background do not include any decays to tau leptons. The expected yield of the tau final states (both $\ell^+\ell^-\tau^+\tau^-$ and $\tau^+\tau^-\tau^+\tau^-$) in the baseline selection (two on-shell Z bosons plus at least two jets with $m_{jj}>100$~GeV) is estimated using the MadGraph\_AMC@NLO FxFx 0,1 jet sample and is found to be 0.015~fb or 0.6\% of the total expected yield. This justifies not generating these final states in order to increase the statistics in the relevant lepton channels.
+%The irreducible QCD-induced $\Pp\Pp  \to \Z\Z$ processes are produced at next-to-leading-order (NLO) with up to 2 extra parton emission with \texttt{MadGraph5\_aMCatNLO}~\cite{MGatNLO}, and merged using the FXFX scheme. This sample was specifically developed and requested for the ZZjj analysis; it will be the nominal sample in the statistical analysis.
+%The jet multiplicities are generated separately, in order generate events in the phase space probed by this analysis: 
+%\begin{verbatim} generate p p > z z j j  [QCD] \end{verbatim}
+%The subsequent decays of the Z bosons to electrons or muons are performed in MadSpin, in order to preserve the spin correlations between the leptons. The FXFX merging scale $q_{cut} = 30\unit{GeV}$ as well as the minimum jet \pt cut $p_{T}^{jet}>15\unit{GeV}$ are identical to the values in the 0,1 jet FXFX sample. 
+\textbf{Loop-induced ZZ}: Aside from the dominant ZZ background mediated by the tree-level processes, there is also a gluon loop-induced ZZ production process, which is a NNLO diagram and therefore is not included in the nominal ZZ sample. Though suppressed by the two additional strong couplings, it nevertheless contributes to inclusive ZZ production at the 10\% level.
+A new gluon loop-induced ZZ sample simulated by \texttt{MadGraph5\_aMCatNLO}~\cite{MGatNLO} is expressly studied for this analysis, with up to 2 jets modeled from matrix-element and the MLM matching~\cite{MLM} implemented for the first time. The phase-space of dijet produced from the loop-induced process is expected to be more accurately modeled with this sample. %The simulation details and kinematics study are described in Appendix~\ref{sec:ggzznew}. %{\color{red} \FIXME To be updated.}
+%% \input{ggzz_new_sample}
+In order to validate the above sample, a cross-check sample is also simulated at leading order (LO) with 1 jet using \texttt{MadGraph5\_aMCatNLO 2.4.2}~\cite{MGatNLO}:
+\begin{verbatim} 
+generate g g > z z j [noborn=QCD], z > l+ l- 
+\end{verbatim}
+In both samples the last decay is simulated by \texttt{PYTHIA}, since the processing time becomes too long otherwise.
+These effects reduce the quality of the simulation, because the Z natural decay width and lepton correlations are not considered.
+Therefore the process is further validated with a different MC sample generated at LO inclusive with \texttt{MCFM 7.0} \cite{MCFM}.
+The modeling of this process is discussed in more detail in
+%Appendix~\ref{sec:ggzznew}.
+the next section.
+% {\color{red} \FIXME A new official sample with up to 2 jets at matrix element is being studied. If ready in time it will replace the current one.}
+The list of MC samples and their cross sections are shown in 
+Table~\ref{tab:listofsamples} and they include the ones detailed above as well as rare SM backgrounds that give much smaller background contributions. For WZZ and ZZZ the dijet mass at LHE level has been required to be larger than 100 GeV event by event, to avoid double counting with the signal sample. All cross sections used in the analysis are those returned by the generator and reported in Table~\ref{tab:listofsamples}, with no additional k-factors being used.
+The \texttt{PYTHIA 8}~\cite{Sjostrand:2015} package is used for parton showering, hadronization, and the underlying event simulation for all MC samples,
+with parameters set by
+%% the CUETP8M1 tune~\cite{CMS-SMP-12-016} (2016 data taking period) and
+the CP5 tune~\cite{CP5}. %% (2017 and 2018 data taking periods).
+All samples are generated with the NNPDF 3.0 (in 2016) or 3.1 (2017-18) parton distribution functions (PDFs)~\cite{NNPDF2015}.
+The MC samples are reweighed based on the per-event true number of interactions to match the level of pileup observed in data as per general recipes.
+
+% Figure \ref{fig:data_nvtx} shows the number of reconstructed vertices after the reweighing for 2016, similar figures are produced for 2017 and 2018.
+%\begin{figure}[!htb]
+%\vspace*{0.3cm}
+%\begin{center}
+%\includegraphics[width=0.55\textwidth]{Figures/data_mc_ZZ_Nvtx.pdf}
+%\end{center}
+%\caption{Number of reconstructed vertices in ZZ events with the pileup-reweighed MC. Fixme: check final cross section recommendation for reweighing.}
+%\label{fig:data_nvtx}
+%\end{figure}
+% The default set of parton distribution functions (PDF) used for LO generators is \texttt{CTEQ6L}~\cite{CTEQ6L}, whereas \texttt{CT10}~\cite{CT10} is used for NLO generators (FIXME).
+%Leptons are generated requiring  $m_{\ell^{+}\ell^{-}}> 4$ GeV in all samples but \texttt{MadGraph}, in which  $m_{\ell^{+}\ell^{-}} > 12$ GeV, and reconstructed  following the same steps of~\cite{HiggsLegacyPaper,ZZXSPaper}. Jets are generated with $p_{T} > 10$ GeV and reconstructed following the criteria recommended by Jet-MET group~\cite{JetID}.
+
+\begin{sidewaystable}
+  \caption{List of signal and background samples used in the analysis.}
+  \label{tab:listofsamples}
+  \centering
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{l l r l m{.18\textwidth}}
+    \toprule
+    Process & Generator & Cross Section [pb] & Sample name & Remarks\\
+
+    \midrule
+    \multicolumn{5}{l}{Signal samples}\\
+    \hline
+    $\PZ\PZ\PGg \to 4\Pl\,\PGg$      & MadGraph (NLO) & 0.02202  & {\small\tt ZZGJetsTo4L2Nu\_4f\_TuneCP5\_13TeV\_amcatnloFXFX\_pythia8/[1,2,3,4]} &\\ %pp>l+ l- l+ l-a [QCD]; lep = e mu ta
+    $\PW\PZ\PGg \to 3\Pl\,\PGn\,\PGg$& MadGraph (NLO) & 0.03844  & {\small\tt LLWA\_WToLNu\_4FS\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]} &\\ %pp>lep nu z a [QCD]; lep = e mu ta
+    $\PZ\PZ\PGg \to 2\Pl\,2j\,\PGg$  & MadGraph (NLO) & 0.04978  & {\small\tt ZTo2LZTo2JGToG\_TuneCP5\_13TeV\_amcatnloFXFX-pythia8/[1,2,3,4]} &\\
+    $\PW\PZ\PGg \to 2\Pl\,2j\,\PGg$  & MadGraph (NLO) & 0.08044  & {\small\tt WTo2JZTo2LG\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} &\\
+
+    \midrule
+    \multicolumn{5}{l}{Irreducible background samples}\\
+    \hline
+    $\PZ\PZ\to 4\Pl$ + 0,1 jets      & MadGraph (NLO) & 1.256    & {\small\tt ZZTo4L\_TuneCP5\_13TeV\_powheg\_pythia8/[1,2,3,4]}                    &\\
+    $\Pg\Pg\to \PZ\PZ\to 4\PGm$      & MCFM (LO)      & 0.001586 & {\small\tt GluGluToContinToZZTo4mu\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}  &\\
+    $\Pg\Pg\to \PZ\PZ\to 4\Pe$       & MCFM (LO)      & 0.001586 & {\small\tt GluGluToContinToZZTo4e\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}   &\\ 
+    $\Pg\Pg\to \PZ\PZ\to 2\Pe\,2\PGm$& MCFM (LO)      & 0.003191 & {\small\tt GluGluToContinToZZTo2e2mu\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}&\\
+
+    \midrule
+    \multicolumn{5}{l}{Reducible background samples}\\
+    \hline
+    $\PZ$ + 0,1,2 jets               & MadGraph (NLO) & 6225.2   & {\small\tt DYJetsToLL\_M-50\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} & for data/MC comparison in Z+X CR\\% define lep+ = e+ mu+ ta+; generate p p > lep+ lep- j [QCD]; add process p p > lep+ lep- j j [QCD]
+    $\PZ\PGg$ + 0,1 jets             & MadGraph (NLO) & 55.48    & {\small\tt ZGToLLG\_01J\_5f\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} & for prompt \PGg subtraction in Z+X CR\\% define lep = e+ mu+ ta+ e- mu- ta-; generate p p > lep lep a [QCD]; add process p p > lep lep a j [QCD]
+    $\PW\PZ \to 3\Pl\,\PGn$          & MadGraph (NLO) & 5.213    & {\small\tt WZJToLLLNu\_TuneCP5\_13TeV-amcnlo-pythia8/[1,2,3,4]}             & off-shell contrib., letptonic decays\\ % define p = p b b~; define j = j b b~; define ell+ = e+ mu+ ta+; generate p p > ell- vl~ ell+ ell- (+ h.c.); add process p p > ell- vl~ ell+ ell- j (+ h.c)
+    $\PQt\PAQt \to 2\Pl\,PGn$ + jets & Powheg         & 87.3     & {\small\tt TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8/[1,2,3,4]}              &\\
+
+    \midrule
+    \multicolumn{5}{l}{Rare background samples}\\
+    \hline
+    $\PQt\PAQt\PZ$ + 0,1 jets        & MadGraph (LO)  & 0.5407   & {\small\tt ttZJets\_TuneCP5\_13TeV\_madgraphMLM\_pythia8]}  & inclusive \PZ decays\\
+    $\PQt\PAQt\PW$ + 0,1 jets        & MadGraph (NLO) & 0.2161   & {\small\tt TTWJetsToLNu\_TuneCP5\_13TeV-amcatnloFXFX-madspin-pythia8/[1,2,3,4]}& p p > t t\~ l v\\
+    $\PQt\PAQt\PZ\PZ$ + jets         & MadGraph (LO)  & 0.001572 & {\small\tt TTZZ\_TuneCP5\_13TeV-madgraph-pythia8/[1,2,3,4]} & inclusive decays\\
+    $\PQt\PAQt\PW\PW$ + jets         & MadGraph (LO)  & 0.007883 & {\small\tt TTWW\_TuneCP5\_13TeV-madgraph-pythia8/[1,2,3,4]} & inclusive decays\\
+    $\PZ\PZ\PZ$ + jets               & MadGraph (NLO) & 0.01398  & {\small\tt ZZZ\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]}  & inclusive decays, $m_{jj}<100\GeV$\\
+    $\PW\PZ\PZ$ + jets               & MadGraph (NLO) & 0.05565  & {\small\tt WZZ\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]}  & inclusive decays, $m_{jj}<100\GeV$\\
+    $\PW\PW\PZ$ + jets               & MadGraph (NLO) & 0.1651   & {\small\tt WWZ\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]}  &\\
+    $\PW\PW\PW$ + jets               & MadGraph (NLO) & 0.08058  & {\small\tt WWW\_4F\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]}\\
+    \bottomrule
+    \\
+    \multicolumn{5}{l}{[1] \texttt{RunIISummer20UL16MiniAODAPVv2-106X\_mcRun2\_asymptotic\_preVFP\_v*}}\\
+    \multicolumn{5}{l}{[2] \texttt{RunIISummer20UL16MiniAODv2-106X\_mcRun2\_asymptotic\_v*}}\\
+    \multicolumn{5}{l}{[3] \texttt{RunIISummer20UL17MiniAODv2-106X\_mc2017\_realistic\_v*}}\\
+    \multicolumn{5}{l}{[4] \texttt{RunIISummer20UL18MiniAODv2-106X\_upgrade2018\_realistic\_v*}}\\
+  \end{tabular}
+  }
+\end{sidewaystable}
