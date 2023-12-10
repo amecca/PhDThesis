@@ -129,12 +129,13 @@ The MC samples are employed to optimize the event selection, evaluate the signal
 \subsubsection{Signal}
 The signal for this analysis is the production of a photon and two massive vector bosons, one of which is a $\Z$ that decays leptonically.
 The hard process of the signal is simulated up to an additional jet at next to leading order (NLO) with FxFx merging.
-Both of the fully leptonic signals ($\PZ\PZ\PGg \to 4\Pl\,\PGg$ and $\PW\PZ\PGg \to 3\Pl\,PGn\,\PGg$)
-are generated without forcing the intermediate vector boson resonances (e.g. \verb|p p > l+ l- l+ l- a|).
-Tau leptons are included in the generation, but are not part of the signal definition, and are suppressed by the kinematic requirements on the Z mass.
+Both of the fully leptonic signals ($\PZ\PZ\PGg \to 4\Pl\,\PGg$ and $\PW\PZ\PGg \to 3\Pl\,\PGn\,\PGg$)
+are generated without forcing the intermediate vector boson resonances (e.g. \verb|p p > l+ l- l+ l- a|),
+so as to retain and off-shell effects and spin correlations among the leptons in the final state.
+Tau leptons are included in the generation, but are not part of the signal definition, and are suppressed in the analysis by the kinematic requirements on the Z mass.
 No additional studies were conducted on the contamination of taus into the final state.
 
-For the semileptonic signal samples ($\PZ\mathrm{V}\PGg \to 2\Pl\,2j,\PGg$, $\mathrm{V} = W,\, Z$) an intermediate syntax is used,
+For the semileptonic signal samples ($\PZ\mathrm{V}\PGg \to 2\Pl\,2j\,\PGg$, $\mathrm{V} = W,\, Z$) an intermediate syntax is used,
 with off-shell contributions for the leptonic decay of the \PZ,
 while forcing the intermediate resonance for the hadronically decaying boson $\mathrm{V}$ (e.g. \verb|p p > z l+ l- a|).
 The decays are performed by \texttt{MadSpin}~\cite{Artoisenet_2013}, in order to preserve the spin correlations between the leptons and, to some extent, off-shell effects.
@@ -144,9 +145,22 @@ The latter is crucial to ensure sufficient statistics.
 \subsubsection{Background}
 The dominant background for the three and four charged lepton final state are the production of $\PW\PZ$ and $\PZ\PZ$.
 $\PW\PZ$ is simulated at NLO with MadGraph with up to 1 additional jet, including off-shell contributions.
-$\PZ\PZ$ has contributions from $\PQq \PAQq \to \PZ\PZ$ and $\Pg \Pg \to \PZ\PZ$ (with a quark loop).
-The former is simulated at NLO with Powheg \todo{ask someone who knows if that's true},
-while the latter is simulated with MCFM \todo{check how} separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm.
+%% $\PZ\PZ$ has contributions from $\PQq \PAQq \to \PZ\PZ$ and $\Pg \Pg \to \PZ\PZ$ (with a quark loop).
+
+$\PQq \PAQq \to \PZ\PZ$ is simulated at NLO with Powheg up to one extra parton \todo{ask someone who knows if that's true},
+using dynamical QCD factorization and renormalization scales.
+Although the fully differential cross section has already been computed at NNLO \cite{},
+this computation is not yet available in a Monte Carlo generator.
+
+Aside from the dominant ZZ background mediated by the tree-level processes, there is also a gluon loop-induced ZZ production process,
+which is a NNLO diagram and therefore is not included in the nominal ZZ sample.
+Though suppressed by the two additional strong couplings, it nevertheless contributes to inclusive ZZ production at the 10\% level.
+$\Pg \Pg \to \PZ\PZ$ is simulated, separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm, at LO with MCFM 7.0.
+
+Rare backgrounds such as massive triboson VVV and $\PQt\PAQt \,+\, X$ are simulated at NLO with MadGraph5\_aMCatNLO.
+
+%% The former is simulated at NLO with Powheg \todo{ask someone who knows if that's true},
+%% while the latter is simulated with MCFM \todo{check how} separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm.
 
 %% which are simulated at NLO up to 1-jet using MadGraph with FxFx merging.
 
@@ -187,23 +201,12 @@ while the latter is simulated with MCFM \todo{check how} separately for the thre
 %The irreducible QCD-induced $\Pp\Pp  \to \Z\Z$ processes are produced at next-to-leading-order (NLO) with up to 2 extra parton emission with \texttt{MadGraph5\_aMCatNLO}~\cite{MGatNLO}, and merged using the FXFX scheme. This sample was specifically developed and requested for the ZZjj analysis; it will be the nominal sample in the statistical analysis.
 %The jet multiplicities are generated separately, in order generate events in the phase space probed by this analysis: 
 %\begin{verbatim} generate p p > z z j j  [QCD] \end{verbatim}
-%The subsequent decays of the Z bosons to electrons or muons are performed in MadSpin, in order to preserve the spin correlations between the leptons. The FXFX merging scale $q_{cut} = 30\unit{GeV}$ as well as the minimum jet \pt cut $p_{T}^{jet}>15\unit{GeV}$ are identical to the values in the 0,1 jet FXFX sample. 
-\textbf{Loop-induced ZZ}: Aside from the dominant ZZ background mediated by the tree-level processes, there is also a gluon loop-induced ZZ production process, which is a NNLO diagram and therefore is not included in the nominal ZZ sample. Though suppressed by the two additional strong couplings, it nevertheless contributes to inclusive ZZ production at the 10\% level.
-A new gluon loop-induced ZZ sample simulated by \texttt{MadGraph5\_aMCatNLO}~\cite{MGatNLO} is expressly studied for this analysis, with up to 2 jets modeled from matrix-element and the MLM matching~\cite{MLM} implemented for the first time. The phase-space of dijet produced from the loop-induced process is expected to be more accurately modeled with this sample. %The simulation details and kinematics study are described in Appendix~\ref{sec:ggzznew}. %{\color{red} \FIXME To be updated.}
-%% \input{ggzz_new_sample}
-In order to validate the above sample, a cross-check sample is also simulated at leading order (LO) with 1 jet using \texttt{MadGraph5\_aMCatNLO 2.4.2}~\cite{MGatNLO}:
-\begin{verbatim} 
-generate g g > z z j [noborn=QCD], z > l+ l- 
-\end{verbatim}
-In both samples the last decay is simulated by \texttt{PYTHIA}, since the processing time becomes too long otherwise.
-These effects reduce the quality of the simulation, because the Z natural decay width and lepton correlations are not considered.
-Therefore the process is further validated with a different MC sample generated at LO inclusive with \texttt{MCFM 7.0} \cite{MCFM}.
-The modeling of this process is discussed in more detail in
-%Appendix~\ref{sec:ggzznew}.
-the next section.
-% {\color{red} \FIXME A new official sample with up to 2 jets at matrix element is being studied. If ready in time it will replace the current one.}
-The list of MC samples and their cross sections are shown in 
-Table~\ref{tab:listofsamples} and they include the ones detailed above as well as rare SM backgrounds that give much smaller background contributions. For WZZ and ZZZ the dijet mass at LHE level has been required to be larger than 100 GeV event by event, to avoid double counting with the signal sample. All cross sections used in the analysis are those returned by the generator and reported in Table~\ref{tab:listofsamples}, with no additional k-factors being used.
+%The subsequent decays of the Z bosons to electrons or muons are performed in MadSpin, in order to preserve the spin correlations between the leptons. The FXFX merging scale $q_{cut} = 30\unit{GeV}$ as well as the minimum jet \pt cut $p_{T}^{jet}>15\unit{GeV}$ are identical to the values in the 0,1 jet FXFX sample.
+
+The list of MC samples and their cross sections are shown in Table~\ref{tab:listofsamples}
+and they include the ones detailed above as well as rare SM backgrounds that give much smaller background contributions.
+%% For WZZ and ZZZ the dijet mass at LHE level has been required to be larger than 100 \GeV event by event, to avoid double counting with the signal sample.
+All cross sections used in the analysis are those returned by the generator and reported in Table~\ref{tab:listofsamples}, with no additional k-factors being used.
 The \texttt{PYTHIA 8}~\cite{Sjostrand:2015} package is used for parton showering, hadronization, and the underlying event simulation for all MC samples,
 with parameters set by
 %% the CUETP8M1 tune~\cite{CMS-SMP-12-016} (2016 data taking period) and
@@ -224,7 +227,7 @@ The MC samples are reweighed based on the per-event true number of interactions 
 %Leptons are generated requiring  $m_{\ell^{+}\ell^{-}}> 4$ GeV in all samples but \texttt{MadGraph}, in which  $m_{\ell^{+}\ell^{-}} > 12$ GeV, and reconstructed  following the same steps of~\cite{HiggsLegacyPaper,ZZXSPaper}. Jets are generated with $p_{T} > 10$ GeV and reconstructed following the criteria recommended by Jet-MET group~\cite{JetID}.
 
 \begin{sidewaystable}
-  \caption{List of signal and background samples used in the analysis.}
+  \caption{List of signal and background samples used in the analysis, with the Matrix Element generator used and their cross section.}
   \label{tab:listofsamples}
   \centering
   \resizebox{\textwidth}{!}{
