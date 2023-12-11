@@ -1,7 +1,10 @@
 \section{Dataset and samples}
 \label{sec:datasets}
 
-%% \subsection{CMS data}
+\subsection{Trigger selection}
+\input{body/triggers}
+
+\subsection{CMS data}
 This analysis uses a data sample recorded by the CMS experiment at a centre-of-mass energy of 13 \TeV during 2016, 2017 and 2018 corresponding to $\Lumi = 137 \fbinv$ of data.
 Only data that passed the quality certification by all detector subsystems is used in the analysis.
 %% and only luminosity sections included in the respective golden JSONs are used for further analysis.
@@ -10,9 +13,9 @@ The luminosity measurements are carried out by experts within the collaboration 
 The samples used correspond to the UltraLegacy reprocessing, which contains the most recent calibrations of all the physics objects reconstruction and identification criteria, as well as scale factors and uncertainties.
 %% The MINIAOD format is chosen to perform the analysis.
 
-The analysis relies on five different primary datasets (PD), 
+The analysis relies on five different primary datasets (PD),
 {\it DoubleEG}, {\it DoubleMu}, {\it MuonEG}, {\it SingleElectron}, and {\it SingleMuon},
-each of which combines a certain collections of HLT paths, whose exact requirements depend on the year of data 
+each of which combines a certain collections of HLT paths, whose exact requirements depend on the year of data
 taking. {\it DoubleEG} and {\it SingleElectron} are merged into {\it EGamma} in 2018.
 To avoid duplicate events from different primary datasets, events are taken:
 
@@ -29,8 +32,8 @@ To avoid duplicate events from different primary datasets, events are taken:
 \item from SingleElectron if they pass the singleElectron trigger %(\texttt{HLT\_EleXX\_etaXX\_WPLoose/Tight(\_Gsf)})
   and fail all the above triggers.
 \item from SingleMuon if they pass the singleMuon trigger %(\texttt{HLT\_IsoMuXX OR HLT\_IsoTkMuXX})
-  and fail all the above triggers. 
-\end{itemize} 
+  and fail all the above triggers.
+\end{itemize}
 
 The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the integrated luminosity.
 
@@ -38,18 +41,19 @@ The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the i
   \caption{List of data samples used in the analysis. All runs for each of the 5 data streams are used, for a total of 76 primary datasets in the MINIAOD format.}
   \label{tab:datasamples}
   \centering
+  \small
   \begin{tabular}{l l}
     \toprule
     \textbf{Data stream} &  \textbf{Run and reconstruction version}\\
     \midrule
-    \multirow{9}{64pt}{%
+    \begin{tabular}{@{}l}
       DoubleMuon\\
       DoubleEG\\
       MuonEG\\
       SingleMuon\\
       SingleElectron
-    }&
-    \multirow{9}{192pt}{%
+    \end{tabular}&
+    \begin{tabular}{@{}l}
       Run2016B-ver1\_HIPM\_UL2016\\
       Run2016B-ver2\_HIPM\_UL2016\\
       Run2016C-HIPM\_UL2016\\
@@ -59,16 +63,7 @@ The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the i
       Run2016F-UL2016\\
       Run2016G-UL2016\\
       Run2016H-UL2016
-    }
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
+    \end{tabular} \\
     \hline
     DoubleMuon     & Run2017B-UL2017\\
     DoubleEG       & Run2017C-UL2017\\
@@ -84,40 +79,8 @@ The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the i
   \end{tabular}
 \end{table*}
 
-%\begin{table}[h]
-%\scriptsize
-%    \centering
-%    \begin{tabular}{l l l l} 
-%\hline \hline%-----------------------------------------------------------------%---------------------------------------------------------
-%HLT path                             & L1 seed        %                  & prescale  & primary dataset \\
-%\hline %-----------------------------------------------------------------------%---------------------------------------------------
-%\verb| HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ       | & \verb| L1_DoubleEG_15_10   |  & 1 & DoubleEG \\
-%\verb| HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ       | & \verb| L1_DoubleEG_22_10   |  & 1 & DoubleEG \\
-%\verb| HLT_DoubleEle33_CaloIdL_GsfTrkIdVL              | & \verb| (Multiple)          |  & 1 & DoubleEG \\
-%\verb| HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL           | & \verb| L1_TripleEG_14_10_8 |  & 1 & DoubleEG \\
-%\verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL                | & \verb| L1_DoubleMu_11_4    |  & 1 & DoubleMuon \\
-%\verb| HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL              | & \verb| L1_DoubleMu_11_4    |  & 1 & DoubleMuon \\
-%\verb| HLT_TripleMu_12_10_5                            | & \verb| L1_TripleMu_5_5_3   |  & 1 & DoubleMuon \\
-%\verb| HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL  | & \verb| L1_Mu5_EG15         |  & 1 & MuonEG \\
-%\verb| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL  | & \verb| L1_Mu5_EG20         |  & 1 & MuonEG \\
-%\verb| HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL | & \verb| L1_Mu12_EG10        |  & 1 & MuonEG \\
-%\verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL | & \verb| L1_Mu20_EG10        |  & 1 & MuonEG \\
-%\verb| HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL  | & \verb| L1_SingleMu*       |  & 1 & MuonEG \\
-%\verb| HLT_Mu8_DiEle12_CaloIdL_TrackIdL                | & \verb| L1_Mu6_DoubleEG10   |  & 1 & MuonEG \\
-%\verb| HLT_DiMu9_Ele9_CaloIdL_TrackIdL                 | & \verb| L1_DoubleMu7_EG7    |  & 1 & MuonEG \\
-%\verb| HLT_Ele25_eta2p1_WPTight                        | & \verb| L1_SingleEG*         |  & 1 & SingleElectron \\
-%\verb| HLT_Ele27_WPTight                               | & \verb| L1_SingleEG*         |  & 1 & SingleElectron \\
-%\verb| HLT_Ele27_eta2p1_WPLoose_Gsf                    | & \verb| L1_SingleEG*         |  & 1 & SingleElectron \\
-%\verb| HLT_IsoMu20 OR HLT_IsoTkMu20                    | & \verb| L1_SingleMu*         |  & 1 & SingleMuon \\
-%\verb| HLT_IsoMu22 OR HLT_IsoTkMu22                    | & \verb| L1_SingleMu*         |  & 1 & SingleMuon \\
-%\hline %--------------------------------------------------------------------------------------------------------------------------
-%    \end{tabular}
-%\small
-%    \caption{Trigger paths used in this analysis.}% 2016 collision data.}
-%    \label{tab:triggerPaths}
-%\end{table}
-
 \subsection{Simulation}
+\label{sec:simulation}
 \texttt{MadGraph5\_aMCatNLO 2.6.2}~\cite{MGatNLO, Frederix_2018} is used to simulate the signal and most of the background contributions.
 The simulation of $\PQq \PQq / \PQq \Pg \to \PZ \PZ \to 4 \Pl$ is done with \texttt{Powheg} \cite{Nason:2004rx, Frixione:2007vw, Alioli:2010xd, Alioli:2008gx},
 while $\Pg \Pg \to \PZ \PZ \to 4 \Pl$ is simulated with \texttt{MCFM} \cite{MCFM}.
@@ -227,11 +190,11 @@ The MC samples are reweighed based on the per-event true number of interactions 
 %Leptons are generated requiring  $m_{\ell^{+}\ell^{-}}> 4$ GeV in all samples but \texttt{MadGraph}, in which  $m_{\ell^{+}\ell^{-}} > 12$ GeV, and reconstructed  following the same steps of~\cite{HiggsLegacyPaper,ZZXSPaper}. Jets are generated with $p_{T} > 10$ GeV and reconstructed following the criteria recommended by Jet-MET group~\cite{JetID}.
 
 \begin{sidewaystable}
-  \caption{List of signal and background samples used in the analysis, with the Matrix Element generator used and their cross section.}
+  \caption{List of signal and background samples used in the analysis, with the ME generator used and their cross section.}
   \label{tab:listofsamples}
   \centering
-  \resizebox{\textwidth}{!}{
-  \begin{tabular}{l l r l m{.18\textwidth}}
+  \resizebox{.9\textwidth}{!}{
+    \begin{tabular}{l l r l m{.18\textwidth}}
     \toprule
     Process & Generator & Cross Section [pb] & Sample name & Remarks\\
 
@@ -248,7 +211,7 @@ The MC samples are reweighed based on the per-event true number of interactions 
     \hline
     $\PZ\PZ\to 4\Pl$ + 0,1 jets      & MadGraph (NLO) & 1.256    & {\small\tt ZZTo4L\_TuneCP5\_13TeV\_powheg\_pythia8/[1,2,3,4]}                    &\\
     $\Pg\Pg\to \PZ\PZ\to 4\PGm$      & MCFM (LO)      & 0.001586 & {\small\tt GluGluToContinToZZTo4mu\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}  &\\
-    $\Pg\Pg\to \PZ\PZ\to 4\Pe$       & MCFM (LO)      & 0.001586 & {\small\tt GluGluToContinToZZTo4e\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}   &\\ 
+    $\Pg\Pg\to \PZ\PZ\to 4\Pe$       & MCFM (LO)      & 0.001586 & {\small\tt GluGluToContinToZZTo4e\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}   &\\
     $\Pg\Pg\to \PZ\PZ\to 2\Pe\,2\PGm$& MCFM (LO)      & 0.003191 & {\small\tt GluGluToContinToZZTo2e2mu\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}&\\
 
     \midrule
@@ -257,7 +220,7 @@ The MC samples are reweighed based on the per-event true number of interactions 
     $\PZ$ + 0,1,2 jets               & MadGraph (NLO) & 6225.2   & {\small\tt DYJetsToLL\_M-50\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} & for data/MC comparison in Z+X CR\\% define lep+ = e+ mu+ ta+; generate p p > lep+ lep- j [QCD]; add process p p > lep+ lep- j j [QCD]
     $\PZ\PGg$ + 0,1 jets             & MadGraph (NLO) & 55.48    & {\small\tt ZGToLLG\_01J\_5f\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} & for prompt \PGg subtraction in Z+X CR\\% define lep = e+ mu+ ta+ e- mu- ta-; generate p p > lep lep a [QCD]; add process p p > lep lep a j [QCD]
     $\PW\PZ \to 3\Pl\,\PGn$          & MadGraph (NLO) & 5.213    & {\small\tt WZJToLLLNu\_TuneCP5\_13TeV-amcnlo-pythia8/[1,2,3,4]}             & off-shell contrib., letptonic decays\\ % define p = p b b~; define j = j b b~; define ell+ = e+ mu+ ta+; generate p p > ell- vl~ ell+ ell- (+ h.c.); add process p p > ell- vl~ ell+ ell- j (+ h.c)
-    $\PQt\PAQt \to 2\Pl\,PGn$ + jets & Powheg         & 87.3     & {\small\tt TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8/[1,2,3,4]}              &\\
+    $\PQt\PAQt \to 2\Pl\,\PGn$ + jets& Powheg         & 87.3     & {\small\tt TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8/[1,2,3,4]}              &\\
 
     \midrule
     \multicolumn{5}{l}{Rare background samples}\\
