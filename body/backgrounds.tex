@@ -10,19 +10,40 @@ they produce events which may erroneusly pass the selection.
 Often these backrounds prove difficult to model in simulation,
 and it becomes advisable to use a data-driven method for their estimation.
 
-The other category comprises \textit{irreductible backgrouns},
+The other category comprises \textit{irreductible backgrounds},
 which are processes that generate a final state with the same particles as the signal,
 although the kinematic distributions may be different.
 Usually processes in this class are estimated with simulation,
 but in some cases it is possible to contrain their normalization in a control region.
 
-\subsection{Four lepton channel}
+%% \subsection{Four lepton channel}
 For the 4\Pl channel the predominant background component is the production of two on-shell \PZ bosons
 and a photon that is either radiated as FSR from one of the leptons
-or from a misreconstructed jet (e.g. from the decay of a meson like \PGpz or \PGh).
+or from a misreconstructed jet.
 As described in Section \ref{sec:simulation}, it can be either produced from two quarks,
 or proceed from a gluon initiated loop.
 Additional backgrounds such as $\PQt\PAQt\PZ$ and VVV (V = \PZ, \PW) result in very small contributions.
 
-\subsection{Three lepton channel}
+%% \subsection{Three lepton channel}
 \todo{continue}
+
+\subsection{Reducible lepton background}
+This group of backgrounds arises from processes in which some of the reconstructed leptons do not correspond to real, prompt leptons from the vector bosons decay.
+The main sources of \nonprompt leptons are decays of heavy flavour mesons and electrons from photon conversions.
+These leptons tend to be non-isolated.
+On the other hand, misidentified leptons mostly come from jets (usually from light-flavour quarks) that are mistakenly identified as leptons.
+In the following, both \nonprompt and misidentified leptons are referred to as \textit{fake leptons}.
+
+\todo{continue}
+
+\subsection{Reducible photon background}
+This class of backgrounds originate from process whith a photon that does not correspond to a real, prompt photon, either from Initial State Radiation (ISR) or the hard scattering.
+\Nonprompt photons mostly result from the decay of a meson like \PGpz or \PGh.
+Since those particles are usually inside a jet, these photons tend to be non-isolated, similarly to \nonprompt leptons.
+It is possible for a light-flavour jet or an hadron to be misidentified as a photon, if the track is not reconstructed or it is not correcly assigned.
+These misidentified photons tend to have a different energy distribution in the ECAL with respect to real photons.
+Therefore shower shape variables are very useful to exclude such background.
+
+\todo{Look in Wgamma or some other analysis more detail about nonprompt/misidentified photons}
+
+\todo{merge with reducible leptons?}
