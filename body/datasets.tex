@@ -80,6 +80,7 @@ The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the i
 \end{table*}
 
 \subsection{Simulation}
+\providecommand{\mgNLO}{MadGraph5\_aMCatNLO}
 \label{sec:simulation}
 \texttt{MadGraph5\_aMCatNLO 2.6.2}~\cite{MGatNLO, Frederix_2018} is used to simulate the signal and most of the background contributions.
 The simulation of $\PQq \PQq / \PQq \Pg \to \PZ \PZ \to 4 \Pl$ is done with \texttt{Powheg} \cite{Nason:2004rx, Frixione:2007vw, Alioli:2010xd, Alioli:2008gx},
@@ -87,11 +88,11 @@ while $\Pg \Pg \to \PZ \PZ \to 4 \Pl$ is simulated with \texttt{MCFM} \cite{MCFM
 The simulation of the hadronization and parton shower is done by coupling the matrix element generators with \texttt{Pythia8} \cite{bierlich2022comprehensive, Sj_strand_2015} using the \texttt{CP5} tune \cite{CP5}.
 The interaction of the particles with the CMS detector is simulated with \texttt{Geant4} \cite{GEANT}.
 
-The MC samples are employed to optimize the event selection, evaluate the signal efficiency and acceptance, and optimise the search strategy for Triboson production.
+The MC samples are employed to optimise the event selection, evaluate the signal efficiency and acceptance and cross check the data-driven estimate of backgrounds.
 
 \subsubsection{Signal}
 The signal for this analysis is the production of a photon and two massive vector bosons, one of which is a $\Z$ that decays leptonically.
-The hard process of the signal is simulated up to an additional jet at next to leading order (NLO) with FxFx merging.
+The hard process of the signal is simulated up to an additional jet at Next-to-Leading Order (NLO) with FxFx merging.
 Both of the fully leptonic signals ($\PZ\PZ\PGg \to 4\Pl\,\PGg$ and $\PW\PZ\PGg \to 3\Pl\,\PGn\,\PGg$)
 are generated without forcing the intermediate vector boson resonances (e.g. \verb|p p > l+ l- l+ l- a|),
 so as to retain and off-shell effects and spin correlations among the leptons in the final state.
@@ -107,25 +108,26 @@ The latter is crucial to ensure sufficient statistics.
 
 \subsubsection{Background}
 The dominant background for the three and four charged lepton final state are the production of $\PW\PZ$ and $\PZ\PZ$.
-$\PW\PZ$ is simulated at NLO with MadGraph with up to 1 additional jet, including off-shell contributions.
+%% $\PW\PZ$ is simulated at NLO with \mgNLO with up to 1 additional jet, including off-shell contributions.
 %% $\PZ\PZ$ has contributions from $\PQq \PAQq \to \PZ\PZ$ and $\Pg \Pg \to \PZ\PZ$ (with a quark loop).
 
-$\PQq \PAQq \to \PZ\PZ$ is simulated at NLO with Powheg up to one extra parton \todo{ask someone who knows if that's true},
+$\PQq \PAQq \to \PZ\PZ \to 4\Pl$ is simulated with Powheg at NLO QCD (LO EW) up to one extra parton,
 using dynamical QCD factorization and renormalization scales.
-Although the fully differential cross section has already been computed at NNLO \cite{},
+Although the fully differential cross section has already been computed at NNLO \cite{Grazzini_2015},
 this computation is not yet available in a Monte Carlo generator.
+No NNLO/NLO k-Factors are applied.
 
 Aside from the dominant ZZ background mediated by the tree-level processes, there is also a gluon loop-induced ZZ production process,
 which is a NNLO diagram and therefore is not included in the nominal ZZ sample.
 Though suppressed by the two additional strong couplings, it nevertheless contributes to inclusive ZZ production at the 10\% level.
-$\Pg \Pg \to \PZ\PZ$ is simulated, separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm, at LO with MCFM 7.0.
+$\Pg \Pg \to \PZ\PZ$ is simulatet, separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm, at LO with MCFM 7.0.
 
-Rare backgrounds such as massive triboson VVV and $\PQt\PAQt \,+\, X$ are simulated at NLO with MadGraph5\_aMCatNLO.
+$\PW\PZ \to 3\Pl \PGn$, $\PZ \PGg \to 2\Pl \PGg$ and $\PZ \to \Pl \Pl$ (Drell-Yan), with \Pl = \Pe, \PGm, \PGt,
+are simulated at NLO with \mgNLO, including off-shell effects.
+For the first two, up to one additional parton is included in matrix element calculation,
+while for Drell-Yan the calculations include up to two additional partons.
 
-%% The former is simulated at NLO with Powheg \todo{ask someone who knows if that's true},
-%% while the latter is simulated with MCFM \todo{check how} separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm.
-
-%% which are simulated at NLO up to 1-jet using MadGraph with FxFx merging.
+Rare backgrounds such as massive triboson VVV and the various $\PQt\PAQt \,+\, X$ are simulated at NLO with MadGraph5\_aMCatNLO.
 
 % This LO sample is used for the development of the signal extraction MVA and the evaluation of the interference with the electroweak signal. It is not used in the statistical analysis of the VBS search, which uses the NLO FXFX sample described later.
 %(only done in 2016) that only determines interference:
@@ -219,7 +221,7 @@ The MC samples are reweighed based on the per-event true number of interactions 
     \hline
     $\PZ$ + 0,1,2 jets               & MadGraph (NLO) & 6225.2   & {\small\tt DYJetsToLL\_M-50\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} & for data/MC comparison in Z+X CR\\% define lep+ = e+ mu+ ta+; generate p p > lep+ lep- j [QCD]; add process p p > lep+ lep- j j [QCD]
     $\PZ\PGg$ + 0,1 jets             & MadGraph (NLO) & 55.48    & {\small\tt ZGToLLG\_01J\_5f\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} & for prompt \PGg subtraction in Z+X CR\\% define lep = e+ mu+ ta+ e- mu- ta-; generate p p > lep lep a [QCD]; add process p p > lep lep a j [QCD]
-    $\PW\PZ \to 3\Pl\,\PGn$          & MadGraph (NLO) & 5.213    & {\small\tt WZJToLLLNu\_TuneCP5\_13TeV-amcnlo-pythia8/[1,2,3,4]}             & off-shell contrib., letptonic decays\\ % define p = p b b~; define j = j b b~; define ell+ = e+ mu+ ta+; generate p p > ell- vl~ ell+ ell- (+ h.c.); add process p p > ell- vl~ ell+ ell- j (+ h.c)
+    $\PW\PZ \to 3\Pl\,\PGn$          & MadGraph (NLO) & 5.213    & {\small\tt WZTo3LNu\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]}         & off-shell contrib., letptonic decays\\ % define p = p b b~; define j = j b b~; define ell+ = e+ mu+ ta+; generate p p > ell- vl~ ell+ ell- (+ h.c.); add process p p > ell- vl~ ell+ ell- j (+ h.c)
     $\PQt\PAQt \to 2\Pl\,\PGn$ + jets& Powheg         & 87.3     & {\small\tt TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8/[1,2,3,4]}              &\\
 
     \midrule

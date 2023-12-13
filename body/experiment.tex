@@ -59,7 +59,7 @@ The measurement of muons relies on a combination of inner tracking and informati
 which are gas-ionization detectors embedded in the steel flux-return yoke outside the solenoid.
 A detailed description of the CMS detector can be found in Reference \cite{CMS:2008}.
 
-\subsubsection{Coordinate system}
+\paragraph{Coordinate system\\}
 CMS adopts a right-handed Cartesian coordinate system, with the origin defined in the center of the detector; more precisely, the barycenter of the modules of the Tracker Outer Barrel.
 The axes are oriented such that the x-axis points to the center of the LHC ring, the y-axis is orthogonal to the LHC plane pointing up, and the the z-axis lies along the anticlockwise beam direction.
 
@@ -83,7 +83,7 @@ They are used to define a type of angular distance between two physical objects:
 \end{equation}
 
 \subsection{The silicon tracker}
-The CMS inner silicon tracker is the innermost subdetector of the CMS experiment, surrounding the interaction point, measuring 5.8 m in length and 2.5 m in diameter
+The CMS inner silicon tracker is the innermost subdetector of the CMS experiment, surrounding the interaction point, measuring 5.8 m in length and 2.5 m in diameter.
 It provides precise measurement of the trajectories of the charged particles emerging from the LHC collisions.
 These tracks are reconstructed by combining electrical signals (hits) from the outgoing charged particles as they traverse the tracker's layers.
 Thanks to the uniform magnetic field within its volume, which bends the trajectories, it is able to provide a measurement of the associated momentum and charge sign from the track parameters.
@@ -91,7 +91,7 @@ Thanks to the uniform magnetic field within its volume, which bends the trajecto
 The accuracy of track reconstruction is crucial for determining the position of the hard scattering, the primary vertex, as well as in-flight decays resultin in secondary vertices.
 This in turns allows the suppression of the background from pileup interactions, and a handle for measuring particle lifetimes.
 
-The CMS tracker uses silicon pixel and strip sensors to cover $|\eta| < 2.5$, with a total area of $200 m^2$,
+The CMS tracker uses silicon pixel and strip sensors to cover $|\eta| < 2.5$, with a total area of $200\, \mathrm{m}^2$,
 operating at temperatures of around -15 \Celsius and -20 \Celsius, respectively, to minimize ionizing radiation damage.
 To meet spatial measurement requirements amid particle flux, the finely segmented tracking detector with fast readout electronics minimizes the material to reduce multiple scattering.
 Silicon's benefits include high charge carrier mobility, rapid signal processing, optimal energy resolution sensitivity, and excellent spatial resolution due to segmentation.
@@ -124,7 +124,7 @@ During the last period of data taking of 2017, called era F, 5 \% of the convert
 \end{figure}
 
 \subsubsection{The silicon strip detector}
-The strip silicon tracker is located outside of the pixel detector at a radial distance comprised between $20 and 116 \cm$.
+The strip silicon tracker is located outside of the pixel detector at a radial distance comprised between 20 and 116 \cm.
 It consists of 15148 silicon modules, with approximately 9.3 million strips and it extends over a pseudorapidity range up to $|\eta| < 2.5$.
 The strip subsystem features an analogous barrel-endcap partition as in the case of the pixel detector.
 The barrel region is subdivided into the Tracker Inner Barrel (TIB) and the Tracker Outer Barrel (TOB),
@@ -140,7 +140,7 @@ Coverage in the z region $124 \le |z| \le 282 \cm$ is ensured by the TEC subdete
 providing hit positional information in the $r - \phi$ plane with a resolution in the range $18 - 47 \mum$.
 
 \subsection{The electromagnetic calorimeter}
-The electromagnetic calorimeter (ECAL) \cite{CERN-LHCC-97-033} provides a measurement of the energy of incoming electrons and photons.
+The Electromagnetic Calorimeter (ECAL) \cite{CERN-LHCC-97-033} provides a measurement of the energy of incoming electrons and photons.
 It is a hermetic, homogeneus calorimeter made of scintillating crystals of lead tungstate ($\mathrm{PbWO_4}$).
 The material was chosen because of its short radiation lenght (0.89\cm) and high density,
 which allow the absorption of electromagnetic showers within the short lenght;
@@ -158,7 +158,7 @@ The general structure is shown in Figure \ref{fig:ECAL_3D_colour}.
 ECAL is composed of Electromagnetic Barrel (EB), Electromagnetic Endacp (EE) and Encap Preshower (PS).
 EB is made of 61200 crystals with a quasi-projective geometry, and each endcap has 7324 crystals.
 The EB has an inner radius of $129 \cm$, and it is structured as 36 identical ``Supermodules'',
-each covering 20 $^{\circ}$ in $\phi$ and half the barrel length, corresponding to a pseudorapidity interval of $0 < |\eta| < 1.479$.
+each covering $20^{\circ}$ in $\phi$ and half the barrel length, corresponding to a pseudorapidity interval of $0 < |\eta| < 1.479$.
 Each supermodule contains four modules with 400 or 500 crystals apiece, each with a length of 230 mm and a cross section of $22 \times 22 \mathrm{mm}^2$.
 The EE is at a distance of $314 \cm$ from the vertex and covering a pseudorapidity range of $1.479 < |\eta| < 3.0$,
 and is made of crystals with a length of 220 mm and a cross section of $28.62 \times 28.62 \mathrm{mm}^2$.
@@ -178,7 +178,7 @@ This effect is measured and it is taken into account by time-dependent correctio
 
 The ECAL energy resolution $\sigma_E/E$ for electrons was obtained in a test beam measurement \cite{CMS-NOTE-2006-148}, and has the following energy dependency:
 \begin{equation}
-  \frac{\sigma_E}{E} = \frac{2.8\%}{\sqrt{E\small{(GeV)}}} \oplus \frac{12\%}{E\small{(GeV)}} \oplus 0.3\%
+  \frac{\sigma_E}{E} = \frac{2.8\%}{\sqrt{E\, [\GeV]}} \oplus \frac{12\%}{E\, [\GeV]} \oplus 0.3\%
 \end{equation}
 where the $\oplus$ symbol denotes the sum in quadrature of the individual contributions.
 The first term represents the stochastic part which dominates for energy deposits of photoelectrons below 100 GeV;

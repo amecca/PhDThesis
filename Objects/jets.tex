@@ -29,12 +29,12 @@ Jets are reconstructed by using the anti-$k_t$ clustering algorithm out of parti
 after rejecting the charged hadrons that are associated to a pileup primary vertex.
 
 \subsubsection{Jet Identification}
-
+\label{sec:jet_ID}
 In order to assure a good reconstruction efficiency, identification quality criteria are imposed on jets based on
 the energy fraction of the charged, electromagnetic, and neutral hadronic components \cite{CMS-PAS-JME-16-003}.
 
 To reduce instrumental background, the tight working point jet ID suggested by
-a dedicated group of experts within CMS.
+a dedicated group of experts within CMS is applied \todo{add ref and rephrase}.
 %% the JetMET Physics Object Group is applied.%~\cite{JetID2018}.
 In addition, jets from Pile-Up are rejected using the PileUp jet ID criteria.% suggested by the JetMET POG.%~\cite{JetPUID2017}.
 It is to be noted that the PU JetID was only derived for 2016 conditions but is also applied to 2017 and 2018 samples. 
@@ -43,7 +43,29 @@ In this analysis, the jets are required to be within $|\eta| < 4.7$ area and hav
 In addition, the jets are cleaned from any of the tight leptons (passing the SIP and isolation cut computed after FSR correction) 
 and FSR photons by a separation criterion: $\Delta R(\text{jet,lepton/photon}) > 0.4$.
 
-In addition this analysis considers also a collection of large radius jets clustered using the same anti-$k_t$ algorithm with a distance parameter $R = 0.8$.
+The identification of jets originated by the hadronization of heavy-flavour quarks is achieved thorugh the DeepFlavour tagger \cite{Guest_2016, Sirunyan_2018}.
+It uses a deep neural network with input variables from up to six tracks from each jet, information on secondary vertices and on the jet iself (such as the energy and total number of tracks).
+It assigns five probabilities to each jet, namely to contain only one \PQb hadron, two or more \PQb hadrons, exactly one \PQc hadron, at least two \PQc and no \PQb hadrons, or none of the above.
+In this analysis there is the need to exclude events containing top quarks, since their decay $\PQt \to [\PW \to \Pl\PGn] \PQb$ produces additional charged leptons which may lower the purity of the signal regions.
+Thus the need to identify jets induced by the hadronization of \PQb quarks, which is achieved by summing the probabilities of the first two categories.
+Working points are defined for this ID, as shown in Table \ref{tab:DeepFlavourBtagWP}.
+
+\begin{table}
+  \caption{Working points of the combined b-tag with the DeepFlavour classifier and the corresponding misidentification probability, as provided by CMS b-tagging group.}
+  \label{tab:DeepFlavourBtagWP}
+  \centering
+  \begin{tabular}{l c c}
+    \toprule
+    \makecell{Working\\point} & Threshold & \makecell{Misidentification\\probability}\\
+    \midrule
+    Loose  & 0.0494 & 10  \%\\
+    Medium & 0.2770 & 1   \%\\
+    Tight  & 0.7264 & 0.1 \%\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+In addition this analysis considers also a collection of \textbf{large radius jets} clustered using the same anti-$k_t$ algorithm with a distance parameter $R = 0.8$.
 These jets are cleaned using the Pileup Per Particle Identification (PUPPI) \cite{Bertolini_2014}, which is a method for pileup mitigation.
 
 \paragraph{Jet disambiguation\\}

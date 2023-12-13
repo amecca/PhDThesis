@@ -63,6 +63,8 @@
 %% CHAPTERS STRUCTURE
 \usepackage[italian,english]{babel} %%Set English as main language of the document
 \usepackage{appendix}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 %% FIGURES
 \usepackage{graphicx}
 \usepackage{subfigure}		%%allow side by side figures with single caption
@@ -72,6 +74,7 @@
 \usepackage{booktabs}		%%allow use of \toprule, \midrule, \bottomrule in tables
 \usepackage{array}
 \usepackage[table]{xcolor}      %%background color of individual cells
+\usepackage{makecell}           %%saner way to define multiline cells
 %%CAPTIONS
 \usepackage[font=small, labelfont=bf]{caption}
 %% BIBLIOGRAPHY
