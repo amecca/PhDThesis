@@ -8,8 +8,8 @@ The result of this process, called hadronization, is a cone of collimated partic
 \subsubsection{Jet Reconstruction}
 
 Jets are the experimental signatures of quarks and gluons produced in high-energy processes such as head-on proton-proton collisions.
-They are reconstructed using the anti-$k_t$ clustering algorithm \cite{Cacciari:2008gp}, with a distance parameter of 0.4, on PF candidates.
-It defines a distances $d_{ij}$ between the entities i and j, and $d_{iB}$ between object $i$ and the beam (B).:
+They are reconstructed using the \antikt clustering algorithm \cite{Cacciari:2008gp} on PF candidates.
+This algorithm defines the distances $d_{ij}$ between the entities i and j and $d_{iB}$ between object $i$ and the beam (B):
 \begin{equation}
 \begin{split}
 d_{ij} &= min \left( k^{2p}_{T,i}, k^{2p}_{T,j} \right) \frac{\DR_{ij}}{D^2}\\
@@ -22,11 +22,11 @@ The clustering proceeds by identifying the smallest of the distances and if it i
 while if it is $d_{iB}$ calling $i$ a jet and removing it from the list of entities.
 The distances are recalculated and the procedure repeated until no entities are left.
 
-In particular, anti-$k_t$ sets $p = -1$, which results in and infrared and collinear safe algorithm, which is resilient to soft radiation,
+In particular, \antikt sets $p = -1$, which results in and infrared and collinear safe procedure which is resilient to soft radiation,
 meaning that soft emissions do not result in irregularities in the boundaries of the resulting jets.
 
-Jets are reconstructed by using the anti-$k_t$ clustering algorithm out of particle flow candidates, with a distance parameter $R = 0.4$,
-after rejecting the charged hadrons that are associated to a pileup primary vertex.
+In this analysis, two possible valued of the distance parameter of \antikt are considered: $R = 0.4$ and $R = 0.8$.
+Jets are reconstucted after removing charged hadrons that are associated to a pileup primary verted from the Particle Flow candidates.
 
 \subsubsection{Jet Identification}
 \label{sec:jet_ID}
@@ -65,11 +65,11 @@ Working points are defined for this ID, as shown in Table \ref{tab:DeepFlavourBt
   \end{tabular}
 \end{table}
 
-In addition this analysis considers also a collection of \textbf{large radius jets} clustered using the same anti-$k_t$ algorithm with a distance parameter $R = 0.8$.
+In addition this analysis considers also a collection of \textbf{large radius jets} clustered using the same \antikt algorithm with a distance parameter $R = 0.8$.
 These jets are cleaned using the Pileup Per Particle Identification (PUPPI) \cite{Bertolini_2014}, which is a method for pileup mitigation.
 
 \paragraph{Jet disambiguation\\}
-The PF jet collection contains jets clustered with anti-$k_t$ on all the particles reconstructed from Particle Flow.
+The PF jet collection contains jets clustered with \antikt on all the particles reconstructed from Particle Flow.
 This means that isolated and energetic leptons and photons, which are part of the signal definition,
 are likely to be in the core of a jet due to the nature of the algorithm.
 Therefore a disambiguation strategy is needed, to avoid double counting entities.
