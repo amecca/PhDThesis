@@ -25,7 +25,11 @@ or proceed from a gluon initiated loop.
 Additional backgrounds such as $\PQt\PAQt\PZ$ and VVV (V = \PZ, \PW) result in very small contributions.
 
 %% \subsection{Three lepton channel}
-\todo{continue}
+In the 3\Pl channel the main background contributions are Drell-Yan + jets, $\PZ\PGg$ + jets
+and $\PW\PZ$ plus a photon that is either radiated as FSR from one of the leptons or from a misreconstructed jet.
+Another significant contribution comes from $\PZ\PZ \to 4\Pl$ where one of the leptons is lost od misreconstructed as a photon.
+There is also a small fraction of events from $\PZ\PZ\PGg$ in which one of the leptons is outside the detector acceptance. \todo{should check in MC}
+Additional backgrounds from rare processes such as $\PQt\PAQt\PZ$ and VVV (V = \PZ, \PW) result in very small contributions and are estimated with simulation.
 
 \paragraph{Reducible background\\}
 This group of backgrounds arises from processes in which some of the reconstructed leptons or photons do not correspond to real, prompt leptons from the vector bosons decay or photons from the hard process.
@@ -65,10 +69,24 @@ along with a fraction of events from $(\PQq\PAQq/\Pg\Pg) \to \PZ\PZ$ where one o
 In the latter region, named CR2P2F, both leptons from the $\PZ_2$ fail the tight selection, while the leptons of the $\PZ_1$ pass the tight criteria.
 This region is populated primarily by Drell-Yan events, with contributions from $\PZ\PGg$ and $\PQt\PAQt+X$.
 
-\todo{cite one or more ZZ analyses which uses this method; preferably also the first.}
+This method was used by several analyses targeting a final state with four leptons from $\PZ\PZ$ decay~\cite{CMS-SMP-16-001, CMS-SMP-17-006, CMS-SMP-20-001, CMS-PAS-SMP-22-001},
+and is described in detail in Reference~\cite{CMS-HIG-13-002} as the ``Method using opposite-sign (OS) leptons''.
 
 \paragraph{Three lepton channel\\}
-\todo{}
+\note{At the moment, the data-driven fake estimate does NOT work in SR3P. Maybe we shouldn't discuss it if we don't use it.}
+
+\note{SMP-16-002~\cite{SMP-16-002} (2015 data) uses a dijet region to measure the fake rate:
+\textit{``The misidentification probability is measured from a sample of
+dijet events enriched in nonprompt leptons. The sample is selected
+with one jet passing the relaxed lepton identification requirements
+matched to a single lepton trigger, defined as the probe lepton.''}}
+
+\note{SMP-20-014~\cite{SMP-20-014} (full Run2) uses a L+j region:
+\textit{``This CR is defined by requiring a single lepton with pT greater than 10 GeV, and at least
+a reconstructed jet that is well separated from the lepton at $\DR(\PGg, j) > 0.7$. Contributions from
+EWK processes are subtracted to obtain a pure nonprompt measurement region.''}}
+
+\todo{Describe fake leptons method in 3L channel}
 
 \subsubsection{Lepton fake rate measurement}
 The measurement of the lepton fake rate, which is the probability that a fake lepton that passes the loose selection also passes the tigh criteria,
@@ -91,9 +109,6 @@ The measurement is done for each year of data taking, and the resulting rates ca
   \caption{Lepton fake rates measured in the $\PZ+L$ control region, for each year of data-taking.}
   \label{fig:leptonFR}
 \end{figure}
-
-
-\todo{}
 
 The uncertainty on the fake lepton background estimation arises from the difference in composition of the
 background processes in the region where the fake rate is measured and where it is applied.
@@ -159,18 +174,43 @@ which passes the loose selection.
 The photon must have a distance from any of the three leptons of $\DR(\PGg, \Pl) > 0.5$.
 In case ther is more than one photon passing the requirements, the one with the highest \pt is selected.
 
-\todo{prompt $Z\gamma$ subtraction}
-The main processes in the fake rate measurement region are Drell-Yan and $\PZ\PGg$, as can be see in Figure \todo{ref}.
+The main processes in the fake rate measurement region are Drell-Yan and $\PZ\PGg$, as can be seen in Figure \ref{fig:CRLFR_inclusive}.
 The latter contains prompt photons, which would bias the result of the measurement, and thus must be removed.
-Events in the $\PZ\PGg$ sample which have a generator level prompt photon that is matched within $\DR{\PGg^{GEN}, \PGg^{REC}} < 0.2$ are considered prompt.
+Events in the $\PZ\PGg$ sample which have a generator level prompt photon that is matched within $\DR(\PGg^{GEN}, \PGg^{REC}) < 0.2$ are considered prompt.
 Prompt events are subtracted from the data, in the appropriate bins of \pt and pseudorapidity of the photon,
-both from the numerator (photons that pass the selection) and from the denominator (the total).
+both from the numerator (photons that pass the selection, Figure~\ref{fig:CRLFR_lead_pass})
+and from the denominator, which is the sum of the passing and the failing (Figure~\ref{fig:CRLFR_lead_fail}) photons.
 
-\todo{Add data/MC of CRLFR to show that the main processes are DY and ZG.}
+\begin{figure}
+  \centering
+  \subfigure [] {\includegraphics[width=.4\textwidth]{VVGammaAnalyzer/Run2/fullMC/CRLFR/ZL_mass_pow.pdf}}\quad
+  \subfigure [] {\includegraphics[width=.4\textwidth]{VVGammaAnalyzer/Run2/fullMC/CRLFR/Z_l0_pt_pow.pdf}}
+  \caption{Invariant mass of the three lepton system and transverse momentum of the leading lepton from the Z candidate
+  in the fake rate measurement region, integrated on the whole Run2 period.}
+  \label{fig:CRLFR_inclusive}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \subfigure [] {\includegraphics[width=.4\textwidth]{VVGammaAnalyzer/Run2/fullMC/CRLFR/lead_fail_pt_fine_pow.pdf}}\quad
+  \subfigure [] {\includegraphics[width=.4\textwidth]{VVGammaAnalyzer/Run2/fullMC/CRLFR/lead_fail_aeta_fine_pow.pdf}}
+  \caption{Transverse momentum and pseudorapidity of photons passing the loose criterion (VeryLoose ID) but failing the tight selection (Loose working point of the cut-based ID)
+    in the fake rate measurement region, integrated on the whole Run2 period.}
+  \label{fig:CRLFR_lead_fail}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \subfigure [] {\includegraphics[width=.4\textwidth]{VVGammaAnalyzer/Run2/fullMC/CRLFR/lead_loose_pt_fine_pow.pdf}}\quad
+  \subfigure [] {\includegraphics[width=.4\textwidth]{VVGammaAnalyzer/Run2/fullMC/CRLFR/lead_loose_aeta_fine_pow.pdf}}
+  \caption{Transverse momentum and pseudorapidity of photons passing the tight selection (Loose working point of the cut-based ID)
+    in the fake rate measurement region, integrated on the whole Run2 period.}
+  \label{fig:CRLFR_lead_pass}
+\end{figure}
 
 The fake rate is then measured as the ratio of events in which the photon passes also the tight selection (the Loose working point of the cut-based ID)
 to the total.
-This measurement is done separately for endcap and barrel, for several bins of \pt (Figure \todo{add}).
+This measurement is done separately for endcap and barrel, for several bins of \pt (Figure \ref{fig:phFR_VLtoL}).
 
 \begin{figure}
 \subfigure [2016preVFP ] {\includegraphics[width=.5\textwidth]{Figures/FR_VLtoL_pt-aeta_data-ZGToLLG_2016preVFP.pdf}}%
@@ -193,9 +233,9 @@ In particular, the effect of:
 \item The distance from the closest jet in the event
 \end{itemize}
 
-\todo{Move to appendix? --> The results of these cross checks are in Appendix...}
+\note{Move to appendix? --> ``The results of these cross checks are in Appendix...''}
 
-The photon non-prompt rate is assumed to be independent of the flavour of the leptons in the event.\\
+The photon non-prompt rate is assumed to be independent of the flavour of the leptons in the event.
 This assumption is tested by deriving it separately for each flavour of the leptons of the Z boson $e^+ e^- \ell^\pm$ and $\mu^+ \mu^- \ell^\pm$, as shown in Figure \ref{fig:phFR_2e2m}.
 
 \begin{figure}
@@ -237,8 +277,6 @@ It appears that, within the uncertainties, the measurements for each bin are com
 The Fake Rate is then applied to events in the CR4P\_1F, CR3P\_1F and CR2P\_1F regions to estimate the non-prompt contribution in SR4P\_1P, SR3P\_1P, SR3P\_1P respectively.
 Each event in this region is reweighed by the transfer factor $TF^\gamma(p_T, \eta) = \frac{f^\gamma}{1-f^\gamma}$, where $f^\gamma$ is the Fake Rate estimated in the measurement region.
 
-\todo{Add stuff}
-
 \begin{equation}
   \begin{split}
     \label{eq:fakeRate_explanation_part1}
@@ -250,8 +288,9 @@ Each event in this region is reweighed by the transfer factor $TF^\gamma(p_T, \e
 where $N^{bkg}$ is the total number of events that have a fake photon, regardless of the region they are classified into.
 From this it follows that the number of background events in the signal region is:
 \begin{equation}
+  \label{eq:fakeRate_explanation_part2}
   N^{bkg}_{4P\_1P} = \sum \frac{f_i}{1-f_i} N_{4P\_1F}
 \end{equation}
 
 \subsection{Final State Radiation}
-\todo{TODO}
+\todo{TODO after discussion on ZZ and ZZgamma.}
