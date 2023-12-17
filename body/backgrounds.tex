@@ -3,18 +3,18 @@
 An accurate description of the background process is an essential aspect of any analysis since it affects the extraction of signal yields.
 The main background sources differ between the three channels, but generally belong to the category of \textit{reducible background}.
 This class contains processes which have a different final state from the signal.
-Howerver, either due to additional particles produced in combination which may produce a different signature in the detector,
+However, either due to additional particles produced in combination which may produce a different signature in the detector,
 other collisions in the same bunch crossing (pileup),
 or other errors in the reconstruction procedure,
-they produce events which may erroneusly pass the selection.
-Often these backrounds prove difficult to model in simulation,
+they produce events which may erroneously pass the selection.
+Often these backgrounds prove difficult to model in simulation,
 and it becomes advisable to use a data-driven method for their estimation.
 
-The other category comprises \textit{irreductible backgrounds},
+The other category comprises \textit{irreducible backgrounds},
 which are processes that generate a final state with the same particles as the signal,
 although the kinematic distributions may be different.
 Usually processes in this class are estimated with simulation,
-but in some cases it is possible to contrain their normalization in a control region.
+but in some cases it is possible to constrain their normalisation in a control region.
 
 %% \subsection{Four lepton channel}
 For the 4\Pl channel the predominant background component is the production of two on-shell \PZ bosons
@@ -27,7 +27,7 @@ Additional backgrounds such as $\PQt\PAQt\PZ$ and VVV (V = \PZ, \PW) result in v
 %% \subsection{Three lepton channel}
 In the 3\Pl channel the main background contributions are Drell-Yan + jets, $\PZ\PGg$ + jets
 and $\PW\PZ$ plus a photon that is either radiated as FSR from one of the leptons or from a misreconstructed jet.
-Another significant contribution comes from $\PZ\PZ \to 4\Pl$ where one of the leptons is lost od misreconstructed as a photon.
+Another significant contribution comes from $\PZ\PZ \to 4\Pl$ where one of the leptons is lost or misreconstructed as a photon.
 There is also a small fraction of events from $\PZ\PZ\PGg$ in which one of the leptons is outside the detector acceptance. \todo{should check in MC}
 Additional backgrounds from rare processes such as $\PQt\PAQt\PZ$ and VVV (V = \PZ, \PW) result in very small contributions and are estimated with simulation.
 
@@ -42,7 +42,7 @@ Both leptons and photons in this category tend to be non-isolated from the nearb
 The other class is comprised of misidentified jets, mostly from light-flavour quarks, which can erroneously be reconstructed as either leptons,
 if a track is associated to the main energy deposits, or as photons otherwise.
 These misidentified photons tend to have a different energy distribution in the ECAL with respect to real photons,
-which makes shower shape variables effetive in separating this background from real photons.
+which makes shower shape variables effective in separating this background from real photons.
 
 In the following the terms \textit{fake leptons} and \textit{fake photons} are used to refer to both \nonprompt and misidentified objects.
 
@@ -51,9 +51,9 @@ In the following the terms \textit{fake leptons} and \textit{fake photons} are u
 \subsection{Fake Leptons}
 To estimate the expected fake lepton background yield in the signal region,
 dedicated control regions are defined with requirements similar to the signal region but in such a way not to contain signal events.
-To enhance the \nonprompt lepton component, events in these regions are reqired to
+To enhance the \nonprompt lepton component, events in these regions are required to
 have a number of leptons that fail the tight selection, while passing the loose criteria.
-The other selections are identical to mantain similarity with the signal region.
+The other selections are identical to maintain similarity with the signal region.
 
 The fake lepton background yield in the signal region is extrapolated from these regions
 according to the probability for loose lepton candidates to pass also the final selection criteria (defined in Section 4.1.2).
@@ -89,8 +89,8 @@ EWK processes are subtracted to obtain a pure nonprompt measurement region.''}}
 \todo{Describe fake leptons method in 3L channel}
 
 \subsubsection{Lepton fake rate measurement}
-The measurement of the lepton fake rate, which is the probability that a fake lepton that passes the loose selection also passes the tigh criteria,
-is carried out in a separate control region which is enriched in nonptompt leptons.
+The measurement of the lepton fake rate, which is the probability that a fake lepton that passes the loose selection also passes the tight criteria,
+is carried out in a separate control region which is enriched in contempt leptons.
 
 This region, denoted as $\PZ+L$, is defined as containing a valid \PZ candidate whose leptons must have $\pt^{\Pl_{Z,1}} > 20 \GeV$ and $\pt^{\Pl_{Z,2}} > 10 \GeV$
 and an additional lepton which passes the loose selection.
@@ -98,7 +98,7 @@ Additionally, the \PZ candidate must have a mass within 10 \GeV from the nominal
 and the missing energy must be $\MET < 20 \GeV$ to reduce the contribution from real leptons from $\PW\PZ$.
 The last requirement means that this region is orthogonal to all of the regions in the 3\Pl channel, in which the MET is required to be greater than 30 \GeV.
 
-The fake rate is measured on the third lepton in several bins of transverse momentum, separately for the barrel and encap and flavour.
+The fake rate is measured on the third lepton in several bins of transverse momentum, separately for the barrel and endcap and flavour.
 The measurement is done for each year of data taking, and the resulting rates can be seen in Figure \ref{fig:leptonFR}.
 
 \begin{figure}
@@ -160,11 +160,12 @@ Summing all the contributions, one obtains for the signal region:
 \todo{Describe lepton FR for 3\Pl.}
 
 \subsection{Fake photons}
-The background from fake photons, either misidentified or nonprompt, can be estimate using a similar data-driven approach.
+\label{sec:fake_photons_background}
+The background from fake photons, either misidentified or \nonprompt, can be estimate using a similar data-driven approach.
 It is necessary to define two working points.
 For this analysis, the Loose working point of the cut-based ID is the tight analysis selection,
 while the \textit{very loose} selection (see Section \ref{sec:photon_selection}) is used as the loose criterion.
-The differences between the two selections are the two cuts on \sieie and H/E, which have a good discriminating power against nonprompt photons and misidentified jets.
+The differences between the two selections are the two cuts on \sieie and H/E, which have a good discriminating power against \nonprompt photons and misidentified jets.
 
 \subsubsection{Photon fake rate measurement}
 The photon fake rate measurement, which is the probability for a fake photon that passes the loose selection to also pass the tight one,
@@ -172,7 +173,7 @@ is done on a subset of the same $\PZ+L$ region that is used for the lepton fake 
 In addition to the requirements for that region, events must also have a photon with $\pt > 20 \GeV$ and $|\eta| < 1.4442$ or $1.556 < |\eta| < 2.4$
 which passes the loose selection.
 The photon must have a distance from any of the three leptons of $\DR(\PGg, \Pl) > 0.5$.
-In case ther is more than one photon passing the requirements, the one with the highest \pt is selected.
+In case there is more than one photon passing the requirements, the one with the highest \pt is selected.
 
 The main processes in the fake rate measurement region are Drell-Yan and $\PZ\PGg$, as can be seen in Figure \ref{fig:CRLFR_inclusive}.
 The latter contains prompt photons, which would bias the result of the measurement, and thus must be removed.
@@ -225,8 +226,8 @@ To ensure the stability of the measurement against other variables in the event,
 additional measurements are carried out in specific sub-regions, and the results compared.
 In particular, the effect of:
 \begin{itemize}
-\item The status of the third lepton: wether it passes or fails the tight selection.
-  This could bias the measurement if the lepton were a misidentified jet and the additional hadronic attivity produced an additional nonprompt photon.
+\item The status of the third lepton: whether it passes or fails the tight selection.
+  This could bias the measurement if the lepton were a misidentified jet and the additional hadronic activity produced an additional \nonprompt photon.
 \item The flavour of the third lepton
 \item The flavour of the SFOS pair that constitute the \PZ boson.
 \item The number of additional jets in the event
@@ -291,6 +292,26 @@ From this it follows that the number of background events in the signal region i
   \label{eq:fakeRate_explanation_part2}
   N^{bkg}_{4P\_1P} = \sum \frac{f_i}{1-f_i} N_{4P\_1F}
 \end{equation}
+
+\paragraph{Usage of the MVA based ID\\}
+Additionally, kinematic photons that pass the MVA-based working points wp90 and wp80 are also considered,
+given the improved performance of the MVA ID over the cut-based one.
+The drawback is that this does not allow a data-driven estimation of the \nonprompt background,
+due to the limited size of the application region defined by requiring a photon that passes the wp90 but fails the wp80.
+
+Unlike a cut-based selection, it is not possible to invert only part of the MVA based ID.
+The only way to derive a looser working point is to redo the optimisation of the raw MVA score,
+and then study the efficiency of such selection in data and simulation to derive scale factors.
+Both of these studies are outside the scope of this analysis.
+
+Another possibility is to measure a fake rate between the kinematic selection and the looser MVA working point, \texttt{wp90}.
+However, the former is too loose and the selected fakes have signatures that are very different from those of prompt photons.
+This would make the assumption that the transfer factor is the same in the measurement and application regions quite unstable.
+
+\todo{Add plots (e.g. Data/MC of CR3P1F/CR2P2F o SR4P blinded) of the number of events in wp90, wp80.}
+
+Therefore, the results obtained using the MVA ID are derived without the data-driven estimate of fake photons.
+In this case, the MC prediction of backgrounds which contain \nonprompt or misidentified photons is used.
 
 \subsection{Final State Radiation}
 \todo{TODO after discussion on ZZ and ZZgamma.}

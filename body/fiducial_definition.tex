@@ -1,38 +1,39 @@
 \section{Fiducial region definition}
 % the signal definition at gen level
-The fiducial phase space definition mimics the selection described in Section \ref{sec:event_selection}.
+The fiducial phase space definition mimics the selection applied to reconstructed events, described in Section \ref{sec:event_selection}.
 
 The charged leptons, either electrons or muons are required to have $\pt > 5 \GeV$ and $|\eta| < 2.5$.
-\todo{Each lepton pair $\Pl_i, \Pl_j$ must be separated $\DR(\Pl_i, \Pl_j) > 0.02$.}
-\todo{Lepton isolation is ensured by requiring the scalar sum of the \pt of all stable particles, i.e.,
-  those particles not decaying in the detector volume, within a cone of radius $\DR = 0.3$ to be less than 0.35 times the \pt of the lepton.}
+Each lepton pair $\Pl_i, \Pl_j$ must be separated $\DR(\Pl_i, \Pl_j) > 0.02$.
+\todo{Is this actually done?}
+Lepton isolation is ensured by requiring the scalar sum of the \pt of all stable particles, i.e.,
+those particles not decaying in the detector volume, within a cone of radius $\DR = 0.3$ to be less than 0.35 times the \pt of the lepton.
+\todo{Again, to be checked.}
 Neutrinos, FSR photons, and leptons (electrons and muons) are not included in
 the computation of the isolation sum to enhance the model independence of the measurements,
 following the findings of Reference \cite{HIG-14-028}.
 Low mass resonances are excluded by requiring that any opposite-sign lepton pair, regardless of flavour,
 satisfies $m_{\Pl^{+} \Pl'^{-}} > 4\GeV$.
 
-The number of charged leptons that pass these requirements is used to categorize the event into one of the three channels: 4\Pl, 3\Pl and 2\Pl.
+The number of charged leptons that pass these requirements is used to categorise the event into one of the three channels: 4\Pl, 3\Pl and 2\Pl.
 
 The photon is required to have $\pt > 20 \GeV$, $|\eta| < 2.4$ and be produced in the hard scattering. % isPrompt
 It must be separated from any lepton by $\DR(\PGg, \Pl) > 0.5$.
 
-\todo{This paragraph is wrong.}
-In the 2 \Pl channel, the two quarks from the decay of the VB must have $\pt > 30 \GeV$ and $|\eta| < 4.7$.
-Their flavour must be compatible with a \PZ decay (e.g. \PQu\PAQu, \PQd\PAQd, \PQs\PAQs, \PQc\PAQc or \PQb\PAQb),
-or a \PW decay (e.g. \PQu\PAQd, \PQu\PAQb, \PQd\PAQu, \PQd\PAQc, \PQs\PAQd or \PQs\PAQc).
-The separation between the quarks and the photon must be $\DR(\PGg, \PQq) > 0.4$.
-\todo{End of wrong}
+%% NOTE: The following paragraph is wrong
+%% In the 2 \Pl channel, the two quarks from the decay of the VB must have $\pt > 30 \GeV$ and $|\eta| < 4.7$.
+%% Their flavour must be compatible with a \PZ decay (e.g. \PQu\PAQu, \PQd\PAQd, \PQs\PAQs, \PQc\PAQc or \PQb\PAQb),
+%% or a \PW decay (e.g. \PQu\PAQd, \PQu\PAQb, \PQd\PAQu, \PQd\PAQc, \PQs\PAQd or \PQs\PAQc).
+%% The separation between the quarks and the photon must be $\DR(\PGg, \PQq) > 0.4$.
 
-In the 2 \Pl channel, jets are built with the \antikt algorithm with a distance parameter of 0.4,
+In the 2\Pl channel, jets are built with the \antikt algorithm with a distance parameter of 0.4,
 and are required to have $\pt^{\rm jet} > 30 \GeV$ and $|\eta^{\rm jet}| < 4.7$, as done at the reconstruction level.
 The jets are kept if no lepton or photon inside a cone with the size of the jet radius is found.
 
-In the 4\Pl channel the leading (subleading) lepton must have \pt > 20 (10) \GeV.
+In the 4\Pl channel the leading (sub-leading) lepton must have \pt > 20 (10) \GeV.
 There must be two pairs of same-flavour and opposite-sign (SFOS) leptons, which are labelled $\PZ_1$ and $\PZ_2$,
 the former being the one with the mass closest the the Z peak, which must have $60 \GeV < m_{\PZ_{1,2}} < 120 \GeV$.
 
 In the 3\Pl channel, the SFOS pair with the mass closest to the \PZ peak is selected first, and the remaining lepton is assigned to the \PW.
 The mass of the \PZ boson must be $60 \GeV < m_\PZ < 120 \GeV$. %within 15 \GeV from the \PZ peak.
-The leading (subleading) lepton from the \PZ boson must have \pt > 20 (10) \GeV,
+The leading (sub-leading) lepton from the \PZ boson must have \pt > 20 (10) \GeV,
 while the lepton from the \PW must have \pt > 20 \GeV.

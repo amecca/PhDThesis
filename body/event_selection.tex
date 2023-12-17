@@ -65,6 +65,14 @@ This creates a new set of jets which constitutes an alternative vision of the ha
 This is caused by the larger number of pileup particles included in a AK8 jet, which in turn require larger energy corrections or pruning, thus increasing the uncertainty.
 
 \subsection{Photon selection}
-\todo{photon selection: pt, eta, id}
+Photons are required to have a transverse momentum $\pt^\PGg > 20 \GeV$
+and be in the acceptance region of the ECAL, ecluding the overalp region, $|\eta^\PGg| < 1.442$ OR $1.566 < |\eta^\PGg| < 2.4$.
+The minimum separation between a photon and any of the leptons mus be $\DR(\PGg, \Pl) > 0.5$.
+Photons are required to pass the Conversion Safe Electron Veto.
+%% and the Pixel Seed veto
+
+Several photon IDs are compared in this analysis (see Section \ref{sec:photon_selection}):
+the Loose working point of the cut-based ID
+and the two working points \texttt{wp90} and \texttt{wp80} of the MVA-based ID.
 
 In case ther is more than one photon passing the requirements, the one with the highest \pt is selected.
