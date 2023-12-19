@@ -1,0 +1,71 @@
+\chapter{Details of Lepton fake rate application}
+Let us denote a true lepton as \Pl and a fake as j.
+The number of events with two fakes, regardless of the region they are classified into, is $N^{jj}$ and those with one fake is $N^{j\Pl+\Pl j}$.
+
+Then, the number of events with two fakes that are classified into the various regions is:
+\begin{subequations}
+  \begin{align}
+    \label{eq:lepFR_jj_4P}
+    N^{jj}_{4P}   &= \sum_{i \ins N^{jj}} f_3^i f_4^i
+    \\
+    \label{eq:lepFR_jj_3P1F}
+    N^{jj}_{3P1F} &= \sum_{i \ins N^{jj}} f_3^i(1-f_4^i) + (1-f_3^i)f_4^i
+    \\
+    \label{eq:lepFR_jj_2P2F}
+    N^{jj}_{2P2F} &= \sum_{i \ins N^{jj}} (1-f_3^i)(1-f_4^i)
+  \end{align}
+\end{subequations}
+
+while the number of events with one fake $N^{j\Pl+\Pl j}$ is:
+\begin{subequations}
+  \begin{align}
+    \label{eq:lepFR_jl_4P}
+    N^{j\Pl+\Pl j}_{4P}   &= \sum_{i \ins N^{j\Pl+\Pl j}} f_3^i + f_4^i
+    \\
+    \label{eq:lepFR_jl_3P1F}
+    N^{j\Pl+\Pl j}_{3P1F} &= \sum_{i \ins N^{j\Pl+\Pl j}} (1-f_3^i) + (1-f_4^i)
+  \end{align}
+\end{subequations}
+since we assume that no significant contribution from events with three prompt leptons is present in CR2P2F.
+
+%% However, the events with two fakes that are classified into CR3P1F have to be subtracted in order to...
+
+From Equation \ref{eq:lepFR_jj_2P2F} we can measure the number of events with two fakes from the yield in CR2P2F:
+\begin{equation}
+  \label{eq:lepFR_jj}
+  N^{jj} = \sum_{i \ins 2P2F} \frac{1}{1-f_3^i} \frac{1}{1-f_4^i}
+\end{equation}
+
+Combining this result with Equation \ref{eq:lepFR_jj_4P}, it follows that the contribution to the signal region is:
+\begin{equation}
+  \label{eq:lepFR_jj_4P_result}
+  N^{jj}_{4P} = \sum_{i \ins 2P2F} \frac{f_4^i}{1-f_4^i} \frac{f_4^i}{1-f_4^i}
+\end{equation}
+
+\paragraph{Background in CR3P1F\\}
+The computation of the contribution from events with only one fake is not as straightforward, since the CR3P1F region iself has a background
+from events with two fakes that were promoted with a probabiliy dependent on the fake rate.
+
+For simplicity, let us consider the component $\Pl j$, where the third lepton is prompt and the fourth is fake.
+In the sub-region $PF$ of CR3P1F, where the third lepton passes the selection and the fourth fails, the contribution from $jj$ is:
+\begin{equation}
+    N^{jj}_{PF} = \sum_{i \ins N^{jj}} f_3^i (1-f_4^i) = \sum_{i \ins 2P2F} \frac{f_3^i}{1-f_3^i}
+\end{equation}
+which must be subtracted from the $PF$ yield when computing the contribution of $\Pl j$ to 4P:
+\begin{equation}
+  N^{\Pl j}_{4P} = \sum_{i \ins PF} \frac{f_4^i}{1-f_4^i} - \sum_{j \ins 2P2F} \frac{f_3^j}{1-f_3^j} \frac{f_4^j}{1-f_4^j}
+\end{equation}
+
+Repeating the same procedure for the other sub-region $FP$ and the $j\Pl$ component, the result for CR3P1F = $FP$ + $PF$:
+\begin{equation}
+  \label{eq:lepFR_jl_4P_result}
+  N^{j\Pl+\Pl j}_{4P} = \sum_{i \ins 3P1F} \left( \frac{f_3^i}{1-f_3^i} + \frac{f_4^i}{1-f_4^i} \right) - 2 \sum_{j \ins 2P2F} \frac{f_4^j}{1-f_4^j} \frac{f_4^j}{1-f_4^j}
+\end{equation}
+
+\paragraph{Final result\\}
+Summing the CR3P1F (Equation \ref {eq:lepFR_jl_4P_result}) and the CR2P2F (Equation \ref{eq:lepFR_jj_4P_result}) contributions to the signal region:
+\begin{equation}
+  N^{bkg}_{4P} = \sum_{i \ins 3P1F} \left( \frac{f_3^i}{1-f_3^i} + \frac{f_4^i}{1-f_4^i} \right) - \sum_{j \ins 2P2F} \frac{f_4^j}{1-f_4^j} \frac{f_4^j}{1-f_4^j}
+\end{equation}
+
+This is the result reported in Equation \ref{eq:lepFR_4P}, since for every event in CR3P1F one of $f_3$ and $f_4$ is always 0, since the lepton passes the selection.
