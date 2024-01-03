@@ -1,0 +1,46 @@
+\chapter{Alignment of the CMS Silicon Tracker}
+
+The CMS silicon tracker is the largest in the world, both in terms of surface area and number of sensors.
+In order to harness its exceptional resolution, a precise knowlegde of the position and orientation of the modules is necessary
+During the installation, the mechanical alignment alignment of the modules resulted in a precision of O(100 \mum),
+which is much larger than the design hit resolution of the modules of O(10 \mum).
+
+Consequently, an additional refinement addressing the positional accuracy, orientation, and surface deformations of the sensors becomes imperative.
+This refinement, commonly denoted as the tracker alignment, is characterized by the derivation of a set of parameters known as the tracker alignment constants.
+These constants, which amount to around $200\,000$, are used during the track reconstruction to determine the true position of the hits.
+
+Changes in the environment such as temperature variations and the ramping of the magnetic field induce movements in the tracker structures,
+motivating regular updates of the alignment constants to maintain the target precision.
+The method used in CMS to derive the constants consists in performing track fits with the corresponding track parameters unconstrained.
+
+\paragraph{Hierarchical alignment\\}
+The alignment parametes of the CMS tracker are organized in a hierarchy that follows the one of the modules themselves (see Figure \ref{fig:tracker_hierarchy}).
+
+Each element of the hierarchy has its own six parameters (3 translations and 3 rotations).
+This adds redundant degrees of freedom, since the movements of the large structures can be equivalently expressed by the parameters of their components.
+The redundancy is removed by linear equality constraints, imposed on the original equation system with Lagrange multipliers.
+\todo{rephrase!!!}
+This treatment of alignables allows the fitting of only the large mechanical structures with varying granularity,
+which is expecially useful when the number of track is limited, e.g. when restarting data-taking after a commisioning period.
+
+\section{Track-based alignment}
+The track-based alignment consist in deriving the alignment parametes $\vec{p}$ by minimising the following $\chi^2$ function:
+
+\begin{equation}
+  \chi^2(\vec{p}, \vec{q}\,) \sum_j^{\rm tracks} \sum_i^{\rm hits} \left( \frac{m_{ij} - f_{ij}(\vec{p}, \vec{q_j})}{\sigma_{ij}^{m}} \right)
+\end{equation}
+
+where
+\begin{itemize}
+  \item The $\vec{p}$ are the alignment parameters.
+  \item The $\vec{q}$ are the parameters of the tracks (e.g. the track curvature or the deflection at a given detector layer).
+    The $\vec{q_j}$ are the parameters of the $j$-th track.
+  \item The $m_{ij}$ are the measurements (hits).
+  \item The $f_{ij}$ are the predicted measurements using the track parameters and the alignment constants.
+  \item The $\sigma^m_{ij}$ are the uncertainties of the measurements, due to local hit resolution and alignment uncertainty.
+\end{itemize}
+
+The alignment procedure allows for a variable subset of the parameters to be fitted, while keeping the other fixed.
+
+
+This strategy is used for example when resuming data taking after commissioning or a magnet cycle, where initially only the high level structures are aligned
