@@ -1,7 +1,7 @@
 \section{Event Selection}
 \label{sec:event_selection}
 
-\textbf{Z candidates} are defined as pairs of selected leptons (eletrons or muons) with same flavour and opposite sign (SFOS).
+\textbf{Z candidates} are defined as pairs of selected leptons (electrons or muons) with same flavour and opposite sign (SFOS).
 They must satisfy $60 < m_{\Pl\Pl} < 120 \GeVcc$, where the Z candidate mass includes any selected FSR photons associated to its leptons.
 
 \subsection{Four lepton channel}
@@ -16,7 +16,7 @@ The ZZ candidates are required to satisfy the following:
   in order to ensure a high and constant trigger efficiency for all the selected events.
 \item Low mass resonance suppression: all four opposite sign pairs, regardless of flavour, that can be built must satisfy $m_{\Pl\Pl} > 12 \GeVcc$.
   This cut suppresses pairs of leptons from cascade decays, which may have different flavour and are found to broadly peak at very low invariant masses.
-  In this case, selected FSR photons are not used in computing $m_{\Pl\Pl}$str, since a QCD-induced low mass di-lepton (e.g. \JPsi) may have photons nearby (e.g. from a \Pgpz).
+  In this case, selected FSR photons are not used in computing $m_{\Pl\Pl}$, since a QCD-induced low mass di-lepton (e.g. \JPsi) may have photons nearby (e.g. from a \Pgpz).
 \item Wrong pairing suppression: in the 4\Pe and 4\PGm channels,
   defining $\PZ_a$ and $\PZ_b$ the mass-sorted alternative pairing of the four leptons ($\PZ_a$ is the closest to the nominal Z boson mass),
   the ZZ candidate is excluded if: $|m_{\PZ_a} - m_\PZ^{PDG}| < |m_{\PZ_1} - m_\PZ^{PDG}|$ AND $m_{\PZ_b} < 12 \GeVcc$.
@@ -66,7 +66,7 @@ This is caused by the larger number of pileup particles included in a AK8 jet, w
 
 \subsection{Photon selection}
 Photons are required to have a transverse momentum $\pt^\PGg > 20 \GeV$
-and be in the acceptance region of the ECAL, ecluding the overalp region, $|\eta^\PGg| < 1.442$ OR $1.566 < |\eta^\PGg| < 2.4$.
+and be in the acceptance region of the ECAL, excluding the overlap region, $|\eta^\PGg| < 1.442$ OR $1.566 < |\eta^\PGg| < 2.4$.
 The minimum separation between a photon and any of the leptons must be $\DR(\PGg, \Pl) > 0.5$.
 Photons are required to pass the Conversion Safe Electron Veto.
 %% and the Pixel Seed veto
@@ -75,4 +75,4 @@ Several photon IDs are compared in this analysis (see Section \ref{sec:photon_se
 the Loose working point of the cut-based ID
 and the two working points \texttt{wp90} and \texttt{wp80} of the MVA-based ID.
 
-In case ther is more than one photon passing the requirements, the one with the highest \pt is selected.
+In case there is more than one photon passing the requirements, the one with the highest \pt is selected.

@@ -11,7 +11,7 @@ The Large Hadron Collider (LHC) \cite{CERN-AC-93-03-LHC}, situated at the Europe
 It operates within a circular underground tunnel spanning 26.7 kilometres, originally excavated to accommodate the LEP electron-positron collider, operating from 1989 to 2000.
 
 The LHC accelerates two counter-rotating beams, primarily composed of protons but also capable of collision with heavy nuclei like lead (Pb) at varying energies.
-The acceleration process involves a sequence of pre-accelerators, shown in Figure \ref{fig:CERNaccelerators}: the protons are isolated from a duoplasmatron source, accelerated through Linac2 to 50 MeV, further pushed in the Proton Syncrotron Booster (PSB) to 1.4 GeV, accelerated to 25 GeV in the Proton Synchrotron (PS), and finally reach an energy of 450 GeV in the Super Proton Synchrotron (SPS) before entering the LHC rings.
+The acceleration process involves a sequence of pre-accelerators, shown in Figure \ref{fig:CERNaccelerators}: the protons are isolated from a duoplasmatron source, accelerated through Linac2 to 50 MeV, further pushed in the Proton Synchrotron Booster (PSB) to 1.4 GeV, accelerated to 25 GeV in the Proton Synchrotron (PS), and finally reach an energy of 450 GeV in the Super Proton Synchrotron (SPS) before entering the LHC rings.
 It was designed to accelerate protons up to 7 TeV ($\sqrt{s} =$ 14 TeV), and has successfully done so at 3.5 and 4 TeV during Run 1, at 6.5 TeV during Run 2 and 6.8 TeV during the ongoing Run 3.
 Operation at 7 TeV is scheduled for the upcoming High Luminosity LHC (HL-LHC) after Long Shutdown 3.
 
@@ -54,23 +54,23 @@ Within the solenoid volume there are three major subsystems:
 a silicon pixel and strip tracker which measures the trajectories of charged particles,
 a lead tungstate crystal electromagnetic calorimeter (ECAL) that mainly collects the energies of electrons and photons,
 and a brass and scintillator hadronic calorimeter (HCAL) which stops the more penetrating hadrons.
-Quartz fiber based forward calorimeters further improve hermeticity.
+Quartz fibre based forward calorimeters further improve hermeticity.
 The measurement of muons relies on a combination of inner tracking and information from the muon chambers,
-which are gas-ionization detectors embedded in the steel flux-return yoke outside the solenoid.
+which are gas-ionisation detectors embedded in the steel flux-return yoke outside the solenoid.
 A detailed description of the CMS detector can be found in Reference \cite{CMS:2008}.
 
 \paragraph{Coordinate system\\}
-CMS adopts a right-handed Cartesian coordinate system, with the origin defined in the center of the detector; more precisely, the barycenter of the modules of the Tracker Outer Barrel.
-The axes are oriented such that the x-axis points to the center of the LHC ring, the y-axis is orthogonal to the LHC plane pointing up, and the the z-axis lies along the anticlockwise beam direction.
+CMS adopts a right-handed Cartesian coordinate system, with the origin defined in the centre of the detector; more precisely, the barycentre of the modules of the Tracker Outer Barrel.
+The axes are oriented such that the x-axis points to the centre of the LHC ring, the y-axis is orthogonal to the LHC plane pointing up, and the the z-axis lies along the anticlockwise beam direction.
 
 \paragraph{Kinematic variables\\}
-In High Energy Physics (HEP), the particle polar direction is often descrbed with its rapidity, defined as:
+In High Energy Physics (HEP), the particle polar direction is often described with its rapidity, defined as:
 \begin{equation}
   \label{eq:rapidityDefinition}
   y = \frac{1}{2} ln \frac{E + p_z}{E - p_z}
 \end{equation}
 Difference in rapidity are invariant under Lorentz boosts along the z-axis.
-In physics analyses the pseudo-rapidity is onften used in its place, since the two coincide in the ultra-relativistic limit:
+In physics analyses the pseudo-rapidity is often used in its place, since the two coincide in the ultra-relativistic limit:
 \begin{equation}
   \label{eq:pseudorapidityDefinition}
   \eta = - ln \left( \tan \frac{\theta}{2} \right)
@@ -88,12 +88,12 @@ It provides precise measurement of the trajectories of the charged particles eme
 These tracks are reconstructed by combining electrical signals (hits) from the outgoing charged particles as they traverse the tracker's layers.
 Thanks to the uniform magnetic field within its volume, which bends the trajectories, it is able to provide a measurement of the associated momentum and charge sign from the track parameters.
 
-The accuracy of track reconstruction is crucial for determining the position of the hard scattering, the primary vertex, as well as in-flight decays resultin in secondary vertices.
+The accuracy of track reconstruction is crucial for determining the position of the hard scattering, the primary vertex, as well as in-flight decays resulting in secondary vertices.
 This in turns allows the suppression of the background from pileup interactions, and a handle for measuring particle lifetimes.
 
 The CMS tracker uses silicon pixel and strip sensors to cover $|\eta| < 2.5$, with a total area of $200\, \mathrm{m}^2$,
-operating at temperatures of around -15 \Celsius and -20 \Celsius, respectively, to minimize ionizing radiation damage.
-To meet spatial measurement requirements amid particle flux, the finely segmented tracking detector with fast readout electronics minimizes the material to reduce multiple scattering.
+operating at temperatures of around -15 \Celsius and -20 \Celsius, respectively, to minimise ionising radiation damage.
+To meet spatial measurement requirements amid particle flux, the finely segmented tracking detector with fast readout electronics minimises the material to reduce multiple scattering.
 Silicon's benefits include high charge carrier mobility, rapid signal processing, optimal energy resolution sensitivity, and excellent spatial resolution due to segmentation.
 Local hit reconstruction involves clustering, noise calibration, and hit candidate conversion, providing cluster charge profiles and hit positions.
 
@@ -119,13 +119,13 @@ The BPIX is composed of four coaxial barrel layers located at a radial distance 
 The FPIX consists of three end cap disks per side constituted by several blades positioned at a distance of 29.1, 39.6 and 51.6\cm from the nominal interaction point (IP).
 The BPIX modules are parallel to the beamline, while the FPIX sensors are arranged into blades, oriented with a tilt of 20$^{\circ}$ with respect to normal incidence in order to exploit the Lorentz drift effect\footnote{
 Charge carriers in the sensors, migrating along an electric field that is not parallel to the magnetic field, will have their trajectories deflected by a small angle $\theta_{LA}$.
-This Lorentz drift effect broadens the charge cluster to neighboring sensors (charge sharing), thereby improving the hit resolution.
+This Lorentz drift effect broadens the charge cluster to neighbouring sensors (charge sharing), thereby improving the hit resolution.
 }.
 
 The 124 million pixels, around double the amount of the Phase-0 version, have an individual size of $100 \times 150 \mum^2$.
 The front-end modules of the data acquisition (DAQ) system are powered by 1200 DC-DC converters that deliver the necessary voltage in the range of 2.4-3.3 V,
 which were installed during the upgrade to cope with the increased number of channels while maintaining the existing cabling \cite{Feld_2015}.
-During the last period of data taking of 2017, called era F, 5 \% of the converter had failed and 35 \% were damaged (but working) due to the radiation damage aggravated by a design problem, and were succesfully replaced during the 2017-2018 end-of-year technical stop \cite{CMS:dcdc-failure-short}.
+During the last period of data taking of 2017, called era F, 5 \% of the converter had failed and 35 \% were damaged (but working) due to the radiation damage aggravated by a design problem, and were successfully replaced during the 2017-2018 end-of-year technical stop \cite{CMS:dcdc-failure-short}.
 
 \begin{figure}[thb]
   \centering
@@ -152,9 +152,9 @@ providing hit positional information in the $r - \phi$ plane with a resolution i
 
 \subsection{The electromagnetic calorimeter}
 The Electromagnetic Calorimeter (ECAL) \cite{CERN-LHCC-97-033} provides a measurement of the energy of incoming electrons and photons.
-It is a hermetic, homogeneus calorimeter made of scintillating crystals of lead tungstate ($\mathrm{PbWO_4}$).
-The material was chosen because of its short radiation lenght (0.89\cm) and high density,
-which allow the absorption of electromagnetic showers within the short lenght;
+It is a hermetic, homogeneous calorimeter made of scintillating crystals of lead tungstate ($\mathrm{PbWO_4}$).
+The material was chosen because of its short radiation length (0.89\cm) and high density,
+which allow the absorption of electromagnetic showers within the short length;
 its small Moli\`ere radius (2.2\cm) allows a good shower separation.
 Its response time is fast, and 80 \% of the scintillation light is emitted within the 25 ns between the LHC bunch crossings.
 The general structure is shown in Figure \ref{fig:ECAL_3D_colour}.
@@ -166,7 +166,7 @@ The general structure is shown in Figure \ref{fig:ECAL_3D_colour}.
   \label{fig:ECAL_3D_colour}
 \end{figure}
 
-ECAL is composed of Electromagnetic Barrel (EB), Electromagnetic Endacp (EE) and Encap Preshower (PS).
+ECAL is composed of Electromagnetic Barrel (EB), Electromagnetic Endacp (EE) and Endcap Preshower (PS).
 EB is made of 61200 crystals with a quasi-projective geometry, and each endcap has 7324 crystals.
 The EB has an inner radius of $129 \cm$, and it is structured as 36 identical ``Supermodules'',
 each covering $20^{\circ}$ in $\phi$ and half the barrel length, corresponding to a pseudorapidity interval of $0 < |\eta| < 1.479$.
@@ -180,7 +180,7 @@ to avoid the alignment of inter crystal gaps with particle trajectories.
 The scintillation light from ECAL crystals is read by fast, radiation-tolerant photodetectors which can operate inside the CMS magnetic field
 and are insensitive to particles traversing them.
 Two preshower detectors are installed at each end of the tracker detector, in front of the ECAL endcaps,
-in order to help distinguishing $\Pgpz \rightarrow \PGg PGg$ decays from single photons and identifying electrons against minimum ionizing particles.
+in order to help distinguishing $\Pgpz \to \PGg \PGg$ decays from single photons and identifying electrons against minimum ionising particles.
 These sampling calorimeters are made of a lead radiator layer which initiates electromagnetic showers from incoming particles,
 followed by silicon strip sensors that measure the deposited energy.
 Although lead tungstate crystals are radiation resistant, they undergo a limited but rapid loss of optical transmission under irradiation.
@@ -206,13 +206,13 @@ Thus, the HO subdetector has been installed to extend the depth of the HCAL to 1
 in order to catch the most energetic hadronic shower tails, utilising the magnet coil as an absorber.
 The hadron forward calorimeter extends the pseudorapidity range to $|\eta| = 5.0$ and it is located at a distance of 11 m from the beamspot.
 Since it is affected by hadronic energy depositions seven times more intense than in the rest of the HCAL,
-it is composed of iron absorbers and quartz fiber as active material, due to their higher more radiation-hardness.
-It is further equipped with a set of photomultipiers, which detect the cone of Cherenkov light emitted by charged particles passing through the material.
+it is composed of iron absorbers and quartz fibre as active material, due to their higher more radiation-hardness.
+It is further equipped with a set of photomultipliers, which detect the cone of Cherenkov light emitted by charged particles passing through the material.
 %% The relative HCAL energy response curve for isolated charged pions is illustrated in Figure 2.8.
 %% A broader response curve is an indicator of a larger pile-up contamination.
 %% Out-of-time pile-up mitigation helps reduce the latter, thereby improving the quality of pion isolation.
-HCAL is instrumental in recognisign hadrons and their decay products,
-and provides a crucial measurement of the missing transverse energy exploiting its extensive coverage in $\eta$, a property referred to as hermiticity.
+HCAL is instrumental in recognising hadrons and their decay products,
+and provides a crucial measurement of the missing transverse energy exploiting its extensive coverage in $\eta$, a property referred to as hermeticity.
 
 \begin{figure}[thb]
   \centering
@@ -225,8 +225,8 @@ and provides a crucial measurement of the missing transverse energy exploiting i
 Muons produced in collisions at the LHC usually traverse the Tracker, ECAL, HCAL,
 and the solenoid volumes without being stopped and are identified and measured in the muon detectors located in the outermost part of CMS.
 The muon system is made of muon chambers embedded in the iron return yoke of the CMS magnetic field
-and is divided into a cilindrical barrel section and two planar endcaps.
-It uses three types of gas-ionization chambers: Drift Tubes (DT), Cathode Strip Chambers (CSC) and Resistive Plate Chambers (RPC).
+and is divided into a cylindrical barrel section and two planar endcaps.
+It uses three types of gas-ionisation chambers: Drift Tubes (DT), Cathode Strip Chambers (CSC) and Resistive Plate Chambers (RPC).
 The layout of the three subsystems is shown in Figure \ref{fig:MUON_2Dquarter}.
 
 \begin{figure}[thb]
@@ -242,7 +242,7 @@ The layout of the three subsystems is shown in Figure \ref{fig:MUON_2Dquarter}.
 \subsubsection{Drift Tubes}
 The Drift Tubes (DTs) are located in the barrel region, where the muon rate is lower and the magnetic field is quite uniform,
 and cover a pseudorapidity range of $|\eta| < 1.2$.
-The DTs are organized into four stations interspersed among the layers of the flux return plates.
+The DTs are organised into four stations interspersed among the layers of the flux return plates.
 Their basic constituents are rectangular drift cells bounded by two parallel aluminium planes, which serve as cathodes.
 Anodes are 80\mum stainless steel wires located in the centre of each cell.
 A muon passing through a cell ionises the gas mixture that fills the cell volume.
@@ -289,24 +289,24 @@ An overview of the layout of the system is shown in Figure \ref{fig:L1trigger-bl
 \begin{figure}[thb]
   \centering
   \includegraphics[width=0.85\textwidth]{L1trigger-block-diagram.png}
-  \caption{Main dataflow diagram for the Phase-1 \Lone trigger \cite{CMS-TDR-12}.}
+  \caption{Main data-flow diagram for the Phase-1 \Lone trigger \cite{CMS-TDR-12}.}
   \label{fig:L1trigger-block-diagram}
 \end{figure}
 
 \subsubsection{High-level Trigger}
 The High Level Trigger (HLT) is a sophisticated software-based system which uses tens of thousands of CPU cores
-running multithreaded instances of an optimized version of the CMS reconstruction algorithm.
+running multithreaded instances of an optimised version of the CMS reconstruction algorithm.
 This array of commercial CPUs manages the full event reconstruction through several sequential algorithms,
 targeting signature of interest referred to as \textit{trigger path}.
 The goal of the HLT is to reduce the incoming \Lone rate of 100 kHZ to around 1 kHz,
-while maintaining a good efficiency in the variouse phase spaces of interest for physics
+while maintaining a good efficiency in the various phase spaces of interest for physics
 and being as inclusive as possible to enable a broad variety of searches.
 
 For this purpose, some paths that would otherwise exceed the available bandwidth are made to only pass the selection after a pre-scale.
 This consists of a random discarding of the event, either at L1 or at HLT, which is then accounted for in the analysis.
 
 Another major constraint of the HLT is the maximum processing time for each event, which is 50 ms.
-To optimize it, the more computationally-intensive algorithms are run at the end of the filtering sequence.
+To optimise it, the more computationally-intensive algorithms are run at the end of the filtering sequence.
 These modules perform a streamlined version of the standard offline reconstruction.
 
 \begin{subappendices}
