@@ -1,12 +1,12 @@
 \chapter{Alignment of the CMS Silicon Tracker}
 
 The CMS silicon tracker is the largest in the world, both in terms of surface area and number of sensors.
-In order to harness its exceptional resolution, a precise knowlegde of the position and orientation of the modules is necessary
-During the installation, the mechanical alignment alignment of the modules resulted in a precision of O(100 \mum),
-which is much larger than the design hit resolution of the modules of O(10 \mum).
+In order to harness its exceptional resolution, a precise knowledge of the position and orientation of the modules is necessary.
+During the installation, the mechanical alignment alignment of the modules resulted in a precision of O(100\mum),
+which is much larger than the design hit resolution of the modules of O(10\mum).
 
 Consequently, an additional refinement addressing the positional accuracy, orientation, and surface deformations of the sensors becomes imperative.
-This refinement, commonly denoted as the tracker alignment, is characterized by the derivation of a set of parameters known as the tracker alignment constants.
+This refinement, commonly denoted as the tracker alignment, is characterised by the derivation of a set of parameters known as the tracker alignment constants.
 These constants, which amount to around $200\,000$, are used during the track reconstruction to determine the true position of the hits.
 
 Changes in the environment such as temperature variations and the ramping of the magnetic field induce movements in the tracker structures,
@@ -14,17 +14,18 @@ motivating regular updates of the alignment constants to maintain the target pre
 The method used in CMS to derive the constants consists in performing track fits with the corresponding track parameters unconstrained.
 
 \paragraph{Hierarchical alignment\\}
-The alignment parametes of the CMS tracker are organized in a hierarchy that follows the one of the modules themselves (see Figure \ref{fig:tracker_hierarchy}).
+The alignment parameters of the CMS tracker are organised in a hierarchy that follows the one of the modules themselves (see Figure \ref{fig:tracker_hierarchy}).
 
 Each element of the hierarchy has its own six parameters (3 translations and 3 rotations).
-This adds redundant degrees of freedom, since the movements of the large structures can be equivalently expressed by the parameters of their components.
+This adds redundant degrees of freedom, since the movements of the large structures can be equivalently expressed by shifts of elements within their sub-hierarchies.
 The redundancy is removed by linear equality constraints, imposed on the original equation system with Lagrange multipliers.
 \todo{rephrase!!!}
 This treatment of alignables allows the fitting of only the large mechanical structures with varying granularity,
-which is expecially useful when the number of track is limited, e.g. when restarting data-taking after a commisioning period.
+which is especially useful when the number of track is limited, e.g. when restarting data-taking after a commissioning period.
 
 \section{Track-based alignment}
-The track-based alignment consist in deriving the alignment parametes $\vec{p}$ by minimising the following $\chi^2$ function:
+The track-based alignment consists in the determination of the correct alignment constants using the measured hits and reconstructed tracks.
+The alignment parameters $\vec{p}\,$ are fitted by minimising the following $\chi^2$ function:
 
 \begin{equation}
   \chi^2(\vec{p}, \vec{q}\,) \sum_j^{\rm tracks} \sum_i^{\rm hits} \left( \frac{m_{ij} - f_{ij}(\vec{p}, \vec{q_j})}{\sigma_{ij}^{m}} \right)
@@ -32,7 +33,7 @@ The track-based alignment consist in deriving the alignment parametes $\vec{p}$ 
 
 where
 \begin{itemize}
-  \item The $\vec{p}$ are the alignment parameters.
+  \item The $\vec{p}$ are the (global) alignment parameters.
   \item The $\vec{q}$ are the parameters of the tracks (e.g. the track curvature or the deflection at a given detector layer).
     The $\vec{q_j}$ are the parameters of the $j$-th track.
   \item The $m_{ij}$ are the measurements (hits).
@@ -41,6 +42,42 @@ where
 \end{itemize}
 
 The alignment procedure allows for a variable subset of the parameters to be fitted, while keeping the other fixed.
+This strategy is used for example when resuming data taking after commissioning or a magnet cycle, where initially only the high level structures are aligned,
+leading to only 36 parameters.
 
+The fitting procedure extracts the best values for the $\vec{p}\,$ regardless of the (potentially millions) of track parameters $\vec{q_j}\,$,
+thus allowing alignment campaigns with large datasets and many degrees of freedom.
+This is achieved by linearising the $\chi^2(\vec{p_0}\,+\Delta p, \vec{q_0}\,+\Delta q)$ as deviations from a previous set of alignment parameters.
+Its minimisation can be expressed by a set of linear equations containing the measurements and the derivatives in the alignables or track parameters.
+Employing block matrix algebra it is possible to factorise the problem such that only a sub-matrix involving the $\Delta p$ has to be inverted,
+while maintaining all the correlations from the track parameters~\cite{blobel2002new}.
 
-This strategy is used for example when resuming data taking after commissioning or a magnet cycle, where initially only the high level structures are aligned
+\section{Datasets}
+Different types of datasets are generally used for the alignment.
+The main benefit of a diverse set of tracks is that each track topology correlates a different set of alignables.
+
+The main datasets are:
+\begin{itemize}
+\item \textbf{Collisions}
+  \begin{itemize}
+  \item Minimum bias, a sample of randomly chosen events passing the L1 trigger (Section \ref{sec:L1trigger}).
+  \item Isolated muons: events passing one of the single muon HLT triggers with isolation cuts on a cone of radius \DR = 0.1
+  \item Dimuon resonances: pairs of muons with a mass close to the \PZ or \PGU
+  \end{itemize}
+\item \textbf{Cosmic muons}
+  \begin{itemize}
+  \item Cosmic RUns at ZEro Tesla (CRUZET), before magnet ramp up (no \pt requirements since it is not measured)
+  \item Cosmic Runs At Four Tesla (CRAFT), after the magnet ramp-up
+  \item Interfill cosmics, taken between LHC fills, with conditions similar to CRAFT
+  \item Cosmics During Collisions (CDC)
+  \end{itemize}
+\end{itemize}
+All of the tracks have a minimum \pt requirement, ranging from 1 to 5 \GeV depending on the dataset.
+
+Collisions datasets contain tracks propagating outwards from the interaction point, which correlate the modules radially.
+These datasets contain several million tracks which are essential for a full module level alignment.
+
+CMS has dedicated algorithms for the reconstruction of cosmic tracks both for commissioning and calibration.
+CRUZET and CRAFT are available for alignment before the start of LHC collisions, to provide an alignment after a shutdown period.
+Cosmic ray muons cross the whole detector, connecting modules located in the top and bottom halves.
+This is fundamental to constrain several types of systematic distortions.
