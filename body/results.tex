@@ -198,3 +198,82 @@ The p-value is usually expressed as a \textit{significance} $Z$ using the Gaussi
 \end{equation}
 
 The conventional values of $Z$ = 3$\sigma$ and $Z$ = 5$\sigma$, corresponding to p-values of $1.3 \cdot 10^{-3}$ and $2.8 \cdot 10^{-7}$, are used to claim evidence for and the discovery of a new phenomenon respectively.
+
+\section{Comparison of strategies}
+As mentioned in Sections \ref{sec:evt_photon_selection} and \ref{sec:FSR_cut},
+different approaches are used to select the photon
+and results are reported both including and excluding the FSR contribution.
+
+Additionally, several event variables are tested for the final fit to the signal strenght.
+
+The first is the invariant mass of the $\PZ\PZ\PGg$ system.
+It is expected to be higher for triboson events where the photon comes from the hard scattering than for FSR.
+Additionally, it is expected to be sensitive to Beyond Standard Model (BSM) contributions, expecially in the high-energy tail.
+
+The second variable is the transverse momentum of the photon.
+As the $\PZ\PZ\PGg$ mass, it is presumed to be sensitive to BSM physics in the high-momentum tail.
+
+The third option considered is the MVA-based ID working point passed by the photon.
+Three bins are defined:
+\begin{description}
+\item[wp80] The photon passes the \texttt{wp80} working point;
+\item[$\mathrm{wp90} \land \mathrm{!wp80}$] The photon passes \texttt{wp90}, but fails \texttt{wp80};
+\item[None] The photon fails \texttt{wp90};
+\end{description}
+The yield of the simulation is scaled in each bin according to the appropriate scale factors (see Section \ref{sec:photonID}).
+
+This section reports the results for all of the combination of the aforementioned choices of the analysis strategy.
+
+\subsection{Results including FSR}
+
+\subsubsection{Cut-based ID}
+\providecommand{\impactswidthscale}{0.6}
+The \nonprompt photon contribution is estimated using the data-driven approach.
+The variable considered is $m_{\PZ\PZ\PGg}$.
+The impacts of the systematic uncertainties on the expected results is shown in Figure \ref{fig:inclusive_cutID_phoCR_mZZGloose}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\impactswidthscale\textwidth]{Run2_SR4P_phoCR_lepCR_mZZGloose_impacts.pdf}
+  \caption{Impacts of the systematic uncertainties on the signal strength fit
+    on the mass of the $\PZ\PZ\PGg$ system,
+    using the Loose working point of the photon cut-based ID.
+    The data-driven estimate for \nonprompt photons is used.
+    The FSR cut is not applied.
+  }
+  \label{fig:inclusive_cutID_phoCR_mZZGloose}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\impactswidthscale\textwidth]{Run2_SR4P_phoMC_lepCR_loosept_impacts.pdf}
+  \caption{Impacts of the systematic uncertainties on the signal strength fit
+    on the transverse momentum of the photon,
+    using the Loose working point of the photon cut-based ID.
+    \Nonprompt photons are estimated from simulation.
+    The FSR cut is not applied.
+  }
+  \label{fig:inclusive_cutID_phoMC_loosept}
+\end{figure}
+
+\begin{table}
+  \caption{Summary of the results on the signal significance with the various strategies.}
+  \label{tab:summary_significances_inclusive}
+  \begin{tabular}{lllll}
+    \toprule
+    FSR cut                      & Photon ID                          & \nonprompt \PGg & Variable         & Significance\\
+    \midrule
+    \multirow{5}{*}{Not applied} & \multirow{2}{*}{Cut-based (Loose)} & data-driven     & $m_{\PZ\PZ\PGg}$ & X $\sigma$  \\
+                                 &                                    & simulation      & $\pt^\PGg$       & X $\sigma$  \\
+                                 & MVA (\texttt{wp90})                & simulation      & $m_{\PZ\PZ\PGg}$ & X $\sigma$  \\
+                                 & MVA (\texttt{wp80})                & simulation      & $m_{\PZ\PZ\PGg}$ & X $\sigma$  \\
+                                 & Kinematic                          & simulation      & MVA score        & X $\sigma$  \\
+    \hline
+    \multirow{5}{*}{Applied}     & \multirow{2}{*}{Cut-based (Loose)} & data-driven     & $m_{\PZ\PZ\PGg}$ & X $\sigma$  \\
+                                 &                                    & simulation      & $\pt^\PGg$       & X $\sigma$  \\
+                                 & MVA (\texttt{wp90})                & simulation      & $m_{\PZ\PZ\PGg}$ & X $\sigma$  \\
+                                 & MVA (\texttt{wp80})                & simulation      & $m_{\PZ\PZ\PGg}$ & X $\sigma$  \\
+                                 & Kinematic                          & simulation      & MVA score        & X $\sigma$  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
