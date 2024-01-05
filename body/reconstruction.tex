@@ -37,12 +37,16 @@ Electron and Muon identification criteria, energy/momentum calibrations, and eff
 \subsubsection{Electron Reconstruction}
 \label{sec:eleReco}
 \input{Objects/eleReco}
-\subsubsection{Electron Identification}
-\label{sec:eleID}
-\input{Objects/ele_MVA.tex}
 \subsubsection{Electron Impact Parameter Selection}
 \label{sec:eleSIP}
 \input{Objects/eleIP.tex}
+\subsubsection{Electron MVA}
+\label{sec:eleMVA}
+\input{Objects/ele_MVA.tex}
+\subsection{Electron Identification}
+%{Analysis selection for electrons}
+\label{sec:ele_selection}
+\input{Objects/eleID}
 %\subsubsection{Electron Isolation Optimization}
 %\label{sec:eleiso}
 %\input{Objects/eleIso}
@@ -53,16 +57,17 @@ Electron and Muon identification criteria, energy/momentum calibrations, and eff
 \note{Remove, maybe?}
 \label{sec:eleEffMeas}
 \input{Objects/eleEffMeas}
+
 \subsection{Muons}
 \subsubsection{Muon Reconstruction}
 \label{sec:muonReco}
 \input{Objects/muonReco}
-\subsubsection{Muon Identification}
-\label{sec:muonID}
-\input{Objects/muonID}
 \subsubsection{Muon Isolation}
 \label{sec:muoniso}
 \input{Objects/muonIso}
+\subsubsection{Muon Identification}
+\label{sec:muonID}
+\input{Objects/muonID}
 
 Loose muons that pass also the identification, isolation and \SIPthreeD requirements are defined \textbf{tight muons}.
 

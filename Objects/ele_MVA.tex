@@ -26,15 +26,14 @@ The full list of observables used can be found in the Table~\ref{tab:ele_ID_inpu
 \begin{table}[ht]
 \scriptsize
    \centering
-   \begin{tabular}{c|l}
-\hline
-\hline
+   \begin{tabular}{c l}
+   \toprule
 Observable type & Observable name \\
-\hline
+   \midrule
 \multirow{6}{*}{Cluster shape}
 	& RMS of the energy-crystal number spectrum along $\eta$ and $\varphi$; $\sigma_{i\eta i\eta}$, $\sigma_{i\varphi i\varphi}$ \\
 	& Super cluster width along $\eta$ and $\phi$ \\
-	& Ratio of the hadronic energy behind the electron supercluster to the supercluster energy, $H/E$ \\
+	& Ratio of the hadronic energy behind the electron SC to the supercluster energy, $H/E$ \\
 	& Circularity $(E_{5\times5} - E_{5\times1})/E_{5\times5}$ \\
 	& Sum of the seed and adjacent crystal over the super cluster energy $R_{9}$ \\
 	& For endcap training bins: energy fraction in pre-shower $E_\text{PS}/E_\text{raw}$ \\
@@ -57,8 +56,7 @@ Observable type & Observable name \\
 \hline
 \multirow{1}{*}{For PU-resilience}
    & Mean energy density in the event: $\rho$ $(\mathord{\cdot})$ \\
-\hline
-\hline
+   \bottomrule
      \end{tabular}
 \small
     \caption{Overview of input variables to the identification classifier. Variables not used in the Run 2 MVA are marked with  $(\mathord{\cdot})$.}
@@ -81,7 +79,7 @@ For the analysis, loose electrons have to pass this MVA identification and isola
 \hline
 \multicolumn{4}{|c|}{2016 Datasets}                                                                 \\
 \hline %----------------------------------------------------------------------------------------
-minimum BDT score    &  $|\eta| < 0.8 $ & $0.8 < |\eta| < 1.479$ 	& $|\eta| > 1.479$      \\
+\pt range            &  $|\eta| < 0.8 $ & $0.8 < |\eta| < 1.479$ 	& $|\eta| > 1.479$      \\
 \hline %----------------------------------------------------------------------------------------
 $ 5 < p_T < 10 $ GeV &  0.9503      & 0.9461  	& 0.9387		\\
 $p_T > 10$ GeV         &  0.3782	& 0.3587		&  -0.5745	\\
@@ -100,7 +98,7 @@ $p_T > 10$ GeV         &  0.3782	& 0.3587		&  -0.5745	\\
 \hline
 \multicolumn{4}{|c|}{2017 Datasets}                                                                 \\
 \hline %----------------------------------------------------------------------------------------
-minimum BDT score    &  $|\eta| < 0.8 $ & $0.8 < |\eta| < 1.479$ 	& $|\eta| > 1.479$      \\
+\pt range            &  $|\eta| < 0.8 $ & $0.8 < |\eta| < 1.479$ 	& $|\eta| > 1.479$      \\
 \hline %----------------------------------------------------------------------------------------
 $ 5 < p_T < 10 $ GeV &  0.8521    & 0.8268  	& 0.8694		\\
 $p_T > 10$ GeV         &  0.9825    & 0.9692	& 0.7935	\\
