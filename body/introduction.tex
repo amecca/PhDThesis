@@ -11,21 +11,23 @@ The fundamental interactions obey a local gauge symmetry, which is associated to
 The interactions are mediated by gauge bosons such as the photon, the W and Z bosons and the gluons.
 The strong interaction is governed by quantum chromodynamics (QCD), a gauge field theory based on colour symmetry group $SU(3)_C$,
 and its eight generators correspond to the gluons.
-The electroweak interaction is described by a gauge field theory that is invariant under both weak isospin $I_3$ and hypercharge $Y$,
+The electroweak interaction is described by a gauge field theory that is invariant under both weak isospin $T_3$ and hypercharge $Y$,
 corresponding to the group $U(1)_Y$ $\otimes SU(2)_T$;
 the electroweak interaction encompasses both electromagnetic and weak nuclear interactions,
 mediated by the photon and by the W$^+$, W$^-$ and Z$^0$ boson respectively,
 which come from the mixing of the generators of the two groups, as explained later in Section \ref{EWSB}.
-The fundamental bosons all have spin 1, except for the Higgs Boson, which is the only known fundamental particle with spin 0.
+The fundamental bosons all have spin 1, except for the Higgs Boson, which is the only known fundamental particle in the theory with spin 0.
 
 Matter is described in the SM by twelve fermion fields.
 All of the fundamental fermions have spin $\frac{1}{2}$ and include quarks, which constitute protons and neutrons, as well as leptons like electrons and neutrinos.
 Quarks and leptons are further divided into three generations, each with two particles with different weak isospin, for a total of twelve elementary particles, as detailed in Table \ref{tab:fermions}; each fermion has a corresponding antiparticle with the same mass and spin and opposite charges for the three gauge groups.
-Fermions belonging to different generations have different masses, which are not predicted by the model and must be determined experimentally.
+Fermions belonging to different generations have been observed to have different masses, which are not predicted by the model and must be determined experimentally.
 
-The colour charge is exclusive to quarks, that carry a colour, and anti-quarks, which carry an anti-colour, while leptons and bound states with no net colour charge are called ``white''.
-Similarly, gluons carry both a colour and an anti-colour charge, while all the other bosons are white.
-Colour charge can exist in three states, arbitrarily labelled blue, green, and red, complemented by an anti-colour, anti-blue, anti-green, and untried.
+Quarks have colour charge, anti-quarks carry anti-colour, while leptons have no net colour charge, which is called ``white'' colour.
+%% Free particles must have a net colour charge of zero due to colour confinement, which is a property of the strong interaction.
+Gluons carry both a colour and an antu-colour charge, while all the other fundamental bosons, as well as bound states of quarks and anti-quarks are white.
+
+Colour charge can exist in three states, arbitrarily labelled blue, green, and red, complemented by an anti-colour, anti-blue, anti-green, and anti-red.
 
 Only the W$^+$ and the W$^-$ bosons carry electromagnetic charge, while the others are neutral.
 Only left-handed fermions and right handed anti-fermions can be engaged in charged weak interactions, while the neutral weak interaction can involve both types, although with different couplings.
@@ -75,7 +77,16 @@ Moreover, the addition in the Lagrangian of a mass term to fermions in the form 
 
 In the SM, the Electroweak Symmetry Breaking (EWSB), through the Brout-Englert-Higgs Mechanism, shortly called Higgs Mechanism, generates mass terms for gauge bosons while preserving gauge invariance.
 The core idea is the spontaneous symmetry breaking, a concept originally elaborated in condensed matter physics.
-In 1964 Brout and Englert \cite{PhysRevLett.13.321} and Higgs \cite{PhysRevLett.13.508, HIGGS1964132}
+
+In 1964 Brout and Englert \cite{PhysRevLett.13.321} and Higgs \cite{PhysRevLett.13.508, HIGGS1964132} indepently proposed
+that the spontaneous symmetry breaking could be the solution to this conundrum.
+A new scalar complex field $\Phi$, which is an isospin doublet (with hypercharge $Y_\Phi = 1$) and a colour singlet is introduced.
+The Lagrangian of the theory, which is invariant under an original hidden symmetry, is:
+\begin{equation}
+  %% \begin{split}
+  \Lagrangian_{Higgs} = ( D^\mu \Phi )^\dagger ( D_\mu \Phi ) - V(\Phi^\dagger \Phi)\ ,\quad \Phi = \begin{pmatrix} \phi^+ \\ \phi^0 \end{pmatrix}
+  %% \end{split}
+\end{equation}
 
 The EWSB causes also a mixing of the gauge boson fields, resulting in:
 \begin{equation}
@@ -85,7 +96,9 @@ The EWSB causes also a mixing of the gauge boson fields, resulting in:
   \begin{pmatrix} \PGg \\ \PZz \end{pmatrix} &= \begin{pmatrix} \cos\theta_W & \sin\theta_W \\ -\sin\theta_W & \cos\theta_W \end{pmatrix} \begin{pmatrix} \mathrm{B} \\ \PW^3\end{pmatrix}
 \end{split}
 \end{equation}
-The only field that remains massless is the photon, while the other three become massive by interacting with three of the four components of the Higgs field $\psi$ through the Brout-Englert-Higgs Mechanism. The W mass is 80.38 \GeVcc and the Z mass is 91.19 \GeVcc \cite{Workman:2022ynf}.
+The only field that remains massless is the photon, while the other three become massive by interacting with three of the four components of the Higgs field $\psi$ through the Brout-Englert-Higgs Mechanism.
+The mass of the W and Z boson is not predicted by the theory, though a relation to them holds, and are determined experimentally.
+The W mass is approximately $80.38 \GeVcc$ and the Z mass $91.19 \GeVcc$~\cite{Workman:2022ynf}.
 From the broken symmetry a new particle emerges, corresponding to the fourth component of the Higgs field: the Higgs Boson.
 The remaining (unbroken) symmetry is $U(1)_Q \otimes SU(2)_L$.
 
@@ -93,7 +106,7 @@ Because of the mixing, the resulting electric charge of the fermions, that is th
 
 \section{Triboson production}
 \subsection{Motivations}
-While most of the phenomenology predicted by the SM has already been tested and measured with great precision, the EWSB remains partially unexplored and its study, in the near future, will be of major interest for the High Energy Physics experiments.
+While most of the phenomenology predicted by the SM has already been tested and measured with great precision, the EWSB remains partially unexplored and its study, in the near future, will be of major interest for the particle physics experiments.
 
 Due to the non-Abelian nature of the SU(2) and SU(3) groups, there are triple and quartic self-interactions between their gauge fields.
 Indeed, while expanding the Yang-Mills Lagrangian of the gauge bosons:
@@ -160,7 +173,7 @@ A few representative Feynman diagrams for triboson production are shown in Figur
   \label{fig:triboson_feynman}
 \end{figure}
 It must be noted that not all final states are possible through such diagrams, since charge must be conserved at each vertex, the Higgs boson does not directly couple with photons and no fully neutral vertex is allowed in the SM.
-This means that no contribution from QGC (Figure \ref{fig:triboson_feynman:QGC}) is present at LO for fully neutral final states such as \PZ\PZ\PZ, \PZ\PZ\PGg, \PZ\PGg\PGg.
+This means that no contribution from QGC (Figure \ref{fig:triboson_feynman:QGC}) is present at LO for fully neutral final states such as $\PZ\PZ\PZ$, $\PZ\PZ\PGg$, $\PZ\PGg\PGg$.
 
 It offers the opportunity to test the predictions of the Standard Model with unparalleled precision in a complementary way with respect to the study of the Higgs Boson.
 
@@ -169,7 +182,7 @@ although some have final states with a very low background.
 
 \begin{table}[ht]
   \centering
-  \caption{Summary of ATLAS and CMS results on triboson production.}
+  \caption{Summary of the ATLAS and CMS collaborations results on triboson production.}
   \label{tab:summary_triboson_papers}
   \renewcommand{\arraystretch}{1.5} % more space between rows in the main table
   \begin{tabular}{l l r l}
@@ -224,35 +237,35 @@ although some have final states with a very low background.
 % STDM-2018-33 & WGG           & 13 TeV & & submitted https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/STDM-2018-33
 % STDM-2019-17 & WZG           & 13 TeV & & submitted https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/STDM-2019-17
 
-Triboson production in proton-proton collisions has been observed by both the ATLAS and CMS collaborations at LHC in several channels.
+Some triboson production channels have been observed by both the ATLAS and CMS collaborations in proton-proton collisions at LHC.
 The first results were obtained during Run1 at a centre-of-mass energy of 8 TeV.
 
 % Many articles only report a fiducial cross section, so it is more difficult to compare between experiments
 % GGG
-The production of three photons, $\gamma\gamma\gamma$, was observed by ATLAS \cite{STDM-2016-06}, with a measured cross section of $72.6 \pm 6.5 \text{(stat)} \pm 9.2 \text{(syst)}~\text{fb}$.
+The production of three photons, $\gamma\gamma\gamma$, was observed by the ATLAS Collaboration \cite{STDM-2016-06}, with a measured cross section of $72.6 \pm 6.5 \text{(stat)} \pm 9.2 \text{(syst)}~\text{fb}$.
 % WGG
-Evidence for the production of $W\gamma\gamma$ was found by ATLAS \cite{STDM-2013-05} measuring a cross-section of $6.1^{+1.1}_{-1.0} \text{(stat)} \pm 1.2 \text{(syst)} \pm 0.2 \text{(lumi)}~\text{fb}$ for the leptonic channel,
-while CMS \cite{SMP-15-008} measured $4.9 \pm 1.4 \text{(stat)} \pm 1.6 \text{(syst)} \pm 0.1 \text{(lumi)}~\text{fb}$.
+Evidence for the production of $W\gamma\gamma$ was found by the ATLAS Collaboration \cite{STDM-2013-05} measuring a cross-section of $6.1^{+1.1}_{-1.0} \text{(stat)} \pm 1.2 \text{(syst)} \pm 0.2 \text{(lumi)}~\text{fb}$ for the leptonic channel,
+while the CMS Collaboration \cite{SMP-15-008} measured $4.9 \pm 1.4 \text{(stat)} \pm 1.6 \text{(syst)} \pm 0.1 \text{(lumi)}~\text{fb}$.
 % ZGG
-Both ATLAS \cite{STDM-2014-01} and CMS \cite{SMP-15-008} observed $ZZ\gamma$, measuring fiducial cross sections of
+Both the ATLAS \cite{STDM-2014-01} and CMS collaborations \cite{SMP-15-008} observed $ZZ\gamma$, measuring fiducial cross sections of
 $6.2^{+1.2}_{-1.1} \text{(stat)} \pm 0.4 \text{(syst)} \pm 0.1 \text{(lumi)}~\text{fb}$ for the former,
 and $12.4 \pm 1.4 \text{(stat)} \pm 1.8 \text{(syst)} \pm 0.3 \text{(lumi)}~\text{fb}$ for the latter for the leptonic decay of the Z boson.
 % WWG
-ATLAS failed to found evidence for $WW\gamma$ \cite{STDM-2016-05}, but measured $\sigma(pp \rightarrow e\nu \mu\nu \gamma) = 1.5 \pm 0.9 \text{(stat)} \pm 0.5 \text{(syst)}~\text{fb}$.
+The ATLAS Collaboration studied the $WW\gamma$ \cite{STDM-2016-05}, measuring the inclusive cross section $\sigma(pp \rightarrow e\nu \mu\nu \gamma) = 1.5 \pm 0.9 \text{(stat)} \pm 0.5 \text{(syst)}~\text{fb}$, at 1.4 $\sigma$ level.
 % WWW
-Similarly, ATLAS set an upper limit of 730 fb \cite{STDM-2015-07} on the cross section of $W^{\pm}W^{\pm}W^{\mp}$ at 95 \% confidence level.
+Similarly, the ATLAS Collaboration set an upper limit of 730 fb \cite{STDM-2015-07} on the cross section of $W^{\pm}W^{\pm}W^{\mp}$ at 95 \% confidence level.
 % by considering two decay channels, the fully leptonic $W^{\pm}W^{\pm}W^{\mp} \rightarrow \ell^{\pm} \nu \ell^{\pm} \nu \ell^{\mp} \nu$
 % and the the semileptonic $W^{\pm}W^{\pm}W^{\mp} \rightarrow \ell^{\pm} \nu \ell^{\pm} \nu j j$.
 
-In Run2, with more statistics and also the higher centre-of-mass energy of 13 TeV, more channels became accessible.
+In Run2, with more data avaliable, and also the higher centre-of-mass energy of 13 TeV, more channels became accessible.
 % WGG
-CMS found evidence for $W^\pm\gamma\gamma$ \cite{SMP-19-013} and measured a fiducial cross section of
+The CMS Collaboration found evidence for $W^\pm\gamma\gamma$ \cite{SMP-19-013} and measured a fiducial cross section of
 $13.6^{+1.9}_{-1.9} \text{(stat)} {}^{+4.0}_{-4.0} \text{(syst)} \pm 0.08 \text{(PDF + scale)}~\text{fb}$.
 % ZGG
-ATLAS observed $Z\gamma\gamma$ \cite{STDM-2021-09} and measured the fiducial cross section $\sigma_{Z(\rightarrow \ell\ell)\gamma\gamma} = 2.45 \pm 0.20 \text{(stat)} \pm 0.22 \text{(syst)} \pm 0.04 \text{(lumi)}~\text{fb}$,
-while CMS found evidence for the process \cite{SMP-19-013} and measured $5.41^{+0.58}_{-0.55} \text{(stat)} {}^{+0.64}_{-0.70} \text{(syst)} \pm 0.06 \text{(PDF + scale)}~\text{fb}$.
+The ATLAS Collaboration observed $Z\gamma\gamma$ \cite{STDM-2021-09} and measured the fiducial cross section $\sigma_{Z(\rightarrow \ell\ell)\gamma\gamma} = 2.45 \pm 0.20 \text{(stat)} \pm 0.22 \text{(syst)} \pm 0.04 \text{(lumi)}~\text{fb}$,
+while the CMS Collaboration found evidence for the same process \cite{SMP-19-013} and measured $5.41^{+0.58}_{-0.55} \text{(stat)} {}^{+0.64}_{-0.70} \text{(syst)} \pm 0.06 \text{(PDF + scale)}~\text{fb}$.
 % VVV
-ATLAS found evidence \cite{STDM-2017-22} and CMS observed \cite{SMP-19-014} the production of three massive vector bosons by combining multiple channels.
+The ATLAS Collaboration found evidence \cite{STDM-2017-22} and the CMS Collaboration observed \cite{SMP-19-014} the production of three massive vector bosons by combining multiple channels.
 The former analysis considered $WWW$ and $WWZ$, finding evidence also for the two process separately and measuring inclusive cross sections
 $\sigma_{WWW} = 0.65^{+0.16}_{-0.15} \text{(stat)} {}^{+0.16}_{-0.14} \text{(syst)}~\text{fb}$ and
 $\sigma_{WWZ} = 0.55 \pm 0.14 \text{(stat)} {}^{+0.15}_{-0.13} \text{(syst)}~\text{fb}$ respectively.
@@ -264,7 +277,9 @@ while for $WZZ$ the significance was lower than 3 standard deviations with a mea
 $\sigma_{WZZ} = 200 ^{+160}_{-110} \text{(stat)} {}^{+70}_{-20 } \text{(syst)}~\text{fb}$,
 and for $ZZZ$ only an upper limit of $\sigma_{ZZZ} < 200~\text{fb}$ at 95 \% CL could be placed.
 % WWW
-In another paper, ATLAS observed $WWW$ production \cite{HDBS-2019-16}, with a small excess, measuring an inclusive cross-section of $820 \pm 100 \text{(stat)} \pm 80 \text{(syst)}~\text{fb}$.
+In another paper, the ATLAS Collaboration presented the observation of $WWW$ production \cite{HDBS-2019-16},
+measuring an inclusive cross-section of $820 \pm 100 \text{(stat)} \pm 80 \text{(syst)}~\text{fb}$,
+with an excess approximately 2.6 standard deviations from the predicted cross section of $511 \pm 18~\text{fb}$ calculated at next-to-leading-order QCD and leading-order electroweak accuracy.
 
 The strategy for the measurement of three yet unexplored channels of triboson production will be described in this thesis.
 
@@ -300,15 +315,15 @@ In Table \ref{tab:VB-BR} the branching ratios (BR) of W and Z are reported.
 \end{table}
 
 Hadronic branching ratios are much greater than the leptonic ones: the hadronic BR for the W boson is three times the one containing at least an electron or a muon, while for Z it is 10 times larger.
-Triboson production is an extremely rare process, as highlighted by the cross sections reported in Table \ref{tab:xsection-inclusive}.
+Triboson production in the $\PZ\PZ\PGg$ and $\PZ\PW\PGg$ channels is an extremely rare process, as highlighted by the cross sections reported in Table \ref{tab:xsection-inclusive}.
 On one hand we would like to use the decays with larger BR, but on the other hand with a clean fully leptonic final state it would be easier to separate the signal from the background.
 However, the small BR (V $\rightarrow$ leptons) translates into very low production and decay cross section of $\PZ\PZ\PGg$ and $\PW\PZ\PGg$ into leptons (Table \ref{tab:xsection-exclusive}).
-In addition the leptonic decay of a W boson produces a charged lepton and a neutrino, but the latter cannot be detected in any current particle collider experiment.
+In addition the leptonic decay of a W boson produces a charged lepton and a neutrino, but the latter cannot be detected directly neither in CMS nor in ATLAS.
 Its presence may only be deduced from the existence of an unbalance in the sum in the transverse plane of the momenta of all the particles coming from a collision,
-called ``missing transverse momentum'' ($\overrightarrow{\slashed{p}_T}$), ``missing transverse energy'', or sometimes just ``missing energy'' ($\slashed{E}_T$), abbreviated as MET.
-Since the measurement of the MET is by its nature indirect, the errors associated with it are higher than for every other reconstructed entity.
+called ``missing transverse momentum'' (\ptmiss), ``missing transverse energy'', or sometimes just ``missing energy'' (\ETmiss), abbreviated as MET.
+Since the measurement of the \ptmiss is by its nature indirect, the errors associated with it are higher than for every other reconstructed entity.
 As a result, searches for leptonic decays of \PW bosons suffer from the increased complexity of its reconstruction, especially in the case of two {\PW}s.
-Additionally, MET is present in many different processes besides triboson production, which results in increased background.
+Additionally, \ptmiss is present in many different processes besides triboson production, which results in increased background.
 
 In this analysis three channels are considered, with 4, 3, and 2 charged leptons (electrons or muons) in the final state, corresponding to
 $pp \rightarrow \PZ\PZ\PGg \rightarrow 4\Pl \PGg$,
@@ -348,7 +363,7 @@ respectively.
 
 The quarks coming from the decay of the bosons hadronize in timescales comparable to 10$^\text{-15}$ s, producing a spray of particles known as a jet.
 The reconstruction and identification of such objects is explained in detail in Section \ref{sec:jets}.
-The main drawback of the hadronic channels is that, in an hadron collider, jets are produced with a much higher frequency than leptons,
+The main drawback of the hadronic channels is that, in a hadron collider, jets are produced with a much higher frequency than leptons,
 both as initial/final state radiation, higher order QCD corrections, and by pile-up events,
 which translates into a much higher number of background events.
 The precise reconstruction of jet properties is also more difficult, and it is not possible to distinguish the flavour of the light quark that originated a jet,
@@ -356,7 +371,7 @@ and thus separating a Z from a W becomes a very challenging task, compared to le
 
 Figure \ref{fig:triboson_feynman_finalstate} shows three illustrative Feynman diagrams for each of the three channels.
 It is worth noting that in the Standard Model the $\PW\PZ\PGg$ (regardless of the decay of the \PW and \PZ) production
-has a leading order contribution from triple and quartic gauge couplings,
+has a leading order (perturbative expansion up to $\alpha_{EW}^6$) contribution from triple and quartic gauge couplings,
 while that is not the case for $\PZ\PZ\PGg$, due to the absence of neutral TGC and QGC.
 
 \begin{figure}[th]
@@ -364,6 +379,6 @@ while that is not the case for $\PZ\PZ\PGg$, due to the absence of neutral TGC a
   \subfigure[] {\includegraphics[width=.32\linewidth]{triboson_4LG.pdf}}
   \subfigure[] {\includegraphics[width=.32\linewidth]{triboson_3LNuG.pdf}}
   \subfigure[] {\includegraphics[width=.32\linewidth]{triboson_2L2jG.pdf}}
-  \caption{Representative Feynman diagrams for the production of three vector bosons with a photon and 4, 3 or 2 charged lepton in the final state.}
+  \caption{Representative Feynman diagrams for the production of three vector bosons with a photon and 4, 3 or 2 charged leptons in the final state.}
   \label{fig:triboson_feynman_finalstate}
 \end{figure}
