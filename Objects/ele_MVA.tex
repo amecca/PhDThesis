@@ -1,7 +1,10 @@
-The electron selection is based on a multivariate discriminant for all data taking periods.
-Reconstructed electrons are identified and isolated by means of a Gradient Boosted Decision Tree (GBDT) multivariate classifier algorithm, which exploits observables from the electromagnetic cluster, the matching between the cluster and the electron track, observables based exclusively on tracking measurements as well as particle flow isolation sums.
+Reconstructed electrons are identified and isolated by means of a Gradient Boosted Decision Tree (GBDT) multivariate classifier algorithm,
+\todo{Ref}
+which exploits observables from the electromagnetic cluster, the matching between the cluster and the electron track, observables based exclusively on tracking measurements as well as particle flow isolation sums.
 
-The classifier is trained with the e\textbf{X}treme \textbf{G}radient \textbf{Boost}ing (XGBoost) optimized distributed gradient boosting library designed to be highly efficient, flexible and portable.
+The classifier is trained with the e\textbf{X}treme \textbf{G}radient \textbf{Boost}ing (XGBoost) optimized distributed gradient boosting library
+\todo{Ref}
+designed to be highly efficient, flexible and portable.
 
 The relative isolation for electrons is defined as: 
 \begin{equation}
@@ -24,96 +27,86 @@ between the slope of the average isolation and that of $\rho$ as a function of t
 The full list of observables used can be found in the Table~\ref{tab:ele_ID_input_variables}.
 
 \begin{table}[ht]
-\scriptsize
-   \centering
-   \begin{tabular}{c l}
-   \toprule
-Observable type & Observable name \\
-   \midrule
-\multirow{6}{*}{Cluster shape}
-	& RMS of the energy-crystal number spectrum along $\eta$ and $\varphi$; $\sigma_{i\eta i\eta}$, $\sigma_{i\varphi i\varphi}$ \\
-	& Super cluster width along $\eta$ and $\phi$ \\
-	& Ratio of the hadronic energy behind the electron SC to the supercluster energy, $H/E$ \\
-	& Circularity $(E_{5\times5} - E_{5\times1})/E_{5\times5}$ \\
-	& Sum of the seed and adjacent crystal over the super cluster energy $R_{9}$ \\
-	& For endcap training bins: energy fraction in pre-shower $E_\text{PS}/E_\text{raw}$ \\
-\hline
-\multirow{2}{*}{Track-cluster matching}
-	& Energy-momentum agreement $E_{tot}/p_{in}$, $E_{ele}/p_{out}$, $1/E_{tot} - 1/p_{in}$ \\
-	& Position matching $\Delta\eta_{in}$, $\Delta\varphi_{in}$, $\Delta\eta_{seed}$ \\
-\hline
-\multirow{5}{*}{tracking}
-   & Fractional momentum loss $f_{brem} = 1 - p_{out}/p_{in}$ \\
-   & Number of hits of the KF and GSF track $N_{KF}$, $N_{GSF}$ $(\mathord{\cdot})$ \\
-   & Reduced $\chi^2$ of the KF and GSF track $\chi^{2}_{KF}$, $\chi^{2}_{\textrm{GSF}}$ \\
-   & Number of expected but missing inner hits $(\mathord{\cdot})$ \\
-   & Probability transform of conversion vertex fit $\chi^2$ $(\mathord{\cdot})$ \\
-\hline
-\multirow{3}{*}{isolation}
-   & Particle Flow photon isolation sum $(\mathord{\cdot})$ \\
-   & Particle Flow charged hadrons isolation sum $(\mathord{\cdot})$ \\
-   & Particle Flow neutral hadrons isolation sum $(\mathord{\cdot})$ \\
-\hline
-\multirow{1}{*}{For PU-resilience}
-   & Mean energy density in the event: $\rho$ $(\mathord{\cdot})$ \\
-   \bottomrule
-     \end{tabular}
-\small
-    \caption{Overview of input variables to the identification classifier. Variables not used in the Run 2 MVA are marked with  $(\mathord{\cdot})$.}
-    \label{tab:ele_ID_input_variables}
+  \caption{Overview of input variables to the identification classifier. Variables not used in the Run 2 MVA are marked with  $(\mathord{\cdot})$.}
+  \label{tab:ele_ID_input_variables}
+  \small
+  \centering
+  \begin{tabular}{c l}
+    \toprule
+    Observable type & Observable name \\
+    \midrule
+    \multirow{6}{*}{Cluster shape}
+      & RMS of the energy-crystal number spectrum: $\sigma_{i\eta i\eta}$, $\sigma_{i\varphi i\varphi}$ \\
+      & Super cluster width along $\eta$ and $\phi$ \\
+      & Ratio of the hadronic energy behind the SC to the SC energy, $H/E$ \\
+      & Circularity $(E_{5\times5} - E_{5\times1})/E_{5\times5}$ \\
+      & Sum of the seed and adjacent crystal over the SC energy $R_{9}$ \\
+      & For endcap training bins: energy fraction in pre-shower $E_\text{PS}/E_\text{raw}$ \\
+    \hline
+    \multirow{2}{*}{Track-cluster match}
+      & Energy-momentum agreement $E_{tot}/p_{in}$, $E_{ele}/p_{out}$, $1/E_{tot} - 1/p_{in}$ \\
+      & Position matching $\Delta\eta_{in}$, $\Delta\varphi_{in}$, $\Delta\eta_{seed}$ \\
+    \hline
+    \multirow{5}{*}{Tracking}
+      & Fractional momentum loss $f_{brem} = 1 - p_{out}/p_{in}$ \\
+      & Number of hits of the KF and GSF track $N_{KF}$, $N_{GSF}$ $(\mathord{\cdot})$ \\
+      & Reduced $\chi^2$ of the KF and GSF track $\chi^{2}_{KF}$, $\chi^{2}_{\textrm{GSF}}$ \\
+      & Number of expected but missing inner hits $(\mathord{\cdot})$ \\
+      & Probability transform of conversion vertex fit $\chi^2$ $(\mathord{\cdot})$ \\
+    \hline
+    \multirow{3}{*}{Isolation}
+      & Particle Flow photon isolation sum $(\mathord{\cdot})$ \\
+      & Particle Flow charged hadrons isolation sum $(\mathord{\cdot})$ \\
+      & Particle Flow neutral hadrons isolation sum $(\mathord{\cdot})$ \\
+    \hline
+    \multirow{1}{*}{For PU-resilience}
+      & Mean energy density in the event: $\rho$ $(\mathord{\cdot})$ \\
+    \bottomrule
+  \end{tabular}
 \end{table}
 
 
 The model is trained on 2016, 2017, and 2018 Drell-Yan with jets MC sample for both signal and background. The separate training for three periods guarantees
-optimal performance during the whole Run 2 data taking period.
+optimal performance during the entire \RunII data taking period.
 
 
-Tables~\ref{tab:ele_ID_WPA},~\ref{tab:ele_ID_WPB} and ~\ref{tab:ele_ID_WPC} list the cuts values applied to the MVA output for 2016, 2017, 2018 training, respectively. For 2018, the corresponding signal and background efficiencies are given as examples.They are very similar for 2016 and 2017.
+Tables~\ref{tab:ele_ID_WPA}, \ref{tab:ele_ID_WPB} and~\ref{tab:ele_ID_WPC} list the cuts values applied to the MVA output for 2016, 2017, 2018 training, respectively.
+For 2018, the corresponding signal and background efficiencies are given as examples.
+They are very similar for 2016 and 2017.
 
 For the analysis, loose electrons have to pass this MVA identification and isolation working point.
 
 \begin{table}[ht]
-%\scriptsize
-    \centering
-    \begin{tabular}{c|c c c}
-\hline
-\multicolumn{4}{|c|}{2016 Datasets}                                                                 \\
-\hline %----------------------------------------------------------------------------------------
-\pt range            &  $|\eta| < 0.8 $ & $0.8 < |\eta| < 1.479$ 	& $|\eta| > 1.479$      \\
-\hline %----------------------------------------------------------------------------------------
-$ 5 < p_T < 10 $ GeV &  0.9503      & 0.9461  	& 0.9387		\\
-$p_T > 10$ GeV         &  0.3782	& 0.3587		&  -0.5745	\\
-\hline %----------------------------------------------------------------------------------------
-\hline %----------------------------------------------------------------------------------------
-     \end{tabular}
-\small
-    \caption{Minimum BDT score required for passing the electron identification, for 2016 samples.}% \textbf{FIXME: WP to be defined!}}
-    \label{tab:ele_ID_WPA}
+  \caption{Minimum BDT score required for passing the electron identification, for 2016 samples.}% \textbf{FIXME: WP to be defined!}}
+  \label{tab:ele_ID_WPA}
+  \centering
+  \begin{tabular}{c c c c}
+    \toprule    %----------------------------------------------------------------------------------------
+    \pt range           & $|\eta| < 0.8$ & $0.8 < |\eta| < 1.479$ & $|\eta| > 1.479$ \\
+    \midrule    %----------------------------------------------------------------------------------------
+    $5 < \pt < 10 \GeV$ &  0.9503        &  0.9461                &  0.9387 \\
+    $\pt > 10 \GeV$     &  0.3782        &  0.3587                & -0.5745 \\
+    \bottomrule %----------------------------------------------------------------------------------------
+  \end{tabular}
 \end{table}
 
 \begin{table}[ht]
-%\scriptsize
-    \centering
-    \begin{tabular}{c|c c c}
-\hline
-\multicolumn{4}{|c|}{2017 Datasets}                                                                 \\
-\hline %----------------------------------------------------------------------------------------
-\pt range            &  $|\eta| < 0.8 $ & $0.8 < |\eta| < 1.479$ 	& $|\eta| > 1.479$      \\
-\hline %----------------------------------------------------------------------------------------
-$ 5 < p_T < 10 $ GeV &  0.8521    & 0.8268  	& 0.8694		\\
-$p_T > 10$ GeV         &  0.9825    & 0.9692	& 0.7935	\\
-\hline %----------------------------------------------------------------------------------------
-\hline %----------------------------------------------------------------------------------------
-     \end{tabular}
-\small
-    \caption{Minimum BDT score required for passing the electron identification, for 2017 samples.}% \textbf{FIXME: WP to be defined!}}
-    \label{tab:ele_ID_WPB}
+  \caption{Minimum BDT score required for passing the electron identification, for 2017 samples.}% \textbf{FIXME: WP to be defined!}}
+  \label{tab:ele_ID_WPB}
+  \centering
+  \begin{tabular}{c c c c}
+    \toprule    %----------------------------------------------------------------------------------------
+    \pt range           & $|\eta| < 0.8$ & $0.8 < |\eta| < 1.479$ & $|\eta| > 1.479$ \\
+    \midrule    %----------------------------------------------------------------------------------------
+    $5 < \pt < 10 \GeV$ &  0.8521        &  0.8268                & 0.8694 \\
+    $\pt > 10 \GeV$     &  0.9825        &  0.9692                & 0.7935 \\
+    \bottomrule %----------------------------------------------------------------------------------------
+  \end{tabular}
 \end{table}
 
 \begin{table}[ht]
-%\scriptsize
-    \centering
-    \begin{tabular}{|c|c c c}
+  \centering
+  \begin{tabular}{|c|c c c}
 %\multicolumn{4}{|c|}{Datasets}                                                                 \\
 %\hline %----------------------------------------------------------------------------------------
 \cline{2-4}
@@ -123,7 +116,7 @@ $p_T > 10$ GeV         &  0.9825    & 0.9692	& 0.7935	\\
 \hline %----------------------------------------------------------------------------------------
 $ 5 < p_T < 10 $ GeV              & 0.8956                        & 81.04\%            &  \multicolumn{1}{c|}{4.4\%}  \\
 \hline %----------------------------------------------------------------------------------------
- $p_T > 10$ GeV                     &  0.0424	           	     & 97.1\%		&  \multicolumn{1}{c|}{2.9\%}		\\
+ $p_T > 10$ GeV                     &  0.0424                & 97.1\%  &  \multicolumn{1}{c|}{2.9\%} \\
 \hline %----------------------------------------------------------------------------------------
 \cline{2-4}
   \multicolumn{1}{ c|}{}             & \multicolumn{3}{|c|}{$0.8 < |\eta| < 1.479$}                        \\
@@ -132,7 +125,7 @@ $ 5 < p_T < 10 $ GeV              & 0.8956                        & 81.04\%     
 \hline  %----------------------------------------------------------------------------------------
 $ 5 < p_T < 10 $ GeV              & 0.9111                     & 79.3\%           &  \multicolumn{1}{c|}{4.6\%}     \\
 \hline %----------------------------------------------------------------------------------------
-$p_T > 10$ GeV                      &  0.0047		         & 96.3\%	  &  \multicolumn{1}{c|}{3.6\%}		\\
+$p_T > 10$ GeV                      &  0.0047         & 96.3\%  &  \multicolumn{1}{c|}{3.6\%} \\
 \hline %----------------------------------------------------------------------------------------
 
 \cline{2-4}
@@ -142,7 +135,7 @@ $p_T > 10$ GeV                      &  0.0047		         & 96.3\%	  &  \multicolu
 \hline  %----------------------------------------------------------------------------------------
 $ 5 < p_T < 10 $ GeV              & 0.9401                     & 72.97\%    &  \multicolumn{1}{c|}{3.6\%}     \\
 \hline %----------------------------------------------------------------------------------------
-$p_T > 10$ GeV                      & -0.6042		   & 95.7\%      &  \multicolumn{1}{c|}{6.7\%}		\\
+$p_T > 10$ GeV                      & -0.6042   & 95.7\%      &  \multicolumn{1}{c|}{6.7\%} \\
 \hline %----------------------------------------------------------------------------------------
 
      \end{tabular}
