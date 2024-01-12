@@ -26,32 +26,47 @@ In particular, \antikt sets $p = -1$, which results in and infrared and collinea
 meaning that soft emissions do not result in irregularities in the boundaries of the resulting jets.
 
 In this analysis, two possible valued of the distance parameter of \antikt are considered: $R = 0.4$ and $R = 0.8$.
-Jets are reconstucted after removing charged hadrons that are associated to a pileup primary verted from the Particle Flow candidates.
+Jets are reconstructed from the Particle Flow candidates after removing charged hadrons that are associated to a pileup primary vertex.
 
 \subsubsection{Jet Identification}
 \label{sec:jet_ID}
 In order to assure a good reconstruction efficiency, identification quality criteria are imposed on jets based on
 the energy fraction of the charged, electromagnetic, and neutral hadronic components \cite{CMS-PAS-JME-16-003}.
 
-To reduce instrumental background, the tight working point jet ID suggested by
-a dedicated group of experts within CMS is applied \todo{add ref and rephrase}.
-%% the JetMET Physics Object Group is applied.%~\cite{JetID2018}.
-In addition, jets from Pile-Up are rejected using the PileUp jet ID criteria.% suggested by the JetMET POG.%~\cite{JetPUID2017}.
-It is to be noted that the PU JetID was only derived for 2016 conditions but is also applied to 2017 and 2018 samples. 
+To reduce instrumental background, the jet ID described in Table \ref{tab:JetID2018} is used.
 
-In this analysis, the jets are required to be within $|\eta| < 4.7$ area and have a transverse momentum above 30 \GeV. 
-In addition, the jets are cleaned from any of the tight leptons (passing the SIP and isolation cut computed after FSR correction) 
-and FSR photons by a separation criterion: $\Delta R(\text{jet,lepton/photon}) > 0.4$.
+\begin{table}
+  \caption{Jet identification criteria used in \RunII with thresholds used for 2018 data.}
+  \label{tab:JetID2018}
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{l c c c c}
+    \toprule
+    Variable                    & $|\eta| \le 2.6$ & $2.6 < |\eta| \le 2.7$ & $2.7 < |\eta| \le 3.0$ & $3.0 < |\eta| \le 5.0$\\
+    \midrule
+    Neutral Hadron Fraction     & < 0.90           & < 0.90                 & -                      & > 0.2                 \\
+    Neutral EM Fraction         & < 0.90           & < 0.99                 & $<0.99\ \land\,>0.02$  & < 0.9                 \\
+    Number of Constituents      & > 1              & -                      & -                      & -                     \\
+    Muon Fraction               & < 0.80           & < 0.80                 & -                      & -                     \\
+    Charged Hadron Fraction     & > 0              & -                      & -                      & -                     \\
+    Charged Multiplicity        & > 0              & > 0                    & -                      & -                     \\
+    Charged EM Fraction         & < 0.80           & < 0.80                 & -                      & -                     \\
+    Number of Neutral Particles & -                & -                      & > 2                    & > 10                  \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
 
-The identification of jets originated by the hadronization of heavy-flavour quarks is achieved thorugh the DeepFlavour tagger \cite{Guest_2016, Sirunyan_2018}.
-It uses a deep neural network with input variables from up to six tracks from each jet, information on secondary vertices and on the jet iself (such as the energy and total number of tracks).
+In this analysis, the jets are required to be within $|\eta| < 4.7$ and to have a transverse momentum above 30\GeV.
+
+The identification of jets originated by the hadronization of heavy-flavour quarks is achieved through the DeepFlavour tagger \cite{Guest_2016, Sirunyan_2018}.
+It uses a deep neural network with input variables from up to six tracks from each jet, information on secondary vertices and on the jet itself (such as the energy and total number of tracks).
 It assigns five probabilities to each jet, namely to contain only one \PQb hadron, two or more \PQb hadrons, exactly one \PQc hadron, at least two \PQc and no \PQb hadrons, or none of the above.
 In this analysis there is the need to exclude events containing top quarks, since their decay $\PQt \to [\PW \to \Pl\PGn] \PQb$ produces additional charged leptons which may lower the purity of the signal regions.
 Thus the need to identify jets induced by the hadronization of \PQb quarks, which is achieved by summing the probabilities of the first two categories.
 Working points are defined for this ID, as shown in Table \ref{tab:DeepFlavourBtagWP}.
 
 \begin{table}
-  \caption{Working points of the combined b-tag with the DeepFlavour classifier and the corresponding misidentification probability, as provided by CMS b-tagging group.}
+  \caption{Working points of the combined b-tag with the DeepFlavour classifier and the corresponding misidentification probability.}
   \label{tab:DeepFlavourBtagWP}
   \centering
   \begin{tabular}{l c c}
@@ -73,35 +88,29 @@ The PF jet collection contains jets clustered with \antikt on all the particles 
 This means that isolated and energetic leptons and photons, which are part of the signal definition,
 are likely to be in the core of a jet due to the nature of the algorithm.
 Therefore a disambiguation strategy is needed, to avoid double counting entities.
-Jets are removed if they match within $\DR < 0.2$ a photon passing the kinematic selection (Section \todo{ref}),
-or a lepton passing the Loose ID.
+In addition, the jets are cleaned from any of the leptons passing the Loose ID
+and photons, either FSR associated to a lepton or candidates passing the kinematic selection (Section \ref{sec:photonID}),
+by a separation criterion: $\Delta R(\text{jet,lepton/photon}) > 0.4$.
 
 \subsubsection{Jet Energy Corrections}
 
 The calorimeter response to particles is not linear and it is not straightforward to translate the measured jet energy
 to the true particle or parton energy, therefore Jet Energy Corrections (JEC) must be applied.
-In this analysis, standard jet energy corrections are applied to the reconstructed jets, which account for pileup,
+In this analysis, jet energy corrections are applied to the reconstructed jets, which account for pileup,
 non uniformity of detector response, and residual differences between the jet energy scale between data and simulation, and residual calibration for data
 \cite{CMS:JEC_2011, CMS-DP-2016-020, CMS-DP-2021-033}.
-The corrections, parametrized as function of \pt and $\eta$ of the jets, are applied following the standard procedure recommended by CMS jet experts.
-
-\paragraph{Removal of noisy jets\\}
-Increased jet multiplicity was reported for 2017 data, creating ``horns'' in the jet $\eta$ distribution for $2.5<|\eta_{jet}|<3$.
-The issue was linked to an increase of the ECAL noise, PU and bunch-crossing dependent, thus getting worse as luminosity increases.
-The problem can only be fixed in the UL ReReco.
-For now, we checked the impact of rejecting jets with raw $\pt < 50 \GeV$ in $2.65 <|\eta| < 3.139$.
-As we see no significant impact in the data/MC agreement, we decided not to use these cuts.
+The corrections, parametrised as function of \pt and $\eta$ of the jets, are applied following the standard procedure used by most of the CMS analyses.
 
 \subsubsection{L1 prefiring}
 
 In 2016 and 2017, the gradual timing shift of ECAL was not properly propagated to \Lone trigger primitives (TP)
 resulting in a significant fraction of high eta TP being mistakenly associated to the previous bunch crossing~\cite{CMS:L1trigger_Run2}.
-Since \Lone trigger rules forbid two consecutive bunch crossings to fire, an unfortunate consequence of this,
+Since \Lone trigger rules forbid two consecutive bunch crossings to fire,
 in addition to missing the trigger primitive in the correct bunch crossing,
-is that events can self veto if a significant amount of ECAL energy is found in the region of $2<|\eta|<3$.
+events can self veto if a significant amount of ECAL energy is found in the region of $2<|\eta|<3$.
 This effect is not described by the simulations.
 
-A similar effect is present in the muon system, where the BX assignment of the muon candidates can be wrong due to the limited time resolution of the muon detectors.
+A similar effect is present in the muon system, where the bunch crossing assignment of the muon candidates can be wrong due to the limited time resolution of the muon detectors.
 This effect was most pronounced in 2016, but is non-zero for both 2017 and 2018.
 The associated prefiring rate is stable for $\pt > 25 \GeV$ but affects the almost entire eta range.
 Its magnitude varies between 0\% and a 3\%.
@@ -114,7 +123,7 @@ w^{pref} = 1 - \Probability(prefire) = \prod_{i\, \in\, \PGg,\, jets,\, \PGm} (1
 \end{equation}
 
 The Figure~\ref{fig:L1Prefiring} shows the impact of the L1 pre-firing weights on the signal MC.
-The impact on the normalization of the signal is around 0.8\%.
+The impact on the normalisation of the signal is around 0.8\%.
 
 \begin{figure}
 \subfigure [L1 pre-firing weights]       {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{Figures/L1Prefiring_ZZGTo4LG.png}}}

@@ -64,7 +64,7 @@ the $\rho$ corrections are shown in Figure~\ref{fig:Iph_CR2P2F} for photons in t
 \subfigure [Barrel] {\includegraphics[width=.5\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_phIso_EB_pow.pdf}}%
 \subfigure [Endcap] {\includegraphics[width=.5\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_phIso_EE_pow.pdf}}
 \caption{The PF photon isolation ($I_\PGg$), before the $\rho$ correction, in a cone defined by $\DR = 0.3$ for photons in the EB (left) and in the EE (right).
-The events belong to the leptonic control region CR2P2F.
+The events belong to the leptonic control region CR2P2F (see Section \ref{sec:fake_leptons}).
 The lower panels display the ratio of the data to the simulation.}
 \label{fig:Iph_CR2P2F}
 \end{figure}
@@ -99,7 +99,7 @@ The distributions of \sieie are shown in Figure \ref{fig:sieie_CR2P2F} for photo
 \subfigure [Barrel] {\includegraphics[width=.5\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_sieie_EB_pow.pdf}}%
 \subfigure [Endcap] {\includegraphics[width=.5\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_sieie_EE_pow.pdf}}
 \caption{Distribution of \sieie for photons in the EB (left) and in the EE (right).
-The events belong to the leptonic control region CR2P2F.
+The events belong to the leptonic control region CR2P2F (see Section \ref{sec:fake_leptons}).
 The lower panels display the ratio of the data to the simulation.}
 \label{fig:sieie_CR2P2F}
 \end{figure}
@@ -111,8 +111,8 @@ to the total energy of the supercluster.
 \paragraph{Cut-based ID\\}
 The cut-based photon ID~\cite{CMS:EGM-17-001} uses 5 variables: $H/E$, \sieie, $I_{ch}^{corr}$, $I_{n} ^{corr}$ and $I_{\PGg} ^{corr}$.
 The Loose working point, shown in Table~\ref{tab:VPhotonID}, is selected for this analysis.
-It provides 90\,\% efficiency on signal photons with 86\,\% (77\,\%) background rejection in the Barrel (Endcap), as tested by CMS experts.
-The efficiency in data is well modeled in simulation, and the ratio between the two, shown in Figure \ref{fig:phEffSF}, is within 5\,\% from unity.
+It provides 90\,\% efficiency on signal photons with 86\,\% (77\,\%) background rejection in the Barrel (Endcap).
+The efficiency in data is well modelled in simulation, and the ratio between the two, shown in Figure \ref{fig:phEffSF}, is within 5\,\% from unity.
 This ratio is referred as Scale Factor (SF), and is applied to simulation to correct for the residual mismodelling and avoid biasing the results.
 
 \begin{table}
@@ -139,7 +139,7 @@ This ratio is referred as Scale Factor (SF), and is applied to simulation to cor
   \subfigure [2016postVFP] {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2016postVFP.pdf}}}\\
   \subfigure [2017]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2017.pdf}}}
   \subfigure [2018]        {\resizebox{.5\textwidth}{!}{\includegraphics[width=.5\textwidth]{SF/phEffSF_2018.pdf}}}
-  \caption{Photon efficiency scale factors for the POG cut-based Loose ID.}
+  \caption{Photon efficiency scale factors for the cut-based Loose ID.}
   \label{fig:phEffSF}
 \end{figure}
 
@@ -171,14 +171,14 @@ Besides the identification working points, an electron veto selection (CSEV veto
 %\end{figure}
 
 \paragraph{Multivariate ID\\}
-A more sophisticated photon identification strategy, developed by CMS experts, is based on a multivariate technique, based on a Boosted Decision Tree (BDT) \cite{CMS:EGM-17-001}.
+A more sophisticated photon identification strategy, is based on a multivariate technique, based on a Boosted Decision Tree (BDT) \cite{CMS:EGM-17-001}.
 This multivariate (MVA) discriminant is built based on 14 input variables,
 and provides excellent separation between signal (prompt photons) and background from misidentified jets.
 The signal is defined as reconstructed photons from a \PGg + jets simulated sample that are matched at generator level with prompt photons within a cone of size $\DR = 0.1$,
 whereas the background is defined by reconstructed photons in the same sample that do not match with a generated photon.
 Photon candidates with $\ET > 15 \GeV$, $|\eta| < 2.5$, and satisfying very loose preselection requirements are used for the training of the BDT.
 The variables used include the energy and shower shape of the supercluster, as well as various isolations.
-Some of these variables are also employed by the cut-based ID, so the two discriminats are not independent.
+Some of these variables are also employed by the cut-based ID, so the two discriminants are not independent.
 %% The full list is shown in Table~\ref{tab:MVAvariables}.
 %% The version used is \texttt{RunIIFall17v2}.
 
@@ -225,14 +225,14 @@ Name & Barrel & Endcap \\
 \end{table}
 
 As with any other ID, to account for difference in the modelling of its efficiency in simulations and the true efficiency in data,
-Scale Factors are measured for each year in differen bins of \pt and $\eta$ for \texttt{wp80} (Figure \ref{fig:phEffMVASF_wp80}) and \texttt{wp90} (Figure \ref{fig:phEffMVASF_wp90}).
+Scale Factors are measured for each year in different bins of \pt and $\eta$ for \texttt{wp80} (Figure \ref{fig:phEffMVASF_wp80}) and \texttt{wp90} (Figure \ref{fig:phEffMVASF_wp90}).
 
 \begin{figure}
 \centering
 \subfigure [2016preVFP ] {\includegraphics[width=.5\textwidth]{SF/2016_PhotonsMVAwp80_SF2D.pdf}}%
 \subfigure [2017]        {\includegraphics[width=.5\textwidth]{SF/2017_PhotonsMVAwp80_SF2D.pdf}}\\
 \subfigure [2018]        {\includegraphics[width=.5\textwidth]{SF/2018_PhotonsMVAwp80_SF2D.pdf}}
-\caption{Photon efficiency scale factors for the POG MVA-based ID with working point \texttt{wp80}.}
+\caption{Photon efficiency scale factors for the MVA-based ID with working point \texttt{wp80}.}
 \label{fig:phEffMVASF_wp80}
 %% }
 \end{figure}
@@ -242,7 +242,7 @@ Scale Factors are measured for each year in differen bins of \pt and $\eta$ for 
 \subfigure [2016preVFP ] {\includegraphics[width=.5\textwidth]{SF/2016_PhotonsMVAwp90_SF2D.pdf}}%
 \subfigure [2017]        {\includegraphics[width=.5\textwidth]{SF/2017_PhotonsMVAwp90_SF2D.pdf}}\\
 \subfigure [2018]        {\includegraphics[width=.5\textwidth]{SF/2018_PhotonsMVAwp90_SF2D.pdf}}
-\caption{Photon efficiency scale factors for the POG MVA-based ID with working point \texttt{wp90}.}
+\caption{Photon efficiency scale factors for the MVA-based ID with working point \texttt{wp90}.}
 \label{fig:phEffMVASF_wp90}
 \end{figure}
 
@@ -254,7 +254,7 @@ and the three working points of the cut-based ID.
 \centering
 \includegraphics[width=.5\textwidth]{PhotonIsoAUC.png}
 \caption{Performance of the photon BDT and cut-based identification algorithms in 2017.
-Cut-based identification is shown for three different working points, loose, medium and tight.}
+Three different working points (loose, medium and tight) are shown for the cut-based ID. \cite{CMS:photon-performance-2015}}
 \label{fig:PhotonIsoAUC}
 \end{figure}
 
@@ -275,10 +275,11 @@ are defined \textbf{very loose} photons.
 They are used as the loose working point in a tight-to-loose method (Section \ref{sec:fake_photons_background}) to estimate the \nonprompt photon background.
 
 The photons that also pass the \sieie and charged isolation ($I_{ch}$), and thus the Loose cut-based ID, are the \textbf{loose photons},
-which is the tight selection for the \nonprompt photon background.
+which is the tight selection for the \nonprompt photon background,
+and the analysis selection for the results derived using the cut-based ID.
 
 Additionally, kinematic photons that pass the MVA-based working points wp90 and wp80 are also considered,
 given the improved performance of the MVA ID over the cut-based one.
-The drawback is that this does not allow a data-driven estimation of the \nonprompt background,
+The drawback of this ID is that it is not possible to do a data-driven estimation of the \nonprompt background,
 due to the limited size of the application region defined by requiring a photon that passes the wp90 but fails the wp80,
-as explained in Section \ref{sec:fake_photons_background}.
+as explained in Section~\ref{sec:fake_photons_background}.
