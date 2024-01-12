@@ -1,6 +1,8 @@
-A Particle-Flow based isolation is used to suppress the contamination from muon from hadronic decays inside jets.
+A Particle Flow based isolation is used to suppress the contamination from muon from hadronic decays inside jets.
 The so-called $\Delta\beta$ correction is applied in order to subtract the pileup contribution for the muons, 
 whereby $\Delta\beta = \frac{1}{2} \sum^\text{charged had.}_\text{PU} \pt$ gives an estimate of the energy deposit of neutral particles (hadrons and photons) from pile-up vertices.
+\todo{Add PILEUP}
+
 The relative isolation for muons is then defined as:
 \begin{equation}
 \text{RelPFIso} = \frac{1}{\pt^\text{muon}} \left( \sum_\text{charged had.} \pt + \max(0, \sum_\text{neutral had.} \ET + \sum_\text{photon} \ET - \Delta \beta) \right)

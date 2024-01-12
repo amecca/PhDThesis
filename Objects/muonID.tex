@@ -1,9 +1,9 @@
 %More details on muon reconstruction can be found in Ref.~\cite{AN-15-277}.
 \label{sec:muo_selection}
 Muon candidates are selected among global muons and tracker muons.
-Standalone muon tracks that are only reconstructed in the muon system are not used.
+Standalone muon tracks that are only reconstructed in the muon system are not used for this analysis.
 
-Muons are required to have transverse momentum $\pt > 5 \GeV$ and pseudorapidity $|\eta| < 2.4$.
+Muons are required to have a transverse momentum above 5\GeV and a pseudorapidity $|\eta| < 2.4$.
 As for the electrons, the muon track is required to be compatible with the primary vertex,
 to suppress contributions from in-flight decays of hadrons, pileup and cosmic rays.
 This requirement translates into $d_{xy} < 0.5 \cm$, $d_z < 1 \cm$, where $d_{xy}$ and $d_z$ are
@@ -22,36 +22,24 @@ efficiency for muons separated by approximately $\Delta R < 0.4$, which roughly
 corresponds to muons originating from $\cPZ$ bosons with $\pt > 500\GeV$.
 
 \begin{table}
-    \begin{small}
     \begin{center}
     \caption{
-      The requirements for a muon to pass the Tracker High-$\pt$ ID. Note that
-      these are equivalent to the Muon POG High-$\pt$ ID with the global track 
-      requirements removed.
+      The requirements for a muon to pass the Tracker High-$\pt$ ID.
       }
-    \begin{tabular}{|l|l|}
-      \hline
-      Plain-text description         & Technical description                 \\
-      \hline
-      Muon station matching          & Muon is matched to segments           \\
-                                     & in at least two muon stations         \\
-                                     & \textbf{NB: this implies the muon is} \\
-                                     & \textbf{an arbitrated tracker muon.}  \\
-      \hline                                                          
-      Good $\pt$ measurement         & $\pt / \sigma_{\pt} < 0.3$            \\
-      \hline
-      Vertex compatibility ($x-y$)   & $d_{xy} < 2$~mm                       \\
-      \hline
-      Vertex compatibility ($z$)     & $d_{z} < 5$~mm                        \\
-      \hline
-      Pixel hits                     & At least one pixel hit                \\
-      \hline
-      Tracker hits                   & Hits in at least six tracker layers   \\
-      \hline
-    \end{tabular}
     \label{tab:highPtID}
+    \begin{tabular}{ll}
+      \toprule
+      Requirement                    & Technical description                 \\
+      \midrule
+      Muon station matching          & \renewcommand{\arraystretch}{1.}\begin{tabular}{@{}l@{}}Muon is matched to segments\\in at least two muon stations\end{tabular}\\
+      Good $\pt$ measurement         & $\pt / \sigma_{\pt} < 0.3$, $\sigma_{\pt}$ is the \pt uncertainty\\
+      Vertex compatibility ($xy$)    & $d_{xy} < 2$~mm                       \\
+      Vertex compatibility ($z$)     & $d_{z} < 5$~mm                        \\
+      Pixel hits                     & At least one pixel hit                \\
+      Tracker hits                   & Hits in at least six tracker layers   \\
+      \bottomrule
+    \end{tabular}
     \end{center}
-    \end{small}
 \end{table}
 
 An additional \textit{ghost-cleaning} step is performed to deal with situations when a single muon

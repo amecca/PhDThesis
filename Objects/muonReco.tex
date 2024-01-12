@@ -10,7 +10,7 @@ The final collection is composed by three different muon types:
       One or more segments, each built from hits in a single DT or CSC chamber are combined
       with RPC hits and fitted to build a standalone-muon track.
 \item Tracker muons, built by propagating tracks from the inner tracker outward,
-      requiring a match with at least one segmant made of hits in the DT or CSC.
+      requiring a match with at least one segment made of hits in the DT or CSC.
       The high probability that a tracker muon to have one single matched segment in the muon system
       makes this algorithm very efficient at low momentum ($\PT < 5 \GeV$).
 \item Global muons, built by propagating standalone-muon tracks inward to the inner tracker.
@@ -20,7 +20,8 @@ The final collection is composed by three different muon types:
 Global and tracker muons that share the same inner track are merged into a single muon object.
 The charge and momentum are extracted from the tracker track for muons of \PT $< 200$ \GeV,
 since multiple scattering limits the precision of the muon system at low momentum.
-Above that threshold, charge and momentum are extracted from the global fit.
+Above that threshold, charge and momentum are extracted from the a fit to hits that can come from the entire tracking system.
+\todo{maybe describe the various global refits}
 
 The efficiency of muon reconstruction is very high, around 99 \% within the detector acceptance,
 thanks to the high efficiency of both the inner track and muon system reconstruction.
