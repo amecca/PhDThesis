@@ -76,8 +76,8 @@ They are very similar for 2016 and 2017.
 
 For the analysis, loose electrons have to pass this MVA identification and isolation working point.
 
-\begin{table}[ht]
-  \caption{Minimum BDT score required for passing the electron identification, for 2016 samples.}% \textbf{FIXME: WP to be defined!}}
+\begin{table}
+  \caption{Minimum BDT score required for passing the electron identification, for 2016 samples.}
   \label{tab:ele_ID_WPA}
   \centering
   \begin{tabular}{c c c c}
@@ -90,58 +90,36 @@ For the analysis, loose electrons have to pass this MVA identification and isola
   \end{tabular}
 \end{table}
 
-\begin{table}[ht]
-  \caption{Minimum BDT score required for passing the electron identification, for 2017 samples.}% \textbf{FIXME: WP to be defined!}}
+\begin{table}
+  \caption{Minimum BDT score required for passing the electron identification, for 2017 samples.}
   \label{tab:ele_ID_WPB}
   \centering
   \begin{tabular}{c c c c}
     \toprule    %----------------------------------------------------------------------------------------
     \pt range           & $|\eta| < 0.8$ & $0.8 < |\eta| < 1.479$ & $|\eta| > 1.479$ \\
     \midrule    %----------------------------------------------------------------------------------------
-    $5 < \pt < 10 \GeV$ &  0.8521        &  0.8268                & 0.8694 \\
-    $\pt > 10 \GeV$     &  0.9825        &  0.9692                & 0.7935 \\
+    $5 < \pt < 10 \GeV$ &  0.8521        &  0.8268                &  0.8694 \\
+    $\pt > 10 \GeV$     &  0.9825        &  0.9692                &  0.7935 \\
     \bottomrule %----------------------------------------------------------------------------------------
   \end{tabular}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}
+  \caption{Minimum BDT score required for passing the electron identification and corresponding signal and background efficiencies, for 2018 samples.}
+  \label{tab:ele_ID_WPC}
   \centering
-  \begin{tabular}{|c|c c c}
-%\multicolumn{4}{|c|}{Datasets}                                                                 \\
-%\hline %----------------------------------------------------------------------------------------
-\cline{2-4}
-  \multicolumn{1}{ c|}{}             & \multicolumn{3}{|c|}{$|\eta| < 0.8 $}                        \\
-\cline{2-4} %----------------------------------------------------------------------------------------
-   \multicolumn{1}{c|}{}            & Cut on BDT score & Signal eff. & \multicolumn{1}{c|}{Background eff.}  \\
-\hline %----------------------------------------------------------------------------------------
-$ 5 < p_T < 10 $ GeV              & 0.8956                        & 81.04\%            &  \multicolumn{1}{c|}{4.4\%}  \\
-\hline %----------------------------------------------------------------------------------------
- $p_T > 10$ GeV                     &  0.0424                & 97.1\%  &  \multicolumn{1}{c|}{2.9\%} \\
-\hline %----------------------------------------------------------------------------------------
-\cline{2-4}
-  \multicolumn{1}{ c|}{}             & \multicolumn{3}{|c|}{$0.8 < |\eta| < 1.479$}                        \\
-\cline{2-4} %----------------------------------------------------------------------------------------
-   \multicolumn{1}{c|}{}            & Cut on BDT score & Signal eff.      & \multicolumn{1}{c|}{Background eff.}  \\
-\hline  %----------------------------------------------------------------------------------------
-$ 5 < p_T < 10 $ GeV              & 0.9111                     & 79.3\%           &  \multicolumn{1}{c|}{4.6\%}     \\
-\hline %----------------------------------------------------------------------------------------
-$p_T > 10$ GeV                      &  0.0047         & 96.3\%  &  \multicolumn{1}{c|}{3.6\%} \\
-\hline %----------------------------------------------------------------------------------------
-
-\cline{2-4}
-  \multicolumn{1}{ c|}{}             & \multicolumn{3}{|c|}{$|\eta| > 1.479$}                        \\
-\cline{2-4} %----------------------------------------------------------------------------------------
-   \multicolumn{1}{c|}{}            & Cut on BDT score & Signal eff. & \multicolumn{1}{c|}{Background eff.}  \\
-\hline  %----------------------------------------------------------------------------------------
-$ 5 < p_T < 10 $ GeV              & 0.9401                     & 72.97\%    &  \multicolumn{1}{c|}{3.6\%}     \\
-\hline %----------------------------------------------------------------------------------------
-$p_T > 10$ GeV                      & -0.6042   & 95.7\%      &  \multicolumn{1}{c|}{6.7\%} \\
-\hline %----------------------------------------------------------------------------------------
-
-     \end{tabular}
-\small
-    \caption{Minimum MVA score required for passing the electron identification, together with the corresponding signal and background efficiencies, for 2018 samples.}
-\label{tab:ele_ID_WPC}
+  \begin{tabular}{c c c c c}
+    \toprule
+    $|\eta|$ range                      & \pt range           & Cut on BDT & Signal eff. & Background eff. \\
+    \midrule
+    \multirow{2}{*}{$|\eta| < 0.8 $}    & $5 < \pt < 10 \GeV$ &  0.8956    &  81.0\,\%   &  4.4\,\% \\
+                                        & $\pt > 10 \GeV$     &  0.0424    &  97.1\,\%   &  2.9\,\% \\
+    \hline
+    \multirow{2}{*}{$0.8<|\eta|<1.479$} & $5 < \pt < 10 \GeV$ &  0.9111    &  79.3\,\%   &  4.6\,\% \\
+                                        & $\pt > 10 \GeV$     &  0.0047    &  96.3\,\%   &  3.6\,\% \\
+    \hline
+    \multirow{2}{*}{$|\eta| > 1.479$}   & $5 < \pt < 10 \GeV$ &  0.9401    & 73.0\,\%    &  3.6\,\% \\
+                                        & $\pt > 10 \GeV$     & -0.6042    & 95.7\,\%    &  6.7\,\% \\
+    \bottomrule
+  \end{tabular}
 \end{table}
-
-\clearpage
