@@ -1,28 +1,31 @@
-The Tag-and-Probe study was performed on the SingleElectron/EGamma dataset using the golden JSONs year per year.  
+Electron efficiencies are evaluated using the Tag-and-Probe method.
+The study was performed on the SingleElectron/EGamma dataset for each year separately.
 
 Tag electrons need to satisfy the following quality requirements:
 \begin{itemize}
-%\item trigger matched to HLT\_Ele27\_eta2p1\_WPTight\_Gsf\_v*
-\item~trigger matched to single electron trigger (e.g HLT\_Ele32\_WPTight\_Gsf\_L1DoubleEG\_v* for 2018 for instance)
-\item~$p_{T} > 30$~GeV (tag), super cluster (SC) $\eta < 2.17$% but on in EB-EE gap ($1.4442<|\eta|<1.566$)
-\item~the tag and the probe need to have opposite charge.
+\item trigger matched to single electron trigger
+\item $\pt > 30 \GeV$, supercluster (SC) $|\eta| < 2.17$% but on in EB-EE gap ($1.4442<|\eta|<1.566$)
+\item the tag and the probe need to have opposite charge.
 %\item tight working point of the Spring16 cut-based electron ID
 \end{itemize}
 
-For the bin between 7 and 20 GeV, additional criteria are required 
-%\begin{itemize}
-%\item~the tag has to pass a cut on the MVA ID$>0.92$, $\sqrt(2*PFMET*p_T(tag)*(1-cos(\phi_{MET}-\phi_{tag})))<45 GeV$.
-%\item~tag $p_{T}$ increased to 50 GeV
-%\item~the charge is determined with the so-called selection method, asing all three estimates of the electron charge to agree.
-%\end{itemize}
-%t
-which help cleaning the background and makes the fits more reliable (and thus, the measurement more precise).
+For the bin between 7 and 20\GeV, additional criteria are required:
+\begin{itemize}
+\item the tag has to pass a cut on the MVA score,
+\item $\sqrt{2*\MET*\pt^{tag}*(1-cos(\phi_{MET}-\phi_{tag}))} < 45 \GeV$.
+\item tag minimum \pt increased to 50\GeV
+\item the charge is determined with the so-called selection method, requiring that all three estimates of the electron charge to agree. \todo{explain how electron charge is determined}
+\end{itemize}
+These cuts help cleaning the background and make the fits more reliable (and thus, the measurement more precise).
 
-Probe electrons only need to be reconstructed as GsfElectron while the FSR recovery algorithm is not applied in efficiency measurement. 
+Probe electrons only need to be reconstructed as GsfElectron while the FSR recovery algorithm is not applied.
 
-The nominal MC efficiencies are evaluated from the LO MadGraph Drell-Yan.
+The nominal MC efficiencies are evaluated from the a Drell-Yan sample simulated with \MADGRAPH at Leading Order in QCD.
 
-For the efficiency measurements a template fit is used. The $m_{ee}$ signal shape of the passing and failing probes is taken from MC and convoluted with a Gaussian. The data is then fitted with the convoluted MC template and a CMSShape (an Error-function with a one-sided exponential tail). This change follows from the usage of the T\&P tool developed by the EGM POG. For the low $p_T$ bins, a Gaussian is added to the signal model for the failing probes. 
+For the efficiency measurements a template fit is used.
+The $m_{ee}$ signal shape of the passing and failing probes is taken from MC and convoluted with a Gaussian.
+The data is then fitted with the convoluted MC template and a CMSShape (an Error-function with a one-sided exponential tail).
+For the low \pt bins, a Gaussian is added to the signal model for the failing probes.
 
 %\paragraph{Electron selection efficiency measurements}\mbox{}\\
 %\label{par:Efficiency_measurements}
@@ -34,11 +37,10 @@ The electron selection efficiency is measured as a function of the probe electro
 
 %\includegraphics[page=2, width=0.4\textwidth]{Figures/Electrons/ErecoEta}\\
 
-
- The EGM recommendations on the evaluation of Tag-and-Probe uncertainties for efficiency measurements are followed. Specifically, we consider
+Standard practices for the evaluation of Tag-and-Probe uncertainties for efficiency measurements are followed. Specifically, the following were considered:
 
 \begin{itemize}
-   \item Variation of the signal shape from a MC shape to an analytic shape (Crystal Ball) fitted to the MC
+   \item Variation of the signal shape from the MC shape to an analytic shape (Crystal Ball) fitted to the MC
    \item Variation of the background shape from a CMS-shape to a simple exponential in fits to data
 %   \item Variation of the tag selection: tag $p_{T}>$35~GeV and passes MVA-based 8X ID
    \item Using an NLO MC sample for the signal templates
