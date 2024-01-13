@@ -6,7 +6,7 @@ SOURCES=$(shell find $(SRCDIR) -maxdepth 1 -type f -name "*.tex")
 OBJECTS=$(patsubst $(SRCDIR)/%.tex,$(OBJDIR)/%.pdf,$(SOURCES))
 
 .PHONY: all
-all: $(OBJECTS)
+all: $(OBJDIR) $(OBJECTS)
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
@@ -14,7 +14,7 @@ $(OBJDIR):
 Makefile: ;
 %.tex: ;
 
-$(OBJDIR)/%.pdf: $(SRCDIR)/%.tex $(OBJDIR)
+$(OBJDIR)/%.pdf: $(SRCDIR)/%.tex
 	TEXINPUTS=".:../lib:" \
 	$(PDF) $(PDFOPT) -output-directory=$(OBJDIR) $<
 

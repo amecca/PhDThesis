@@ -15,25 +15,25 @@
     \vertex (i1) at (0,3.0) {\(\PQq\)};
     \vertex (i2) at (0,0.5) {\(\PAQq\)};
 
-    \vertex [right=of i1]     (a);
-    \vertex [right=of i2]     (b);
-    \vertex [right=of a]      (c);
-    \vertex [right=of b]      (d);
-    \vertex (e) at (3.75,2.5);
-
+    \vertex [right=of i1]  (a);
+    \vertex [right=of i2]  (b);
+    \vertex [right=1 of a] (c);
+    \vertex [right=of b]   (d);
+    \vertex (e)  at (3.5,3.5);
     \vertex (f1) at (4.5,4) {\(\PAl\)};
-    \vertex (f2) at (4.5,3) {\(\Pl\)};
-    \vertex (f5) at (4.5,2) {\(\PGg\)};
-    \vertex (f3) at (4.5,1) {\(\PAl\)};
-    \vertex (f4) at (4.5,0) {\(\Pl\)};
+    \vertex (f2) at (4.5,3) {\(\PGnl\)};
+    \vertex (f3) at (4.5,2) {\(\PGg\)};
+    \vertex (f4) at (4.5,1) {\(\PAl\)};
+    \vertex (f5) at (4.5,0) {\(\Pl\)};
 
     \diagram* {
       (i1) -- [fermion] (a) -- [fermion] (b) -- [fermion] (i2),
-      (a) -- [boson, edge label=\(\PZ\)] (c),
-      (b) -- [boson, edge label=\(\PZ\)] (d),
-      (e) -- [boson] (f5),
-      (f1) -- [fermion] (c) -- [fermion] (e) -- [fermion] (f2),
-      (f3) -- [fermion] (d) -- [fermion] (f4),
+      (a) -- [boson, edge label'=\(\PW^*\)] (c),
+      (b) -- [boson, edge label=\(\PZ\)]   (d),
+      (c) -- [boson, edge label=\(\PW\)](e),
+      (c) -- [boson] (f3),
+      (f1) -- [fermion] (e) -- [fermion] (f2),
+      (f4) -- [fermion] (d) -- [fermion] (f5),
     };
   \end{feynman}
 \end{tikzpicture}
