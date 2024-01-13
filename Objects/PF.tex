@@ -1,0 +1,31 @@
+\note{Notes on PF}
+{\bf HEADER: link algorithm}
+
+The goal of the link algorithm is to connect the elements resulting from the local reconstruction in the various subdetectors
+and produce \textit{PF blocks} which will be used to provide the global event description.
+While the linking can test any pair of elements, only the nearest neighbours in the $(\eta,\phi)$ plane are considered to limit the complexity.
+
+Tracks are linked to calorimeter clusters by extrapolating from the outermost hit to the preshower, ECAL and HCAL.
+The track is linked to a cluster if its extrapolated position is within the cluster area, accounting for gaps between active elements and position uncertainty.
+
+The energy of photons emitted by electron bremsstrahlung is recovered by extrapolating tangents to the GSF tracks to ECAL from each of the tracker layers.
+If the extrapolated position is within a cluster and has distance in $\eta$ smaller than 0.05 to che cluster center, the link is created.
+Photons have a significant probability to convert to an $\Pep \Pem$ pair in the tracker material.
+A dedicated conversion finder creates links between any two tracks compatible with originating from a photon conversion.
+If the converted photon direction, obtained from the sum of the two track momenta, is found to be compatible with one of the aforementioned track tangents, a link is created between each of these two tracks and the original electron track.
+
+Links between clusters belonging to different calorimeters (preshwoer, ECAL and HCAL) are created if the position of the cluster in the more granular detector is within the area of the other.
+Charged particle tracks may be linked together through a secondary vertex, provided they pass some quality cuts.
+Finally, links between the inner tracker and the muon detector tracks are established to form global and tracker muon tracks, as described in section \ref{sec:muonReco}.
+
+{\bf HEADER: PF blocks}
+
+Thanks to the granularity of the CMS subdetectors, most PF block only contain a few elements from one particle.
+Each PF block is processed separately in the several steps. After each step the elements that were used are removed from the block:
+\begin{enumerate}
+\item muon candidates are identified and reconstructed;
+\item electron identification and reconstruction, including bremsstrahlung recovery, and isolated photon reconstruction are performed in the same step;
+\item non-isolated photons, charged and neutral hadrons from parton fragmentation, hadronization, and decays in jets are identified;
+\item hadrons that underwent nuclear interactions in the tracker and produced secondary particles are identified and reconstructed;
+\end{enumerate}
+Finally, after all blocks have been processed and the global event description is available, the event is revisited by a post-processing step.
