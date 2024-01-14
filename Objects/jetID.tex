@@ -1,0 +1,62 @@
+\label{sec:jet_ID}
+In order to assure a good reconstruction efficiency, identification quality criteria are imposed on jets based on
+the energy fraction of the charged, electromagnetic, and neutral hadronic components \cite{CMS-PAS-JME-16-003}.
+
+To reduce instrumental background, the jet ID described in Table \ref{tab:JetID2018} is used.
+
+\begin{table}
+  \caption{Jet identification criteria used in \RunII with thresholds used for 2018 data.}
+  \label{tab:JetID2018}
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{l c c c c}
+    \toprule
+    Variable                    & $|\eta| \le 2.6$ & $2.6 < |\eta| \le 2.7$ & $2.7 < |\eta| \le 3.0$ & $3.0 < |\eta| \le 5.0$\\
+    \midrule
+    Neutral Hadron Fraction     & < 0.90           & < 0.90                 & -                      & > 0.2                 \\
+    Neutral EM Fraction         & < 0.90           & < 0.99                 & $<0.99\ \land\,>0.02$  & < 0.9                 \\
+    Number of Constituents      & > 1              & -                      & -                      & -                     \\
+    Muon Fraction               & < 0.80           & < 0.80                 & -                      & -                     \\
+    Charged Hadron Fraction     & > 0              & -                      & -                      & -                     \\
+    Charged Multiplicity        & > 0              & > 0                    & -                      & -                     \\
+    Charged EM Fraction         & < 0.80           & < 0.80                 & -                      & -                     \\
+    Number of Neutral Particles & -                & -                      & > 2                    & > 10                  \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+In this analysis, the jets are required to be within $|\eta| < 4.7$ and to have a transverse momentum above 30\GeV.
+
+The identification of jets originated by the hadronization of heavy-flavour quarks is achieved through the DeepFlavour tagger \cite{Guest_2016, Sirunyan_2018}.
+It uses a deep neural network with input variables from up to six tracks from each jet, information on secondary vertices and on the jet itself (such as the energy and total number of tracks).
+It assigns five probabilities to each jet, namely to contain only one \PQb hadron, two or more \PQb hadrons, exactly one \PQc hadron, at least two \PQc and no \PQb hadrons, or none of the above.
+In this analysis there is the need to exclude events containing top quarks, since their decay $\PQt \to [\PW \to \Pl\PGn] \PQb$ produces additional charged leptons which may lower the purity of the signal regions.
+Thus the need to identify jets induced by the hadronization of \PQb quarks, which is achieved by summing the probabilities of the first two categories.
+Working points are defined for this ID, as shown in Table \ref{tab:DeepFlavourBtagWP}.
+
+\begin{table}
+  \caption{Working points of the combined b-tag with the DeepFlavour classifier and the corresponding misidentification probability.}
+  \label{tab:DeepFlavourBtagWP}
+  \centering
+  \begin{tabular}{l c c}
+    \toprule
+    \makecell{Working\\point} & Threshold & \makecell{Misidentification\\probability}\\
+    \midrule
+    Loose  & 0.0494 & 10  \%\\
+    Medium & 0.2770 & 1   \%\\
+    Tight  & 0.7264 & 0.1 \%\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+In addition this analysis considers also a collection of \textbf{large radius jets} clustered using the same \antikt algorithm with a distance parameter $R = 0.8$.
+These jets are cleaned using the Pileup Per Particle Identification (PUPPI) \cite{Bertolini_2014}, which is a method for pileup mitigation.
+
+\paragraph{Jet disambiguation\\}
+The PF jet collection contains jets clustered with \antikt on all the particles reconstructed from Particle Flow.
+This means that isolated and energetic leptons and photons, which are part of the signal definition,
+are likely to be in the core of a jet due to the nature of the algorithm.
+Therefore a disambiguation strategy is needed, to avoid double counting entities.
+Jets are removed if they match any of the leptons passing the Loose ID
+and photons, either FSR associated to a lepton or candidates passing the kinematic selection (Section \ref{sec:photonID}),
+by requiring: $\DR(\text{jet,lepton/photon}) > 0.4$.

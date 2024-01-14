@@ -1,0 +1,29 @@
+As quarks and gluons have a net colour charge and cannot exist as free particles due to colour-confinement, they can not be observed directly.
+After they are produced in the collision, they combine with quarks and anti-quarks spontaneously created from the vacuum
+to form a stable configuration of colour-neutral hadrons along the direction of the initial parton.
+This happens in a very small timescale, of the order of $10^{-15}$ s, while the involved quarks and gluons are still inside the beam pipe,
+and for this reason free quarks and gluons are never observed directly.
+The result of this process, called hadronization, is a cone of collimated particles known as a jet.
+
+\subsubsection[The anti-kt clustering algorithm]{The \antikt clustering algorithm} %{Jet Reconstruction}
+
+%% Jets are the experimental signatures of quarks and gluons produced in high-energy processes such as head-on proton-proton collisions.
+They are reconstructed using the \antikt clustering algorithm \cite{Cacciari:2008gp} on all the PF candidates.
+This algorithm defines the distances $d_{ij}$ between the entities i and j and $d_{iB}$ between object $i$ and the beam (B):
+\begin{equation}
+\begin{split}
+d_{ij} &= min \left( k^{2p}_{T,i}, k^{2p}_{T,j} \right) \frac{\DR_{ij}}{D^2}\\
+d_{iB} &= k^{2p}_{T,i}
+\end{split}
+\end{equation}
+where $k_{T, i}$ is the transverse momentum of the object $i$ and $D$ is the distance parameter that can be adjusted.
+
+The clustering proceeds by identifying the smallest of the distances and if it is a $d_{ij}$ recombining entities i and j,
+while if it is $d_{iB}$ calling $i$ a jet and removing it from the list of entities.
+The distances are recalculated and the procedure repeated until no entities are left.
+
+In particular, \antikt sets $p = -1$, which results in and infrared and collinear safe procedure which is resilient to soft radiation,
+meaning that soft emissions do not result in irregularities in the boundaries of the resulting jets.
+
+In this analysis, two possible valued of the distance parameter of \antikt are considered: $R = 0.4$ and $R = 0.8$.
+Jets are reconstructed from the Particle Flow candidates after removing charged hadrons that are associated to a pileup primary vertex.
