@@ -2,49 +2,48 @@ The requirements on all objects used for the analysis with 2016, 2017 or 2018 da
 
 A lepton is declared {\bf loose} if it passes the reconstruction, kinematics and dxy/dz cuts and declared {\bf tight} if it passes in addition the identification, isolation and SIP3D requirements. 
 
-\renewcommand{\arraystretch}{2}
-\begin{table}[H]
-	\small
-	\centering
-	\caption{Summary of physics object selection for the analysis.}
-	\label{tab:objsummary}
-	\begin{tabular}{|c|c|}
-		\hline \hline
-                %\multicolumn{number cols}{align}{text} % align: l,c,r
-		%\multicolumn{2}{|c|}{$\HZZfl$ object selection summary}                                                                                                                                                            \\ \hline
-		%\textbf{2016}                                                                                       & \textbf{2017}                                                                                                                  \\ \hline \hline
-		\multicolumn{2}{|c|}{\textbf{Electrons}}                                                                                                                                                                                    \\ \hline
-		\multicolumn{2}{|c|}{$\mathrm{p_T^e} > 7 \GeV$ \hspace{0.5cm} $\abs{\eta^e} < 2.5$}                                                                                                                                               \\
-		\multicolumn{2}{|c|}{$\mathrm{d_{xy}} < 0.5 \, \mathrm{cm}$ \hspace{0.5cm} $\mathrm{d_{z}} < 1 \, \mathrm{cm}$}                                                                                                                           \\
-		\multicolumn{2}{|c|}{$| {\rm SIP_{3D}} | < 4$ }                                                                                                                                                                                   \\
-                \multicolumn{2}{|c|}{BDT ID with isolation with cuts from Tables~\ref{tab:ele_ID_WPA},~\ref{tab:ele_ID_WPB} and~\ref{tab:ele_ID_WPC} }    \\        
-		%\begin{tabular}[c]{@{}c@{}}BDT ID\\ (cuts from Table~\ref{tab:ele_ID_WP_2016})\end{tabular} & \begin{tabular}[c]{@{}c@{}}BDT ID with isolation\\ (cuts from Table~\ref{tab:ele_ID_WP_2017} )\end{tabular} \\
-		%\multicolumn{1}{|c|}{$\ensuremath{{\cal I}_{\mathrm{PF}}^{e}} < 0.35$}                     & \multicolumn{1}{c|}{}                                                                                                 
-                \hline \hline
-		\multicolumn{2}{|c|}{\textbf{Muons}}  \\ \hline
-                \multicolumn{2}{|c|}{Global or Tracker Muon} \\
-                \multicolumn{2}{|c|}{Discard Standalone Muon tracks if reconstructed in muon system only} \\
-                \multicolumn{2}{|c|}{Discard muons with muonBestTrackType==2 even if they are global or tracker muons} \\
-		\multicolumn{2}{|c|}{$\mathrm{p_T^{\mu}} > 5 \GeV$ \hspace{0.5cm} $\abs{\eta^{\mu}} < 2.4$}                                                                                                                                       \\
-		\multicolumn{2}{|c|}{$\mathrm{d_{xy}} < 0.5 \, \mathrm{cm}$ \hspace{0.5cm} $\mathrm{d_{z}} < 1 \, \mathrm{cm}$}                                                                                                                           \\
-		\multicolumn{2}{|c|}{$| {\rm SIP_{3D}} | < 4$  }                                                                                                                                                                                   \\
-		%\multicolumn{2}{|c|}{PF muon ID if $p_T<200$  GeV, PF muon ID or High-$p_T$ muon ID (Table~\ref{tab:highPtID}) if $p_T>200$ GeV}                                                                                                                                                 \\
-                \multicolumn{2}{|c|}{BDT with ID, isolation and impact parameters with cuts from Table~\ref{tab:muon_ID_WPA}  }    \\ 
-                %		\multicolumn{2}{|c|}{$\ensuremath{{\cal I}_{\mathrm{PF}}^{\mu}} < 0.35$}                                                                                                                                           \\ \hline \hline
-		\multicolumn{2}{|c|}{\textbf{FSR photons}}                                                                                                                                                                                  \\ \hline
-		\multicolumn{2}{|c|}{$\mathrm{p_T^{\gamma}} > 2 \GeV$ \hspace{0.5cm} $\abs{\eta^{\gamma}} < 2.4$}                                                                                                                                 \\
-		\multicolumn{2}{|c|}{$\ensuremath{{\cal I}_{\mathrm{PF}}^{\gamma}} < 1.8$}                                                                                                                                         \\
-		\multicolumn{2}{|c|}{$\Delta R(\ell,\gamma) < 0.5$ \hspace{0.5cm} $\frac{\Delta R(\ell,\gamma)}{(\pt^{\gamma})^2} < 0.012 \GeV^{-2}$}                                                                                             \\ \hline \hline
-		\multicolumn{2}{|c|}{\textbf{Jets}}                                                                                                                                                                                         \\ \hline
-		\multicolumn{2}{|c|}{$\mathrm{p_T^{\mathrm{jet}}} > 30 \GeV$ \hspace{0.5cm} $\abs{\eta^{\mathrm{jet}}} < 4.7$}                                                                                                                    \\
-		\multicolumn{2}{|c|}{$\Delta R(\ell/\gamma, \mathrm{jet}) > 0.4$} \\
-                \multicolumn{2}{|c|}{Cut-based jet ID (tight WP) } \\
-                \multicolumn{2}{|c|}{Jet pileup ID (tight WP)} \\
-                \multicolumn{2}{|c|}{Deep CSV b-tagging (medium WP)} \\
-                \hline \hline
-		%Cut-based jet ID (loose WP)                                                               & Cut-based jet ID (tight WP)                                                                                           \\
-                %		\multicolumn{1}{|l|}{}                                                                     & Jet pileup ID (tight WP)                                                                                              \\
-		%CSV b-tagging                                                                              & Deep CSV b-tagging     \\ \hline \hline                                                                                             
-	\end{tabular}
+\begin{table}
+  \centering
+  \caption{Summary of physics object selection for the analysis.}
+  \label{tab:objsummary}
+  %% \resizebox{\textwidth}{!}{
+    \begin{tabular}{l l}
+      \toprule
+      \multirow{4}{*}{Electrons}
+        & $\pt^e > 7 \GeV$   \quad $\abs{\eta^e} < 2.5$ \\
+        & $d_{xy} < 0.5 \cm$ \quad $d_{z} < 1 \cm$      \\
+        & $\SIPthreeD < 4$                              \\
+        & MVA ID with isolation cuts from Section~\ref{sec:eleMVA}\\
+      \midrule
+      \multirow{5}{*}{Muons}
+        & Global or Tracker Muon                                 \\
+        %% & Discard muons with muonBestTrackType==2 even if they are global or tracker muons \\
+        & $\pt^{\mu} > 5 \GeV$ \quad $\abs{\eta^{\mu}} < 2.4$    \\
+        & $d_{xy} < 0.5 \cm$   \quad $d_{z} < 1 \cm$             \\
+        & $\SIPthreeD < 4$                                       \\
+        & BDT with ID, isolation from Section~\ref{sec:muo_selection}\\
+      \midrule
+      \multirow{4}{*}{FSR photons}
+        & $\pt^{\PGg} > 2 \GeV$ \quad $\abs{\eta^{\PGg}} < 2.4$     \\
+        & ${\cal I}_{\mathrm{PF}}^{\PGg} < 1.8$                     \\
+        & $\DR(\ell,\,\PGg) < 0.5$                                  \\
+        & $\frac{\DR(\Pl,\,\PGg)}{(\pt^{\PGg})^2} < 0.012 \GeV^{-2}$\\
+        \noalign{\vspace{.3ex}} % small vertical space
+      \midrule
+      \multirow{5}{*}{Signal photons}
+        & $\pt^{\PGg} > 20 \GeV$                        \\
+        & $\abs{\eta^{\PGg}} < 2.4 \; \land \abs{\eta^{\PGg}} \notin (1.4442, 1.566) $\\
+        & $\DR(\ell,\,\PGg) > 0.5$                      \\
+        & Conversion Safe Electron Veto                 \\
+        & Cut-based (Loose wp) or MVA (wp90 or wp80) ID \\
+      \midrule
+      \multirow{5}{*}{Jets}
+        & $\pt^{\mathrm{jet}} > 30 \GeV$ \quad $\abs{\eta^{\mathrm{jet}}} < 4.7$ \\
+        & $\DR(\ell/\PGg,\, \mathrm{jet}) > 0.4$    \\
+        & Cut-based jet ID (tight WP)               \\
+        & Jet pileup ID (tight WP)                  \\
+        & Deep CSV b-tagging (medium WP)            \\
+      \bottomrule
+    \end{tabular}
+  %% }
 \end{table}
-\renewcommand{\arraystretch}{1}

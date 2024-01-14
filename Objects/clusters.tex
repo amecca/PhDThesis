@@ -1,0 +1,8 @@
+\label{sec:clusters}
+First, \textit{cluster seeds} are identified as crystals with local energy maximum above a certain threshold.
+Then, \textit{topological clusters} are grown by aggregating crystals with at least one one side in common with one already in the cluster,
+if their energy exceeds a threshold defined as twice the noise level in the crystal.
+An expectation-maximisation algorithm based on a Gaussian-mixture model is then used to reconstruct the \textit{PF clusters} within a topological cluster,
+based on the assumption that the number of PF clusters is equal to the number of seeds.
+Finally, the energy of each cell within a topological cluster is shared among all the associated PF clusters according to the cell-cluster distance,
+with an iterative determination of the cluster energies and positions.

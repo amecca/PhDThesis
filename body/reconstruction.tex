@@ -15,7 +15,7 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 %% $\left| \eta^\ell \right|$, is less than 2.5 (2.4) for electrons (muons).
 %% The physics objects and the ZZ candidate selections used in this analysis are those of the $H \rightarrow ZZ \rightarrow 4\ell$~\cite{HiggsAN,HiggsLegacyPaper} analysis, with minor changes. Here, we just report the main features, referring to that material for control plots/tables etc.
 
-\section{Particle Flow elements}
+\section{Base elements}
 \subsection{Tracks}
 \label{sec:tracks}
 \input{Objects/tracks.tex}
@@ -24,12 +24,12 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 \label{sec:eleReco}
 \input{Objects/eleReco}
 
-\subsection{Muons}
+\subsection{Muon tracking}
 \label{sec:muonReco}
 \input{Objects/muonReco}
 
 \subsection{Calorimeter clusters}
-\todo{move here some stuff from electrons?}
+\input{Objects/clusters.tex}
 
 \section{Particle Flow - Global event reconstruction}
 \label{sec:ParticleFlow}
@@ -70,7 +70,7 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 \subsubsection{Electron MVA}
 \label{sec:eleMVA}
 \input{Objects/ele_MVA.tex}
-\subsection{Analysis selection for electrons}%% {Electron Selection}
+\subsubsection{Analysis selection for electrons}%% {Electron Selection}
 \label{sec:ele_selection}
 \input{Objects/eleID}
 
@@ -79,11 +79,18 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 \label{sec:muoniso}
 \input{Objects/muonIso}
 \subsubsection{Muon Identification}
-\label{sec:muonID}
 \input{Objects/muonID}
 
 Loose muons that pass also the identification, isolation and \SIPthreeD requirements are defined \textbf{tight muons}.
 
+\subsection{Photons}
+\todo{Move here photon selection}
+
+\subsection{Jets}
+\todo{Move here jet selection}
+
+\subsection{Summary}
+\input{Objects/summary.tex}
 
 \section{Additional studies}
 \note{Maybe move to next chapter}
