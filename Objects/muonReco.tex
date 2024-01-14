@@ -18,10 +18,22 @@ The final collection is composed by three different muon types:
 \end{itemize}
 
 Global and tracker muons that share the same inner track are merged into a single muon object.
-The charge and momentum are extracted from the tracker track for muons of \PT $< 200$ \GeV,
-since multiple scattering limits the precision of the muon system at low momentum.
-Above that threshold, charge and momentum are extracted from the a fit to hits that can come from the entire tracking system.
-\todo{maybe describe the various global refits}
+%% The charge and momentum are extracted from the tracker track for muons of \PT $< 200$ \GeV,
+%% since multiple scattering limits the precision of the muon system at low momentum.
+
+Global muon charge and momentum are extracted from the a fit to hits that can come from the entire tracking system.
+The default algorithm used by CMS to determine the muon momentum is the \textit{Tune-P} algorithm~\cite{CMS-MUO-10-004}.
+It selects the best estimate from one of the following refits:
+\begin{itemize}
+\item Inner track: only information from the inner tracker is used.
+  for muons with $\pt < 200\GeV$, the contribution to the momentum measurement is marginal because of the uncertainty due to multiple scattering.
+\item Tracker-Plus-First-Muon-Station: uses the inner track and the innermost muon station with associated hits.
+\item Picky fit: targets muons which produced an electromagnetic shower in the steel return yoke between chambers, creating additional hits.
+  If a chamber has a large occupancy, only the hits compatible with the extrapolated trajectory are used.
+\item Dynamic truncation: targets muons with significant bending due to energy losses.
+  Extrapolating from the inner track, it adds hits from the closest segments, if compatible.
+  It continues outward until two consecutive stations without compatible hits are found.
+\end{itemize}
 
 The efficiency of muon reconstruction is very high, around 99 \% within the detector acceptance,
-thanks to the high efficiency of both the inner track and muon system reconstruction.
+thanks to the high efficiency of both the inner track and muon system reconstruction~\cite{CMS-MUO-16-001}.
