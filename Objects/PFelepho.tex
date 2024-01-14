@@ -1,0 +1,11 @@
+Electron and photon reconstruction are conducted together.
+The former are seeded by a GSF track, while the latter are seeded by ECAL superclusters not linked to any tracks and $\ET \geq 10 \GeV$.
+The sum of HCAL energy within $\DR < 0.15$ of the SC centre must not exceed 10\usep\% of the SC energy.
+All the clusters linked to the SC or to a tangent of the GSF track are collected.
+Tracks linked to these clusters are also associated if their momentum and HCAL clusters are compatible with the electron hypothesis.
+
+The total energy of the ECAL clusters is corrected with analytical function of the energy and pseudorapidity to account for missing association,
+up to 25\usep\% at $\abs{\eta} \simeq 1.5$ and low \pt.
+This energy is assigned to photon candidate; the photon direction is that of the supercluster.
+The estimation of electron momentum
+relies on a combination of the energy of the supercluster and the momentum estimate of the GSF track.

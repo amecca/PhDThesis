@@ -23,7 +23,4 @@ At most one missing hit is allowed per each trajectory.
 Once the hits are collected, the track parameters are estimated with a fit that uses a Gaussian Sum Filter (GSF) \cite{CMS-NOTE-2005-001} with 5 components,
 instead of the Kalman Filter (KF) \cite{billoir.qian:simultaneous} used for non-electron tracks.
 
-% This is probably part of proper PF
 Tracker- and ECAL-based seeds are merged and refitted with 12 GSF components.
-Charge estimation is then performed and the final step is the estimation of electron momentum,
-which relies on a combination of the energy of the supercluster and the momentum estimate of the GSF track.

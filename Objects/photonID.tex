@@ -19,7 +19,7 @@ Each has its own advantages and disadvantages.
 Due to its nature, the cut-based ID can be easily inverted by reversing only one or a few of its cuts.
 On the other hand, MVA-based ID is more effective at discriminating between signal and background, providing a higher signal-to-noise ratio.
 
-\paragraph{Identification variables\\}
+\subsubsection{Identification variables}
 One of the most efficient ways to reject photon backgrounds is the use of isolation energy sums,
 a generic class of discriminating variables that are constructed from the sum of the reconstructed energy in a cone around photons in different subdetectors.
 %% For this purpose, it is convenient to define cones in terms of an $\eta-\phi$ metric;
@@ -89,7 +89,7 @@ Another important variable is $R_9$, which is defined as the ratio between the e
 centered around the most energetic crystal of the SC,
 to the total energy of the supercluster.
 
-\paragraph{Cut-based ID\\}
+\subsubsection{Cut-based ID}
 The cut-based photon ID~\cite{CMS:EGM-17-001} uses 5 variables: $H/E$, \sieie, $I_{ch}^{corr}$, $I_{n} ^{corr}$ and $I_{\PGg} ^{corr}$.
 The Loose working point, shown in Table~\ref{tab:VPhotonID}, is selected for this analysis.
 It provides 90\,\% efficiency on signal photons with 86\,\% (77\,\%) background rejection in the Barrel (Endcap).
@@ -97,6 +97,8 @@ The efficiency in data is well modelled in simulation, and the ratio between the
 This ratio is referred as Scale Factor (SF), and is applied to simulation to correct for the residual mismodelling and avoid biasing the results.
 
 \begin{table}
+  \caption[.]{Cut thresholds of the Loose working point cut-based photon ID.}
+  \label{tab:VPhotonID}
   \centering
   \renewcommand{\arraystretch}{1.4}
   \begin{tabular}{c c c}
@@ -111,8 +113,6 @@ This ratio is referred as Scale Factor (SF), and is applied to simulation to cor
     $I_{\PGg}^{corr} [\GeV]$ & $2.876 + 0.004017\, p_{T}^{\gamma}$ & $4.162 + 0.0037\, p_{T}^{\gamma}$  \\
     \bottomrule
   \end{tabular}
-  \caption[.]{Cut thresholds of the Loose working point cut-based photon ID.}
-  \label{tab:VPhotonID}
 \end{table}
 
 \begin{figure}
@@ -124,7 +124,6 @@ This ratio is referred as Scale Factor (SF), and is applied to simulation to cor
   \label{fig:phEffSF}
 \end{figure}
 
-Besides the identification working points, an electron veto selection (CSEV veto) is also applied.
 %% The scale factors are shown in ~\ref{tab:eleveto_SFs}.
 
 %% \begin{table}[htbp]
@@ -151,7 +150,7 @@ Besides the identification working points, an electron veto selection (CSEV veto
 %  \end{center}
 %\end{figure}
 
-\paragraph{Multivariate ID\\}
+\subsubsection{Multivariate ID}
 A more sophisticated photon identification strategy, is based on a multivariate technique, based on a Boosted Decision Tree (BDT) \cite{CMS:EGM-17-001}.
 This multivariate (MVA) discriminant is built based on 14 input variables,
 and provides excellent separation between signal (prompt photons) and background from misidentified jets.
@@ -239,7 +238,7 @@ Three different working points (loose, medium and tight) are shown for the cut-b
 \label{fig:PhotonIsoAUC}
 \end{figure}
 
-\paragraph{Selections used in the analysis\\}
+\subsubsection{Selections used in the analysis}
 \label{sec:photon_selection}
 
 A common base selection is applied to all the photons, consisting of

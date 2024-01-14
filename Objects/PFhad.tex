@@ -1,0 +1,17 @@
+Once muons, electrons, and isolated photons are identified and removed from the PF blocks,
+the remaining particles to be identified are hadrons from jet fragmentation and hadronization.
+These particles may be detected as charged hadrons, neutral hadrons, nonisolated photons, and more rarely additional muons.
+
+Within tracker acceptance, all remaining ECAL and HCAL clusters not linked to any track give rise to photons and charged hadrons respectively.
+Outside the tracker, only ECAL clusters not linked to an HCAL cluster are classified as photons.
+The remaining HCAL clusters are each linked to one or more tracks.
+The sum of the track momenta is then compared to the calibrated calorimetric energy in order to determine the particle content.
+If the calorimetric energy is in excess by an amount larger than the expected resolution,
+it is interpreted by a photon and possibly to a neutral hadron.
+Each track becomes a charged hadron with momentum and energy from the track itself.
+All the momenta are refitted jointly using the calorimeter deposits and the track information.
+
+If the calorimeter energy is smaller than the track momenta by more than three standard deviations,
+identified global muon tracks are masked.
+If the excess persists, misreconstructed tracks with \pt uncertainty larger than 1\GeV
+are sequentially masked in decreasing \pt order until the excess disappears or the PF block is empty.

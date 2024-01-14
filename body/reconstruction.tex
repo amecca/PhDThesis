@@ -20,6 +20,9 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 \label{sec:tracks}
 \input{Objects/tracks.tex}
 
+\subsection{Calorimeter clusters}
+\input{Objects/clusters.tex}
+
 \subsection{Electrons}
 \label{sec:eleReco}
 \input{Objects/eleReco}
@@ -28,19 +31,16 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 \label{sec:muonReco}
 \input{Objects/muonReco}
 
-\subsection{Calorimeter clusters}
-\input{Objects/clusters.tex}
-
 \section{Particle Flow - Global event reconstruction}
 \label{sec:ParticleFlow}
 \input{Objects/PF.tex}
 
-\subsection{Electrons}
-\todo{}
+\subsection{Electrons and isolated photons}
+\input{Objects/PFelepho.tex}
 \subsection{Muons}
 \todo{}
 \subsection{Hadrons and nonisolated photons}
-\todo{}
+\input{Objects/PFhad.tex}
 %% \subsection{Event post processing}
 %% \todo{}
 
@@ -83,7 +83,7 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 
 Loose muons that pass also the identification, isolation and \SIPthreeD requirements are defined \textbf{tight muons}.
 
-\subsubsection{Photon Identification}
+\subsection{Photon Identification}
 \label{sec:photonID}
 \input{Objects/photonID}
 
