@@ -1,12 +1,13 @@
 The reconstruction of the trajectory of charged particles with high precision at the CMS detector
 is a complex task because of the large combinatorics from the high multiplicity of particles and the large number of readout channels.
-Additional systematic effects having an impact on the track reconstruction may arise from possible distortions in the tracking
-material, inhomegeneities in the magnetic field and misalignment of the detector components.
+
 First local charge clusters are converted to hits using the digitised output from the data acquisition system.
-The local track reconstruction output is then buffered for the global track reconstruction, which aims at identifying
-hit combinations that match to possible trajectories of the charged particles present in the event.
+%% The local track reconstruction output is then buffered for the global track reconstruction, which aims at identifying
+%% hit combinations that match to possible trajectories of the charged particles present in the event.
+
+%% Track seeds are built from few hits compatible with a charged particle trajectory (e.g. triplets in the pixel detector).
 All steps of the reconstruction are performed using an iterative pattern recognition technique, a Kalman-like fitting procedure adapted for the CMS framework in the Combinatorial Track Finder \cite{billoir.qian:simultaneous} (CTF) algorithm.
-At each iteration of CTF, positional information from the hits used in the previous step is discarded and the set of requirements are gradually relaxed.
+At each iteration of the CTF, positional information from the hits used in the previous step is discarded and the set of requirements are gradually relaxed.
 The tracking algorithm carries out three main substasks.
 \begin{description}
 \item[Seed finding] involving the generation of the starting points of the iterative sequence, namely pairs or triplets of hits.
@@ -21,8 +22,9 @@ The tracking algorithm carries out three main substasks.
 \item[Final fit] the best-fit value of the track parameters and the covariance matrix are determined by means of a least-squares fit.
 \end{description}
 
-% Primary Vertex
-The pp collision vertices in an event are reconstructed by grouping tracks consistent with originating at a common point in the luminous region.
-The candidate vertex with the largest value of summed physics-object $p^2_T$ is taken to be the primary pp interaction vertex.
-The physics objects are the jets, clustered using the anti-kT jet finding algorithm \cite{Cacciari:2008gp, Cacciari:2011ma} with all the tracks assigned to candidate vertices as inputs,
-and the associated missing transverse momentum, taken as the negative vector $p_T$ sum of those jets.
+The first types of seeds to be processed are those that are more likely to belong to high-momentum particles with an origin close to the beam axis.
+Later iterations target tracks that are missing one or more hits, have low-momentum or originate from a displaced vertex.
+After the final fit of a track, its hits are masked for the next iteration.
+This reduces the combinatorial complexity of the seed finding and pattern recognition steps.
+allowing increased tracking efficiency, expecially at low momentum, while keeping a low misreconstruction rate
+and with the the added benefit of faster computing time. %up to a factor 2

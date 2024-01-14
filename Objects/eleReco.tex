@@ -1,5 +1,7 @@
 %More details on electron reconstruction can be found in Ref.~\cite{ElectronLegacy}. 
 Electrons deposit most of their energy in the ECAL and produce hits in the inner tracker.
+Electron tracks are reconstructed with a dedicated tracking procedure that differs from the one used for other charged particles,
+because electrons loose a larger amount of energy in the tracker and this causes significant changes in the curvature.
 Their reconstruction algorithm combines information from the two subsystems,
 by associating a track to an ECAL cluster and estimating the electron momentum using both pieces of information.
 
@@ -17,21 +19,18 @@ Finally, the energy of each cell within a topological cluster is shared among al
 with an iterative determination of the cluster energies and positions.
 PF clusters are assembled into \textit{PF superclusters} (SC), starting from a seed cluster and aggregating those that are presumed to come from bremsstrahlung or conversion products.
 
-Electron tracks are reconstructed with a dedicated tracking procedure that differs from the one used for other charged particles,
-because electrons loose a larger amount of energy in the tracker and this causes significant changes in the curvature.
+While this procedure is suited for isolated electrons, it is not fit for electrons in jets or with low \pt.
+A \textit{tracker-based seeding} complements it, leveraging the large efficiency of iterative tracking for these electrons.
 The standard track seeds (see Section \ref{sec:tracks}) are used to initialise the procedure.
 Then the track building proceeds iteratively from the track parameters provided in each layer, modelling the electron energy loss with a Bethe-Block function.
 To maintain good efficiency in the presence of bremsstrahlung, compatibility requirements between the predicted and the found hits in each layer are quite loose.
 If several hits are compatible with the predicted one, different trajectory candidates are created and developed,
 with a limit of five candidate trajectories for each layer.
 At most one missing hit is allowed per each trajectory.
-Once the hits are collected, the track parameters are estimated with a fit that uses a Gaussian Sum Filter (GSF) \cite{CMS-NOTE-2005-001},
+Once the hits are collected, the track parameters are estimated with a fit that uses a Gaussian Sum Filter (GSF) \cite{CMS-NOTE-2005-001} with 5 components,
 instead of the Kalman Filter (KF) \cite{billoir.qian:simultaneous} used for non-electron tracks.
 
-Finally, a refining procedure is applied to the PF superclusters
-and some loose requirements are applied to the variables that characterise the geometrical association between the track and the supercluster.
+% This is probably part of proper PF
+Tracker- and ECAL-based seeds are merged and refitted with 12 GSF components.
 Charge estimation is then performed and the final step is the estimation of electron momentum,
 which relies on a combination of the energy of the supercluster and the momentum estimate of the GSF track.
-
-
-

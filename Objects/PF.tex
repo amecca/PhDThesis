@@ -1,5 +1,15 @@
-\note{Notes on PF}
-{\bf HEADER: link algorithm}
+The algorithm relies on precise track reconstruction and clustering techniques that efficiently distinguish between overlapping showers.
+A robust linking procedure is used to combine information related to energy deposits associated with a single particle across different sub-detectors.
+The PF sequence begins with identifying tracks of charged particles, followed by extrapolating these tracks to compatible calorimeter energy deposits.
+
+Neutral hadrons and photons are identified through \textit{Charged Hadron Subtraction}, which removes the energy deposits that can be linked to tracks from charged hadrons.
+The remaining deposits in ECAL and HCAL are attributed to photons and neutral hadrons,
+provided that the cluster energies of neutral hadron candidates exceed their track momentum, accounting for detector resolution effects.
+
+The CMS detector's exceptional performance with the PF algorithm is attributed to the high granularity of the electromagnetic calorimeter, hermeticity of the hadron calorimeter, and a large magnetic field integral.
+
+
+\paragraph{Link algorithm\\}
 
 The goal of the link algorithm is to connect the elements resulting from the local reconstruction in the various subdetectors
 and produce \textit{PF blocks} which will be used to provide the global event description.
@@ -18,7 +28,7 @@ Links between clusters belonging to different calorimeters (preshwoer, ECAL and 
 Charged particle tracks may be linked together through a secondary vertex, provided they pass some quality cuts.
 Finally, links between the inner tracker and the muon detector tracks are established to form global and tracker muon tracks, as described in section \ref{sec:muonReco}.
 
-{\bf HEADER: PF blocks}
+\paragraph{Processing of blocks\\}
 
 Thanks to the granularity of the CMS subdetectors, most PF block only contain a few elements from one particle.
 Each PF block is processed separately in the several steps. After each step the elements that were used are removed from the block:
