@@ -7,7 +7,7 @@ In order to improve the reconstruction of the momentum of the leptons, it is nec
 This is also important in order to suppress the background from diboson ($\PZ\PZ$ for the 4\Pl channel $\PW\PZ$ for the 3\Pl channel respectively),
 where the additional photon does not come from the hard scattering, but is instead radiated by one of the leptons.
 
-The FSR recovery algorithm is designed to discriminate FSR photons from the background from pileup interactions and from Initial State Radiation (ISR).
+The FSR recovery algorithm is designed to discriminate FSR photons from the background from \pileup interactions and from Initial State Radiation (ISR).
 This is achieved by exploiting the kinematics of FSR photons, which tend to be collinear to the parent lepton and to be isolated from hadronic activity in the event.
 
 The FSR photons are selected for each lepton, starting from the collection of photons produced by the Particle Flow algorithm.
@@ -19,13 +19,13 @@ I^{\PGg} \mathdefined \frac{1}{\pt^\PGg} \left( \sum{\pt^\PGg} + \sum_{i\, \in\,
 
 where $\sum{\pt^\PGg}$, $\sum_{i\, \in\, \mathrm{neutral}}{\pt^i}$ and $\sum_{j\, \in\, \mathrm{charged}}{\pt^j}$
 are the scalar sums of the transverse momenta of photons, neutral and charged hadrons inside a cone of radius $\mathrm{R} = 0.3$ around the photon,
-including pileup contributions.
+including \pileup contributions.
 
 The photons that passed these selections are associated to the closest lepton, among those that pass the loose ID and SIP cut (see Section \ref{sec:eleSIP}).
 Because the electron reconstruction algorithm already recovers some of the FSR photons, we exclude those that have $\Delta R(e, \gamma) <$ 0.15 or $|\Delta\phi(e, \gamma)| <$ 2 and $|\Delta\eta(e, \gamma)| <$ 0.05 to avoid double counting.
 The FSR candidate are also discarded if they do not satisfy $\Delta R(\ell, \gamma) <$ 0.5 with respect to the associated lepton.
 
-Since FSR photons tend to have higher energies than the ones from pileup, and are expected to be quasi-collinear with the emitting leptons, an FSR candidate is accepted if $\Delta R(\ell, \gamma)^{} / E_{T,\gamma}^{2} < 0.012 \GeV^{-2}$.
+Since FSR photons tend to have higher energies than the ones from \pileup, and are expected to be quasi-collinear with the emitting leptons, an FSR candidate is accepted if $\Delta R(\ell, \gamma)^{} / E_{T,\gamma}^{2} < 0.012 \GeV^{-2}$.
 If more than one photon can be associated to a lepton, only the FSR candidate with the smallest $\Delta R(\ell, \gamma)^{} / E_{T,\gamma}^{2}$ is kept.
 Accepted FSR photons have their momentum added to the lepton and are excluded from the computation of its isolation.
 
