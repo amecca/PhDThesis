@@ -2,6 +2,7 @@
 
 The collision events registered by the CMS detector are reconstructed by combining information from the different subdetectors.
 This process aims to improve the identification of the final-state particles and the reconstruction precision of their properties.
+The basic elements such as tracks and calorimeter clusters are the reconstructed first and form the starting point of the next step.
 The global reconstruction strategy is implemented through the Particle Flow (PF) algorithm \cite{ParticleFlow}.
 Originally applied in the ALEPH experiment at LEP, this algorithm combines data from the CMS subsystems to reconstruct physics objects and achieve a comprehensive and coherent event reconstruction.
 The resulting physics objects include charged and neutral hadrons, photons, electrons, and muons, serving as the starting inputs for all subsequent data analyses.
@@ -27,7 +28,7 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 \label{sec:eleReco}
 \input{Objects/eleReco}
 
-\subsection{Muon tracking}
+\subsection{Muons}
 \label{sec:muonReco}
 \input{Objects/muonReco}
 

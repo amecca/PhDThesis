@@ -1,6 +1,37 @@
-Similar to electrons the muon momentum scale is measured in data by fitting a Crystal-ball function to the di-muon mass spectrum around the Z peak in the 
-$Z \rightarrow \mu\mu$ control region.
-%At the moment no muon scale and resolution corrections are available but from 
-%Fig.~\ref{fig:mu_energy_scaleA},~\ref{fig:mu_energy_scaleB} and~\ref{fig:mu_energy_scaleC} shows a very good agreement between data and simulation, for 2016, 2017 and 2018 eras, respectively. %even without any corrections.
+Two methods are used to calibrate the muon momentum scale~\cite{CMS-MUO-16-001}.
+The magnitudes of the momentum scale corrections are about 0.2\usep\% and 0.3\usep\% in the barrel and endcap, respectively~\cite{CMS-MUO-16-001}.
+The uncertainty in the resolution is estimated to be about 5\usep\% of its value for both techniques.
 
+\paragraph{Rochester corrections\\}
+In the first method, muon momentum scale is measured in data by fitting
+the di-muon mass spectrum
+in a two-step process
+in $Z \rightarrow \mu\mu$ events~\cite{RochesterMuon}.
+%% Three datasets are used:
+%% the first is a simulation with realistic detector conditions of $\PGg/\PZ \to \PGm \PGm$ events (realistic);
+%% the second is a simulation with a perfectly aligned detector (ideal);
+%% the third contains data.
 
+In the first step, the corrections are derived
+for bins of charge, $\eta$ and $\phi$
+by requiring that the average $<1/\pt^\mu>$
+in data and MC to be the same as that in an ideal simulation with a perfectly aligned detector.
+This produces a table of uncorrelated corrections.
+%% This step is called $<1/\pt^\mu>$ correction.
+
+The second step aims at correcting the residual mismodelling of detector efficiency in $\eta$, $/\phi$.
+In order to be independent of the modelling assumptions
+for the \pt and $\eta$ distributons of $\PZ \to \mu\mu$ events,
+the reconstructed \PZ mass is required to be equal to that in the ideal MC for each bin in $\eta$ and $\phi$.
+%% This step is called $\Delta M/M$ tuning.
+%% Next \textit{addittive} corrections are extracted by taking the difference between the \PGmp and \PGmm scale corrections,
+%% which are caused by misalignments,
+%% and \textit{multiplicative} corrections
+%% which are caused by mismodelling of the magnetic field.
+
+\paragraph{Corrections with Kalman filter\\}
+The second method uses \PJGy and \PGU(1S) events~\cite{CMS-PAS-SMP-14-007}.
+The effect of variations of the magnetic field, misalignment, and mismodelling of the material
+on the measured muon curvature are calculated.
+Their values are extracted by fitting the dimuon mass with a Kalman filter
+in several bins of pseudorapidity, for a total of 44 parameters.
