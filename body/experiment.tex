@@ -31,10 +31,34 @@ This highly sophisticated accelerator operates at temperatures as low as 1.9 K (
 Proton bunches in the LHC are spaced by 25 ns and cross at a rate of 40 MHz.
 The nominal number of protons per bunch is $N_b = 12 \times 10^{11}$ and the nominal number of bunches is $2808$.
 The LHC design luminosity of \LHigh was achieved in 2016, and by the end of 2017 it reached twice this value.
-The data recorded by the CMS detector corresponds to and integrated luminosity of $36.3\fbinv$ in 2016, $41.5\fbinv$ in 2017 and $59.8\fbinv$ in 2018,
-for a total of $137.6\fbinv$~\footnote{
-These figures refer to the runs suitable for physics, e.g. excluding calibrations, and account for the detector deadtime.
-The total luminosity delivered by LHC during the 2016-2018 period is is $159.3\fbinv$.}.
+The parameters used by LHC in each year of \RunII{} are reported in Table~\ref{tab:LHCparamsRun2}.
+
+The data recorded by the CMS detector\footnote{
+These figures refer to the runs suitable for physics, e.g. excluding commisioning, calibrations and special runs, and account for the detector deadtime.
+The total luminosity delivered by LHC during the 2016-2018 period is is $159.3\fbinv$.}
+corresponds to an integrated luminosity of $36.3\fbinv$ in 2016, $41.5\fbinv$ in 2017 and $59.8\fbinv$ in 2018,
+for a total of $137.6\fbinv$.
+
+\begin{table}
+  \caption{The main LHC machine parameters for the data production years in \RunII{} compared to the design beam configuration~\cite{CERN-2004-003}.
+  The mean number of interactions per bunch crossing (pile-up) denoted with $<\mu>$ is taken from References~\cite{CMS:LUM-17-003, CMS:LUM-17-004, CMS:LUM-18-002}.
+  To compare the pile-up conditions at different values of the centre-of-mass-energy, the theoretical prediction of the pp inelastic cross-section derived with
+  Pythia~\cite{Sjostrand:2015} is used, i.e. $\sigma^{pp}_{incl.}(13\TeV) = 80.0\unit{\text{mb}}$.}
+  \label{tab:LHCparamsRun2}
+  \centering
+  \begin{tabular}{l c c c c}
+    \toprule
+    Parameter                & Design & 2016 & 2017 & 2018\\
+    \midrule
+    Beam energy [$\TeV$]     &     7  &  6.5 &  6.5 &  6.5\\
+    %% Bunch spacing [ns]      &    25  &  25  & 25   & 25  \\
+    $N_p^{bunch}\ [10^{11}]$ &  1.15  & 1.1  & 1.15 & 1.15\\
+    $N_{bunches}$            &  2808  & 2220 & 2556 & 2556\\
+    $\mathcal{L}_{peak}\ [10^{34}\cm^{-2}\text{s}^{-1}]$ & 1 & 1.4 & 2.06 & 2.01\\
+    $<\mu>$                  &    20  &   27 &   38 &   37\\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \section{The Compact Muon Solenoid experiment}
 The Compact Muon Solenoid (CMS) is one of the two general purpose detectors operating at the LHC.
