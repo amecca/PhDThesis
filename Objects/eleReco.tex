@@ -1,15 +1,18 @@
+\label{sec:eleReco}
 %More details on electron reconstruction can be found in Ref.~\cite{ElectronLegacy}. 
 Electrons deposit most of their energy in the ECAL and produce hits in the inner tracker.
-Electron tracks are reconstructed with a dedicated tracking procedure that differs from the one used for other charged particles,
-because electrons loose a larger amount of energy in the tracker and this causes significant changes in the curvature.
-Their reconstruction algorithm combines information from the two subsystems,
-by associating a track to an ECAL cluster and estimating the electron momentum using both pieces of information.
-
 The electron reconstruction is complicated by the presence of the tracker material between the collision point and the ECAL crystals,
 which causes the emission of bremsstrahlung along its trajectory, and the resulting photons have a probability of converting to electron-positron pairs.
-These effects must be taken into account by the reconstruction algorithm.
+These effects are taken into account with dedicated seeding and reconstruction algorithms,
+which accounts for the changes in curvature and the spread of the energy in the calorimeter.
+%% Their reconstruction algorithm combines information from the two subsystems,
+%% by associating a track to an ECAL cluster and estimating the electron momentum using both pieces of information.
 
 The energy deposited by the electron is usually spread over several ECAL crystals, so the first step is clustering the energy deposits (Section \ref{sec:clusters}).
+Two approaches are used to seed the electron reconstruction.
+
+The first, traditionally called \textit{ECAL-based} approach, starts from energetic ($\ET > 4\GeV$) ECAL clusters.
+The cluster energy and position are used to infer the expected position of hits in the tracker.
 PF clusters are assembled into \textit{PF superclusters} (SC), starting from a seed cluster and aggregating those that are presumed to come from bremsstrahlung or conversion products.
 
 While this procedure is suited for isolated electrons, it is not fit for electrons in jets or with low \pt.
