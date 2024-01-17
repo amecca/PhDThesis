@@ -1,0 +1,40 @@
+\label{sec:lepCR3l}
+\note{At the moment, the data-driven fake estimate does NOT work in SR3P. Maybe we shouldn't discuss it if we don't use it.}
+
+\note{SMP-16-002~\cite{SMP-16-002} (2015 data) uses a dijet region to measure the fake rate:
+\textit{``The misidentification probability is measured from a sample of
+dijet events enriched in nonprompt leptons. The sample is selected
+with one jet passing the relaxed lepton identification requirements
+matched to a single lepton trigger, defined as the probe lepton.''}}
+
+\note{SMP-20-014~\cite{SMP-20-014} (full Run2) uses a L+j region:
+\textit{``This CR is defined by requiring a single lepton with pT greater than 10 GeV, and at least
+a reconstructed jet that is well separated from the lepton at $\DR(\PGg, j) > 0.7$. Contributions from
+EWK processes are subtracted to obtain a pure nonprompt measurement region.''}}
+
+Seven leptonic control regions are defined for the three lepton channel, following the strategy used in Reference~\cite{SMP-20-014},
+using the same selections as the signal region except for the lepton identification.
+The leptons are ordered: $\Pl^\PZ_1$, $\Pl^\PZ_2$ and $\Pl^\PW$
+and the regions are defined based on which lepton fails the tight selection.
+Unlike the four lepton channel the order is important,
+so for example an event where only the leading lepton from the \PZ fails will be in a different control region
+from an event where only the subleading lepton does not pass the tight selection.
+
+This classification produces three regions where only one lepton fails the selection, three where two leptons fail and one where all three leptons are \nonprompt.
+The agreement between the simulation and the data decreases accordingly, given the instrumental nature of this background, which makes it difficult to model.
+
+\begin{figure}
+  \subfigure [$\Pl^\PW$ fails  ] {\includegraphics[width=.333333333\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR110/lll_mass_pow.pdf}}%
+  \subfigure [$\Pl^\PZ_1$ fails] {\includegraphics[width=.333333333\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR011/lll_mass_pow.pdf}}%
+  \subfigure [$\Pl^\PZ_2$ fails] {\includegraphics[width=.333333333\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR101/lll_mass_pow.pdf}}
+  \caption{Invariant mass of the three charged leptons in the three lepton control regions for the 3L channel where only one lepton fails the selection.}
+  \label{fig:CR3L_1_Run2}
+\end{figure}
+
+\begin{figure}
+  \subfigure [$\Pl^\PZ_1$ and $\Pl^\PZ_2$ fail] {\includegraphics[width=.333333333\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR001/lll_mass_pow.pdf}}%
+  \subfigure [$\Pl^\PZ_1$ and $\Pl^\PW$ fail  ] {\includegraphics[width=.333333333\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR010/lll_mass_pow.pdf}}%
+  \subfigure [$\Pl^\PZ_2$ and $\Pl^\PW$ fail  ] {\includegraphics[width=.333333333\textwidth]{Figures/dataMC_noLFR/Run2/fullMC/CR100/lll_mass_pow.pdf}}
+  \caption{Invariant mass of the three charged leptons in the three lepton control regions for the 3L channel where two leptons fail the selection.}
+  \label{fig:CR3L_2_Run2}
+\end{figure}

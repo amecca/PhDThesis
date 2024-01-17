@@ -55,37 +55,15 @@ have a number of leptons that fail the tight selection, while passing the loose 
 The other selections are identical to maintain similarity with the signal region.
 
 The fake lepton background yield in the signal region is extrapolated from these regions
-according to the probability for loose lepton candidates to pass also the final selection criteria (defined in Section 4.1.2).
+according to the probability for loose lepton candidates to pass also the final selection criteria,
+defined in Sections~\ref{sec:ele_selection} and \ref{sec:muo_selection} for electrons and muons respectively.
 These probabilities, referred to as fake rates, are estimated independently as illustrated in the following section.
 
-\paragraph{Four lepton channel\\}
-For the 4\Pl channel, two control regions are defined.
-The former, named CR3P1F, one of the leptons of the $\PZ_2$ must fail the tight selection,
-while the other three (2 from $\PZ_1$ and the other from $\PZ_2$) must pass the tight identification and isolation criteria.
-It is expected to be populated by $\PW\PZ$, with contributions from Drell-Yan and $\PZ\PGg$,
-along with a fraction of events from $(\PQq\PAQq/\Pg\Pg) \to \PZ\PZ$ where one of the prompt leptons fails the selection.
+\subsubsection{Four leptons channel}
+\input{strategy/lepCR4l.tex}
 
-In the latter region, named CR2P2F, both leptons from the $\PZ_2$ fail the tight selection, while the leptons of the $\PZ_1$ pass the tight criteria.
-This region is populated primarily by Drell-Yan events, with contributions from $\PZ\PGg$ and $\PQt\PAQt+X$.
-
-This method was used by several analyses targeting a final state with four leptons from $\PZ\PZ$ decay~\cite{CMS-SMP-16-001, CMS-SMP-17-006, CMS-SMP-20-001, CMS-PAS-SMP-22-001},
-and is described in detail in Reference~\cite{CMS-HIG-13-002} as the ``Method using opposite-sign (OS) leptons''.
-
-\paragraph{Three lepton channel\\}
-\note{At the moment, the data-driven fake estimate does NOT work in SR3P. Maybe we shouldn't discuss it if we don't use it.}
-
-\note{SMP-16-002~\cite{SMP-16-002} (2015 data) uses a dijet region to measure the fake rate:
-\textit{``The misidentification probability is measured from a sample of
-dijet events enriched in nonprompt leptons. The sample is selected
-with one jet passing the relaxed lepton identification requirements
-matched to a single lepton trigger, defined as the probe lepton.''}}
-
-\note{SMP-20-014~\cite{SMP-20-014} (full Run2) uses a L+j region:
-\textit{``This CR is defined by requiring a single lepton with pT greater than 10 GeV, and at least
-a reconstructed jet that is well separated from the lepton at $\DR(\PGg, j) > 0.7$. Contributions from
-EWK processes are subtracted to obtain a pure nonprompt measurement region.''}}
-
-\todo{Describe fake leptons method in 3L channel}
+\subsubsection{Three leptons channel}
+\input{strategy/lepCR3l.tex}
 
 \subsubsection{Lepton fake rate measurement}
 The measurement of the lepton fake rate, which is the probability that a fake lepton that passes the loose selection also passes the tight criteria,
