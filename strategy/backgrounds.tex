@@ -59,82 +59,18 @@ according to the probability for loose lepton candidates to pass also the final 
 defined in Sections~\ref{sec:ele_selection} and \ref{sec:muo_selection} for electrons and muons respectively.
 These probabilities, referred to as fake rates, are estimated independently as illustrated in the following section.
 
+\subsubsection{Lepton fake rate measurement}
+\input{strategy/CRLFR.tex}
+
+\subsubsection{Lepton fake rate application}
+Once the fake rates are estimated they are used to reweight the events
+in dedicated control regions (alternatively called application regions).
+
 \subsubsection{Four leptons channel}
 \input{strategy/lepCR4l.tex}
 
 \subsubsection{Three leptons channel}
 \input{strategy/lepCR3l.tex}
-
-\subsubsection{Lepton fake rate measurement}
-The measurement of the lepton fake rate, which is the probability that a fake lepton that passes the loose selection also passes the tight criteria,
-is carried out in a separate control region which is enriched in contempt leptons.
-
-This region, denoted as $\PZ+L$, is defined as containing a valid \PZ candidate whose leptons must have $\pt^{\Pl_{Z,1}} > 20 \GeV$ and $\pt^{\Pl_{Z,2}} > 10 \GeV$
-and an additional lepton which passes the loose selection.
-Additionally, the \PZ candidate must have a mass within 10 \GeV from the nominal peak,
-and the missing energy must be $\MET < 20 \GeV$ to reduce the contribution from real leptons from $\PW\PZ$.
-The last requirement means that this region is orthogonal to all of the regions in the 3\Pl channel, in which the MET is required to be greater than 30 \GeV.
-
-The fake rate is measured on the third lepton in several bins of transverse momentum, separately for the barrel and endcap and flavour.
-The measurement is done for each year of data taking, and the resulting rates can be seen in Figure \ref{fig:leptonFR}.
-
-\begin{figure}
-  \centering
-  \subfigure [2016] {\includegraphics[width=.5\textwidth]{leptonFakeRate_2016.pdf}}%
-  \subfigure [2017] {\includegraphics[width=.5\textwidth]{leptonFakeRate_2017.pdf}}\\
-  \subfigure [2018] {\includegraphics[width=.5\textwidth]{leptonFakeRate_2018.pdf}}
-  \caption{Lepton fake rates measured in the $\PZ+L$ control region, for each year of data-taking.}
-  \label{fig:leptonFR}
-\end{figure}
-
-The uncertainty on the fake lepton background estimation arises from the difference in composition of the
-background processes in the region where the fake rate is measured and where it is applied.
-This uncertainty was measured by several analyses \todo{cite} and found to be \todo{how much?}.
-
-\subsubsection{Lepton fake rate application}
-\paragraph{Four leptons channel\\}
-Once the fake rates are estimated they are applied to the CR2P2F and CR3P1F dedicated control regions to estimate the fake lepton background yield in the 4\Pl signal region.
-
-The expected reducible background in the signal region is given by the sum of two terms:
-\begin{itemize}
-  \item A 3P1F component, from events with one fake lepton, estimated from the CR3P1F region.
-  \item A 2P2F component, from events with two fake leptons, estimated from the CR2P2F region.
-\end{itemize}
-
-The 3P1F and 2P2F components are given by the number of events in the respective regions, weighted by factors dependent on the fake rates:
-\begin{subequations}
-  \begin{align}
-    \label{eq:lepFR_3P1Fto4P}
-    N^{from\ 3P1F}_{SR} &= \sum_{i \ins 3P1F} \frac{f_a^i}{1-f_a^i}, \quad where\ a = 3, 4
-    \\
-    \label{eq:lepFR_2P2Fto4P}
-    N^{from\ 2P2F}_{SR} &= \sum_{j \ins 2P2F} \frac{f_3^j}{1-f_3^j} \frac{f_4^j}{1-f_4^j}
-  \end{align}
-\end{subequations}
-where $f_3^j$ and $f_4^j$ correspond to the fake rates of the two loose leptons in the j-th event.
-
-However, the CR3P1F region itself has a contribution from fake lepton background events from the CR2P2F region.
-These are events with two genuine leptons and two fakes, where only one of the fakes passes the tight selection, thus winding up in the CR3P1F region.
-The expected number of background events in the CR3P1F region, $N^{from\ 2P2F}_{3P1F}$,
-can be computed from the number of events observed in the CR2P2F control region, $N^{bkg}_{2P2F}$,
-by weighting each event in the region with a factor dependent from the fake rates:
-\begin{equation}
-  \label{eq:lepFR_N3P1F}
-  N^{from\ 2P2F}_{3P1F} = \sum_{i \ins 2P2F} \left( \frac{f_i}{1-f_i} + \frac{f_j}{1-f_j} \right)
-\end{equation}
-
-Summing all the contributions, one obtains for the signal region:
-\begin{equation}
-  \begin{split}
-    \label{eq:lepFR_4P}
-    N^{bkg}_{SR} &= \sum \frac{f^a_i}{1-f^a_i} \left( N_{3P1F} - N^{from\ 2P2F}_{3P1F} \right) + \sum_{j \ins 2P2F} \left( \frac{f_j}{1-f_j} \frac{f_j}{1-f_j} \right)
-    \\
-                 &= \sum_{i \ins 3P1F} \frac{f^a_i}{1-f^a_i} - \sum_{j \ins 2P2F} \left( \frac{f_j}{1-f_j} \frac{f_j}{1-f_j} \right)
-  \end{split}
-\end{equation}
-
-\paragraph{Three leptons channel}
-\todo{Describe lepton FR for 3\Pl.}
 
 \subsection{Fake photons}
 \label{sec:fake_photons_background}

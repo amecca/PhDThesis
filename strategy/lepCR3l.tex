@@ -14,11 +14,8 @@ EWK processes are subtracted to obtain a pure nonprompt measurement region.''}}
 
 Seven leptonic control regions are defined for the three lepton channel, following the strategy used in Reference~\cite{SMP-20-014},
 using the same selections as the signal region except for the lepton identification.
-The leptons are ordered: $\Pl^\PZ_1$, $\Pl^\PZ_2$ and $\Pl^\PW$
-and the regions are defined based on which lepton fails the tight selection.
-Unlike the four lepton channel the order is important,
-so for example an event where only the leading lepton from the \PZ fails will be in a different control region
-from an event where only the subleading lepton does not pass the tight selection.
+The total number of events in each of these categories are denoted
+$N_{LLL}$, $N_{LLT}$, $N_{LTL}$, $N_{TLL}$, $N_{LTT}$, $N_{TLT}$, and $N_{TTL}$, where the subindex denotes whether the lepton is tight ($T$) or loose but not tight ($L$).
 
 This classification produces three regions where only one lepton fails the selection, three where two leptons fail and one where all three leptons are \nonprompt.
 The agreement between the simulation and the data decreases accordingly, given the instrumental nature of this background, which makes it difficult to model.
@@ -38,3 +35,36 @@ The agreement between the simulation and the data decreases accordingly, given t
   \caption{Invariant mass of the three charged leptons in the three lepton control regions for the 3L channel where two leptons fail the selection.}
   \label{fig:CR3L_2_Run2}
 \end{figure}
+
+\paragraph{Contribution to signal region\\}
+The number of events can be expressed as a function of the number of events with a given composition of prompt ($P$) or \nonprompt ($F$) leptons:
+$N_{FFF}$, $N_{FFP}$, $N_{FPF}$, $N_{PFF}$, $N_{FPP}$, $N_{PFP}$, and $N_{PPF}$.
+Assuming that all the prompt leptons pass the tight selection, the number of nonprompt events in the signal region $N_{TTT}$ can be related to the quantities defined previously:
+\begin{equation}
+  \resizebox{\textwidth}{!}{
+    $\begin{aligned}
+      N_{TTT} &= f_1 N_{FPP} + f_2 N_{PFP}+f_3 N_{PPF}+f_1 f_2 N_{FFP}+f_2 f_3 N_{PFF}+f_1 f_3 N_{FPF}+f_1 f_2 f_3 N_{FFF}\\
+      N_{TTL} &= (1-f_3) N_{PPF} + f_2(1-f_3) N_{PFF} + f_1(1-f_3) N_{FPF} + f_1 f_2(1-f_3) N_{FFF}\\
+      N_{TLT} &= (1-f_2) N_{PFP} + f_3(1-f_2) N_{PFF} + f_1(1-f_2) N_{FFP} + f_1 f_3(1-f_2) N_{FFF}\\
+      N_{LTT} &= (1-f_1) N_{FPP} + f_2(1-f_1) N_{FFP} + f_3(1-f_1) N_{FPF} + f_3 f_2(1-f_1) N_{FFF}\\
+      N_{TLL} &= (1-f_2)(1-f_3) N_{PFF} + f_1(1-f_2)(1-f_3) N_{FFF}\\
+      N_{LTL} &= (1-f_1)(1-f_3) N_{FPF} + f_2(1-f_1)(1-f_3) N_{FFF}\\
+      N_{LLT} &= (1-f_2)(1-f_1) N_{FFP} + f_3(1-f_2)(1-f_1) N_{FFF}\\
+      N_{LLL} &= (1-f_1)(1-f_2)(1-f_3) N_{FFF}
+    \end{aligned}$
+  }
+\end{equation}
+where $f_i = f(\pt^{i},\, \eta^{i})$ is the probability of the $i$-th loose nonprompt lepton to pass the tight criteria (i ranges from 1 to 3).
+Then solving this yields $N_{TTT}$ as a function of the yields in the application regions:
+\begin{equation}
+\begin{split}
+N_{TTT} =
+  \frac{f_1}{1-f_1} N_{LTT}
++ \frac{f_2}{1-f_2} N_{TLT}
++ \frac{f_3}{1-f_3} N_{TTL}
++ \frac{f_1 f_2 f_3}{(1-f_1)(1-f_2)(1-f_3)} N_{LLL}\\
+- \frac{f_1 f_2}{(1-f_1)(1-f_2)} N_{LLT}
+- \frac{f_1 f_3}{(1-f_1)(1-f_3)} N_{LTL}
+- \frac{f_2 f_3}{(1-f_2)(1-f_3)} N_{TLL}
+\end{split}
+\end{equation}
