@@ -3,28 +3,27 @@ The study was performed on the SingleElectron/EGamma dataset for each year separ
 
 Tag electrons need to satisfy the following quality requirements:
 \begin{itemize}
-\item trigger matched to single electron trigger
-\item $\pt > 30 \GeV$, supercluster (SC) $|\eta| < 2.17$% but on in EB-EE gap ($1.4442<|\eta|<1.566$)
+\item trigger matched to single electron trigger;
+\item $\pt > 30 \GeV$, supercluster (SC) $|\eta| < 2.17$;% but on in EB-EE gap ($1.4442<|\eta|<1.566$)
 \item the tag and the probe need to have opposite charge.
 %\item tight working point of the Spring16 cut-based electron ID
 \end{itemize}
 
 For the bin between 7 and 20\GeV, additional criteria are required:
 \begin{itemize}
-\item the tag has to pass a cut on the MVA score,
-\item $\sqrt{2*\MET*\pt^{tag}*(1-cos(\phi_{MET}-\phi_{tag}))} < 45 \GeV$.
-\item tag minimum \pt increased to 50\GeV
-\item the charge is determined with the so-called selection method, requiring that all three estimates of the electron charge to agree. \todo{explain how electron charge is determined}
+\item the tag has to pass a cut on the MVA score;
+\item $\sqrt{2*\MET*\pt^{tag}*(1-cos(\phi_{MET}-\phi_{tag}))} < 45 \GeV$;
+\item tag minimum \pt increased to 50\GeV;
+\item the charge is determined with the so-called selection method, requiring that all three estimates of the electron charge to agree.
 \end{itemize}
 These cuts help cleaning the background and make the fits more reliable (and thus, the measurement more precise).
 
 Probe electrons only need to be reconstructed as GsfElectron while the FSR recovery algorithm is not applied.
 
-The nominal MC efficiencies are evaluated from the a Drell-Yan sample simulated with \MADGRAPH at Leading Order in QCD.
-
-For the efficiency measurements a template fit is used.
-The $m_{ee}$ signal shape of the passing and failing probes is taken from MC and convoluted with a Gaussian.
-The data is then fitted with the convoluted MC template and a CMSShape (an Error-function with a one-sided exponential tail).
+The nominal MC efficiencies are evaluated from the a Drell-Yan sample simulated with \MADGRAPH at Leading Order in QCD,
+using a template fit.
+The $m_{ee}$ signal shape of the passing and failing probes are taken from MC and convoluted with a Gaussian.
+The data is then fitted with the convoluted MC templates and a CMSShape (an Error-function with a one-sided exponential tail).
 For the low \pt bins, a Gaussian is added to the signal model for the failing probes.
 
 %\paragraph{Electron selection efficiency measurements}\mbox{}\\
@@ -47,4 +46,17 @@ Standard practices for the evaluation of Tag-and-Probe uncertainties for efficie
 \end{itemize}
 
 The total uncertainty for the measurement of the scale factors is the quadratic sum of the statistical uncertainties returned from the fit and the aforementioned systematic uncertainties.
+
+The resulting efficiencies and corresponding scale factors, expressed as ratio of the efficiency observed in data to that calculated in simulation are reported
+in Figure~\ref{fig:eleMVAEffSF}.
+
+\begin{figure}
+\centering
+\includegraphics[width=.5\textwidth]{eleMVAEffSF2017.png}
+\caption{Electron selection efficiencies in data (upper panel)
+  and data-to-simulation ratio (lower panel),
+  measured using the Tag-and-Probe technique
+  as a function of the transverse energy}
+\label{fig:eleMVAEffSF}
+\end{figure}
 
