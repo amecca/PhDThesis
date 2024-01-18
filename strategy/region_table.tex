@@ -1,0 +1,25 @@
+\begin{table}
+  \caption{Definition of the analysis division into channels and regions.}
+  \label{tab:region_definition}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c | c|c|c | c|c|c|c | c|}
+      \hline
+      channel $\rightarrow$    & \multicolumn{3}{c|}{4 \Pl} & \multicolumn{4}{c|}{3 \Pl $\ (\ptmiss > 30 \GeV)$} & 2 \Pl   \\
+      \hline
+      \Pl status $\rightarrow$ & 4P      & 3P1F & 2P2F      & 3P      & 2P1F & 2P2F & 3F                        & 2P      \\
+      \hline
+      \PGg PASS                & \cellcolor[HTML]{cc7fff}SR & \multirow{2}*{CR \Pl} & \multirow{2}*{CR \Pl} &
+                                 \cellcolor[HTML]{a4c2f3}SR & \multirow{2}*{CR \Pl} & \multirow{2}*{CR \Pl} & \multirow{2}*{CR \Pl}  &
+                                 \cellcolor[HTML]{ffcb7f}SR \\
+      \cline{1-2} \cline{5-5} \cline{9-9}
+      \PGg FAIL                & CR \PGg &      &           & CR \PGg &      &      &                           & CR \PGg \\
+      \hline %% \midrule
+      \multicolumn{3}{c}{}                                & & \multicolumn{4}{c|}{3 \Pl $\ (\ptmiss < 30 \GeV)$} & \multicolumn{1}{c}{} \\
+      \cline{5-8}
+      \multicolumn{3}{c}{}                                & & 3P & 2P1F & 1P2F & 3F                             & \multicolumn{1}{c}{} \\
+      \cline{5-8}
+      \multicolumn{3}{c}{}                                & & \multicolumn{2}{c|}{\shortstack[c]{\vspace{.5ex} \\ \Pl-FR and \PGg-FR \\ measurement}} & & & \multicolumn{1}{c}{} \\
+      \cline{5-8}
+    \end{tabular}
+  }
+\end{table}

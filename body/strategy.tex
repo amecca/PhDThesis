@@ -1,48 +1,44 @@
 \chapter{Analysis Strategy}
 
 The analysis aims at observing triboson production of $\PZ\PZ\PGg$ and $\PW\PZ\PGg$, by combining three orthogonal channels.
-The \textit{channels} are defined based on the number of loose leptons (Sections \ref{sec:ele_selection} and \ref{sec:muo_selection}) in the event.
-Each channel is further divided into several \textit{regions}, based on the number of leptons that pass the tight selection,
-and whether or not there is a photon that passes the tight selection (Section \ref{sec:photonID}).
-The full scope of the division is illustrated in Table \ref{tab:region_definition}.
-
-\begin{table}
-  \caption{Definition of the analysis division into channels and regions.}
-  \label{tab:region_definition}
-  \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|c | c|c|c | c|c|c|c | c|}
-      \hline
-      channel $\rightarrow$    & \multicolumn{3}{c|}{4 \Pl} & \multicolumn{4}{c|}{3 \Pl $\ (\ptmiss > 30 \GeV)$} & 2 \Pl   \\
-      \hline
-      \Pl status $\rightarrow$ & 4P      & 3P1F & 2P2F      & 3P      & 2P1F & 2P2F & 3F                        & 2P      \\
-      \hline
-      \PGg PASS                & \cellcolor[HTML]{cc7fff}SR & \multirow{2}*{CR \Pl} & \multirow{2}*{CR \Pl} &
-                                 \cellcolor[HTML]{a4c2f3}SR & \multirow{2}*{CR \Pl} & \multirow{2}*{CR \Pl} & \multirow{2}*{CR \Pl}  &
-                                 \cellcolor[HTML]{ffcb7f}SR \\
-      \cline{1-2} \cline{5-5} \cline{9-9}
-      \PGg FAIL                & CR \PGg &      &           & CR \PGg &      &      &                           & CR \PGg \\
-      \hline %% \midrule
-      \multicolumn{3}{c}{}                                & & \multicolumn{4}{c|}{3 \Pl $\ (\ptmiss < 30 \GeV)$} & \multicolumn{1}{c}{} \\
-      \cline{5-8}
-      \multicolumn{3}{c}{}                                & & 3P & 2P1F & 1P2F & 3F                             & \multicolumn{1}{c}{} \\
-      \cline{5-8}
-      \multicolumn{3}{c}{}                                & & \multicolumn{2}{c|}{\shortstack[c]{\vspace{.5ex} \\ \Pl-FR and \PGg-FR \\ measurement}} & & & \multicolumn{1}{c}{} \\
-      \cline{5-8}
-    \end{tabular}
-  }
-\end{table}
-
-The 4\Pl channel targets $\PZ\PZ\PGg$ production with fully leptonic decay of the two Z bosons.
-The 3\Pl channel focuses primarily on $\PW\PZ\PGg$, also with fully leptonic decay of the \PW and \PZ bosons,
-but since there is a small contamination of $\PZ\PZ\PGg$ it benefits from a combined fit of the two.
-Finally, the 2\Pl channel targets both $\PZ\PZ\PGg$ and $\PW\PZ\PGg$, where one \PZ decays to leptons,
+The \textit{channels} are defined based on the number of leptons in the event.
+The four charged lepton channel (4\Pl) targets the $\PZ\PZ\PGg$ production with fully leptonic decay of the two Z bosons.
+The three charged lepton channel (3\Pl) is designed primarily for the $\PW\PZ\PGg$ production, in the fully leptonic decay channel of the \PW and \PZ bosons.
+Finally, the two charged lepton channel (2\Pl) targets both the $\PZ\PZ\PGg$ and $\PW\PZ\PGg$ production, where one \PZ decays to leptons,
 and the other massive boson decays to quarks, which hadronize to jets.
 
+Each channel is studied using several \textit{regions},
+based on the number of leptons that pass the tight selection (Sections \ref{sec:ele_selection} and \ref{sec:muo_selection}),
+and whether or not there is a photon that passes the tight selection (Section \ref{sec:photonID}).
+%% The full scope of the division is illustrated in Table \ref{tab:region_definition}.
+
+The main results reported in this analysis are for the four lepton channel,
+while
+%% My contribtion to this analysis includes the architecture of the overall strategy in three orthogonal channels,
+%% the \nonprompt photon background estimation technique and its application to this analysis.
+%% \todo{This needs rephrasing}
+
+\section{Signal}
 \input{strategy/signal}
+
+\section{Background}
 \input{strategy/backgrounds}
-\input{strategy/datasets}
+
+\section{Event selection}
 \input{strategy/event_selection}
-\input{strategy/fiducial_definition}
+
+\section{Background estimation strategy}
+I devised a set of backround estimation strategies mainly for misidentified and \nonprompt particles that are common to the three channels.
+The consequent division into Signal Regions (SR), Control/application Regions (CR) and measurement region is illustrated in Table\ref{tab:region_definition}.
+\input{strategy/region_table.tex}
+
+\subsection{Fake leptons}
+\input{strategy/fake_lepton_estimation}
+\subsection{Fake photons}
+\input{strategy/fake_photon_estimation}
+
+\input{strategy/datasets}
+
 \input{strategy/systematics}
 
 \begin{subappendices}
