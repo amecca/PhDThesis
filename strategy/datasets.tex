@@ -189,56 +189,51 @@ The MC samples are reweighed based on the per-event true number of interactions 
 % The default set of parton distribution functions (PDF) used for LO generators is \texttt{CTEQ6L}~\cite{CTEQ6L}, whereas \texttt{CT10}~\cite{CT10} is used for NLO generators (FIXME).
 %Leptons are generated requiring  $m_{\ell^{+}\ell^{-}}> 4$ GeV in all samples but \texttt{MadGraph}, in which  $m_{\ell^{+}\ell^{-}} > 12$ GeV, and reconstructed  following the same steps of~\cite{HiggsLegacyPaper,ZZXSPaper}. Jets are generated with $p_{T} > 10$ GeV and reconstructed following the criteria recommended by Jet-MET group~\cite{JetID}.
 
-\begin{sidewaystable}
+\begin{table}
   \caption{List of signal and background samples used in the analysis, with the ME generator used and their cross section.}
   \label{tab:listofsamples}
   \centering
-  \resizebox{.8\textwidth}{!}{
-    \begin{tabular}{l l r l m{.18\textwidth}}
+  %% \resizebox{.8\textwidth}{!}{
+    \begin{tabular}{l l r m{.3\textwidth}}
     \toprule
-    Process & Generator & $\sigma$ [pb] & Sample name & Remarks\\
+    Process & Generator & $\sigma$ [pb] & Remarks\\
 
     \midrule
-    \multicolumn{5}{l}{Signal samples}\\
+    \multicolumn{4}{l}{Signal samples}\\
     \hline
-    $\PZ\PZ\PGg \to 4\Pl\,\PGg$      & MadGraph (NLO) & 0.02202  & {\small\tt ZZGJetsTo4L2Nu\_4f\_TuneCP5\_13TeV\_amcatnloFXFX\_pythia8/[1,2,3,4]} &\\ %pp>l+ l- l+ l-a [QCD]; lep = e mu ta
-    $\PW\PZ\PGg \to 3\Pl\,\PGn\,\PGg$& MadGraph (NLO) & 0.03844  & {\small\tt LLWA\_WToLNu\_4FS\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]} &\\ %pp>lep nu z a [QCD]; lep = e mu ta
-    $\PZ\PZ\PGg \to 2\Pl\,2j\,\PGg$  & MadGraph (NLO) & 0.04978  & {\small\tt ZTo2LZTo2JGToG\_TuneCP5\_13TeV\_amcatnloFXFX-pythia8/[1,2,3,4]} &\\
-    $\PW\PZ\PGg \to 2\Pl\,2j\,\PGg$  & MadGraph (NLO) & 0.08044  & {\small\tt WTo2JZTo2LG\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} &\\
+    $\PZ\PZ\PGg \to 4\Pl\,\PGg$      & MadGraph (NLO) & 0.02202  &\\ %pp>l+ l- l+ l-a [QCD]; lep = e mu ta
+    $\PW\PZ\PGg \to 3\Pl\,\PGn\,\PGg$& MadGraph (NLO) & 0.03844  &\\ %pp>lep nu z a [QCD]; lep = e mu ta
+    $\PZ\PZ\PGg \to 2\Pl\,2j\,\PGg$  & MadGraph (NLO) & 0.04978  &\\
+    $\PW\PZ\PGg \to 2\Pl\,2j\,\PGg$  & MadGraph (NLO) & 0.08044  &\\
 
     \midrule
-    \multicolumn{5}{l}{Irreducible background samples}\\
+    \multicolumn{4}{l}{Irreducible background samples}\\
     \hline
-    $\PZ\PZ\to 4\Pl$ + 0,1 jets      & MadGraph (NLO) & 1.256    & {\small\tt ZZTo4L\_TuneCP5\_13TeV\_powheg\_pythia8/[1,2,3,4]}                    &\\
-    $\Pg\Pg\to \PZ\PZ\to 4\PGm$      & MCFM (LO)      & 0.001586 & {\small\tt GluGluToContinToZZTo4mu\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}  &\\
-    $\Pg\Pg\to \PZ\PZ\to 4\Pe$       & MCFM (LO)      & 0.001586 & {\small\tt GluGluToContinToZZTo4e\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}   &\\
-    $\Pg\Pg\to \PZ\PZ\to 2\Pe\,2\PGm$& MCFM (LO)      & 0.003191 & {\small\tt GluGluToContinToZZTo2e2mu\_13TeV\_TuneCP5\_MCFM701\_pythia8/[1,2,3,4]}&\\
+    $\PZ\PZ\to 4\Pl$ + 0,1 jets      & MadGraph (NLO) & 1.256    &\\
+    $\Pg\Pg\to \PZ\PZ\to 4\PGm$      & MCFM (LO)      & 0.001586 &\\
+    $\Pg\Pg\to \PZ\PZ\to 4\Pe$       & MCFM (LO)      & 0.001586 &\\
+    $\Pg\Pg\to \PZ\PZ\to 2\Pe\,2\PGm$& MCFM (LO)      & 0.003191 &\\
 
     \midrule
-    \multicolumn{5}{l}{Reducible background samples}\\
+    \multicolumn{4}{l}{Reducible background samples}\\
     \hline
-    $\PZ$ + 0,1,2 jets               & MadGraph (NLO) & 6225.2   & {\small\tt DYJetsToLL\_M-50\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} & for data/MC comparison in \PZ+L CR\\% define lep+ = e+ mu+ ta+; generate p p > lep+ lep- j [QCD]; add process p p > lep+ lep- j j [QCD]
-    $\PZ\PGg$ + 0,1 jets             & MadGraph (NLO) & 55.48    & {\small\tt ZGToLLG\_01J\_5f\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]} & for prompt \PGg subtraction in \PGg FR measurement\\% define lep = e+ mu+ ta+ e- mu- ta-; generate p p > lep lep a [QCD]; add process p p > lep lep a j [QCD]
-    $\PW\PZ \to 3\Pl\,\PGn$          & MadGraph (NLO) & 5.213    & {\small\tt WZTo3LNu\_TuneCP5\_13TeV-amcatnloFXFX-pythia8/[1,2,3,4]}         & off-shell contrib., letptonic decays\\ % define p = p b b~; define j = j b b~; define ell+ = e+ mu+ ta+; generate p p > ell- vl~ ell+ ell- (+ h.c.); add process p p > ell- vl~ ell+ ell- j (+ h.c)
-    $\PQt\PAQt \to 2\Pl\,\PGn$ + jets& Powheg         & 87.3     & {\small\tt TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8/[1,2,3,4]}              &\\
+    $\PZ$ + 0,1,2 jets               & MadGraph (NLO) & 6225.2   & for data/MC comparison in \PZ+L CR\\% define lep+ = e+ mu+ ta+; generate p p > lep+ lep- j [QCD]; add process p p > lep+ lep- j j [QCD]
+    $\PZ\PGg$ + 0,1 jets             & MadGraph (NLO) & 55.48    & for prompt \PGg subtraction in \PGg FR measurement\\% define lep = e+ mu+ ta+ e- mu- ta-; generate p p > lep lep a [QCD]; add process p p > lep lep a j [QCD]
+    $\PW\PZ \to 3\Pl\,\PGn$          & MadGraph (NLO) & 5.213    & off-shell contrib., letptonic decays\\ % define p = p b b~; define j = j b b~; define ell+ = e+ mu+ ta+; generate p p > ell- vl~ ell+ ell- (+ h.c.); add process p p > ell- vl~ ell+ ell- j (+ h.c)
+    $\PQt\PAQt \to 2\Pl\,\PGn$ + jets& Powheg         & 87.3     &\\
 
     \midrule
-    \multicolumn{5}{l}{Rare background samples}\\
+    \multicolumn{4}{l}{Rare background samples}\\
     \hline
-    $\PQt\PAQt\PZ$ + 0,1 jets        & MadGraph (LO)  & 0.5407   & {\small\tt ttZJets\_TuneCP5\_13TeV\_madgraphMLM\_pythia8]}  & inclusive \PZ decays\\
-    $\PQt\PAQt\PW$ + 0,1 jets        & MadGraph (NLO) & 0.2161   & {\small\tt TTWJetsToLNu\_TuneCP5\_13TeV-amcatnloFXFX-madspin-pythia8/[1,2,3,4]}& p p > t t\~ l v\\
-    $\PQt\PAQt\PZ\PZ$ + jets         & MadGraph (LO)  & 0.001572 & {\small\tt TTZZ\_TuneCP5\_13TeV-madgraph-pythia8/[1,2,3,4]} & inclusive decays\\
-    $\PQt\PAQt\PW\PW$ + jets         & MadGraph (LO)  & 0.007883 & {\small\tt TTWW\_TuneCP5\_13TeV-madgraph-pythia8/[1,2,3,4]} & inclusive decays\\
-    $\PZ\PZ\PZ$ + jets               & MadGraph (NLO) & 0.01398  & {\small\tt ZZZ\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]}  & inclusive decays, $m_{jj}<100\GeV$\\
-    $\PW\PZ\PZ$ + jets               & MadGraph (NLO) & 0.05565  & {\small\tt WZZ\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]}  & inclusive decays, $m_{jj}<100\GeV$\\
-    $\PW\PW\PZ$ + jets               & MadGraph (NLO) & 0.1651   & {\small\tt WWZ\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]}  &\\
-    $\PW\PW\PW$ + jets               & MadGraph (NLO) & 0.08058  & {\small\tt WWW\_4F\_TuneCP5\_13TeV-amcatnlo-pythia8/[1,2,3,4]}\\
+    $\PQt\PAQt\PZ$ + 0,1 jets        & MadGraph (LO)  & 0.5407   & inclusive \PZ decays\\
+    $\PQt\PAQt\PW$ + 0,1 jets        & MadGraph (NLO) & 0.2161   & p p > t t\~ l v\\
+    $\PQt\PAQt\PZ\PZ$ + jets         & MadGraph (LO)  & 0.001572 & inclusive decays\\
+    $\PQt\PAQt\PW\PW$ + jets         & MadGraph (LO)  & 0.007883 & inclusive decays\\
+    $\PZ\PZ\PZ$ + jets               & MadGraph (NLO) & 0.01398  & inclusive decays, $m_{jj}<100\GeV$\\
+    $\PW\PZ\PZ$ + jets               & MadGraph (NLO) & 0.05565  & inclusive decays, $m_{jj}<100\GeV$\\
+    $\PW\PW\PZ$ + jets               & MadGraph (NLO) & 0.1651   &\\
+    $\PW\PW\PW$ + jets               & MadGraph (NLO) & 0.08058  &\\
     \bottomrule
-    \\
-    \multicolumn{5}{l}{[1] \texttt{RunIISummer20UL16MiniAODAPVv2-106X\_mcRun2\_asymptotic\_preVFP\_v*}}\\
-    \multicolumn{5}{l}{[2] \texttt{RunIISummer20UL16MiniAODv2-106X\_mcRun2\_asymptotic\_v*}}\\
-    \multicolumn{5}{l}{[3] \texttt{RunIISummer20UL17MiniAODv2-106X\_mc2017\_realistic\_v*}}\\
-    \multicolumn{5}{l}{[4] \texttt{RunIISummer20UL18MiniAODv2-106X\_upgrade2018\_realistic\_v*}}\\
   \end{tabular}
-  }
-\end{sidewaystable}
+  %% }
+\end{table}
