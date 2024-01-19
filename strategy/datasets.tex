@@ -108,7 +108,11 @@ The motivation of using the decay chain syntax is twofold, as it allows to speed
 The latter is crucial to ensure sufficient statistics.
 
 \subsubsection{Background}
-The dominant background for the three and four charged lepton final state are the production of $\PW\PZ$ and $\PZ\PZ$.
+The dominant background for the four charged lepton final state is the production of $\PZ\PZ$,
+with minor contributions from massive triboson production.
+In the three lepton channel the major background contributions are Drell-Yan processes, $\PZ+\PGg$ production and $\PW\PZ$ production,
+with minor contribution from $\PZ\PZ$ production and $\PQt\PAQt$.
+
 %% $\PW\PZ$ is simulated at NLO with \MGvATNLO with up to 1 additional jet, including off-shell contributions.
 %% $\PZ\PZ$ has contributions from $\PQq \PAQq \to \PZ\PZ$ and $\Pg \Pg \to \PZ\PZ$ (with a quark loop).
 
@@ -120,7 +124,7 @@ No NNLO/NLO k-Factors are applied.
 
 Aside from the dominant ZZ background mediated by the tree-level processes, there is also a gluon loop-induced ZZ production process,
 which is a NNLO diagram and therefore is not included in the nominal ZZ sample.
-Though suppressed by the two additional strong couplings, it nevertheless contributes to inclusive ZZ production at the 10\% level.
+Though suppressed by the two additional strong couplings, it nevertheless contributes to inclusive ZZ production at the 10\usep\% level.
 $\Pg \Pg \to \PZ\PZ$ is simulated, separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm, at LO with \MCFM 7.0.
 
 $\PW\PZ \to 3\Pl \PGn$, $\PZ \PGg \to 2\Pl \PGg$ and $\PZ \to \Pl \Pl$ (Drell-Yan), with \Pl = \Pe, \PGm, \PGt,
@@ -130,16 +134,12 @@ while for Drell-Yan the calculations include up to two additional partons.
 
 Rare backgrounds such as massive triboson VVV and the various $\PQt\PAQt \,+\, X$ are simulated at NLO with \MGvATNLO.
 
-% This LO sample is used for the development of the signal extraction MVA and the evaluation of the interference with the electroweak signal. It is not used in the statistical analysis of the VBS search, which uses the NLO FXFX sample described later.
-%(only done in 2016) that only determines interference:
-%include the electroweak and QCD as well as their interference:
-%\begin{verbatim} 
-%generate p p > z z j j QCD^2==2,  z  >  l+ l-
-%\end{verbatim}
-%The cross-sections reported by the generator with 2016 settings are reported in Table \ref{tab:signal_background_xsec}. It can be seen that the interference is positive and amounts to about 0.0426 fb or 10\% of the electroweak signal. The opposing kinematics of the QCD and electroweak production cause the interference to be concentrated in the same phase-space as the QCD background, as is shown in the tagging-jet mass $m_{jj}$ and $|\Delta\eta_{jj}|$ distribution in Fig.~\ref{fig:interference}. 
+%The cross-sections reported by the generator with 2016 settings are reported in Table \ref{tab:signal_background_xsec}.
+%It can be seen that the interference is positive and amounts to about 0.0426 fb or 10\% of the electroweak signal.
+%The opposing kinematics of the QCD and electroweak production cause the interference to be concentrated in the same phase-space as the QCD background,
+%as is shown in the tagging-jet mass $m_{jj}$ and $|\Delta\eta_{jj}|$ distribution in Fig.~\ref{fig:interference}. 
 %The study of this sample is presented in the Appendix \ref{sec:interf}.
-%\begin{table}[!h]
-%\vspace{0.5cm}
+%\begin{table}
 %    \centering
 %    \topcaption{Cross sections of the electroweak and QCD-induced production of the $4\ell jj$ final state and the interference. The phase space is that of the generation, i.e. $m_{jj}>100$~GeV and includes the branching ratios for the Z decays to electrons or muons.}
 %   \begin{tabular}{c c c c c}
@@ -152,6 +152,7 @@ Rare backgrounds such as massive triboson VVV and the various $\PQt\PAQt \,+\, X
 %   \end{tabular}
 %   \label{tab:signal_background_xsec}
 %\end{table}
+
 %\begin{figure}[!htb]
 %\begin{center}
 %    \subfigure [] {\resizebox{7.5cm}{!}{\includegraphics{Figures/interference_mjj}}}
@@ -163,6 +164,7 @@ Rare backgrounds such as massive triboson VVV and the various $\PQt\PAQt \,+\, X
 %\label{fig:interference}
 %\end{center}
 %\end{figure}
+
 % The MadGraph samples for signal and background do not include any decays to tau leptons. The expected yield of the tau final states (both $\ell^+\ell^-\tau^+\tau^-$ and $\tau^+\tau^-\tau^+\tau^-$) in the baseline selection (two on-shell Z bosons plus at least two jets with $m_{jj}>100$~GeV) is estimated using the MadGraph\_AMC@NLO FxFx 0,1 jet sample and is found to be 0.015~fb or 0.6\% of the total expected yield. This justifies not generating these final states in order to increase the statistics in the relevant lepton channels.
 %The irreducible QCD-induced $\Pp\Pp  \to \Z\Z$ processes are produced at next-to-leading-order (NLO) with up to 2 extra parton emission with \texttt{MadGraph5\_aMCatNLO}~\cite{MGatNLO}, and merged using the FXFX scheme. This sample was specifically developed and requested for the ZZjj analysis; it will be the nominal sample in the statistical analysis.
 %The jet multiplicities are generated separately, in order generate events in the phase space probed by this analysis: 
@@ -171,23 +173,14 @@ Rare backgrounds such as massive triboson VVV and the various $\PQt\PAQt \,+\, X
 
 The full list of MC samples and their cross sections are shown in Table~\ref{tab:listofsamples}
 It includes the ones detailed above as well as rare SM backgrounds that result in much smaller contributions to the signal regions.
-%% For WZZ and ZZZ the dijet mass at LHE level has been required to be larger than 100 \GeV event by event, to avoid double counting with the signal sample.
 All cross sections used in the analysis are those returned by the generator and reported in Table~\ref{tab:listofsamples}, with no additional k-factors being used.
 
 All samples are generated with the NNPDF 3.0 (in 2016) or 3.1 (2017-18) parton distribution functions (PDFs)~\cite{NNPDF2015}.
 The MC samples are reweighed based on the per-event true number of interactions to match the level of \pileup observed in data as per general recipes.
 
-% Figure \ref{fig:data_nvtx} shows the number of reconstructed vertices after the reweighing for 2016, similar figures are produced for 2017 and 2018.
-%\begin{figure}[!htb]
-%\vspace*{0.3cm}
-%\begin{center}
-%\includegraphics[width=0.55\textwidth]{Figures/data_mc_ZZ_Nvtx.pdf}
-%\end{center}
-%\caption{Number of reconstructed vertices in ZZ events with the pileup-reweighed MC. Fixme: check final cross section recommendation for reweighing.}
-%\label{fig:data_nvtx}
-%\end{figure}
-% The default set of parton distribution functions (PDF) used for LO generators is \texttt{CTEQ6L}~\cite{CTEQ6L}, whereas \texttt{CT10}~\cite{CT10} is used for NLO generators (FIXME).
-%Leptons are generated requiring  $m_{\ell^{+}\ell^{-}}> 4$ GeV in all samples but \texttt{MadGraph}, in which  $m_{\ell^{+}\ell^{-}} > 12$ GeV, and reconstructed  following the same steps of~\cite{HiggsLegacyPaper,ZZXSPaper}. Jets are generated with $p_{T} > 10$ GeV and reconstructed following the criteria recommended by Jet-MET group~\cite{JetID}.
+%Leptons are generated requiring $m_{\Pl^{+}\Pl^{-}}> 4 \GeV$ in all samples but \texttt{MadGraph}, in which  $m_{\Pl^{+}\Pl^{-}} > 12 \GeV$,
+%and reconstructed  following the same steps of~\cite{HiggsLegacyPaper,ZZXSPaper}.
+%Jets are generated with $\pt > 10 \GeV$ and reconstructed following the criteria recommended by Jet-MET group~\cite{JetID}.
 
 \begin{table}
   \caption{List of signal and background samples used in the analysis, with the ME generator used and their cross section.}
@@ -207,16 +200,13 @@ The MC samples are reweighed based on the per-event true number of interactions 
     $\PW\PZ\PGg \to 2\Pl\,2j\,\PGg$  & MadGraph (NLO) & 0.08044  &\\
 
     \midrule
-    \multicolumn{4}{l}{Irreducible background samples}\\
+    \multicolumn{4}{l}{Main background samples}\\
     \hline
     $\PZ\PZ\to 4\Pl$ + 0,1 jets      & MadGraph (NLO) & 1.256    &\\
     $\Pg\Pg\to \PZ\PZ\to 4\PGm$      & MCFM (LO)      & 0.001586 &\\
     $\Pg\Pg\to \PZ\PZ\to 4\Pe$       & MCFM (LO)      & 0.001586 &\\
     $\Pg\Pg\to \PZ\PZ\to 2\Pe\,2\PGm$& MCFM (LO)      & 0.003191 &\\
 
-    \midrule
-    \multicolumn{4}{l}{Reducible background samples}\\
-    \hline
     $\PZ$ + 0,1,2 jets               & MadGraph (NLO) & 6225.2   & for data/MC comparison in \PZ+L CR\\% define lep+ = e+ mu+ ta+; generate p p > lep+ lep- j [QCD]; add process p p > lep+ lep- j j [QCD]
     $\PZ\PGg$ + 0,1 jets             & MadGraph (NLO) & 55.48    & for prompt \PGg subtraction in \PGg FR measurement\\% define lep = e+ mu+ ta+ e- mu- ta-; generate p p > lep lep a [QCD]; add process p p > lep lep a j [QCD]
     $\PW\PZ \to 3\Pl\,\PGn$          & MadGraph (NLO) & 5.213    & off-shell contrib., letptonic decays\\ % define p = p b b~; define j = j b b~; define ell+ = e+ mu+ ta+; generate p p > ell- vl~ ell+ ell- (+ h.c.); add process p p > ell- vl~ ell+ ell- j (+ h.c)
