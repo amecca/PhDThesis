@@ -65,6 +65,7 @@ This is caused by the larger number of \pileup particles included in a AK8 jet, 
 
 \subsection{Photon selection}
 \label{sec:evt_photon_selection}
+The photon selection is common to the three channels.
 Photons are required to have a transverse momentum $\pt^\PGg > 20 \GeV$
 and be in the acceptance region of the ECAL, excluding the overlap region, $|\eta^\PGg| < 1.442$ OR $1.566 < |\eta^\PGg| < 2.4$.
 The minimum separation between a photon and any of the leptons must be $\DR(\PGg, \Pl) > 0.5$.
@@ -74,23 +75,7 @@ Photons are required to pass the Conversion Safe Electron Veto.
 Several photon IDs are compared in this analysis (see Section \ref{sec:photon_selection}):
 the Loose working point of the cut-based ID
 and the two working points \texttt{wp90} and \texttt{wp80} of the MVA-based ID.
-
 In case there is more than one photon passing the requirements, the one with the highest \pt is selected.
 
-\subsection{FSR cut}
-\label{sec:FSR_cut}
-Although the cut on the minimum $\DR$ between the photon and any of the signal leptons greatly reduces the FSR component,
-a non negligible contribution from large angle emission remains.
-To address that, a cut on the invariant mass of the Z boson(s) is devised.
-The emission of a high-energy photon with a large angle alters significantly the four-momentum of a lepton,
-therefore the invariant mass of the Z boson reconstructed without that photon will be shifted to lower values.
-For this reason the cut requires
-the invriant mass of the reconstructed Z to be $m_{\Pl \Pl} > 81 \GeV$.
-
-\note{Alternative cut:\\
-  that the invariant mass of the two leptons is closer to the Z peak
-  than the mass of the two lepton plus photon system, namely:
-  $|m_{\Pl\Pl} - m_{\PZ}| < |m_{\Pl\Pl\PGg} - m_{\PZ}|$.
-  In the 4\Pl channel the Z boson used to evaluate this cut is the one that contains the lepton closest to the signal photon.
-  This removes events in which the photon is very likely FSR from one of the leptons.
-}
+For the results on the significance of triboson production, the cut designed to suppress FSR contributions
+described in Section~\ref{sec:FSR_cut} is also applied.
