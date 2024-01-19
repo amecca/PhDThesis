@@ -11,9 +11,9 @@ resulting in a certain degree of ambiguity in what can be considered triboson pr
 We can classify the diagrams into three classes:
 
 \begin{enumerate}
-\item The photon is radiated from an initial state fermion (Figure \ref{fig:ppTo4LG_hard}), a case that includes Initial State Radiation (ISR) diagrams.
-\item The photon emerges from a Triple or Quartic Gauge Coupling (e.g. Figure \ref{fig:ppTo4LG_GC}).
-\item The photon is emitted as Final State Radiation (FSR) by one of the leptons from the decay of a vector boson (e.g. Figure \ref{fig:ppTo4LG_FSR}).
+\item The photon is radiated from an initial state fermion (Figure~\ref{fig:ppTo4LG_hard}), a case that includes Initial State Radiation (ISR) diagrams.
+\item The photon emerges from a Triple or Quartic Gauge Coupling (e.g. Figure~\ref{fig:ppTo4LG_GC}).
+\item The photon is emitted as Final State Radiation (FSR) by one of the leptons from the decay of a vector boson (e.g. Figure~\ref{fig:ppTo4LG_FSR}).
 \end{enumerate}
 Arguably, only the first and second process are strictly considerable triboson production.
 
@@ -30,13 +30,56 @@ while $\PZ\PZ\PGg$ does not have any leading order (perturbative expansion up to
 
 \begin{figure}
   \centering
-  \subfigure [From initial-state fermion] {\includegraphics[width=.319\textwidth]{triboson_4LG.pdf} \label{fig:ppTo4LG_hard}}
-  \subfigure [Non-abelian coupling]       {\includegraphics[width=.319\textwidth]{QGC_3LNuG.pdf}    \label{fig:ppTo4LG_GC}  }
-  \subfigure [From final-state fermion]   {\includegraphics[width=.319\textwidth]{ZZ_4LG.pdf}       \label{fig:ppTo4LG_FSR} }
+  \subfigure [From an initial-state fermion] {\includegraphics[width=.319\textwidth]{triboson_4LG.pdf} \label{fig:ppTo4LG_hard}}
+  \subfigure [From non-abelian coupling]     {\includegraphics[width=.319\textwidth]{QGC_3LNuG.pdf}    \label{fig:ppTo4LG_GC}  }
+  \subfigure [From a final-state fermion]    {\includegraphics[width=.319\textwidth]{ZZ_4LG.pdf}       \label{fig:ppTo4LG_FSR} }
 \caption{Representative Standard Model Feynman diagrams that yield four isolated leptons and a photon in the final state.}
 \label{fig:ppTo4LG}
 \end{figure}
 
+\paragraph{Signal components\\}
+The relative composition of the diagrams shown in Figure~\ref{fig:ppTo4LG} in the signal sample was assessed in a generator level study.
+The study is conducted on the four lepton channel, but the results can be generalised to the other two.
+Two samples were generated at Leading Order EW ($\alpha_{\rm EW}^5 \, \alpS^0$) using \MADGRAPH.
+The first is the inclusive production of four fermions and a photon, while the other constrains the intermediate vector boson state.
+
+More precisely, the first sample simulates the process $\Pp\Pp \to 2\Pe 2\PGm \PGg$,
+which in \MADGRAPH syntax corresponds to \verb|generate p p > e+ e- mu+ mu- a|.
+The photon may be attached either to an initial- or final-state fermion line,
+but not to a triple or quartic vertex since there are no suitable couplings in the SM for this final state.
+The choice of a final state where the two lepton pairs have different flavour
+excludes the interference from diagrams with the momenta of two leptons swapped.
+The computed cross section is $0.075 \fbinv$.
+
+The second sample forces the intermediate Z boson resonances $\Pp\Pp \to \PZ\PZ\PGg \to 2\Pe 2\PGm \PGg$,
+using the syntax:
+\begin{verbatim}
+define ze = z
+define zmu = z
+generate p p > ze zmu a, ze > e+ e-, zmu > mu+ mu-
+\end{verbatim}
+In this case the photon is forced to be directly attached to an initial-state fermion line,
+making this a sub-sample of the previous one.
+The computed cross section is $0.027 \fbinv$.
+
+The distributions of the invariant mass of the same-flavour opposite-sign lepton pairs and the transverse momentum of the photon
+for the first and second sample are shown in Figure~\ref{fig:genstudy}.
+From these plots it appears that in a sizeable fraction of FSR events the mass of one of the
+reconstructed $\Pl\Pl$ pairs is significantly lower than the \PZ peak.
+It is also visible that the transverse momentum of FSR photons tends to be lower,
+since the momentum of the lepton may change significantly,
+and it becomes almost zero above $80\GeVc$.
+However only a fraction of the events in both samples are in the tail with $\pt^\PGg > 80\GeVc$.
+
+\begin{figure}
+  \centering\hfill
+  \subfigure [$m_{\Pl\Pl}$] {\includegraphics[width=.45\textwidth]{genstudy_mll.pdf}}\hfill
+  \subfigure [$\pt^\PGg$]   {\includegraphics[width=.45\textwidth]{genstudy_ptGamma.pdf}}\hfill\mbox{}
+  \caption{Invariant mass of the same-flavour opposite-sign lepton pairs and the transverse momentum of the photon
+  in the two MC samples produced for the study of the fraction of FSR events in the $\Pp\Pp \to 4\Pl\PGg$ process.}
+  \label{fig:genstudy}
+\end{figure}
+
+
 \subsection{Signal definition}
 \input{strategy/signal_definition}
-
