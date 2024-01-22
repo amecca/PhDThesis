@@ -14,33 +14,7 @@ either due to additional particles produced in the same hard scattering
 that are reconstructed in the detector or the identification algorithms,
 or coming from other collisions in the same bunch crossing (\pileup),
 they generate events which pass the selection.
-These processes have cross sections orders of magnitude larger than the signal.
-Often these backgrounds prove difficult to model in simulation,
-and it becomes advisable to use a data-driven method for their estimation.
 
-\paragraph{Four lepton channel\\}
-For the 4\Pl channel the predominant background component is the production of two on-shell \PZ bosons
-and a photon that is either radiated as FSR from one of the leptons
-or from a misreconstructed jet.
-%% As described in Section \ref{sec:simulation}
-It can either be produced from two quarks,
-or proceed from a gluon initiated loop.
-Additional backgrounds such as $\PQt\PAQt\PZ$ and VVV (V = \PZ, \PW) result in very small contributions.
-
-\todo{Expand, e.g. ZZ from qq/gg}
-
-\paragraph{Three lepton channel}
-In the 3\Pl channel the main background contributions are Drell-Yan + jets, $\PZ\PGg$ + jets
-and $\PW\PZ$ plus a photon that is either radiated as FSR from one of the leptons or from a misreconstructed jet.
-Another significant contribution comes from $\PZ\PZ \to 4\Pl$ where one of the leptons is lost or misreconstructed as a photon.
-There is also a small fraction of events from $\PZ\PZ\PGg$ in which one of the leptons is outside the detector acceptance. \todo{should check in MC}
-Additional backgrounds from rare processes such as $\PQt\PAQt\PZ$ and VVV (V = \PZ, \PW) result in very small contributions and are estimated with simulation.
-
-\paragraph{Two lepton channel\\}
-\todo{Describe backgrounds in 2L}
-
-\paragraph{Reducible background\\}
-This group of backgrounds arises from processes in which some of the reconstructed leptons or photons do not correspond to real, prompt leptons from the vector bosons decay or photons from the hard process.
 This particles can either be \nonprompt leptons or photons, or misidentified light-flavour jets.
 
 \Nonprompt leptons come mainly from decays of heavy flavour mesons and electrons from asymmetric photons conversions,
@@ -53,3 +27,51 @@ These misidentified photons tend to have a different energy distribution in the 
 which makes shower shape variables effective in separating this background from real photons.
 
 In the following the terms \textit{fake leptons} and \textit{fake photons} are used to refer to both \nonprompt and misidentified objects.
+These processes have cross sections orders of magnitude larger than the signal.
+Often these backgrounds prove difficult to model in simulation,
+and it becomes advisable to use a data-driven method for their estimation.
+
+\subsection{Four lepton channel}
+For the 4\Pl channel the predominant background component is the production of two on-shell \PZ bosons
+which decay to either electrons or muons.
+It is possible that and a photon that is either radiated as FSR from one of the leptons
+is also present in the event, thus producing the same signature as the signal.
+\note{check next sentence:}
+In this case, this process would be considered signal for the measurement of the cross section of $\Pp\Pp \to 4\Pl\PGg$,
+and a background for the results on triboson production.
+Alternatively the photon may be \nonprompt or a misreconstructed jet.
+
+Two \PZ bosons can be produced through quark-antiquark annihilation, as shown in Figure~\ref{fig:qqtoZZto4L}
+or from gluon fusion with a quark loop, illustrated in Figure~\ref{fig:ggtoZZto4L}.
+The latter is a Next-to-Leading Order (NLO) process, and its contribution is around 10\usep\% of the former in terms of event yield.
+
+Additional backgrounds such as $\PQt\PAQt\PZ$ and VVV (V = \PZ, \PW) result in very small contributions.
+
+\begin{figure}
+\hfill
+\subfigure [$\PQq\PAQq \to \PZ\PZ \to 4\Pl$]     {\includegraphics[width=.4\textwidth]{Figures/Feynman/qq_ZZ_4L.pdf} \label{fig:qqtoZZto4L}} \hfill
+\subfigure [$\Pg\Pg \to \PZ\PZ \to 4\Pl$ (loop)] {\includegraphics[width=.4\textwidth]{Figures/Feynman/gg_ZZ_4L.pdf} \label{fig:ggtoZZto4L}} \hfill\mbox{}
+\caption{Feynman diagrams for the production of two Z bosons
+with subsequent decay to four charged leptons
+either from quark-antiquark annihilation
+or from a gluon-initiated loop.}
+\end{figure}
+
+\subsection{Three lepton channel}
+In the three lepton channel the main background contributions are $\PW\PZ$, Drell-Yan + jets and $\PZ\PGg$ + jets.
+As for the \PZ\PZ in the four lepton channel, in \PW\PZ events an additional photon may be emitted as FSR from one of the leptons
+or be a misidentified or \nonprompt particle.
+The cross sections of Drell-Yan processes and \PZ\PGg production are much larger than that of the signal and,
+although the probabilities of particle misreconstruction or misidentification are comparatively small,
+they result in a significant yield in the signal region.
+
+Another not negligible contribution is the $\PZ\PZ \to 4\Pl$ where one of the leptons is lost or misreconstructed as a photon.
+There is also a small fraction of events from $\PZ\PZ\PGg$ in which one of the leptons is outside the detector acceptance. \todo{should check in MC.}
+Additional backgrounds from rare processes such as $\PQt\PAQt\PZ$ and VVV (V = \PZ, \PW) result in very small contributions and are estimated with simulation.
+
+\subsection{Two lepton channel}
+In the two lepton channel the major background are Drell-Yan processes and \PZ\PGg production.
+Unlinke the three lepton channel, the absence of the requirements on the presence of the third lepton and of the missing energy
+enhances the constibutions from these sources.
+The main distingushing feature is the kinematics and characteristics of the hadronic part of the events,
+which plays a major role in this channel.
