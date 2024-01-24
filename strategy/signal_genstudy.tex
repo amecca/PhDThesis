@@ -20,27 +20,65 @@ generate p p > ze zmu a, ze > e+ e-, zmu > mu+ mu-
 \end{verbatim}
 In this case the photon is forced to be directly attached to an initial-state fermion line,
 making this a sub-sample of the previous one.
-The computed cross section is $0.027 \fbinv$.
+The computed cross section is $0.026 \fbinv$. % $0.027 \fbinv$. % reason: the dRl>0.4 was not applied to this sample
 
 Both samples were generated with the requirement that the leading (subleading) lepton has a transverse momentum larger than 20 (10)\GeV.
 Every lepton is required to have $\pt^\Pl > 5\GeV$ and $|\eta^\Pl| < 2.5$,
 while the photon must satisfy $\pt^\PGg > 20\GeV$ and $|\eta^\PGg| < 2.5$.
 Additionally, the minimum separation between the photon and any of the four leptons must be $\DR(\Pl,\PGg) > 0.5$.
 
-The distributions of the invariant mass of the same-flavour opposite-sign lepton pairs and the transverse momentum of the photon
+The distributions of the invariant mass of the same-flavour opposite-sign lepton pairs
+%% and the transverse momentum of the photon
+and the $\DR$ distance between the photon and the closest lepton
 for the first and second sample are shown in Figure~\ref{fig:genstudy}.
 From these plots it appears that in a sizeable fraction of FSR events the mass of one of the
 reconstructed $\Pl\Pl$ pairs is significantly lower than the \PZ peak.
-It is also visible that the transverse momentum of FSR photons tends to be lower,
-since the momentum of the lepton may change significantly,
-and it becomes almost zero above $80\GeVc$.
-However only a fraction of the events in both samples are in the tail with $\pt^\PGg > 80\GeVc$.
+It is also visible that most FSR photons are close to the parent lepton.
+For these reasons, the triboson fiducial region, detailed in Section~\ref{sec:FSR_cut},
+is defined using cuts on these variables.
 
 \begin{figure}
   \centering\hfill
   \subfigure [$m_{\Pl\Pl}$] {\includegraphics[width=.45\textwidth]{genstudy_mll.pdf}}\hfill
-  \subfigure [$\pt^\PGg$]   {\includegraphics[width=.45\textwidth]{genstudy_ptGamma.pdf}}\hfill\mbox{}
-  \caption{Invariant mass of the same-flavour opposite-sign lepton pairs and the transverse momentum of the photon
+  \subfigure [$min \DR(\Pl,\PGg)$] {\includegraphics[width=.45\textwidth]{genstudy_dRlCloserG.pdf}}\hfill\mbox{}
+  \caption{Invariant mass of the same-flavour opposite-sign lepton pairs
+    and $\DR$ distance between the photon and the closest lepton
   in the two MC samples produced for the study of the fraction of FSR events in the $\Pp\Pp \to 4\Pl\PGg$ process.}
   \label{fig:genstudy}
 \end{figure}
+
+The corresponding distributions after the application of the cuts are shown in Figure~\ref{fig:genstudy_cuts}.
+The yields after the application of the cuts are reported in Table~\ref{tab:genstudy_yields}.
+The application of the cuts results in a reduction
+of 36\usep\% and 9\usep\% of the yield in the inclusive and constrained samples respectively.
+The FSR component, which is the difference of the two, is reduced by 51\usep\%.
+
+\begin{figure}
+  \centering\hfill
+  \subfigure [$m_{\Pl\Pl}$] {\includegraphics[width=.45\textwidth]{genstudy_mll_cuts.pdf}}\hfill
+  \subfigure [$min\ \DR(\Pl,\PGg)$] {\includegraphics[width=.45\textwidth]{genstudy_dRlCloserG_cuts.pdf}}\hfill\mbox{}
+  \caption{
+    Invariant mass of the same-flavour opposite-sign lepton pairs
+    and $\DR$ distance between the photon and the closest lepton,
+    after the application of the cuts to suppress the FSR component,
+    in the two MC samples produced for the study of the fraction of FSR events in the $\Pp\Pp \to 4\Pl\PGg$ process.
+  }
+  \label{fig:genstudy_cuts}
+\end{figure}
+
+\begin{table}
+  \centering
+  \caption{Number of events in the inclusive and constrained samples (and their difference) after applying the cuts to suppress the FSR component.}
+  \label{tab:genstudy_yields}
+  \begin{tabular}{l r@{}r r@{}r r@{}r}
+    \toprule
+    Cut                   & \multicolumn{2}{c}{inclusive} & \multicolumn{2}{c}{constrained} & \multicolumn{2}{c}{difference}\\
+    \midrule
+    %%None (not even dRl0p4)&         74.488& (100\usep\%)  &         27.279&   (100\usep\%)  &       47.202& (100\%) \\
+    None                  &         74.5  & (100\usep\%)  &         26.1  &   (100\usep\%)  &       48.4  & (100\%) \\
+    $\DR(\Pl,\PGg) > 0.5$ &         67.0  & ( 90\usep\%)  &         25.4  &    (93\usep\%)  &       41.6  & ( 86\%) \\
+    $m_{ll} > 81\GeV$     &         51.0  & ( 68\usep\%)  &         25.5  &    (98\usep\%)  &       25.5  & ( 53\%) \\
+    Both                  &         47.8  & ( 64\usep\%)  &         24.9  &    (91\usep\%)  &       22.9  & ( 47\%) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
