@@ -1,4 +1,5 @@
 % Likelihood scans with nuisance groups without the FSR cut
+\label{sec:likelihood_scans_inclusive}
 The extraction of the signal strength modifier $\mu$ proceeds through the maximisation of the likelihood,
 as described in Section~\ref{sec:statistical_analysis}.
 This procedure can be visualised by scanning the likelihood function for several values of the parameter $\mu$ while profiling the nuisance parameters.
@@ -23,14 +24,12 @@ Four groups of parameters are used in the following results:
 \item \textbf{others:} remaining experimental uncertainties, such as the lepton or photon efficiency scale factors or the \pileup weight;
 \end{itemize}
 
-\todo{describe results}
-
 \begin{figure}
   \centering
   \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/phoCR/SR4P/SYS_mZZGloose_central_pow.pdf}
   \hfill
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoCR_lepCR_mZZGloose.pdf}
-  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{d}{not}}
+  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{d}{not }}
   \label{fig:scan_Run2_SR4P_phoCR_lepCR_mZZGloose}
 \end{figure}
 
@@ -39,7 +38,7 @@ Four groups of parameters are used in the following results:
   \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/lepCR/SR4P/lead_loose_pt_pow.pdf}
   \hfill
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoMC_lepCR_mZZGloose.pdf}
-  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{s}{not}}
+  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{s}{not }}
   \label{fig:scan_Run2_SR4P_phoMC_lepCR_mZZGloose}
 \end{figure}
 
@@ -48,7 +47,7 @@ Four groups of parameters are used in the following results:
   \includegraphics[height=0.33\textheight]{Figures/dataMC/Run2/lepCR/SR4P/SYS_mZZGwp90_central_pow.pdf}
   \hfill
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoMC_lepCR_mZZGwp90.pdf}
-  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp90}}{MVA ID}{s}{not}}
+  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp90}}{MVA ID}{s}{not }}
   \label{fig:scan_Run2_SR4P_phoMC_lepCR_mZZGwp90}
 \end{figure}
 
@@ -57,7 +56,7 @@ Four groups of parameters are used in the following results:
   \hfill
   \centering
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoMC_lepCR_mZZGwp80.pdf}
-  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp80}}{MVA ID}{s}{not}}
+  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp80}}{MVA ID}{s}{not }}
   \label{fig:scan_Run2_SR4P_phoMC_lepCR_mZZGwp80}
 \end{figure}
 
@@ -66,7 +65,7 @@ Four groups of parameters are used in the following results:
   \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/lepCR/SR4P/SYS_wp90pt_central_pow.pdf}
   \hfill
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoMC_lepCR_wp90pt.pdf}
-  \caption{\captionScan{transverse momentum of the photon}{\texttt{wp90}}{MVA ID}{s}{not}}
+  \caption{\captionScan{transverse momentum of the photon}{\texttt{wp90}}{MVA ID}{s}{not }}
   \label{fig:scan_Run2_SR4P_phoMC_lepCR_wp90pt}
 \end{figure}
 
@@ -83,3 +82,23 @@ Four groups of parameters are used in the following results:
   }
   \label{fig:scan_Run2_SR4P_phoMC_lepCR_MVAcut}
 \end{figure}
+
+The uncertainty on the signal strength due to the statistics is between 0.035 and 0.050,
+and is by far the largest contribution to the total.
+This feature is observed for all of the strategies tested here.
+The other groups of systematics have much lower impacts.
+The theoretical uncertainties are around 0.03-0.05,
+while the effect of the luminosity is around 0.03
+and the rest of the experimental uncertainties amount to 0.06-0.08 of the signal strength.
+The data-driven estimate, when split of the other experimental uncertainties,
+adds an undertainty of 0.05-0.08 on the signal strength when estimating the fake photon background
+with the data-driven method (Figure~\ref{fig:scan_Run2_SR4P_phoCR_lepCR_mZZGloose}).
+
+\note{Temp}
+The signal sample has a cross section of 22.02\usep{}fb, as reported in Table~\ref{tab:listofsamples}.
+Assuming a signal strength of
+$1.000^{+0.480}_{-0.406}$,
+as extracted from
+\todo{best strategy}, % TEMP MVAcut
+the measured cross section for the production of $\Pp\Pp \to 4\Pl\PGg$ ($\Pl = \Pe,\,\PGm$) at a centre-of-mass energy of $13\TeV$ is
+$22.02^{+10.57}_{-8.94}\usep\text{fb}$.
