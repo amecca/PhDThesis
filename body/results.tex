@@ -40,20 +40,29 @@ This section reports the results for all of the combination of the aforementione
 
 \section{Four lepton channel}
 \input{results/caption-commands.tex} % Template captions for results
+
 \subsection{Inclusive cross section}
+\subsubsection{Systematic impacts}
 \input{results/impacts_inclusive.tex}
 
-\subsection{Triboson with FSR cut}
-\todo{significance with FSR cut}
-
-The significances obtained with the various strategies for the identification of the photon and the estimation of the fake photon background are illustrated in Table~\ref{tab:summary_significances_inclusive}.
-\input{results/significance_table}
-
-\subsection{Likelihood scans inclusive}
-\todo{temp name}
+\subsubsection{Likelihood scans}
 \input{results/likelihood_scans_inclusive.tex}
-\subsection{Likelihood scans in triboson fiducial region}
+
+\subsubsection{Significance}
+The significances obtained with the various strategies for the identification of the photon and the estimation of the fake photon background are illustrated in Table~\ref{tab:summary_significances_inclusive}.
+\input{results/significance_table_inclusive.tex}
+
+\subsection{Triboson fiducial region}
+
+\subsubsection{Systematic impacts}
+\input{results/impacts_FSRcut.tex}
+
+\subsubsection{Likelihood scans}
 \input{results/likelihood_scans_FSRcut.tex}
+
+\subsubsection{Significance}
+\input{results/significance_table_FSRcut.tex}
+
 
 \section{Yields and kinematic distributions}
 \input{results/yields.tex}

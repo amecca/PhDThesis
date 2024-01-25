@@ -1,3 +1,5 @@
+\providecommand{\impactswidthscale}{0.6}
+
 \providecommand{\descriptionFakePhoton}[1]{\if d#1%
 The data-driven estimate for \nonprompt photons is used%
 \else
@@ -11,4 +13,12 @@ using the #2 working point of the photon #3.
 \descriptionFakePhoton{#4}.
 The FSR cut is #5applied.
 The effect of groups of nuisance parameters on the uncertainty is assessed by sequentially fixing their value in the fit.
+}
+
+\providecommand{\captionImpact}[5]{
+  Distribution and impacts of the systematic uncertainties on the signal strength fit
+  on the #1,
+  using the #2 working point of the photon #3.
+  \descriptionFakePhoton{#4}.
+  The FSR cut is #5applied.
 }
