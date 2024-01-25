@@ -25,27 +25,12 @@ Four groups of parameters are used in the following results:
 
 \todo{describe results}
 
-\newcommand{\descriptionFakePhoton}[1]{\if d#1%
-The data-driven estimate for \nonprompt photons is used%
-\else
-\Nonprompt photons are estimated from simulation%
-\fi}
-
-\newcommand{\captionScan}[5]{
-Likelihood scan for the signal strength parameter
-on the #1,
-using the #2 working point of the photon #3.
-\descriptionFakePhoton{#4}.
-The FSR cut is #5 applied.
-The effect of groups of nuisance parameters on the uncertainty is assessed by sequentially fixing their value in the fit.
-}
-
 \begin{figure}
   \centering
   \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/phoCR/SR4P/SYS_mZZGloose_central_pow.pdf}
   \hfill
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoCR_lepCR_mZZGloose.pdf}
-  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{d}{}}
+  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{d}{not}}
   \label{fig:scan_Run2_SR4P_phoCR_lepCR_mZZGloose}
 \end{figure}
 
@@ -54,7 +39,7 @@ The effect of groups of nuisance parameters on the uncertainty is assessed by se
   \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/lepCR/SR4P/lead_loose_pt_pow.pdf}
   \hfill
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoMC_lepCR_mZZGloose.pdf}
-  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{s}{}}
+  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{s}{not}}
   \label{fig:scan_Run2_SR4P_phoMC_lepCR_mZZGloose}
 \end{figure}
 
@@ -63,7 +48,7 @@ The effect of groups of nuisance parameters on the uncertainty is assessed by se
   \includegraphics[height=0.33\textheight]{Figures/dataMC/Run2/lepCR/SR4P/SYS_mZZGwp90_central_pow.pdf}
   \hfill
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoMC_lepCR_mZZGwp90.pdf}
-  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp90}}{MVA ID}{s}{}}
+  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp90}}{MVA ID}{s}{not}}
   \label{fig:scan_Run2_SR4P_phoMC_lepCR_mZZGwp90}
 \end{figure}
 
@@ -72,7 +57,7 @@ The effect of groups of nuisance parameters on the uncertainty is assessed by se
   \hfill
   \centering
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoMC_lepCR_mZZGwp80.pdf}
-  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp80}}{MVA ID}{s}{}}
+  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp80}}{MVA ID}{s}{not}}
   \label{fig:scan_Run2_SR4P_phoMC_lepCR_mZZGwp80}
 \end{figure}
 
@@ -81,7 +66,7 @@ The effect of groups of nuisance parameters on the uncertainty is assessed by se
   \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/lepCR/SR4P/SYS_wp90pt_central_pow.pdf}
   \hfill
   \includegraphics[height=.33\textheight]{scan_expected_Run2_SR4P_phoMC_lepCR_wp90pt.pdf}
-  \caption{\captionScan{transverse momentum of the photon}{\texttt{wp90}}{MVA ID}{s}{}}
+  \caption{\captionScan{transverse momentum of the photon}{\texttt{wp90}}{MVA ID}{s}{not}}
   \label{fig:scan_Run2_SR4P_phoMC_lepCR_wp90pt}
 \end{figure}
 
