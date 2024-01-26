@@ -1,9 +1,17 @@
 \label{sec:statistical_analysis}
-The likelihood function is defined as the Probability Density Function for a set of parameters of a model, given a certain set of experimental observables (data).
-The model adopted for this analysis defines a signal strength modifier $\mu$, that multiplies the cross section of the $ZZ\gamma$ signal and leaves all the other processes unchanged.
+A statistical analysis is conducted in order to assess the presence of the signal process in the observed data,
+quantify the significance of the excess over background predictions and measure its cross section.
+The statistical inference is performed with the \textsc{Combine Tool} software package~\cite{CMS-NOTE-2011-005}.
+
+\subsection{Likelihood and nuisance parameters}
+The likelihood function is defined as the probability density function for a set of parameters of a model
+that quantifies the agreement with a certain set of experimental observables (data).
+The model adopted for this analysis defines a signal strength modifier $\mu$,
+that multiplies the production cross section of the signal process and leaves all the other processes unchanged.
 Each independent source of systematic uncertainty described in Section \ref{sec:systematics} is assigned a nuisance parameter $\theta_i$, and the full set is denoted $\vec\theta$.
 They are of no direct interest for this analysis, but must be considered in the fitting procedure to extract correct results.
-They enter the model through their PDF $p_i(\tilde{\theta_i}|\theta_i)$, which is the probability of measuring a certain value of the parameter given that the true value is $\theta_i$.
+They enter the model through their probability density function $p_i(\tilde{\theta_i}|\theta_i)$,
+which is the probability of measuring a certain value of the parameter given that the true value is $\theta_i$.
 Furthermore, the expected yields of background, $b$, and signal, $s$, depend on the value of the nuisance parameters.
 
 The global likelihood function is thus defined as:
