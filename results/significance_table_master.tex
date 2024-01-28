@@ -1,0 +1,32 @@
+\providecommand{\sigcell}[2]{%
+  \makecell{Significance\\%
+    \if e#1 expected \else\if o#1 observed\else ERROR\fi\fi\\
+    \if i#2 inclusive\else\if f#2 fiducial\else ERROR\fi\fi%
+  }
+}
+\begin{table}
+  \centering
+  \caption{Global significance table.}
+  \label{tab:test}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lll cccc}
+    \toprule
+    Photon ID           & Fake \PGg   & Variable         & \sigcell{e}{i} & \sigcell{o}{i} & \sigcell{e}{f} & \sigcell{o}{f}\\
+    \midrule
+    \multirow{3}{*}{%
+      \makecell{Cut-based\\(Loose)}%
+    }                   & data-driven & $m_{\PZ\PZ\PGg}$ & 3.06 $\sigma$  &  x.xx $\sigma$ &  2.87 $\sigma$ &  x.xx $\sigma$\\
+                        & simulation  & $m_{\PZ\PZ\PGg}$ & 3.06 $\sigma$  &  x.xx $\sigma$ &  2.76 $\sigma$ &  x.xx $\sigma$\\
+                        & simulation  & $\pt^\PGg$       & 3.20 $\sigma$  &  x.xx $\sigma$ &  2.74 $\sigma$ &  x.xx $\sigma$\\
+    \hline
+    \multirow{2}{*}{MVA%
+      ({\tt wp90})}     & simulation  & $m_{\PZ\PZ\PGg}$ & 3.34 $\sigma$  &  x.xx $\sigma$ &  2.94 $\sigma$ &  x.xx $\sigma$\\
+                        & simulation  & $\pt^\PGg$       & 3.35 $\sigma$  &  x.xx $\sigma$ &  2.90 $\sigma$ &  x.xx $\sigma$\\
+    \hline
+    MVA ({\tt wp80})    & simulation  & $m_{\PZ\PZ\PGg}$ & 3.26 $\sigma$  &  x.xx $\sigma$ &  2.90 $\sigma$ &  x.xx $\sigma$\\
+    \hline
+    Kinematic           & simulation  & MVA score        & 3.32 $\sigma$  &  x.xx $\sigma$ &  2.95 $\sigma$ &  x.xx $\sigma$\\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}

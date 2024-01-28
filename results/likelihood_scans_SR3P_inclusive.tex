@@ -1,0 +1,45 @@
+The extraction of the signal strength modifier $\mu$ proceeds through the maximisation of the likelihood,
+as for the four lepton channel.
+This procedure is visualised by plotting the scan of the likelihood function as in the four lepton channel.
+
+An estimate of the contriburion of the different groups of nuisances is derived
+by sequentially freezing them and the signal strength to the best fit value
+and profiling the others.
+
+Four groups of parameters are used in the following results:
+\begin{itemize}
+\item \textbf{theory:} uncertainties on the QCD scale, proton PDFs and on the value of \alpS;
+\item \textbf{data-driven:} uncertainties related to the data-driven estimate of fake lepton or fake photon backgrounds;
+\item \textbf{luminosity:} the uncertainty on the integrated luminosity corresponding to the data collected by the CMS experiment;
+\item \textbf{others:} remaining experimental uncertainties, such as the lepton or photon efficiency scale factors or the \pileup weight;
+\end{itemize}
+
+For the second strategy, in which both fake leptons and photons are estimated from simulation,
+the data-driven contribution is obviously null.
+
+\begin{figure}
+  \centering
+  \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/phoCR/SR3P/SYS_mWZGloose_central_pow_\dataMCblind .pdf}
+  \hfill
+  \includegraphics[height=.33\textheight]{Figures/combine/inclusive/scan_\expobs_Run2_SR3P_phoCR_lepMC_mWZGloose.pdf}
+  \caption{\captionScan{transvese mass of the $\PW\PZ\PGg$ system}{Loose}{cut-based ID}{d}{not }}
+  \label{fig:scan_Run2_SR3P_phoCR_lepMC_mWZGloose}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/fullMC/SR3P/SYS_mWZGloose_central_pow_\dataMCblind .pdf}
+  \hfill
+  \includegraphics[height=.33\textheight]{Figures/combine/inclusive/scan_\expobs_Run2_SR3P_phoMC_lepMC_mWZGloose.pdf}
+  \caption{\captionScan{transverse mass of the $\PW\PZ\PGg$ system}{Loose}{cut-based ID}{s}{not }}
+  \label{fig:scan_Run2_SR4P_phoMC_lepMC_mWZGloose}
+\end{figure}
+
+The theory group has the highest impact on the total uncertainty on the signal strength,
+accounting for $+0.20/-0.19$ when the data-driven estimate for the nonprompt photons is used
+and $+0.37/-0.38$ when all the backgrounds are estimated from simulation.
+The second most impacting group is the statistics, with an uncertainty of
+$\pm 0.30$ and $+0.28/-0.27$ respectively.
+The first strategy has a total uncertainty of $+0.40/-0.37$,
+while for the second it is $+0.48/-0.47$,
+around $20\usep\%$ higher.

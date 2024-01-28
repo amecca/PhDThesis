@@ -1,0 +1,32 @@
+\providecommand{\mucell}[2]{%
+  \makecell{$\mu$\\%
+    \if e#1 expected \else\if o#1 observed\else ERROR\fi\fi\\
+    \if i#2 inclusive\else\if f#2 fiducial\else ERROR\fi\fi%
+  }
+}
+\begin{table}
+  \centering
+  \caption{Global signal strength table.}
+  \label{tab:test}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lll cccc}
+    \toprule
+    Photon ID           & Fake \PGg   & Variable         & \mucell{e}{i} & \mucell{o}{i} & \mucell{e}{f} & \mucell{o}{f}\\
+    \midrule
+    \multirow{3}{*}{%
+      \makecell{Cut-based\\(Loose)}%
+    }                   & data-driven & $m_{\PZ\PZ\PGg}$ & ${}_{-0.385}^{+0.445}$ & ${}_{+0.}^{-0.}$ & ${}_{-0.424}^{+0.513}$ & ${}_{+0.}^{-0.}$\\
+                        & simulation  & $m_{\PZ\PZ\PGg}$ & ${}_{-0.363}^{+0.417}$ & ${}_{+0.}^{-0.}$ & ${}_{-0.425}^{+0.503}$ & ${}_{+0.}^{-0.}$\\
+                        & simulation  & $\pt^\PGg$       & ${}_{-0.368}^{+0.423}$ & ${}_{+0.}^{-0.}$ & ${}_{-0.431}^{+0.514}$ & ${}_{+0.}^{-0.}$\\
+    \hline
+    \multirow{2}{*}{MVA%
+      ({\tt wp90})}     & simulation  & $m_{\PZ\PZ\PGg}$ & ${}_{-0.349}^{+0.400}$ & ${}_{+0.}^{-0.}$ & ${}_{-0.406}^{+0.480}$ & ${}_{+0.}^{-0.}$\\
+                        & simulation  & $\pt^\PGg$       & ${}_{-0.355}^{+0.408}$ & ${}_{+0.}^{-0.}$ & ${}_{-0.414}^{+0.493}$ & ${}_{+0.}^{-0.}$\\
+    \hline
+    MVA ({\tt wp80})    & simulation  & $m_{\PZ\PZ\PGg}$ & ${}_{-0.359}^{+0.414}$ & ${}_{+0.}^{-0.}$ & ${}_{-0.415}^{+0.496}$ & ${}_{+0.}^{-0.}$\\
+    \hline
+    Kinematic           & simulation  & MVA score        & ${}_{-0.350}^{+0.399}$ & ${}_{+0.}^{-0.}$ & ${}_{-0.404}^{+0.476}$ & ${}_{+0.}^{-0.}$\\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}

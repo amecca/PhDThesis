@@ -21,7 +21,6 @@ Finally, the observed results will be reported.
 As mentioned in Sections \ref{sec:evt_photon_selection} and \ref{sec:FSR_cut},
 different approaches are used to select the photon
 and results are reported both including and excluding the FSR contribution.
-
 Additionally, several event variables are tested for the final fit to the signal strength.
 
 The first is the invariant mass of the $\PZ\PZ\PGg$ system.
@@ -32,17 +31,42 @@ The second variable is the transverse momentum of the photon.
 As the $\PZ\PZ\PGg$ mass, it is presumed to be sensitive to BSM physics in the high-momentum tail.
 
 The third option considered is the MVA-based ID working point passed by the photon.
+In each event, the photon passing the highest MVA working point is selected.
 Three bins are defined:
 \begin{itemize}
 \item \makebox[7em][l]{\bf wp80} The photon passes the \texttt{wp80} working point;
 \item \makebox[7em][l]{\bf $\mathrm{wp90} \land \mathrm{!wp80}$} The photon passes \texttt{wp90}, but fails \texttt{wp80};
 \item \makebox[7em][l]{\bf None} The photon fails \texttt{wp90};
 \end{itemize}
-The yield of the simulation is scaled in each bin according to the appropriate scale factors (see Section \ref{sec:photonID}).
+The yield of the simulation in each bin is scaled according to the appropriate scale factors (see Section \ref{sec:photonID}).
 
 This section reports the results for
 several combinations
 of the aforementioned choices of the analysis strategy.
+In particular, the following were tested:
+\begin{itemize}
+\item Data-driven estimate of fake photons,
+  using the Loose working point of the cut-based ID to select the signal photon,
+  and performing the analysis on the invariant mass spectrum of the $\PZ\PZ\PGg$ system.
+\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+  using the Loose working point of the cut-based ID to select the signal photon,
+  and performing the analysis on the invariant mass spectrum of the $\PZ\PZ\PGg$ system.
+\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+  using the Loose working point of the cut-based ID to select the signal photon,
+  and performing the analysis on the transverse mometnum distribution of the photon.
+\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+  using the \texttt{wp90} working point of the MVA-based ID to select the signal photon,
+  and performing the analysis on the invariant mass spectrum of the $\PZ\PZ\PGg$ system.
+\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+  using the \texttt{wp90} working point of the MVA-based ID to select the signal photon,
+  and performing the analysis on the transverse mometnum distribution of the photon.
+\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+  using the \texttt{wp80} working point of the MVA-based ID to select the signal photon,
+  and performing the analysis on the invariant mass spectrum of the $\PZ\PZ\PGg$ system.
+\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+  using the kinematic selection for the photons,
+  and classifying events depending on which is the highest MVA working point passed by the photon.
+\end{itemize}
 
 \section{Four lepton channel}
 \input{results/caption-commands.tex} % Template captions for results
@@ -51,6 +75,8 @@ This section reports the results obtained for the four lepton channel, which is 
 \subsection{Inclusive cross section}
 \label{sec:results_4L_inclusive}
 The first results pertain the measurement of the inclusive process $\Pp\Pp \to 4\Pl\PGg$ with $\Pl = \Pe,\,\PGm$.
+All of the selections detailed in Section~\ref{sec:event_selection} for the four lepton channel are applied,
+but the additional cut described in Section~\ref{sec:FSR_cut} is not.
 
 \subsubsection{Systematic impacts}
 The impact of a given source of systematic is defined as the shift $\Delta\mu$ on the signal strength
@@ -111,9 +137,15 @@ While it is possible to calculate the z component of the neutrino momentum assum
 this would introduce an additional bias with no benefit on the sensitivity.
 
 The photon is selected using the Loose working point of the cut-based ID.
-Two strategies are compared.
-The first uses the data-driven estimate of the fake photon background,
-while the other estimates all the backgrounds with the simulation.
+Two strategies are compared:
+\begin{itemize}
+\item Data-driven estimate of fake photons,
+  using the Loose working point of the cut-based ID to select the signal photon,
+  and performing the analysis on the transverse mass spectrum of the $\PW\PZ\PGg$ system.
+\item Fake photon and lepton predictions taken from simulation,
+  using the Loose working point of the cut-based ID to select the signal photon,
+  and performing the analysis on the transverse mass spectrum of the $\PW\PZ\PGg$ system.
+\end{itemize}
 
 \subsection{Inclusive cross section}
 The following results target the inclusive production of
@@ -121,8 +153,16 @@ $\Pp\Pp \to 3\Pl\, \PGnl\, \PGg$, with $\Pl = \Pe, \PGm$.
 Thus the cut designed to suppress the contibutions from genuine photons from FSR is not applied.
 
 \subsubsection{Systematic impacts}
+\input{results/impacts_SR3P_inclusive.tex}
+
 \subsubsection{Likelihood scans}
+\input{results/likelihood_scans_SR3P_inclusive.tex}
+
 \subsubsection{Significance}
+The expected sensitivity for the \RunII{} period for the first strategy is
+$2.90 \sigma$,
+while for the second strategy it is
+$2.10 \sigma$.
 
 \section{Yields and kinematic distributions}
 \input{results/yields.tex}
