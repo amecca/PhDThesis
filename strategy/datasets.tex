@@ -100,16 +100,19 @@ The MC samples are employed to optimise the event selection, evaluate the signal
 \subsubsection{Signal}
 The signal for this analysis is the production of a photon and two massive vector bosons, one of which is a $\Z$ that decays leptonically.
 The hard process of the signal is simulated with \MGvATNLO up to an additional jet at Next-to-Leading Order (NLO) with FxFx merging.
-Both of the fully leptonic signals ($\PZ\PZ\PGg \to 4\Pl\,\PGg$ and $\PW\PZ\PGg \to 3\Pl\,\PGn\,\PGg$)
-are generated without forcing the intermediate vector boson resonances (e.g. \verb|p p > l+ l- l+ l- a|),
-so as to retain off-shell effects and spin correlations among the leptons in the final state.
-Tau leptons are included in the generation, but are not part of the signal definition, and are suppressed in the analysis by the kinematic requirements on the Z mass.
-No additional studies were conducted on the contamination of taus into the final state.
 
+The sample for the fully leptonic $\PZ\PZ\PGg \to 4\Pl\,\PGg$ is
+generated without forcing the intermediate vector boson resonances (\ie \verb|p p > l+ l- l+ l- a|),
+so as to retain off-shell effects and spin correlations among the leptons in the final state.
+For the three lepton channel, $\PW\PZ\PGg \to 3\Pl\,\PGn\,\PGg$ is
+generated with a hybrid syntax (\verb|p p > l nu z a|), in which the \PZ resonance is explicit.
 For the semileptonic signal samples ($\PZ\mathrm{V}\PGg \to 2\Pl\,2j\,\PGg$, $\mathrm{V} = W,\, Z$) an intermediate syntax is used,
 with off-shell contributions for the leptonic decay of the \PZ,
 while forcing the intermediate resonance for the hadronically decaying boson $\mathrm{V}$ (e.g. \verb|p p > z l+ l- a|).
-The decays are performed by \MADSPIN~\cite{MadSpin}, in order to preserve the spin correlations between the leptons and, to some extent, off-shell effects.
+
+Tau leptons are included in the generation, but are not part of the signal definition, and are suppressed in the analysis by the kinematic requirements on the Z mass.
+No additional studies were conducted on the contamination of taus into the final state.
+The decays of vector bosons are performed by \MADSPIN~\cite{MadSpin}, in order to preserve the spin correlations between the leptons and, to some extent, off-shell effects.
 The motivation of using the decay chain syntax is twofold, as it allows to speed up the generation and to populate the phase-space probed by the analysis.
 The latter is crucial to ensure sufficient statistics.
 
@@ -156,7 +159,7 @@ The subsequent decays of the \PZ and \PW bosons to electrons or muons are perfor
 %Jets are generated with $\pt > 10 \GeV$ and reconstructed following the criteria recommended by Jet-MET group~\cite{JetID}.
 
 \begin{table}
-  \caption{List of signal and background samples used in the analysis, with the ME generator used and their cross section.}
+  \caption{List of signal and background samples used in the analysis, with the matrix element generator used and their cross section.}
   \label{tab:listofsamples}
   \centering
   %% \resizebox{.8\textwidth}{!}{
