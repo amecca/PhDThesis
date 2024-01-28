@@ -26,9 +26,11 @@ Additionally, several event variables are tested for the final fit to the signal
 The first is the invariant mass of the $\PZ\PZ\PGg$ system.
 It is expected to be higher for triboson events where the photon comes from the hard scattering than for FSR.
 Additionally, it is expected to be sensitive to Beyond Standard Model (BSM) contributions, especially in the high-energy tail.
+In the three lepton channel, the transverse mass of the $\PW\PZ\PGg$ system (see Equation~\ref{eq:transverse_mass}) is used instead.
 
 The second variable is the transverse momentum of the photon.
-As the $\PZ\PZ\PGg$ mass, it is presumed to be sensitive to BSM physics in the high-momentum tail.
+As the $\PZ\PZ\PGg$ mass and the $\PW\PZ\PGg$ transverse mass,
+it is presumed to be sensitive to BSM physics in the high-momentum tail.
 
 The third option considered is the MVA-based ID working point passed by the photon.
 In each event, the photon passing the highest MVA working point is selected.
@@ -40,10 +42,10 @@ Three bins are defined:
 \end{itemize}
 The yield of the simulation in each bin is scaled according to the appropriate scale factors (see Section \ref{sec:photonID}).
 
-This section reports the results for
-several combinations
-of the aforementioned choices of the analysis strategy.
-In particular, the following were tested:
+\section{Four lepton channel}
+\input{results/caption-commands.tex} % Template captions for results
+This section reports the results obtained for the four lepton channel, which is the focus of this thesis.
+In particular, the following choices of the aforementioned analysis strategy were tested:
 \begin{itemize}
 \item Data-driven estimate of fake photons,
   using the Loose working point of the cut-based ID to select the signal photon,
@@ -67,10 +69,6 @@ In particular, the following were tested:
   using the kinematic selection for the photons,
   and classifying events depending on which is the highest MVA working point passed by the photon.
 \end{itemize}
-
-\section{Four lepton channel}
-\input{results/caption-commands.tex} % Template captions for results
-This section reports the results obtained for the four lepton channel, which is the focus of this thesis.
 
 \subsection{Inclusive cross section}
 \label{sec:results_4L_inclusive}
@@ -106,6 +104,7 @@ is around 27.5 events, of which 12.8 from the signal sample.
 The following results are derived after the application of the cut
 designed to suppress FSR and enhance the fraction of events from triboson production diagrams,
 described in Section~\ref{sec:FSR_cut}.
+The target is the process $\Pp\Pp \to \PZ\PZ\PGg \to 4\Pl\PGg$.
 
 \subsubsection{Systematic impacts}
 \input{results/impacts_FSRcut.tex}
