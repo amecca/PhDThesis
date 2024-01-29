@@ -1,14 +1,26 @@
 \label{sec:clusters}
 Clustering the energy deposits in the calorimeter is necessary to
-detect and measure the energy of neutral stable particles (photons and hadrons),
+detect and measure the energy of neutral particles (photons and hadrons),
 reconstruct and identify electrons and their bremsstrahlung photons
 and improve the energy resolution for charged hadrons.
 
-First, \textit{cluster seeds} are identified as crystals with local energy maximum above a certain threshold.
-Then, \textit{topological clusters} are grown by aggregating crystals with at least one one side in common with one already in the cluster,
-if their energy exceeds a threshold defined as twice the noise level in the crystal.
+\note{The following two paragraphs could be moved to the corresponding sections of Chapter 2.}
 
-An expectation-maximisation algorithm based on a Gaussian-mixture model is then used to reconstruct the \textit{PF clusters} within a topological cluster,
+The signals in the ECAL crystals are reconstructed by fitting the signal pulse
+with multiple template functions to subtract the contribution from out-of-time \pileup~\cite{CMS-EGM-18-001}.
+
+During 2016-2017, two separate algorithms were used
+to reconstruct signal amplitudes in HCAL~\cite{CMS-PRF-22-001} at HLT and offline,
+eventually settling in 2018 on a third common algorithm (MAHI) for both.
+The signal amplitude is extracted through an iterative $\chi^2$ fit of the signal pulse
+with templates to account for out-of-time \pileup.
+
+First, \textit{cluster seeds} are identified as crystals with local energy maximum above a certain threshold.
+Then, \textit{topological clusters} are grown by aggregating crystals with at least one side in common with a crystal already in the cluster,
+provided their energy exceeds a threshold defined as twice the noise level in the crystal.
+
+An expectation-maximisation algorithm based on a Gaussian-mixture model~\cite{CMS-NOTE-2005-001}
+is then used to reconstruct the \textit{PF clusters} within a topological cluster,
 based on the assumption that the number of PF clusters is equal to the number of seeds.
 The parameters are the amplitudes and the mean of the Gaussians, while the variance is fixed for each calorimeter.
 % and are determined with a maximum likelyhood fit
