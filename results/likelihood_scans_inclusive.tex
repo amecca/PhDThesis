@@ -105,6 +105,39 @@ adds an uncertainty of 0.05-0.08 on the signal strength when estimating the fake
 with the data-driven method (Figure~\ref{fig:scan_Run2_SR4P_phoCR_lepCR_mZZGloose}).
 When estimating only the fake lepton background from data, the impact of its uncertainty on the signal strength is minimal.
 
+These results are summarised in Table~\ref{tab:scanl_SR4P_inclusive}.
+
+\begin{table}
+  \caption{
+  Summary of the likelihood scans for the four lepton channel
+  in the inclusive region
+  and contribution from each of the nuisance parameter groups to the total uncertainty on the signal strength.
+  %% \note{Must find a clear naming scheme for the header, or define the same names in Section~\ref{sec:results_4L}.}
+  }
+  \label{tab:scanl_SR4P_inclusive}
+  \small
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{lccccccccc}
+    \toprule
+    Fake photon & data-driven    &    MC          &    MC         &    MC          &    MC         &    MC          &    MC         \\
+    Fake lepton & data-driven    & data-driven    & data-driven   & data-driven    & data-driven   & data-driven    & data-driven   \\
+    Photon ID   & Loose (cut)    & Loose (cut)    & Loose (cut)   & wp90 (MVA)     & wp90 (MVA)    & wp80 (MVA)     & kinematic     \\
+    Variable    &$m_{\PZ\PZ\PGg}$&$m_{\PZ\PZ\PGg}$& $\pt^\PGg$    &$m_{\PZ\PZ\PGg}$& $\pt^\PGg$    &$m_{\PZ\PZ\PGg}$& MVAcut        \\
+    \midrule
+    $\mu$       & 1.000          & 1.000          & 1.000         & 1.000          & 1.000         & 1.000          & 1.000         \\
+    total       & -0.385/+0.445  & -0.363/+0.417  & -0.368/+0.423 & -0.349/+0.400  & -0.355/+0.408 & -0.359/+0.414  & -0.350/+0.399 \\
+    \hline
+    data-driven & -0.050/+0.081  & -0.001/+0.001  & -0.001/+0.001 & -0.001/+0.001  & -0.001/+0.001 & -0.001/+0.001  & -0.002/+0.002 \\
+    luminosity  & -0.029/+0.039  & -0.026/+0.036  & -0.026/+0.036 & -0.025/+0.035  & -0.025/+0.035 & -0.024/+0.034  & -0.028/+0.039 \\
+    theory      & -0.038/+0.035  & -0.044/+0.042  & -0.043/+0.040 & -0.040/+0.038  & -0.041/+0.039 & -0.038/+0.035  & -0.051/+0.054 \\
+    syst        & -0.056/+0.084  & -0.059/+0.082  & -0.058/+0.082 & -0.057/+0.079  & -0.057/+0.080 & -0.054/+0.074  & -0.071/+0.094 \\
+    stat        & -0.375/+0.427  & -0.355/+0.405  & -0.360/+0.411 & -0.341/+0.389  & -0.347/+0.397 & -0.352/+0.405  & -0.337/+0.382 \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+
 \note{Temp}
 Choosing the strategy that estimates the fake leptons from data while the fake photons are taken from simulation,
 and identifies the photon with the \texttt{wp90} working point of the MVA-based ID,
