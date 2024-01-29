@@ -26,7 +26,8 @@ The default algorithm used by CMS to determine the muon momentum is the \textit{
 It selects the best estimate from one of the following refits:
 \begin{itemize}
 \item Inner track: only information from the inner tracker is used.
-  For muons with $\pt < 200\GeV$, the contribution to the momentum measurement is marginal because of the uncertainty due to multiple scattering.
+  This is always chosen for muons with $\pt < 200\GeV$, since the information from the muon chamber
+  contributes marginally to the momentum measurement because of the uncertainty due to multiple scattering.
 \item Tracker-Plus-First-Muon-Station: uses the inner track and the innermost muon station with associated hits.
 \item Picky fit: targets muons which produced an electromagnetic shower in the steel return yoke between chambers, creating additional hits.
   If a chamber has a large occupancy, only the hits compatible with the extrapolated trajectory are used.
@@ -35,5 +36,5 @@ It selects the best estimate from one of the following refits:
   It continues outward until two consecutive stations without compatible hits are found.
 \end{itemize}
 
-The efficiency of muon reconstruction is very high, around 99 \% within the detector acceptance,
+The efficiency of muon reconstruction is very high, around $99\usep\%$ within the detector acceptance,
 thanks to the high efficiency of both the inner track and muon system reconstruction~\cite{CMS-MUO-16-001}.

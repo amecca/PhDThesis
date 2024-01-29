@@ -1,0 +1,19 @@
+Isolated global muons are first selected by requiring the
+sum of the \pt of the tracks and \ET of calorimeter deposits
+within a cone of radius $\DR = 0.3$ to be smaller than 10\usep\% of the muon \pt.
+
+For non-isolated muons, such as those inside jets, the tight-muon selection~\cite{CMS-MUO-10-004} is applied:
+it must be a global muon with $\chi^2/d.o.f < 10$ on its global track fit;
+its tracker track must be matched to muon segments at least two stations,
+must use more than 10 hits,
+of which at least one from the Pixel,
+and have a $d_{xy} < 2~\text{mm}$ to the primary vertex.
+%% This selection suppresses muons from in-flight decays.
+Additionally, the muon must either have at least three matched segments in the muon detectors,
+or its associated calorimeter deposits must be compatible with the muon hypothesis.
+
+Muons that fail the tight-muon selection are recovered if the standalone track is of high quality
+and has a large number of hits in the muon detectors.
+% (at least 23 DT or 15 CSC hits, out of 32 and 24, respectively)
+Alternatively, if a high-quality tracker-only fit with at least 13 hits is obtained,
+the muon is selected, provided that the associated calorimeter deposits are compatible with the myon hypothesis.
