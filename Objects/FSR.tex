@@ -1,5 +1,4 @@
-High energy leptons inside a strong magnetic filed can emit high energy photons.
-This is the case for the electrons and muons from the decay of the \PZ and \PW bosons.
+High energy photons can be emitted in the decay of the \PZ and \PW bosons, as described by quantum electrodynamics (QED).
 The Final State Radiation (FSR) photons emitted by leptons are not included at all in the Particle Flow reconstruction of muon momentum,
 and may be missed in electron reconstruction, leading to a degradation of the accuracy for the Z bosons momentum and mass.
 
@@ -12,6 +11,7 @@ This is achieved by exploiting the kinematics of FSR photons, which tend to be c
 
 The FSR photons are selected for each lepton, starting from the collection of photons produced by the Particle Flow algorithm.
 FSR candidates are required to have transverse momentum $p_{T}^{\gamma} > 2 \GeV$ and pseudorapidity $|\eta^{\gamma}| < 2.4$ (inside the tracker acceptance).
+
 A relative isolation is computed as:
 \begin{equation}
 I^{\PGg} \mathdefined \frac{1}{\pt^\PGg} \left( \sum{\pt^\PGg} + \sum_{i\, \in\, \mathrm{neutral}}{\pt^i} + \sum_{j\, \in\, \mathrm{charged}}{\pt^j} \right)
@@ -20,6 +20,7 @@ where $\sum{\pt^\PGg}$, $\sum_{i\, \in\, \mathrm{neutral}}{\pt^i}$ and $\sum_{j\
 are the scalar sums of the transverse momenta of photons, neutral and charged hadrons inside a cone of radius $\mathrm{R} = 0.3$ around the photon,
 including \pileup contributions.
 It is required that the relative isolation is $I^{\PGg} < 1.8$.
+\pagebreak[4] % suggest that this is a good place
 
 The photons that passed these selections are associated to the closest lepton, among those that pass the loose ID and SIP cut (see Section \ref{sec:eleSIP}).
 Because the electron reconstruction algorithm already recovers some of the FSR photons, we exclude those that have $\Delta R(e, \gamma) <$ 0.15 or $|\Delta\phi(e, \gamma)| <$ 2 and $|\Delta\eta(e, \gamma)| <$ 0.05 to avoid double counting.
@@ -30,7 +31,6 @@ and are expected to be quasi-collinear with the emitting leptons.
 The candidate with the smallest $\Delta R(\ell, \gamma)\, / E_{T,\gamma}^{2}$ is kept,
 and is accepted only if $\Delta R(\ell, \gamma)\, / E_{T,\gamma}^{2} < 0.012 \GeV^{-2}$.
 Accepted FSR photons have their momentum added to the lepton and are excluded from the computation of its isolation.
-
 A detailed study on the optimization of the FSR recovery algorithm can be found in Reference \cite{Sirunyan2017}.
 
 Since our analysis selection requires signal photons to have at least $\Delta R(\ell, \gamma) > 0.5$ from any signal lepton, there is no risk of double counting photons.

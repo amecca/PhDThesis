@@ -4,17 +4,19 @@ detect and measure the energy of neutral particles (photons and hadrons),
 reconstruct and identify electrons and their bremsstrahlung photons
 and improve the energy resolution for charged hadrons.
 
+\paragraph{Local reconstruction\\}
 \note{The following two paragraphs could be moved to the corresponding sections of Chapter 2.}
 
 The signals in the ECAL crystals are reconstructed by fitting the signal pulse
 with multiple template functions to subtract the contribution from out-of-time \pileup~\cite{CMS-EGM-18-001}.
 
-During 2016-2017, two separate algorithms were used
+During the period 2016--2017, two separate algorithms were used
 to reconstruct signal amplitudes in HCAL~\cite{CMS-PRF-22-001} at HLT and offline,
 eventually settling in 2018 on a third common algorithm (MAHI) for both.
 The signal amplitude is extracted through an iterative $\chi^2$ fit of the signal pulse
 with templates to account for out-of-time \pileup.
 
+\paragraph{PF clusters\\}
 First, \textit{cluster seeds} are identified as crystals with local energy maximum above a certain threshold.
 Then, \textit{topological clusters} are grown by aggregating crystals with at least one side in common with a crystal already in the cluster,
 provided their energy exceeds a threshold defined as twice the noise level in the crystal.
