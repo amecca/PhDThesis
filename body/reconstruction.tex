@@ -2,10 +2,10 @@
 
 The collision events registered by the CMS detector are reconstructed by combining information from the different subdetectors.
 This process aims to improve the identification of the final-state particles and the reconstruction precision of their properties.
-The basic elements such as tracks and calorimeter clusters are the reconstructed first and form the starting point of the next step.
-The global reconstruction strategy is implemented through the Particle Flow (PF) algorithm \cite{ParticleFlow}.
+The basic elements such as tracks and calorimeter clusters are reconstructed first and form the starting point for the next step.
+The global event reconstruction strategy is implemented through the Particle Flow (PF) algorithm \cite{ParticleFlow}.
 Originally applied in the ALEPH experiment at LEP, this algorithm combines data from the CMS subsystems to reconstruct physics objects and achieve a comprehensive and coherent event reconstruction.
-The resulting physics objects include charged and neutral hadrons, photons, electrons, and muons, serving as the starting inputs for all subsequent data analyses.
+The resulting particles include charged and neutral hadrons, photons, electrons, muons and taus, serving as the starting inputs for all subsequent data analyses.
 Additionally, PF candidates are used to construct more advanced objects such as jets and missing transverse energy.
 
 % NOTE: the content of this chapter is taken (and adapted) from the Analysis Note
@@ -35,13 +35,17 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 \label{sec:ParticleFlow}
 \input{Objects/PF.tex}
 
+\subsection{Muons}
+\label{sec:PFmuo}
+\input{Objects/PFmuo.tex}
+
 \subsection{Electrons and isolated photons}
 \input{Objects/PFelepho.tex}
 
 %% \subsection{Muons}
 %% \input{Objects/PFmuo.tex}
 
-\subsection{Hadrons and nonisolated photons}
+\subsection{Hadrons and non-isolated photons}
 \input{Objects/PFhad.tex}
 %% \subsection{Event post processing}
 %% \todo{}
@@ -57,7 +61,7 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 \subsubsection{Missing energy}
 \input{Objects/MET.tex}
 
-\section{Identification and selction}
+\section{Identification and selection}
 \subsection{Primary Vertex}
 \input{Objects/vertex.tex}
 
@@ -66,7 +70,7 @@ Additionally, PF candidates are used to construct more advanced objects such as 
 \input{Objects/FSR}
 
 \subsection{Electrons}
-\subsubsection{Isolation Optimization}
+\subsubsection{Isolation Optimisation}
 \label{sec:eleiso}
 \input{Objects/eleIso.tex}
 \subsubsection{Impact Parameter Selection}
@@ -99,11 +103,10 @@ Loose muons that pass also the identification, isolation and \SIPthreeD requirem
 \subsection{Summary}
 \input{Objects/summary.tex}
 
-\section{Calibration and efficiency measuremtents}
+\section{Calibration and efficiency measurements}
 Electron and Muon identification criteria, energy/momentum calibrations, and efficiency measurements,
 as well as the Final State Radiation (FSR) recovery, follow the same strategy used in Reference \cite{CMS-SMP-20-001}. % and CMS_AN_2016-442 CMS_AN_2017-342
 
-\note{Maybe move to next chapter}
 \subsection{Electrons}
 \subsubsection{Electron Energy Calibrations}
 \input{Objects/eleCalib}

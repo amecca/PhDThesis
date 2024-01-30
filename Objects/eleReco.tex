@@ -13,7 +13,8 @@ Two approaches are used to seed the electron reconstruction.
 
 The first, traditionally called \textit{ECAL-based} approach, starts from energetic ($\ET > 4\GeV$) ECAL clusters.
 The cluster energy and position are used to infer the expected position of hits in the tracker.
-PF clusters are assembled into \textit{PF superclusters} (SC), starting from a seed cluster and aggregating those that are presumed to come from bremsstrahlung or conversion products.
+Clusters are assembled into \textit{superclusters} (SC),
+starting from a seed cluster and aggregating those that are presumed to come from bremsstrahlung or conversion products.
 
 While this procedure is suited for isolated electrons, it is not fit for electrons in jets or with low \pt.
 A \textit{tracker-based seeding} complements it, leveraging the large efficiency of iterative tracking for these electrons.
@@ -30,4 +31,5 @@ Tracker- and ECAL-based seeds are merged and refitted with 12 GSF components.
 Three different charge estimates are inferred from the GSF track curvature,
 from the curvature of the closest KF track, and from $\Delta\phi$ between the cluster and the GSF track extrapolated to the vertex.
 The default charge estimation for electron candidates is taken as the majority vote of these three estimates.
-For Z electrons which pass a loose cut-based selection, this gives misidentification rates at the $10^{-3}$ level in the barrel and around 2\% in the endcaps~\cite{Rembser_2019}.
+For Z electrons which pass a loose cut-based selection, this gives misidentification rates at the $10^{-3}$ level in the barrel
+and around 2\usep\% in the endcaps~\cite{Rembser_2019}.
