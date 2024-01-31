@@ -99,7 +99,7 @@ The MC samples are reweighed based on the per-event true number of interactions 
 
 The full list of MC samples and their cross sections are shown in Table~\ref{tab:listofsamples}.
 %% It includes the ones detailed above as well as rare SM backgrounds that result in much smaller contributions to the signal regions.
-All cross sections used in the analysis are those returned by the generator and reported in Table~\ref{tab:listofsamples}, with no additional k-factors being used.
+All cross sections used in the analysis are those returned by the generator and reported in Table~\ref{tab:listofsamples}.
 
 The MC samples are employed to optimise the event selection, evaluate the signal efficiency and acceptance and cross check the data-driven estimate of backgrounds.
 
@@ -132,14 +132,22 @@ with contributions from $\PW$+jets and $\PW+\PGg$.
 
 $\PQq\PAQq \to \PZ\PZ \to 4\Pl$, with \Pl = \Pe, \PGm, \PGt, is simulated with \POWHEG at NLO QCD (LO EW) up to one extra parton,
 using dynamical QCD factorisation and renormalization scales.
-Although the fully differential cross section has already been computed at NNLO \cite{Grazzini_2015},
+Although the fully differential cross section has already been computed at next-to-next-to-leading order (NNLO) \cite{Grazzini_2015},
 this computation is not yet available in a Monte Carlo generator.
-No NNLO/NLO k-Factors are applied.
+To account for this difference, the simulated events are reweighted by
+NNLO/NLO k-Factors that depend on $m_{\PZ\PZ}$.
+Additional NLO electroweak corrections depending on the initial state quark flavour and kinematics
+are also applied in the region $m_{ZZ} > 2m_{Z}$, where they have been computed.
 
 Aside from the dominant ZZ background mediated by the tree-level processes, there is also a gluon loop-induced ZZ production process,
 which is a NNLO diagram and therefore is not included in the nominal ZZ sample.
 Though suppressed by the two additional strong couplings, it nevertheless contributes to inclusive ZZ production at the 10\usep\% level.
-$\Pg \Pg \to \PZ\PZ$ is simulated, separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm, at LO with \MCFM 7.0.
+$\Pg \Pg \to \PZ\PZ$ is simulated, separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm, at LO with \MCFM~7.0~\cite{Campbell_2014}.
+An exact calculation at NLO of this process is not yet available,
+but it was shown~\cite{Bonvini_2013} that its cross section is well described
+in the soft collinear approximation.
+Similarly to $\PQq\PAQq \to \PZ\PZ \to 4\Pl$, k-Factors are applied as function of $m_{\PZ\PZ}$~\cite{Catani_2007,Melnikov_2015}.
+Additionally, the cross-section is scaled by a factor $1.7$.
 
 $\PW\PZ \to 3\Pl \PGn$, $\PZ \PGg \to 2\Pl \PGg$ and $\PZ \to \Pl \Pl$ (Drell-Yan), %with \Pl = \Pe, \PGm, \PGt,
 are simulated at NLO with \MGvATNLO, including off-shell effects.
