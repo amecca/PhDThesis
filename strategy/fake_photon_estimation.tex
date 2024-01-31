@@ -144,9 +144,11 @@ From this it follows that the number of background events in the signal region i
   N^{bkg}_{4P\_1P} = \sum \frac{f_i}{1-f_i} N_{4P\_1F}
 \end{equation}
 
-Each event in the application regions is reweighted by the transfer factor
+The transfer factor
 $\text{TF}^\gamma(\pt, \eta) = \frac{f^\gamma}{1-f^\gamma}$,
-where $f^\gamma$ is the Fake Rate estimated in the measurement region.
+where $f^\gamma$ is the Fake Rate estimated in the measurement region,
+is used to reweight the events in the application region and obtain
+the estimate of the fake photon background.
 
 \paragraph{Usage of the MVA based ID\\}
 Kinematic photons that pass the MVA-based working points \texttt{wp90} and \texttt{wp80} are also considered,
