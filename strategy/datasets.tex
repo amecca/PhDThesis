@@ -42,15 +42,16 @@ To avoid duplicate events from different primary datasets, events are taken:
 
 The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the integrated luminosity.
 
-\begin{table*}
+\begin{table}
   \caption{List of data samples used in the analysis. All of the runs for each of the 5 datasets (4 for 2018) are used, for a total of 86 primary datasets.}
   \label{tab:datasamples}
   \centering
   \small
-  \begin{tabular}{l l}
+  \begin{tabular}{l l l}
     \toprule
-    \textbf{Data stream} &  \textbf{Run and reconstruction version}\\
+    \textbf{Year} & \textbf{Data streams} &  \textbf{Run and reconstruction version}\\
     \midrule
+    2016 &
     \begin{tabular}{@{}l}
       DoubleMuon\\
       DoubleEG\\
@@ -70,19 +71,21 @@ The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the i
       Run2016H-UL2016
     \end{tabular} \\
     \hline
-    DoubleMuon     & Run2017B-UL2017\\
-    DoubleEG       & Run2017C-UL2017\\
-    MuonEG         & Run2017D-UL2017\\
-    SingleMuon     & Run2017E-UL2017\\
-    SingleElectron & Run2017F-UL2017\\
+    \multirow{5}{*}{2017}
+      & DoubleMuon     & Run2017B-UL2017\\
+      & DoubleEG       & Run2017C-UL2017\\
+      & MuonEG         & Run2017D-UL2017\\
+      & SingleMuon     & Run2017E-UL2017\\
+      & SingleElectron & Run2017F-UL2017\\
     \hline
-    DoubleMuon & Run2018A-UL2018\\
-    MuonEG     & Run2018B-UL2018\\
-    SingleMuon & Run2018C-UL2018\\
-    EGamma     & Run2018D-UL2018\\
+    \multirow{4}{*}{2018}
+      & DoubleMuon & Run2018A-UL2018\\
+      & MuonEG     & Run2018B-UL2018\\
+      & SingleMuon & Run2018C-UL2018\\
+      & EGamma     & Run2018D-UL2018\\
     \bottomrule
   \end{tabular}
-\end{table*}
+\end{table}
 
 \subsection{Simulation}
 \label{sec:simulation}
