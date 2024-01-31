@@ -13,62 +13,73 @@ and they were optimised for the phase space of the $\PH \to \PZ \PZst \to 4\Pl$ 
 \begin{table*}
   \caption{Trigger paths used in 2016 collision data. All triggers have prescale = 1.}
   \label{tab:triggerpaths2016}
-  \scriptsize
   \centering
-  \begin{tabular}{ l l }
+  \small
+  \begin{tabular}{ l l l }
     \toprule %--------------------------------------------------------------------------------------------------------------------------
-    \shortstack{{}\\[.15ex] \normalsize{HLT path}}             & \normalsize{primary dataset} \\
+    Trigger description & Requirements & Primary Dataset \\
     \midrule %--------------------------------------------------------------------------------------------------------------------------
-    \verb| HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ         | & DoubleEG \\
-    \verb| HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ         | & DoubleEG \\
-    \verb| HLT_DoubleEle33_CaloIdL_GsfTrkIdVL                | & DoubleEG \\
-    \verb| HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL             | & DoubleEG \\
-    \verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL                  | & DoubleMuon \\
-    \verb| HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL                | & DoubleMuon \\
-    \verb| HLT_TripleMu_12_10_5                              | & DoubleMuon \\
-    \verb| HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL    | & MuonEG \\
-    \verb| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL    | & MuonEG \\
-    \verb| HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL   | & MuonEG \\
-    \verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL   | & MuonEG \\
-    \verb| HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL    | & MuonEG \\
-    \verb| HLT_Mu8_DiEle12_CaloIdL_TrackIdL                  | & MuonEG \\
-    \verb| HLT_DiMu9_Ele9_CaloIdL_TrackIdL                   | & MuonEG \\
-    \verb| HLT_Ele25_eta2p1_WPTight                          | & SingleElectron \\
-    \verb| HLT_Ele27_WPTight                                 | & SingleElectron \\
-    \verb| HLT_Ele27_eta2p1_WPLoose_Gsf                      | & SingleElectron \\
-    \verb| HLT_IsoMu20 OR HLT_IsoTkMu20                      | & SingleMuon \\
-    \verb| HLT_IsoMu22 OR HLT_IsoTkMu22                      | & SingleMuon \\
+    Double isolated electron     & $\pt^{\Pe_1}, \pt^{\Pe_2} > 17, 12 \GeVc$                 & \multirow{4}{*}{DoubleEG} \\
+    Double isolated electron     & $\pt^{\Pe_1}, \pt^{\Pe_2} > 23, 12 \GeVc$                 & \\
+    Double isolated GSF electron & $\pt^{\Pe_1}, \pt^{\Pe_2} > 33, 33 \GeVc$                 & \\
+    Triple isolated electron     & $\pt^{\Pe_1}, \pt^{\Pe_2}, \pt^{\Pe_3} > 16, 12, 8 \GeVc$ & \\
+    \hline
+    Double isolated muon & $\pt^{\PGm_1}, \pt^{\PGm_2} > 17, 8 \GeVc$                   & \multirow{3}{*}{DoubleMuon} \\
+    Double isolated muon\hyperlink{tab:triggerpaths2016:fn1}{${}^1$}
+                         & $\pt^{\PGm_1}, \pt^{\PGm_2} > 17, 8 \GeVc$                   & \\
+    Triple isolated muon & $\pt^{\PGm_1}, \pt^{\PGm_2}, \pt^{\PGm_3} > 12, 10, 5 \GeVc$ & \\
+    \hline
+    Tracker muon \!+\! isolated electron & $\pt^{\PGm}, \pt^{\Pe} > 8 , 17$                   & \multirow{7}{*}{MuonEG} \\
+    Tracker muon \!+\! isolated electron & $\pt^{\PGm}, \pt^{\Pe} > 8 , 23$                   & \\
+    Tracker muon \!+\! isolated electron & $\pt^{\PGm}, \pt^{\Pe} > 17, 12$                   & \\
+    Tracker muon \!+\! isolated electron & $\pt^{\PGm}, \pt^{\Pe} > 23, 12$                   & \\
+    Tracker muon \!+\! isolated electron & $\pt^{\PGm}, \pt^{\Pe} > 23, 8 $                   & \\
+    Tracker muon \!+\! double electron   & $\pt^{\PGm},\pt^{\Pe_1},\pt^{\Pe_2} >8,12,12\GeVc$ & \\
+    Double tracker muon + electron   & $\pt^{\PGm_1},\pt^{\PGm_2},\pt^{\Pe}>9,9,9\GeVc$   & \\
+    \hline
+    Single tight ID central electron & $\pt^{\Pe}>25$, $|\eta^\Pe| < 2.1$ & \multirow{3}{*}{SingleElectron} \\
+    Single tight ID electron         & $\pt^{\Pe}>27$                     & \\
+    Single tight ID GSF electron     & $\pt^{\Pe}>27$, $|\eta^\Pe| < 2.1$ & \\
+    \hline
+    Single isolated muon & $\pt^{\PGm}>20$ & \multirow{2}{*}{SingleMuon} \\
+    Single isolated muon & $\pt^{\PGm}>22$ & \\
     \bottomrule %-----------------------------------------------------------------------------------------------------------------------
+    \noalign{\vspace{.5ex}} % small vertical space
+    \multicolumn{3}{l}{\quad\hypertarget{tab:triggerpaths2016:fn1}{1}: $\mu_1$ is global, $\mu_2$ is tracker muon} \\
   \end{tabular}
 \end{table*}
 
 \begin{table*}
   \caption{Trigger paths used in 2017 collision data. All triggers have prescale = 1.}
   \label{tab:triggerpaths2017}
-  \scriptsize
   \centering
-  \begin{tabular}{ l l }
+  \small
+  \begin{tabular}{ l l l }
     \toprule %--------------------------------------------------------------------------------------------------------------------------
-    \shortstack{{}\\[.15ex] \normalsize{HLT path}}              & \normalsize{primary dataset} \\
+    Trigger description & Requirements & Primary Dataset \\
     \midrule %--------------------------------------------------------------------------------------------------------------------------
-    \verb| HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_*           | & DoubleEG \\
-    \verb| HLT_DoubleEle33_CaloIdL_GsfTrkIdVL                 | & DoubleEG \\
-    \verb| HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL              | & DoubleEG \\
-    \verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8        | & DoubleMuon \\
-    \verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8          | & DoubleMuon \\
-    \verb| HLT_TripleMu_12_10_5                               | & DoubleMuon \\
-    \verb| HLT_TripleMu_10_5_5_D2                             | & DoubleMuon \\
-    \verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL    | & MuonEG \\
-    \verb| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ  | & MuonEG \\
-    \verb| HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ | & MuonEG \\
-    \verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ | & MuonEG \\
-    \verb| HLT_DiMu9_Ele9_CaloIdL_TrackIdL_DZ                 | & MuonEG \\
-    \verb| HLT_Mu8_DiEle12_CaloIdL_TrackIdL                   | & MuonEG \\
-    \verb| HLT_Mu8_DiEle12_CaloIdL_TrackIdL_DZ                | & MuonEG \\
-    \verb| HLT_Ele35_WPTight_Gsf_v*                           | & SingleElectron \\
-    \verb| HLT_Ele38_WPTight_Gsf_v*                           | & SingleElectron \\
-    \verb| HLT_Ele40_WPTight_Gsf_v*                           | & SingleElectron \\
-    \verb| HLT_IsoMu27                                        | & SingleMuon \\
+    Double isolated electron & $\pt^{\Pe_1}, \pt^{\Pe_2} > 23, 12 \GeVc$                 & \multirow{3}{*}{DoubleEG} \\
+    Double GSF electron      & $\pt^{\Pe_1}, \pt^{\Pe_2} > 33, 33 \GeVc$                 & \\
+    Triple electron          & $\pt^{\Pe_1}, \pt^{\Pe_2}, \pt^{\Pe_3} > 16, 12, 8 \GeVc$ & \\
+    \hline
+    Double isolated muon & $\pt^{\PGm_1}, \pt^{\PGm_2} > 17, 8 \GeVc,\ m_{\PGm\PGm} > 3.8\GeVcc$ & \multirow{4}{*}{DoubleMuon} \\
+    Double isolated muon & $\pt^{\PGm_1}, \pt^{\PGm_2} > 17, 8 \GeVc,\ m_{\PGm\PGm} > 8  \GeVcc$ & \\
+    Triple muon          & $\pt^{\PGm_1}, \pt^{\PGm_2}, \pt^{\PGm_3} > 12, 10, 5\GeV$            & \\
+    Triple muon          & $\pt^{\PGm_1}, \pt^{\PGm_2}, \pt^{\PGm_3} > 10,  5, 5\GeV$            & \\
+    \hline
+    Iso muon \!+\! iso electron & $\pt^\PGm, \pt^\Pe > 23, 12 \GeVc$                            & \multirow{7}{*}{MuonEG} \\
+    Iso muon \!+\! iso electron & $\pt^\PGm, \pt^\Pe > 8 , 23 \GeVc$                            & \\
+    Iso muon \!+\! iso electron & $\pt^\PGm, \pt^\Pe > 12, 23 \GeVc$                            & \\
+    Iso muon \!+\! iso electron & $\pt^\PGm, \pt^\Pe > 23, 12 \GeVc$                            & \\
+    Double muon \!+\! electron            & $\pt^{\PGm_1}, \pt^{\PGm_2}, \pt^\Pe > 9,9,9 \GeVc$ & \\
+    Muon \!+\! double electron            & $\pt^\PGm, \pt^{\Pe_1}, \pt^{\Pe_2} > 8,12,12\GeVc$ & \\
+    Muon \!+\! double electron            & $\pt^\PGm, \pt^{\Pe_1}, \pt^{\Pe_2} > 8,12,12\GeVc$ & \\
+    \hline
+    Single tight ID electron & $\pt^\Pe > 35 \GeVc$ & \multirow{3}{*}{SingleElectron} \\
+    Single tight ID electron & $\pt^\Pe > 38 \GeVc$ & \\
+    Single tight ID electron & $\pt^\Pe > 40 \GeVc$ & \\
+    \hline
+    Single isolated muon & $\pt^\PGm > 27 \GeVc$ & SingleMuon \\
     \bottomrule %-----------------------------------------------------------------------------------------------------------------------
   \end{tabular}
 \end{table*}
@@ -76,22 +87,25 @@ and they were optimised for the phase space of the $\PH \to \PZ \PZst \to 4\Pl$ 
 \begin{table*}
   \caption{Trigger paths used in 2018 collision data. All triggers have prescale = 1.}
   \label{tab:triggerpaths2018}
-  \scriptsize
+  \small
   \centering
-  \begin{tabular}{ l l }
+  \begin{tabular}{ l l l }
     \toprule %--------------------------------------------------------------------------------------------------------------------------
-    \shortstack{{}\\[.15ex] \normalsize{HLT path}}                & \normalsize{primary dataset} \\
+    Trigger description & Requirements & Primary Dataset \\
     \midrule %--------------------------------------------------------------------------------------------------------------------------
-    \verb| HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_v*            | & EGamma \\
-    \verb| HLT_DoubleEle25_CaloIdL_MW_v*                        | & EGamma \\
-    \verb| HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_v*       | & DoubleMuon \\
-    \verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*   | & MuonEG \\
-    \verb| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v* | & MuonEG \\
-    \verb| HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*| & MuonEG \\
-    %\verb| HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*          | & MuonEG \\
-    \verb| HLT_DiMu9_Ele9_CaloIdL_TrackIdL_DZ_v*                | & MuonEG \\
-    \verb| HLT_Ele32_WPTight_Gsf_v*                             | & EGamma \\
-    \verb| HLT_IsoMu24_v*                                       | & SingleMuon \\
+    Double isolated electron    & $\pt^{\Pe_1}, \pt^{\Pe_2} > 23, 12 \GeVc$ & \multirow{3}{*}{EGamma} \\
+    Double electron             & $\pt^{\Pe_1}, \pt^{\Pe_2} > 25, 25 \GeVc$ & \\
+    Single isolated electron    & $\pt^\Pe > 32 \GeVc$                      & \\
+    \hline
+    Double isolated muon        & $\pt^{\PGm_1}, \pt^{\PGm_2} > 17, 8 \GeVc,\ m_{\PGm\PGm} > 3.8\GeVcc$ & DoubleMuon \\
+    \hline
+    Iso muon \!+\! iso electron & $\pt^\PGm, \pt^\Pe > 23, 12 \GeVc$                  & \multirow{5}{*}{MuonEG} \\
+    Iso muon \!+\! iso electron & $\pt^\PGm, \pt^\Pe >  8, 23 \GeVc$                  & \\
+    Iso muon \!+\! iso electron & $\pt^\PGm, \pt^\Pe > 12, 23 \GeVc$                  & \\
+    Iso muon \!+\! iso electron & $\pt^\PGm, \pt^\Pe > 23, 12 \GeVc$                  & \\
+    Double muon \!+\! electron  & $\pt^{\PGm_1}, \pt^{\PGm_2}, \pt^\Pe > 9,9,9 \GeVc$ & \\
+    \hline
+    Single isolated muon        & $\pt^\PGm > 24 \GeVc$ & SingleMuon \\
     \bottomrule %-----------------------------------------------------------------------------------------------------------------------
   \end{tabular}
 \end{table*}
@@ -100,9 +114,9 @@ They are grouped according to the kind of event selected.
 Each trigger path requires the presence of one or more particles above a certain transverse momentum threshold.
 Each trigger path in these groups additionally requires the event to satisfy conditions regarding particle identification from the sub-detector systems,
 or isolation from other objects in a cone around the triggering particle.
-The \textit{DiEle} triggers select events containing in the final state at least two electrons.
-Similarly, \textit{TriEle} triggers target events containing three electrons.
-\textit{DiMuon} and \textit{TriMuon} triggers target events with at least two and three muons, respectively,
-while \textit{MuEle} triggers select events containing in the final state at least one muon and one electron.
-\textit{SingleMuon} triggers select events with at least one muon,
-while \textit{SingleElectron} triggers select events containing in the final state at least one electron.
+The \textit{Double Electron} triggers select events containing in the final state at least two electrons.
+Similarly, \textit{Triple Electron} triggers target events containing three electrons.
+\textit{Double Muon} and \textit{Triple Muon} triggers target events with at least two and three muons, respectively,
+while \textit{Muon Electron} triggers select events containing in the final state at least one muon and one electron.
+\textit{Single Muon} triggers select events with at least one muon,
+while \textit{Single Electron} triggers select events containing in the final state at least one electron.

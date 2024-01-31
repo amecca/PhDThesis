@@ -23,8 +23,46 @@ The uncertainty on the integrated luminosity varies from 1.2\usep\% to 2.5\usep\
 The luminosity measurements are carried out by experts within the collaboration according to the methodology described in Reference~\cite{CMS:LUM-17-003},
 for each year of data-taking~\cite{CMS:LUM-17-004, CMS:LUM-18-002}.
 
-The uncertainty on lepton identification and reconstruction efficiency has an effect on the overall event yield ranging from 1 to 15\usep\% \todo{verify}.
+%% The uncertainty on lepton identification and reconstruction efficiency has an effect on the overall event yield ranging from 1 to 15\usep\%.
 
 The uncertainties coming from the data-driven estimation of fake lepton and fake photons backgrounds are also considered.
 In both cases, the main contributions arise from the mismatch in background composition between the region in which the fake rate is measured and the regions where it its applied.
 Additionally, in the case of the photon fake rate, the application region itself is statistically limited, and this introduces an additional uncertainty on the normalisation of the fake photon process.
+
+A summary of the effect of the systematic uncertainties on the normalisation
+of the signal and main background samples in the four lepton channel is reported in Table~\ref{tab:syst_norm_effect}.
+Note that the table reports also the impact of theoretical uncertainties
+(\ie as QCD scale, PDF variation and \alpS) on the normalisation of the signal sample.
+However this effect must not be taken into account when the parameter of interest is the
+signal yield itself (or a proxy such as the signal strength modifier),
+and the values are reported merely for completeness.
+
+\begin{table}
+  \caption{
+    Effect of the various systematics (in \%)
+    on the normalisation of the signal and main background samples,
+    as well as the nonprompt lepton and photon data-driven estimates,
+    in the signal region of the four lepton channel.
+    The selection used for the photon is the Loose working point of the cut-based ID.
+  }
+  \label{tab:syst_norm_effect}
+  \centering
+  \begin{tabular}{l >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$}}
+    \toprule
+    & \PZ\PZ\PGg \to 4\Pl & \PZ\PZ \to 4 \Pl & \text{Fake}\ \Pl & \text{Fake}\ \PGg \\
+    \midrule
+    L1 Prefiring        & {-}0.16/{+}0.16 & {-}0.16/{+}0.16 & -               & -               \\
+    PDF Variation       & {-}0.25/{-}3.16 & {+}2.17/{-}3.09 & -               & -               \\
+    QCDscale            & {+}9.90/{-}9.94 & {+}3.85/{-}3.94 & -               & -               \\
+    \alpS               & -               & {+}0.84/{-}1.28 & -               & -               \\
+    Electron efficiency & {+}2.66/{-}2.66 & {+}2.76/{-}2.76 & {+}6.72/{-}6.72 & {+}0.82/{-}0.82 \\
+    Electron fake rate  & -               & -               & {+}6.65/{-}6.65 & -               \\
+    Muon efficiency     & {+}0.33/{-}0.33 & {+}0.33/{-}0.33 & -               & {+}0.45/{-}0.45 \\
+    Muon fake rate      & -               & -               & {+}4.41/{-}4.41 & -               \\
+    Photon energy scale & {+}0.05/{-}0.10 & {+}0.09/{-}0.09 & -               & -               \\
+    Photon efficiency   & {+}1.15/{-}1.15 & {+}1.23/{-}1.23 & {+}0.98/{-}0.98 & -               \\
+    Photon fake rate    & -               & -               & -               & {+}10.1/{-}9.74 \\
+    \pileup weight      & {-}0.99/{+}1.82 & {-}1.41/{+}1.56 & -               & -               \\
+    \bottomrule
+  \end{tabular}
+\end{table}

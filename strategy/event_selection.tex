@@ -17,10 +17,8 @@ The ZZ candidates are required to satisfy the following:
   This cut suppresses pairs of leptons from cascade decays, which may have different flavour and are found to broadly peak at very low invariant masses.
   In this case, selected FSR photons are not used in computing $m_{\Pl\Pl}$, since a QCD-induced low mass di-lepton (e.g. \JPsi) may have photons nearby (e.g. from a \Pgpz).
 \item Wrong pairing suppression: in the 4\Pe and 4\PGm channels,
-  defining $\PZ_a$ and $\PZ_b$ the mass-sorted alternative pairing of the four leptons ($\PZ_a$ is the closest to the nominal Z boson mass),
-  the ZZ candidate is excluded if: $|m_{\PZ_a} - m_\PZ^{PDG}| < |m_{\PZ_1} - m_\PZ^{PDG}|$ AND $m_{\PZ_b} < 12 \GeVcc$.
-  This cut suppresses contribution from events that are likely an on-shell Z and a low mass \Plp \Plm resonance,
-  but would otherwise produce a valid $\PZ_1 \PZ_2$ combination with the alternative pairing.
+  it is required that the alternative pairing of the four leptons does not result in
+  an on-shell Z and a low mass $\Plp\Plm$ resonance with $m_{\Pl\Pl} < 12 \GeVcc$.
 \item Four-lepton invariant mass: $m_{4\Pl} > 100 \GeVcc$.
 \end{itemize}
 
@@ -51,7 +49,7 @@ The reconstruction of the hadronically decaying vector boson is intrinsically ch
 since the large number of particles inside the jets degrades the resolution as compared to energetic and isolated leptons.
 Furthermore, jet energy is sensitive to \pileup, both from charged and neutral particles, which must be accounted for.
 
-When the VB is significantly boosted, the two quarks tend to be emitted with a small angle between them,
+When the vector boson is significantly boosted, the two quarks tend to be emitted with a small angle between them,
 and thus the two jets have a small separation in \DR, causing them to overlap.
 In this case, sometimes the clustering algorithm is not able to distinguish the two jets or cannot reconstruct them correctly.
 Instead, it creates a single cluster, which often does not contain all the particles, and underestimates the energy of the jet.
@@ -71,7 +69,8 @@ The two histograms are normalised to have unit area.}
 
 From Figure~\ref{fig:AK_resolution_mass}, it is clear that pairs of AK4 jets are more precise in the reconstruction of the mass of the bosons.
 This is caused by the larger number of \pileup particles included in a AK8 jet, which in turn require larger energy corrections or pruning, thus increasing the uncertainty.
-\note{Additionally (probably) the VB does not have a very high transverse momentum, so the topology is more often resolved than merged.}
+Additionally the vector boson often does not have a very high transverse momentum,
+so the resolved topology is more probable than the merged one.
 
 \subsection{Photon selection}
 \label{sec:evt_photon_selection}
