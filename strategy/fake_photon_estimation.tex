@@ -149,15 +149,19 @@ $\text{TF}^\gamma(\pt, \eta) = \frac{f^\gamma}{1-f^\gamma}$,
 where $f^\gamma$ is the Fake Rate estimated in the measurement region.
 
 \paragraph{Usage of the MVA based ID\\}
-Additionally, kinematic photons that pass the MVA-based working points \texttt{wp90} and \texttt{wp80} are also considered,
+Kinematic photons that pass the MVA-based working points \texttt{wp90} and \texttt{wp80} are also considered,
 given the improved performance of the MVA ID over the cut-based one.
-The drawback is that this does not allow a data-driven estimation of the \nonprompt background,
-due to the limited size of the application region defined by requiring a photon that passes the wp90 but fails the wp80.
+The drawback of these working points is the reduced size of the application region containing
+photons that pass the looser selection (\texttt{wp90}) and fail the more strict one (\texttt{wp80}),
+compared to the equivalent for the cut-based ID working point
+in which photons are required to pass the VeryLoose ID and fail the Loose ID.
 
 Unlike a cut-based selection, it is not possible to invert only part of the MVA based ID.
 The only way to derive a looser working point is to redo the optimisation of the raw MVA score,
 and then study the efficiency of such selection in data and simulation to derive scale factors.
 Both of these studies are outside the scope of this analysis.
+Therefore it is not possible to estimate the fake photon background in the four lepton channel
+with a Tight-To-Loose method using the two working points \texttt{wp90} and \texttt{wp80} of the MVA based ID.
 
 Another possibility is to measure a fake rate between the kinematic selection and the looser MVA working point, \texttt{wp90}.
 However, the former is too loose and the selected fakes have signatures that are very different from those of prompt photons.
