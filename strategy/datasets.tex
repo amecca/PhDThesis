@@ -7,10 +7,13 @@
 \subsection{CMS data}
 This analysis uses a data sample recorded by the CMS experiment at a centre-of-mass energy of 13\TeV during 2016, 2017 and 2018 corresponding to $\Lumi = 137 \fbinv$ of data.
 Only data that passed the quality certification by all detector subsystems is used in the analysis.
-%% and only luminosity sections included in the respective golden JSONs are used for further analysis.
-The luminosity measurements are carried out by experts within the collaboration according to the methodology described in Ref. \cite{CMS:LUM-17-003}, for each year of data-taking \cite{CMS:LUM-17-004, CMS:LUM-18-002}.
+The luminosity measurements have been carried out by the CMS Collaboration
+with the methodology described in Reference~\cite{CMS:LUM-17-003},
+for each year of data-taking~\cite{CMS:LUM-17-004, CMS:LUM-18-002}.
 
-The samples used correspond to the so called ``UltraLegacy reprocessing'', which contains the most recent calibrations of all the physics objects reconstruction and identification criteria, as well as scale factors and uncertainties.
+The samples used correspond to the so called ``UltraLegacy reprocessing'',
+which contains the most recent calibrations and identification criteria,
+as well as scale factors and uncertainties.
 The simulations for 2016 are split into ``preVFP'' and ``postVFP'' to model the effect
 of an inefficiency in a readout chip in the tracker, explained in Section~\ref{sec:APV}, which was resolved during data taking.
 %% The MINIAOD format is chosen to perform the analysis.
@@ -22,25 +25,25 @@ taking. {\it DoubleEG} and {\it SingleElectron} are merged into {\it EGamma} in 
 To avoid duplicate events from different primary datasets, events are taken:
 
 \begin{itemize}
-\item from DoubleEG if they pass the diEle %(\texttt{HLT\_EleXX\_EleYY\_CaloIdXX\_TrackIdXX\_IsoXX(\_DZ)} )
-  or triEle triggers, %(\texttt{HLT\_EleXX\_EleYY\_EleZZ\_CaloIdXX\_TrackIdXX}) where XX, YY and ZZ are year-dependent thresholds
-\item from DoubleMuon if they pass the diMuon %(\texttt{HLT\_MuXX\_TrkIsoVVL\_MuYY\_TrkIsoVVL})
-  or triMuon %(\texttt{HLT\_TripleMu\_XX\_YY\_ZZ})
-  triggers and fail the diEle and triEle triggers,
-\item from MuEG if they pass the MuEle %(\texttt{HLT\_MuXX\_TrkIsoXX\_EleYY\_CaloIdYY\_TrackIdYY\_IsoYY})
-  or MuDiEle %(\texttt{HLT\_MuXX\_DiEleYY\_CaloIdYY\_TrackIdYY})
-  or DiMuEle %(\texttt{HLT\_DiMuXX\_EleYY\_CaloIdYY\_TrackIdYY})
-  triggers and fail the diEle, triEle, diMuon and triMuon triggers,
-\item from SingleElectron if they pass the singleElectron trigger %(\texttt{HLT\_EleXX\_etaXX\_WPLoose/Tight(\_Gsf)})
-  and fail all the above triggers.
-\item from SingleMuon if they pass the singleMuon trigger %(\texttt{HLT\_IsoMuXX OR HLT\_IsoTkMuXX})
+\item from DoubleEG if they pass a Double Electron %(\texttt{HLT\_EleXX\_EleYY\_CaloIdXX\_TrackIdXX\_IsoXX(\_DZ)} )
+  or Triple Electron trigger; %(\texttt{HLT\_EleXX\_EleYY\_EleZZ\_CaloIdXX\_TrackIdXX}) where XX, YY and ZZ are year-dependent thresholds
+\item from DoubleMuon if they pass a Double Muon %(\texttt{HLT\_MuXX\_TrkIsoVVL\_MuYY\_TrkIsoVVL})
+  or Triple Muon trigger %(\texttt{HLT\_TripleMu\_XX\_YY\_ZZ})
+  and fail the Double Electron and Triple Electron triggers;
+\item from MuonEG if they pass a Muon Electron, %(\texttt{HLT\_MuXX\_TrkIsoXX\_EleYY\_CaloIdYY\_TrackIdYY\_IsoYY})
+  Muon + Double Electron %(\texttt{HLT\_MuXX\_DiEleYY\_CaloIdYY\_TrackIdYY})
+  or Double Muon + Electron trigger %(\texttt{HLT\_DiMuXX\_EleYY\_CaloIdYY\_TrackIdYY})
+  and fail the Double Electron, Triple Electron, Double Muon and Triple Muon triggers;
+\item from SingleElectron if they pass a Single Electron trigger %(\texttt{HLT\_EleXX\_etaXX\_WPLoose/Tight(\_Gsf)})
+  and fail all the above triggers;
+\item from SingleMuon if they pass a Single Muon trigger %(\texttt{HLT\_IsoMuXX OR HLT\_IsoTkMuXX})
   and fail all the above triggers.
 \end{itemize}
 
 The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the integrated luminosity.
 
 \begin{table*}
-  \caption{List of data samples used in the analysis. All runs for each of the 5 data streams are used, for a total of 76 primary datasets in the MINIAOD format.}
+  \caption{List of data samples used in the analysis. All of the runs for each of the 5 datasets (4 for 2018) are used, for a total of 86 primary datasets.}
   \label{tab:datasamples}
   \centering
   \small
@@ -86,7 +89,7 @@ The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the i
 \MGvATNLO 2.6.2 \cite{MGatNLO, Frederix_2018} is used to simulate the signal and most of the background contributions.
 The simulation of $\PQq \PQq / \PQq \Pg \to \PZ \PZ \to 4 \Pl$ is done with \POWHEG~\cite{Nason:2004rx, Frixione:2007vw, Alioli:2010xd, Alioli:2008gx},
 while $\Pg \Pg \to \PZ \PZ \to 4 \Pl$ is simulated with \MCFM~\cite{MCFM}.
-The simulation of the hadronization and parton shower is done by coupling the matrix element generators with \PYTHIA~8~\cite{bierlich2022comprehensive, Sjostrand:2015} using the \textsc{CP5}~tune~\cite{CP5}.
+The simulation of the hadronization and parton shower is done by coupling the matrix element generators with \PYTHIA~8~\cite{Sjostrand:2015, bierlich2022comprehensive} using the \textsc{CP5}~tune~\cite{CP5}.
 The interaction of the particles with the CMS detector is simulated with \GEANTfour~\cite{GEANT}.
 All samples are generated with the NNPDF 3.0 (in 2016) or 3.1 (2017--18) parton distribution functions (PDFs)~\cite{NNPDF2015}.
 The MC samples are reweighed based on the per-event true number of interactions to match the level of \pileup observed in data as per standard practices.
