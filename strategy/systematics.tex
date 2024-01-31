@@ -14,11 +14,11 @@ A detailed description of the various sources considered in this analysis follow
 Theoretical uncertainties arise from the choice of the Parton Distribution Function (PDF) set,
 the uncertainty on the strong coupling constant $\alpha_s$ and
 the renormalization and factorisation QCD scales, which account for the missing higher order uncertainty in finite order perturbative calculations.
-All theoretical systematics act as normalisation uncertainties and are correlated among data-taking periods.
+The uncertainty on the PDF set has a shape effect on the transverse momentum of the photon
+and on the ``MVA shape'' described in Section~\ref{sec:strategy_description}.
+The effects of \alpS and of the missing higher orders are limited to the normalisation for all of the variables considered.
 
 \subsection{Experimental uncertainties}
-Experimental uncertainties have different sources.
-
 The uncertainty on the integrated luminosity varies from 1.2\usep\% to 2.5\usep\% in the data-taking years, and the total uncertainty for \RunII{} is 1.6\usep\%.
 The luminosity measurements are carried out by experts within the collaboration according to the methodology described in Reference~\cite{CMS:LUM-17-003},
 for each year of data-taking~\cite{CMS:LUM-17-004, CMS:LUM-18-002}.
@@ -28,6 +28,17 @@ for each year of data-taking~\cite{CMS:LUM-17-004, CMS:LUM-18-002}.
 The uncertainties coming from the data-driven estimation of fake lepton and fake photons backgrounds are also considered.
 In both cases, the main contributions arise from the mismatch in background composition between the region in which the fake rate is measured and the regions where it its applied.
 Additionally, in the case of the photon fake rate, the application region itself is statistically limited, and this introduces an additional uncertainty on the normalisation of the fake photon process.
+
+The uncertainty on the the electron and muon efficiency scale factors
+result in shifts of the order of~3\usep\% and~0.3\usep\% respectively.
+%% for $\PZ\PZ\PGg$ and $\PQq\PQq/\Pg\Pg\to\PZ\PZ$.
+The photon efficiency scale factors, both for the cut-based and the MVA IDs,
+produce an uncertainty in the yield of approximately~1.1--1.3\usep\%.
+The photon energy scale and resolution have negligible effects.
+The \Lone prefiring discussed in Section~\ref{sec:L1Prefiring}
+results in a normalisation effect of approximately 0.2\usep\%.
+The experimental systematics only affect the normalisation,
+except for the photon MVA efficiency scale factors for the variable ``MVA shape''.
 
 A summary of the effect of the systematic uncertainties on the normalisation
 of the signal and main background samples in the four lepton channel is reported in Table~\ref{tab:syst_norm_effect}.
@@ -41,7 +52,7 @@ and the values are reported merely for completeness.
   \caption{
     Effect of the various systematics (in \%)
     on the normalisation of the signal and main background samples,
-    as well as the nonprompt lepton and photon data-driven estimates,
+    as well as the \nonprompt lepton and photon data-driven estimates,
     in the signal region of the four lepton channel.
     The selection used for the photon is the Loose working point of the cut-based ID.
   }
@@ -62,7 +73,7 @@ and the values are reported merely for completeness.
     Photon energy scale & {+}0.05/{-}0.10 & {+}0.09/{-}0.09 & -               & -               \\
     Photon efficiency   & {+}1.15/{-}1.15 & {+}1.23/{-}1.23 & {+}0.98/{-}0.98 & -               \\
     Photon fake rate    & -               & -               & -               & {+}10.1/{-}9.74 \\
-    \pileup weight      & {-}0.99/{+}1.82 & {-}1.41/{+}1.56 & -               & -               \\
+    \Pileup{} weight    & {-}0.99/{+}1.82 & {-}1.41/{+}1.56 & -               & -               \\
     \bottomrule
   \end{tabular}
 \end{table}
