@@ -53,9 +53,21 @@ leading to only 36 parameters.
 The fitting procedure extracts the best values for the $\vec{p}\,$ regardless of the (potentially millions) of track parameters $\vec{q_j}\,$,
 thus allowing alignment campaigns with large datasets and many degrees of freedom.
 This is achieved by linearising the $\chi^2(\vec{p_0}\,+\Delta p, \vec{q_0}\,+\Delta q)$ as deviations from a previous set of alignment parameters.
-Its minimisation can be expressed by a set of linear equations containing the measurements and the derivatives in the alignables or track parameters.
+Its minimisation can be expressed by a set of linear equations containing the measurements and the derivatives in the alignables or track parameters,
+and treated like a matrix inversion problem:
+\begin{equation}
+  \label{eq:alignment_full_matrix}
+  C \times \binom{\Delta\vec{p}}{\Delta\vec{q}} = \vec{b}
+\end{equation}
 Employing block matrix algebra it is possible to factorise the problem such that only a sub-matrix involving the $\Delta p$ has to be inverted,
 while maintaining all the correlations from the track parameters~\cite{blobel2002new}.
+Equation~\ref{eq:alignment_full_matrix} is reduced to:
+\begin{equation}
+  \label{eq:alignment_reduced_matrix}
+  C' \times \Delta\vec{p} = \vec{b'}
+\end{equation}
+The $C'$ and $\vec{b'}$ have a significantly smaller sizes than $C$ and $\vec{b}$,
+of the order of $\mathcal{O}(10\,000)$.
 
 \section{Alignment algorithms}
 Two independent track-based alignment algorithms are used by the CMS Collaboration, \MPII and \HIPPY.
@@ -74,7 +86,7 @@ The algorithm consists of two steps:
     The track fitting method must fit all the hits simultaneously and provide the full covariance matrix.
     The solution is based on the general broken lines method.
   \item[\textsc{Pede}] This is an independent Fortran programme that solves the linear equation system needed for the alignment.
-    It uses the \textsc{Mille} output to construct the global matrix.
+    It uses the \textsc{Mille} output to perform the local fits and construct the global matrix $C'$.
     An overview of the solution methods that are implemented is given in Table~\ref{tab:MP_solvers}.
 \end{description}
 
@@ -93,6 +105,25 @@ The algorithm consists of two steps:
     \bottomrule
   \end{tabular}
 \end{table}
+
+\subsection[HipPy]{\HIPPY}
+Based on the hits-and-impact-points algorithm~\cite{karimaki2003sensor,CMS-NOTE-2006-018}
+and improved for the BaBar alignment~\cite{BaBar_alignment},
+it has been used extensively during the tracker commissioning
+and CMS startup in \Run1~\cite{CMS-NOTE-2009-002}
+and further improved in \Run2.
+The improved algorithm is named hits-and-impact-points-past-year-1 (\HIPPY).
+
+Unlike \MPII, it is local in that the alignment of each sensor is determined independently of the others.
+One disadvantage is that multiple iterations,
+ranging from a few dozens to a hundred,
+each requiring CPU-intensive track fits,
+are required to solve correlations between alignables.
+The advantages include the native integration with CMS software, providing features such as
+the CMS Kalman filter code for track propagation
+and the implementation of constraints such as mass vertex constraints.
+Each iteration of the algorithm is a very simple application of a small matrix inversion.
+This simplicity and dependence on the CMS software makes the \HIPPY algorithm complementary to \MPII.
 
 \section{Datasets}
 Different types of datasets are generally used for the alignment.
