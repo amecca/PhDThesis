@@ -52,6 +52,9 @@ Its minimisation can be expressed by a set of linear equations containing the me
 Employing block matrix algebra it is possible to factorise the problem such that only a sub-matrix involving the $\Delta p$ has to be inverted,
 while maintaining all the correlations from the track parameters~\cite{blobel2002new}.
 
+\section{Alignment algorithms}
+\todo{Move here stuff specific for \textsc{MILLEPEDE}-II and add \textsc{HipPy}}
+
 \section{Datasets}
 Different types of datasets are generally used for the alignment.
 The main benefit of a diverse set of tracks is that each track topology correlates a different set of alignables.
@@ -81,5 +84,49 @@ CMS has dedicated algorithms for the reconstruction of cosmic tracks both for co
 CRUZET and CRAFT are available for alignment before the start of LHC collisions, to provide an alignment after a shutdown period.
 Cosmic ray muons cross the whole detector, connecting modules located in the top and bottom halves.
 This is fundamental to constrain several types of systematic distortions.
+
+\section{Systematic misalignments}
+Systematic shifts of the assumed position of the moduled with respect to the real ones
+are called systematic misalignments of the tracker geometry. They
+may cause biases in the track reconstruction and negatively impact the physics performace.
+
+A noteworthy class of misalignment is composed by the \textit{weak modes}.
+They are transformations that do not affect significantly the $\chi^2$ of the tracks,
+and are caused by a lack of constraints in the alignment fit.
+While these shifts do not degrade the tracking performance,
+they may affect certain topologies and correlations among tracks that are important for physics measurements.
+
+\subsection{Validation of misaligments}
+To check the quality of a set of alignment constants and the effect of misaligments,
+measurements of several variables that have known values under perfectly aligned conditions are carried out.
+
+\paragraph{Geometry comparison\\}
+The geometry produced by the aligment is compared with a reference geometry,
+such as the one used as a starting point for the procedure or the ideal conditions.
+This serve as a guide to help visualize the effect of the procedure
+and may permit to notice certain known unphysical distortions.
+
+The global shift and rotation of large structures are removed and the module displacements
+$\Delta z$, $\Delta r$ and $Delta \phi$, as well as the rotations,
+are plotted as function of $z$, $r$ and $\phi$.
+
+\paragraph{Cosmic ray muon track\\} % MTS
+The upper and lower portions of cosmic ray muon tracks are reconstructed separately,
+and the two sets of track parameters are compared at the point of closest approach to the beamline.
+The two halves should have the same parameters and systematic differences suggest a misaligment.
+
+Cosmic ray and collision tracks have different topologies, so distortions that appear as
+weak modes in collision may be constrained with cosmic tracks.
+In particular they connect the top and bottom halves of the detector in a single track,
+which is not possible with collisions, and help constrain the z position of the modules.
+Since cosmic ray muon tracks are collected even before the start of the collisions,
+this validation is and early tool in the commisioning of the detector before the start of LHC operations.
+
+\paragraph{Overlap of hits within the same layer of modules\\}
+
+\paragraph{Dimuon validation\\}
+
+\subsection{Modelling of systematic distortions}
+\note{maybe}
 
 \cite{CMS-TRK-20-001}
