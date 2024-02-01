@@ -1,4 +1,7 @@
 \chapter{Alignment of the CMS Silicon Tracker}
+\newcommand{\MPII}{\textsc{millepede}-II\xspace}
+\newcommand{\HIPPY}{\textsc{HipPy}\xspace}
+\newcommand{\MINRES}{\textsc{MinRes}\xspace}
 
 The CMS silicon tracker is the largest in the world, both in terms of surface area and number of sensors.
 In order to harness its exceptional resolution, a precise knowledge of the position and orientation of the modules is necessary.
@@ -18,7 +21,9 @@ The alignment parameters of the CMS tracker are organised in a hierarchy that fo
 
 Each element of the hierarchy has its own six parameters (3 translations and 3 rotations).
 This adds redundant degrees of freedom, since the movements of the large structures can be equivalently expressed by shifts of elements within their sub-hierarchies.
-The redundancy is removed by linear equality constraints, imposed on the original equation system with Lagrange multipliers.
+The redundancy is removed by linear equality constraints,
+imposed on the original equation system with Lagrange multipliers
+or by elimination.
 \todo{rephrase!!!}
 This treatment of alignables allows the fitting of only the large mechanical structures with varying granularity,
 which is especially useful when the number of track is limited, e.g. when restarting data-taking after a commissioning period.
@@ -53,7 +58,41 @@ Employing block matrix algebra it is possible to factorise the problem such that
 while maintaining all the correlations from the track parameters~\cite{blobel2002new}.
 
 \section{Alignment algorithms}
-\todo{Move here stuff specific for \textsc{MILLEPEDE}-II and add \textsc{HipPy}}
+Two independent track-based alignment algorithms are used by the CMS Collaboration, \MPII and \HIPPY.
+The former also performs a global matrix inversion, while the latter neglects the blocks
+relating the global alignables to the track parameters and iterates to improve the approximation.
+Both are maintained and used, thus enabling cross-checks.
+
+\subsection[Millepede-II]{\MPII}
+The \MPII algorithm~\cite{blobel2002new,Blobel:2006yh,terascale-wiki} has been discussed in the context of CMS in Reference~\cite{CMS-TRK-11-002}.
+In addition to CMS, The Belle~II experiment~\cite{PROC-CTD19-098} is also a main user.
+The algorithm consists of two steps:
+\begin{description}
+  \item[\textsc{Mille}] This is integrated into the experiment-specific track-fitting software.
+    Calculates and stores the track residuals with errors and the derivatives of the
+    track (local) and module (global) parameters.
+    The track fitting method must fit all the hits simultaneously and provide the full covariance matrix.
+    The solution is based on the general broken lines method.
+  \item[\textsc{Pede}] This is an independent Fortran programme that solves the linear equation system needed for the alignment.
+    It uses the \textsc{Mille} output to construct the global matrix.
+    An overview of the solution methods that are implemented is given in Table~\ref{tab:MP_solvers}.
+\end{description}
+
+\begin{table}
+  \caption{Comparison of the solution methods implemented in \MPII.
+  The computation time is reported as a function of the number of parameters $n$ and the number of iterations $n_{\rm it}$ if applicable.}
+  \label{tab:MP_solvers}
+  \centering
+  \begin{tabular}{l l l l}
+    \toprule
+    Method                             & Computing time              & Solution type & Error calculation \\
+    \midrule
+    Gauss-Jordan inversion             & $\sim n^3$                  & Exact         & Yes \\
+    Cholesky decomposition             & $\sim n^3$                  & Exact         & Skipped \\
+    \MINRES \cite{Choi_2011,Choi_2014} & $\sim n^2 \times n_{\rm it}$ & Approximate   & No \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \section{Datasets}
 Different types of datasets are generally used for the alignment.
@@ -86,9 +125,9 @@ Cosmic ray muons cross the whole detector, connecting modules located in the top
 This is fundamental to constrain several types of systematic distortions.
 
 \section{Systematic misalignments}
-Systematic shifts of the assumed position of the moduled with respect to the real ones
+Systematic shifts of the assumed position of the modules with respect to the real ones
 are called systematic misalignments of the tracker geometry. They
-may cause biases in the track reconstruction and negatively impact the physics performace.
+may cause biases in the track reconstruction and negatively impact the physics performance.
 
 A noteworthy class of misalignment is composed by the \textit{weak modes}.
 They are transformations that do not affect significantly the $\chi^2$ of the tracks,
@@ -101,9 +140,9 @@ To check the quality of a set of alignment constants and the effect of misaligme
 measurements of several variables that have known values under perfectly aligned conditions are carried out.
 
 \paragraph{Geometry comparison\\}
-The geometry produced by the aligment is compared with a reference geometry,
+The geometry produced by the alignment is compared with a reference geometry,
 such as the one used as a starting point for the procedure or the ideal conditions.
-This serve as a guide to help visualize the effect of the procedure
+This serve as a guide to help visualise the effect of the procedure
 and may permit to notice certain known unphysical distortions.
 
 The global shift and rotation of large structures are removed and the module displacements
@@ -120,7 +159,7 @@ weak modes in collision may be constrained with cosmic tracks.
 In particular they connect the top and bottom halves of the detector in a single track,
 which is not possible with collisions, and help constrain the z position of the modules.
 Since cosmic ray muon tracks are collected even before the start of the collisions,
-this validation is and early tool in the commisioning of the detector before the start of LHC operations.
+this validation is and early tool in the commissioning of the detector before the start of LHC operations.
 
 \paragraph{Overlap of hits within the same layer of modules\\}
 
