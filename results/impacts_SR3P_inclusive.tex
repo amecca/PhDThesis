@@ -21,6 +21,17 @@
 The largest systematic uncertainty is the QCD scale, which accounts for a shift of
 $\approx \pm 0.3$ on the signal strength $\mu$.
 \note{I checked, and it is NOT applied to the signal, like I did in June last year for 4L (Gullielmo's comment).
-  I'm honestly a bit surprised, but maybe some sample has a large uncertainty (DY? But then why this happens also when using data-driven fake photons?).}
+  On $\PW\PZ$ it has a $\approx 15\usep\%$ effect (Fig.~\ref{fig:debug_SR3P_WZTo3LNu_QCDScale}).
+  $\PZ\PGg$ has also a $\approx 18\usep\%$ effect (Fig~\ref{fig:debug_SR3P_ZGToLLG_QCDScale}).
+  }
 The leading experimental uncertainty is due to the electron efficiency scale factors,
 similarly to the four lepton channel.
+
+% <DEBUG>
+\begin{figure}
+  \centering
+  \subfigure [] {\includegraphics[width=.499\textwidth]{Figures/SYS/SR3P/WZTo3LNu_mWZGloose_QCDscale.png}\label{fig:debug_SR3P_WZTo3LNu_QCDScale}}
+  \subfigure [] {\includegraphics[width=.499\textwidth]{Figures/SYS/SR3P/ZGToLLG_mWZGloose_QCDscale.png}\label{fig:debug_SR3P_ZGToLLG_QCDScale}}
+  \caption{\note{}: Effect of the QCD scale systematic on $\PW\PZ$ (left) and $\PZ\PGg$ in SR3P ($m_{\PW\PZ\PGg}$)}
+\end{figure}
+% </DEBUG>
