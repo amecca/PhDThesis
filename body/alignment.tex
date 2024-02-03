@@ -200,6 +200,19 @@ Since cosmic ray muon tracks are collected even before the start of the collisio
 this validation is and early tool in the commissioning of the detector before the start of LHC operations.
 
 \subsubsection{Dimuon validation} % Zmumu
+The reconstructed invariant mass of $X \to \PGm\PGm$ should not depend
+on the direction of the muons within the detector.
+Biases in the mass distribution of a known resonances suggest a sistematic misalignment. %% like $\PZ$ or $\JPsi$
+\PZ bosons are especially useful since they are often produced with a small boost
+resulting in two muons that cross opposite ends of the tracker.
+
+The reconstructed mass in each event is placed into a bin depending on the $\eta$ and $\phi$ of the muons.
+The mass distribution of each bin is then fit with a Gaussian function and its mean recorded.
+%% Profiles in $\eta$ and $\phi$ of the fitted mean invariant mass are constructed.
+Misalignment in the tracker may be detected if the mean reconstructed mass strays from the expected value of 91.2\GeV,
+either uniformly or as a function of $\eta$ and $\phi$.
+This validation requires a ufficiently large sample of $\PZ \to \PGm\PGm$ events
+and is therefore useful in in stable operating conditions.
 
 \subsubsection{Track-vertex impact parameter} % PV
 The resolution of the reconstructed vertex position is driven by the pixel detector
