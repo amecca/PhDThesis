@@ -9,7 +9,7 @@ During the installation, the mechanical alignment of the modules resulted in a p
 which is much larger than the design hit resolution of the modules of O(10\mum).
 
 Consequently, an additional refinement addressing the positional accuracy, orientation, and surface deformations of the sensors becomes imperative.
-This refinement, commonly denoted as the tracker alignment, is characterised by the derivation of a set of parameters known as the tracker alignment constants.
+This refinement, commonly denoted as the tracker alignment, is characterized by the derivation of a set of parameters known as the tracker alignment constants.
 These constants, which amount to around $200\,000$, are used during the track reconstruction to determine the true position of the hits.
 
 Changes in the environment such as temperature variations and the ramping of the magnetic field induce movements in the tracker structures,
@@ -17,7 +17,7 @@ motivating regular updates of the alignment constants to maintain the target pre
 The method used in CMS to derive the constants consists in performing track fits with the corresponding track parameters unconstrained.
 
 \paragraph{Hierarchical alignment\\}
-The alignment parameters of the CMS tracker are organised in a hierarchy that follows the one of the modules themselves (see Figure \ref{fig:tracker_hierarchy}).
+The alignment parameters of the CMS tracker are organized in a hierarchy that follows the one of the modules themselves (see Figure \ref{fig:tracker_hierarchy}).
 
 Each element of the hierarchy has its own six parameters (3 translations and 3 rotations).
 This adds redundant degrees of freedom, since the movements of the large structures can be equivalently expressed by shifts of elements within their sub-hierarchies.
@@ -58,7 +58,7 @@ and treated like a matrix inversion problem:
   \label{eq:alignment_full_matrix}
   C \times \binom{\Delta\vec{p}}{\Delta\vec{q}} = \vec{b}
 \end{equation}
-Employing block matrix algebra it is possible to factorise the problem such that only a sub-matrix involving the $\Delta p$ has to be inverted,
+Employing block matrix algebra it is possible to factorize the problem such that only a sub-matrix involving the $\Delta p$ has to be inverted,
 while maintaining all the correlations from the track parameters~\cite{blobel2002new}.
 Equation~\ref{eq:alignment_full_matrix} is reduced to:
 \begin{equation}
@@ -84,7 +84,7 @@ The algorithm consists of two steps:
     track (local) and module (global) parameters.
     The track fitting method must fit all the hits simultaneously and provide the full covariance matrix.
     The solution is based on the general broken lines method.
-  \item[\textsc{Pede}] This is an independent Fortran programme that solves the linear equation system needed for the alignment.
+  \item[\textsc{Pede}] This is an independent Fortran program that solves the linear equation system needed for the alignment.
     It uses the \textsc{Mille} output to perform the local fits and construct the global matrix $C'$ from Equation~\ref{eq:alignment_reduced_matrix}.
     An overview of the solution methods that are implemented is given in Table~\ref{tab:MP_solvers}.
 \end{description}
@@ -116,7 +116,7 @@ The improved algorithm is named hits-and-impact-points-past-year-1 (\HIPPY).
 Unlike \MPII, it is local in that the alignment of each sensor is determined independently of the others.
 The tracks are fitted, after applying the corresponding constraints,
 with a given set of alignment conditions.
-The $\chi^2$, expressed as a function of the alignment parameter, is minimised on a per-module basis.
+The $\chi^2$, expressed as a function of the alignment parameter, is minimized on a per-module basis.
 Different weights can be assigned to different types of tracks,
 and a new set of alignment conditions is computed and passed back to the track fitting.
 The process is repeated until convergence is reached.
@@ -179,7 +179,7 @@ measurements of several variables that have known values under perfectly aligned
 \subsubsection{Geometry comparison} % GC
 The geometry produced by the alignment is compared with a reference geometry,
 such as the one used as a starting point for the procedure or the ideal conditions.
-This serve as a guide to help visualise the effect of the procedure
+This serve as a guide to help visualize the effect of the procedure
 and may permit to notice certain known unphysical distortions.
 
 The global shift and rotation of large structures are removed and the module displacements

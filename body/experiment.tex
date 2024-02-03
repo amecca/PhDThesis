@@ -135,8 +135,8 @@ Collisions happening in the previous or next bunch crossing are referred to as o
 and a handle for measuring particle lifetimes.
 
 The CMS tracker uses silicon pixel and strip sensors to cover $|\eta| < 2.5$, with a total area of $200\, \mathrm{m}^2$,
-operating at temperatures of around -15\Celsius and -20\Celsius, respectively, to minimise the impact of the ionising radiation damage.
-To meet spatial measurement requirements amid particle flux, the finely segmented tracking detector with fast readout electronics minimises the material to reduce multiple scattering.
+operating at temperatures of around -15\Celsius and -20\Celsius, respectively, to minimize the impact of the ionising radiation damage.
+To meet spatial measurement requirements amid particle flux, the finely segmented tracking detector with fast readout electronics minimizes the material to reduce multiple scattering.
 Silicon's benefits include high charge carrier mobility, rapid signal processing, optimal energy resolution sensitivity, and excellent spatial resolution due to segmentation.
 Local hit reconstruction involves clustering, noise calibration, and hit candidate conversion, providing cluster charge profiles and hit positions.
 
@@ -298,10 +298,10 @@ The layout of the three subsystems is shown in Figure \ref{fig:MUON_2Dquarter}.
 \subsubsection{Drift Tubes}
 The Drift Tubes (DTs) are located in the barrel region, where the muon rate is lower and the magnetic field is quite uniform,
 and cover a pseudorapidity range of $|\eta| < 1.2$.
-The DTs are organised into four stations interspersed among the layers of the flux return plates.
+The DTs are organized into four stations interspersed among the layers of the flux return plates.
 Their basic constituents are rectangular drift cells bounded by two parallel aluminium planes, which serve as cathodes.
 Anodes are 80\mum stainless steel wires located in the centre of each cell.
-A muon passing through a cell ionises the gas mixture that fills the cell volume.
+A muon passing through a cell ionizes the gas mixture that fills the cell volume.
 The drift time of the resulting electrons is then used to measure the distance between the muon track and the wire.
 Each chamber has a resolution of 100 µm in the $r - \phi$ plane.
 
@@ -359,7 +359,7 @@ An overview of the layout of the system is shown in Figure \ref{fig:L1trigger-bl
 
 \subsubsection{High-level Trigger}
 The High Level Trigger (HLT) is a sophisticated software-based system which uses tens of thousands of CPU cores
-running multithreaded instances of an optimised version of the CMS reconstruction algorithm~\cite{CMS-TRG-12-001}.
+running multithreaded instances of an optimized version of the CMS reconstruction algorithm~\cite{CMS-TRG-12-001}.
 This array of commercial CPUs manages the full event reconstruction through several sequential algorithms,
 targeting signature of interest referred to as \textit{trigger path}.
 The goal of the HLT is to reduce the incoming \Lone rate of 100 kHZ to around 1 kHz,
@@ -370,5 +370,5 @@ For this purpose, some paths that would otherwise exceed the available bandwidth
 This consists of a random discarding of the event, either at L1 or at HLT, which is then accounted for in the analysis.
 
 Another major constraint of the HLT is the maximum processing time for each event, which is 50 ms.
-To optimise it, the more computationally-intensive algorithms are run at the end of the filtering sequence.
+To optimize it, the more computationally-intensive algorithms are run at the end of the filtering sequence.
 These modules perform a streamlined version of the standard offline reconstruction.
