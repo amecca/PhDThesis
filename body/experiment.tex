@@ -43,8 +43,8 @@ for a total of $137.6\fbinv$.
 
 \begin{table}
   \caption{The main LHC machine parameters for the data production years in \RunII{} compared to the design beam configuration~\cite{CERN-2004-003}.
-  The mean number of interactions per bunch crossing (pile-up) denoted with $<\mu>$ is taken from References~\cite{CMS:LUM-17-003, CMS:LUM-17-004, CMS:LUM-18-002}.
-  To compare the pile-up conditions at different values of the centre-of-mass-energy, the theoretical prediction of the pp inelastic cross-section derived with
+  The mean number of interactions per bunch crossing (\pileup) denoted with $<\mu>$ is taken from References~\cite{CMS:LUM-17-003, CMS:LUM-17-004, CMS:LUM-18-002}.
+  To compare the \pileup{} conditions at different values of the centre-of-mass-energy, the theoretical prediction of the pp inelastic cross-section derived with
   Pythia~\cite{Sjostrand:2015} is used, i.e. $\sigma^{pp}_{incl.}(13\TeV) = 80.0\unit{\text{mb}}$.}
   \label{tab:LHCparamsRun2}
   \centering
@@ -127,7 +127,7 @@ Thanks to the uniform magnetic field within its volume, which bends the trajecto
 allowing excellent reconstruction of the associated momentum and charge sign from the track parameters.
 
 The accuracy of track reconstruction is crucial for determining the position of the hard scattering, the primary vertex, as well as in-flight decays resulting in secondary vertices.
-This in turns allows for the suppression of the background from \pileup interactions,
+This in turns allows for the suppression of the background from \pileup{} interactions,
 which are simultaneous collisions between other pairs of protons in the same bunch crossing\footnote{
 Strictly speaking, this is called in-time \pileup.
 Collisions happening in the previous or next bunch crossing are referred to as out-of-time \pileup.
@@ -262,8 +262,8 @@ It is further equipped with a set of photomultipliers, which detect the cone of 
 The segmentation of the tiles is $\Delta \eta \times \Delta \phi = 0.087 \times 0.087$ for $|\eta| < 1.6$ and $\simeq 0.17 \times 0.17$ for $|\eta| \ge 1.6$.
 
 %% The relative HCAL energy response curve for isolated charged pions is illustrated in Figure 2.8.
-%% A broader response curve is an indicator of a larger pile-up contamination.
-%% Out-of-time pile-up mitigation helps reduce the latter, thereby improving the quality of pion isolation.
+%% A broader response curve is an indicator of a larger \pileup{} contamination.
+%% Out-of-time \pileup{} mitigation helps reduce the latter, thereby improving the quality of pion isolation.
 HCAL is instrumental in recognising hadrons and their decay products,
 and provides a crucial measurement of the missing transverse energy exploiting its extensive coverage in $\eta$, a property referred to as hermeticity.
 The HF is also used for two of the methods for measuring the instantaneous luminosity.
@@ -345,7 +345,7 @@ consisting of a \Lone trigger (L1) fully implemented in hardware logic and a hig
 \label{sec:L1trigger}
 The L1 trigger achieves a rate reduction down to the level of 100 kHz, with a latency below 4\mus.
 It is implemented in custom hardware, using Field Programmable Gate Arrays (FPGAs) which are generic and easily customisable,
-and Application Specific Integrated Circuits (ASICs), which are more resilient to high pile-up conditions, albeit not easily reconfigurable.
+and Application Specific Integrated Circuits (ASICs), which are more resilient to high \pileup{} conditions, albeit not easily reconfigurable.
 The \Lone trigger uses information from the calorimeters and the muon system to construct the so called \textit{trigger primitives},
 which are the base of the trigger logic.
 An overview of the layout of the system is shown in Figure \ref{fig:L1trigger-block-diagram}.
