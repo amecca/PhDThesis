@@ -81,13 +81,18 @@ but the additional cut described in Section~\ref{sec:FSR_cut} is not.
 
 \subsubsection{Significance}
 \input{results/significance_table_inclusive.tex}
-The significances obtained with the various strategies for the identification of the photon and the estimation of the fake photon background
+The expected significances of the various strategies for the identification of the photon and the estimation of the fake photon background
 are illustrated in Table~\ref{tab:summary_significances_inclusive}.
 The best results are obtained using the MVA ID for the photon, in particular the \texttt{wp90}.
 The choice of the variable for the fit does not have a large effect.
 The cut-based selection results in a significance around 5\usep$\sigma$,
 except for the data-driven estimation of the \nonprompt photon background,
 while the MVA based ID results in an increase of around 0.5.
+
+The observed (expected) significance with the chosen strategy is
+$7.3 \usep\sigma$
+($5.5 \usep\sigma$).
+\note{This looks like a result from another famous general purpose experiment.}
 
 As discussed in Section~\ref{sec:likelihood_scans_inclusive}, the sensitivity is statistically limited
 which is in agreement with the observation that the various strategies have expected significances approximately in the same range.
@@ -118,10 +123,12 @@ and the estimation of the fake photon background are illustrated in
 Table~\ref{tab:summary_significances_inclusive}.
 \input{results/significance_table_FSRcut.tex}
 
-The best results are expected with the fit to the binned MVA score,
-and the strategies that use any of the two MVA working points follow suit.
-Among the cut-based strategies, the highest sensitivity is expected with
+The highest sensitivity is expected with
 the data-driven estimation of the fake photon background.
+\note{Too high, in fact. I suspect something is wrong, so I choose the following:}
+The second best results are expected with the fit to the invariant mass of the $\PZ\PZ\PGg$ system,
+selecting the photon with the \texttt{wp80} of the MVA ID,
+and the binned MVA shape and the \texttt{wp90} (either $m_{\PZ\PZ\PGg}$ or $\pt^\PGg$) follow suit.
 
 The expected significance is just below $3\usep\sigma$ for the cut-based selection,
 except when using the data-driven estimate for \nonprompt photons,
@@ -130,6 +137,13 @@ This region is even more statistically limited,
 with only 17.3 events expected with the cut-based photon ID,
 of which 9.2 from the signal sample,
 as shown in Table~\ref{tab:yield_SR4P_1P_FSRcut_Loose}.
+
+The observed (expected) significance obtained by fitting the
+the invariant mass of the $\PZ\PZ\PGg$ system,
+selecting the photon with the \texttt{wp80} of the MVA ID is
+$3.08 \usep\sigma$
+($3.56 \usep\sigma$).
+\note{A drop of $-0.48\usep\sigma$, seems ok.}
 
 \subsubsection{Likelihood scans}
 \input{results/likelihood_scans_FSRcut.tex}
