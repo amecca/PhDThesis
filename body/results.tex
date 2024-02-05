@@ -79,18 +79,6 @@ The first results pertain the measurement of the inclusive process $\Pp\Pp \to 4
 All of the selections detailed in Section~\ref{sec:event_selection} for the four lepton channel are applied,
 but the additional cut described in Section~\ref{sec:FSR_cut} is not.
 
-\subsubsection{Systematic impacts}
-The impact of a given source of systematic is defined as the shift $\Delta\mu$ on the signal strength
-induced by fixing the corresponding nuisance parameter $\theta_i$ to its $\pm 1 \sigma$ values,
-while profiling the other parameters as normal~\cite{CERN-PH-EP-2014-214}.
-This is effectively a measure of the correlation between the $i$-th nuisance and the signal strength,
-and is useful for determining which nuisances have the largest effect on the uncertainty.
-
-\input{results/impacts_inclusive.tex}
-
-\subsubsection{Likelihood scans}
-\input{results/likelihood_scans_inclusive.tex}
-
 \subsubsection{Significance}
 \input{results/significance_table_inclusive.tex}
 The significances obtained with the various strategies for the identification of the photon and the estimation of the fake photon background
@@ -106,18 +94,23 @@ which is in agreement with the observation that the various strategies have expe
 Indeed, as reported in Table~\ref{tab:Run2_SR4P_phoCR_lepCR}, the expected yield in the signal region, using the Loose cut-based ID,
 is around 27.5 events, of which 12.8 from the signal sample.
 
+\subsubsection{Likelihood scans}
+\input{results/likelihood_scans_inclusive.tex}
+
+\subsubsection{Systematic impacts}
+The impact of a given source of systematic is defined as the shift $\Delta\mu$ on the signal strength
+induced by fixing the corresponding nuisance parameter $\theta_i$ to its $\pm 1 \sigma$ values,
+while profiling the other parameters as normal~\cite{CERN-PH-EP-2014-214}.
+This is effectively a measure of the correlation between the $i$-th nuisance and the signal strength,
+and is useful for determining which nuisances have the largest effect on the uncertainty.
+\input{results/impacts_inclusive.tex}
+
 \subsection{Triboson fiducial region}
 \label{sec:results_4L_FSRcut}
 The following results are derived after the application of the cut
 designed to suppress FSR and enhance the fraction of events from triboson production diagrams,
 described in Section~\ref{sec:FSR_cut}.
 The target is the process $\Pp\Pp \to \PZ\PZ\PGg \to 4\Pl\PGg$.
-
-\subsubsection{Systematic impacts}
-\input{results/impacts_FSRcut.tex}
-
-\subsubsection{Likelihood scans}
-\input{results/likelihood_scans_FSRcut.tex}
 
 \subsubsection{Significance}
 The significances obtained with the various strategies for the identification of the photon
@@ -137,6 +130,12 @@ This region is even more statistically limited,
 with only 17.3 events expected with the cut-based photon ID,
 of which 9.2 from the signal sample,
 as shown in Table~\ref{tab:yield_SR4P_1P_FSRcut_Loose}.
+
+\subsubsection{Likelihood scans}
+\input{results/likelihood_scans_FSRcut.tex}
+
+\subsubsection{Systematic impacts}
+\input{results/impacts_FSRcut.tex}
 
 \section{Three lepton channel}
 \label{sec:results_3L}
@@ -169,17 +168,17 @@ The following results target the inclusive production of
 $\Pp\Pp \to 3\Pl\, \PGnl\, \PGg$, with $\Pl = \Pe, \PGm$.
 Thus the cut designed to suppress the contributions from genuine photons from FSR is not applied.
 
-\subsubsection{Systematic impacts}
-\input{results/impacts_SR3P_inclusive.tex}
-
-\subsubsection{Likelihood scans}
-\input{results/likelihood_scans_SR3P_inclusive.tex}
-
 \subsubsection{Significance}
 The expected sensitivity for the \RunII{} period for the first strategy is
 $2.90 \sigma$,
 while for the second strategy it is
 $2.10 \sigma$.
+
+\subsubsection{Likelihood scans}
+\input{results/likelihood_scans_SR3P_inclusive.tex}
+
+\subsubsection{Systematic impacts}
+\input{results/impacts_SR3P_inclusive.tex}
 
 \section{Yields and kinematic distributions}
 \input{results/yields.tex}
