@@ -24,7 +24,6 @@ This adds redundant degrees of freedom, since the movements of the large structu
 The redundancy is removed by linear equality constraints,
 imposed on the original equation system with Lagrange multipliers
 or by elimination.
-\todo{rephrase!!!}
 This treatment of alignables allows the fitting of only the large mechanical structures with varying granularity,
 which is especially useful when the number of track is limited, e.g. when restarting data-taking after a commissioning period.
 
@@ -70,7 +69,7 @@ The $C'$ and $\vec{b'}$ have a significantly smaller sizes than $C$ and $\vec{b}
 of the order of $\mathcal{O}(10\,000)$.
 
 \section{Alignment algorithms}
-Two independent track-based alignment algorithms are used by the CMS Collaboration, \MPII and \HIPPY.
+Two independent track-based alignment algorithms are used by the CMS Collaboration~\cite{CMS-TRK-20-001}, \MPII and \HIPPY.
 The former also performs a global matrix inversion, while the latter neglects the blocks
 relating the global alignables to the track parameters and iterates to improve the approximation.
 Both are maintained and used, thus enabling cross-checks.
@@ -229,4 +228,3 @@ in a way that depends on the nature and size of the misalignment and the selecte
 \subsection{Modelling of systematic distortions}
 \note{maybe}
 
-\cite{CMS-TRK-20-001}

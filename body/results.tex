@@ -92,11 +92,15 @@ and is useful for determining which nuisances have the largest effect on the unc
 \input{results/likelihood_scans_inclusive.tex}
 
 \subsubsection{Significance}
-The significances obtained with the various strategies for the identification of the photon and the estimation of the fake photon background are illustrated in Table~\ref{tab:summary_significances_inclusive}.
 \input{results/significance_table_inclusive.tex}
-
+The significances obtained with the various strategies for the identification of the photon and the estimation of the fake photon background
+are illustrated in Table~\ref{tab:summary_significances_inclusive}.
 The best results are obtained using the MVA ID for the photon, in particular the \texttt{wp90}.
-The choice of the variable for the fit does not seem to have a large effect.
+The choice of the variable for the fit does not have a large effect.
+The cut-based selection results in a significance around 5\usep$\sigma$,
+except for the data-driven estimation of the \nonprompt photon background,
+while the MVA based ID results in an increase of around 0.5.
+
 As discussed in Section~\ref{sec:likelihood_scans_inclusive}, the sensitivity is statistically limited
 which is in agreement with the observation that the various strategies have expected significances approximately in the same range.
 Indeed, as reported in Table~\ref{tab:Run2_SR4P_phoCR_lepCR}, the expected yield in the signal region, using the Loose cut-based ID,
@@ -126,7 +130,9 @@ and the strategies that use any of the two MVA working points follow suit.
 Among the cut-based strategies, the highest sensitivity is expected with
 the data-driven estimation of the fake photon background.
 
-The expected significance is just below $3\usep\sigma$ for all the strategies.
+The expected significance is just below $3\usep\sigma$ for the cut-based selection,
+except when using the data-driven estimate for \nonprompt photons,
+while the MVA based selection result in 3.3--3.5\usep$\sigma$.
 This region is even more statistically limited,
 with only 17.3 events expected with the cut-based photon ID,
 of which 9.2 from the signal sample,
