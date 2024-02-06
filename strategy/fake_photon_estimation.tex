@@ -155,6 +155,7 @@ Kinematic photons that pass the MVA-based working points \texttt{wp90} and \text
 given the improved performance of the MVA ID over the cut-based one.
 The drawback of these working points is the reduced size of the application region containing
 photons that pass the looser selection (\texttt{wp90}) and fail the more strict one (\texttt{wp80}),
+as shown in Figure~\ref{fig:SR4P_lead_90not80},
 compared to the equivalent for the cut-based ID working point
 in which photons are required to pass the VeryLoose ID and fail the Loose ID.
 
@@ -169,18 +170,19 @@ Another possibility is to measure a fake rate between the kinematic selection an
 However, the former is too loose and the selected fakes have signatures that are very different from those of prompt photons.
 This would make the assumption that the transfer factor is the same in the measurement and application regions quite unstable.
 
-\todo{Add plots (e.g. Data/MC of CR3P1F/CR2P2F o SR4P blinded) of the number of events in wp90, wp80.}
-%% \begin{figure}
-%%   \centering
-%%   \subfigure [$\pt   $ of $\PGg^{\rm pass}$] {\includegraphics[width=.333333333\textwidth]{dataMC_noLFR/Run2/fullMC/CR2P2F/lead_wp90_pt_fine_pow.pdf}}%
-%%   \subfigure [$|\eta|$ of $\PGg^{\rm pass}$] {\includegraphics[width=.333333333\textwidth]{dataMC_noLFR/Run2/fullMC/CR2P2F/lead_wp90_aeta_fine_pow.pdf}}%
-%%   \subfigure [$\sieie$ of $\PGg^{\rm pass}$] {\includegraphics[width=.333333333\textwidth]{dataMC_noLFR/Run2/fullMC/CR2P2F/lead_wp90_sieie_pow.pdf}}
-%%   \caption{Transverse momentum, pseudorapidity and \sieie of photons
-%%     passing the \texttt{wp90} working point of the MVA based ID
-%%     in lepton control region where both leptons from $\PZ_2$ fail the tight selection,
-%%     integrated on the whole \Run2 period.}
-%%   \label{fig:CRLFR_lead_pass}
-%% \end{figure}
+\begin{figure}
+  \centering
+  \subfigure [$\pt   $ of $\PGg^{wp90 \land !wp80}$] {\includegraphics[width=.333333333\textwidth]{dataMC/Run2/lepCR/SR4P/lead_90not80_pt_fine_pow.pdf}}%
+  \subfigure [$|\eta|$ of $\PGg^{wp90 \land !wp80}$] {\includegraphics[width=.333333333\textwidth]{dataMC/Run2/lepCR/SR4P/lead_90not80_aeta_fine_pow.pdf}}%
+  \subfigure [$\sieie$ of $\PGg^{wp90 \land !wp80}$] {\includegraphics[width=.333333333\textwidth]{dataMC/Run2/lepCR/SR4P/lead_90not80_sieie_pow.pdf}}
+  \caption{Transverse momentum, pseudorapidity and \sieie of photons
+    passing the \texttt{wp90} and failing the \texttt{wp80} working point of the MVA based ID
+    in the region with four leptons passing the tight selection.
+    This would be the photon fake rate application region
+    for a tight-to-loose method using the two MVA working points.
+    }
+  \label{fig:SR4P_lead_90not80}
+\end{figure}
 
 Therefore, the results obtained using the MVA ID are derived without the data-driven estimate of fake photons.
 In this case, the MC prediction of backgrounds which contain \nonprompt or misidentified photons is used.
