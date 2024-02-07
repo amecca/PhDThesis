@@ -10,110 +10,139 @@ for the fake photon application region (Table \ref{tab:yields_Run2_CR4P_1F_lepCR
 and for the fake lepton application regions (Tables \ref{tab:yields_Run2_CR3P1F_1P} and \ref{tab:yields_Run2_CR2P2F_1P}).
 
 \begin{table}
-\caption{Yields from the signal region SR4P\_1P, with four leptons passing the tight selection and a photon passing the cut-based ID.}
-\label{tab:Run2_SR4P_phoCR_lepCR}
-% Note: this is from the variable mZZGloose
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrr}
-\toprule
-{} & \multicolumn{1}{c}{2016preVFP} & \multicolumn{1}{c}{2016postVFP} & \multicolumn{1}{c}{2017} & \multicolumn{1}{c}{2018} & \multicolumn{1}{c}{\Run2} \\
-\midrule
-ZZGTo4LG-prompt  &  1.889 $\pm$ 0.046 &  1.657 $\pm$ 0.040 &  3.812 $\pm$ 0.097 &   5.480 $\pm$ 0.137 &  12.838 $\pm$ 0.178 \\
-ZZTo4l-prompt    &  1.185 $\pm$ 0.023 &  1.093 $\pm$ 0.021 &  2.559 $\pm$ 0.036 &   3.710 $\pm$ 0.052 &   8.546 $\pm$ 0.071 \\
-ggTo4e-prompt    &  0.030 $\pm$ 0.001 &  0.029 $\pm$ 0.001 &  0.072 $\pm$ 0.002 &   0.101 $\pm$ 0.003 &   0.232 $\pm$ 0.004 \\
-ggTo2e2mu-prompt &  0.062 $\pm$ 0.003 &  0.056 $\pm$ 0.002 &  0.066 $\pm$ 0.003 &   0.102 $\pm$ 0.004 &   0.286 $\pm$ 0.006 \\
-ggTo4mu-prompt   &  0.056 $\pm$ 0.001 &  0.046 $\pm$ 0.001 &  0.113 $\pm$ 0.003 &   0.153 $\pm$ 0.004 &   0.368 $\pm$ 0.005 \\
-ZZZ-prompt       &  0.007 $\pm$ 0.005 &  0.000 $\pm$ 0.000 &  0.017 $\pm$ 0.008 &   0.029 $\pm$ 0.010 &   0.053 $\pm$ 0.014 \\
-TTZJets-prompt   &  0.010 $\pm$ 0.002 &  0.009 $\pm$ 0.002 &  0.034 $\pm$ 0.005 &   0.040 $\pm$ 0.006 &   0.094 $\pm$ 0.008 \\
-fake\_photons     &  1.212 $\pm$ 0.638 &  0.710 $\pm$ 0.411 &  1.195 $\pm$ 0.489 &   1.736 $\pm$ 0.588 &   4.853 $\pm$ 1.077 \\
-WZZ-prompt       &  0.000 $\pm$ 0.000 &  0.014 $\pm$ 0.010 &  0.017 $\pm$ 0.016 &   0.053 $\pm$ 0.024 &   0.085 $\pm$ 0.031 \\
-WWZ-prompt       &  0.000 $\pm$ 0.000 &  0.040 $\pm$ 0.040 &  0.041 $\pm$ 0.041 &   0.082 $\pm$ 0.058 &   0.163 $\pm$ 0.081 \\
-\midrule
-Total            &  4.451 $\pm$ 0.640 &  3.653 $\pm$ 0.415 &  7.927 $\pm$ 0.502 &  11.485 $\pm$ 0.609 &  27.517 $\pm$ 1.098 \\
-\bottomrule
-\end{tabular}
-}
+  \caption{Yields from the signal region SR4P\_1P, with four leptons passing the tight selection and a photon passing the cut-based ID.
+  The \nonprompt and misidentified photons are estimated with the data-driven method
+  and thus only the events containing a prompt generated photon are included from the main background samples.
+  }
+  \label{tab:Run2_SR4P_phoCR_lepCR}
+  % Note: this is from the variable mZZGloose
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lccccc}
+    \toprule
+    {}                            & 2016preVFP         & 2016postVFP        & 2017               & 2018               & \Run2               \\
+    \midrule
+    $\PZ\PZ\PGg\to4\Pl\PGg$       &  1.962 $\pm$ 0.047 &  1.714 $\pm$ 0.040 &  4.021 $\pm$ 0.100 &  5.864 $\pm$ 0.142 &  13.561 $\pm$ 0.184 \\
+    $\Pg\Pg\to\PZ\PZ\to4\Pe$      &  0.031 $\pm$ 0.001 &  0.030 $\pm$ 0.001 &  0.076 $\pm$ 0.002 &  0.104 $\pm$ 0.003 &   0.240 $\pm$ 0.004 \\
+    $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$ &  0.063 $\pm$ 0.003 &  0.057 $\pm$ 0.002 &  0.069 $\pm$ 0.003 &  0.104 $\pm$ 0.004 &   0.292 $\pm$ 0.006 \\
+    $\Pg\Pg\to\PZ\PZ\to4\PGm$     &  0.056 $\pm$ 0.001 &  0.046 $\pm$ 0.001 &  0.117 $\pm$ 0.003 &  0.159 $\pm$ 0.004 &   0.378 $\pm$ 0.005 \\
+    $\PZ\PZ\PZ$                   &  0.007 $\pm$ 0.005 &  0.000 $\pm$ 0.000 &  0.017 $\pm$ 0.008 &  0.029 $\pm$ 0.010 &   0.053 $\pm$ 0.014 \\
+    $\PQt\PAQt\PZ$+jets           &  0.011 $\pm$ 0.002 &  0.010 $\pm$ 0.002 &  0.036 $\pm$ 0.005 &  0.041 $\pm$ 0.006 &   0.098 $\pm$ 0.009 \\
+    Fake photons                  &  1.357 $\pm$ 0.655 &  1.011 $\pm$ 0.509 &  1.368 $\pm$ 0.519 &  2.451 $\pm$ 0.691 &   6.187 $\pm$ 1.198 \\
+    $\PW\PZ\PZ$                   &  0.000 $\pm$ 0.000 &  0.021 $\pm$ 0.012 &  0.016 $\pm$ 0.015 &  0.065 $\pm$ 0.027 &   0.102 $\pm$ 0.033 \\
+    $\PW\PW\PZ$                   &  0.000 $\pm$ 0.000 &  0.040 $\pm$ 0.040 &  0.041 $\pm$ 0.041 &  0.082 $\pm$ 0.058 &   0.163 $\pm$ 0.082 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    Total                         &  3.488 $\pm$ 0.656 &  2.927 $\pm$ 0.512 &  5.759 $\pm$ 0.531 &  8.900 $\pm$ 0.709 &  21.074 $\pm$ 1.215 \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}
+  \caption{Yields from the signal region SR4P\_1P, with four leptons passing the tight selection and a photon passing the cut-based ID.
+    The \nonprompt and misidentified photons are taken from the simulation.
+  }
+  \label{tab:Run2_SR4P_phoMC_lepCR}
+  % Note: this is from the variable mZZGloose
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lccccc}
+    \toprule
+    {}                            & 2016preVFP          & 2016postVFP       & 2017               & 2018               & \Run2               \\
+    \midrule
+    $\PZ\PZ\PGg\to4\Pl\PGg$       &  1.962 $\pm$ 0.047 &  1.714 $\pm$ 0.040 &  4.021 $\pm$ 0.100 &  5.864 $\pm$ 0.142 &  13.561 $\pm$ 0.184 \\
+    $\PQq\PAQq\to\PZ\PZ\to4\Pl$   &  0.243 $\pm$ 0.011 &  0.210 $\pm$ 0.009 &  0.610 $\pm$ 0.018 &  0.858 $\pm$ 0.025 &   1.921 $\pm$ 0.034 \\
+    $\Pg\Pg\to\PZ\PZ\to4\Pe$      &  0.036 $\pm$ 0.001 &  0.035 $\pm$ 0.001 &  0.088 $\pm$ 0.002 &  0.124 $\pm$ 0.003 &   0.283 $\pm$ 0.004 \\
+    $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$ &  0.077 $\pm$ 0.003 &  0.070 $\pm$ 0.003 &  0.086 $\pm$ 0.003 &  0.127 $\pm$ 0.005 &   0.360 $\pm$ 0.007 \\
+    $\Pg\Pg\to\PZ\PZ\to4\PGm$     &  0.065 $\pm$ 0.001 &  0.054 $\pm$ 0.001 &  0.139 $\pm$ 0.003 &  0.192 $\pm$ 0.005 &   0.449 $\pm$ 0.006 \\
+    $\PZ\PZ\PZ$                   &  0.007 $\pm$ 0.005 &  0.003 $\pm$ 0.003 &  0.021 $\pm$ 0.009 &  0.050 $\pm$ 0.014 &   0.082 $\pm$ 0.017 \\
+    $\PW\PZ\PZ$                   &  0.008 $\pm$ 0.008 &  0.028 $\pm$ 0.014 &  0.038 $\pm$ 0.020 &  0.088 $\pm$ 0.031 &   0.163 $\pm$ 0.041 \\
+    $\PQt\PAQt\PZ$+jets           &  0.012 $\pm$ 0.003 &  0.011 $\pm$ 0.002 &  0.048 $\pm$ 0.006 &  0.054 $\pm$ 0.007 &   0.124 $\pm$ 0.010 \\
+    Fake leptons                  &  0.047 $\pm$ 0.066 &  0.000 $\pm$ 0.000 &  0.089 $\pm$ 0.119 &  0.117 $\pm$ 0.091 &   0.253 $\pm$ 0.164 \\
+    $\PW\PW\PZ$                   &  0.000 $\pm$ 0.000 &  0.040 $\pm$ 0.040 &  0.041 $\pm$ 0.041 &  0.082 $\pm$ 0.058 &   0.163 $\pm$ 0.082 \\
+    Total                         &  2.458 $\pm$ 0.082 &  2.164 $\pm$ 0.059 &  5.181 $\pm$ 0.164 &  7.557 $\pm$ 0.183 &  17.360 $\pm$ 0.266 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    Total                         &  3.488 $\pm$ 0.656 &  2.927 $\pm$ 0.512 &  5.759 $\pm$ 0.531 &  8.900 $\pm$ 0.709 &  21.074 $\pm$ 1.215 \\
+    \bottomrule
+  \end{tabular}
+  }
 \end{table}
 
 \begin{table}
 \caption{Yields from the fake photon application region CR4P\_1F, with four leptons passing the tight selection and a photon passing the VeryLoose ID but failing the cut-based ID Loose.}
 \label{tab:yields_Run2_CR4P_1F_lepCR}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrr}
-\toprule
-{} & \multicolumn{1}{c}{2016preVFP} & \multicolumn{1}{c}{2016postVFP} & \multicolumn{1}{c}{2017} & \multicolumn{1}{c}{2018} & \multicolumn{1}{c}{\Run2} \\
-\midrule
-ZZGTo4LG  &  0.286 $\pm$ 0.019 &  0.270 $\pm$ 0.016 &  0.751 $\pm$ 0.044 &   1.061 $\pm$ 0.060 &   2.367 $\pm$ 0.078 \\
-ZZTo4l    &  2.270 $\pm$ 0.032 &  2.162 $\pm$ 0.029 &  6.228 $\pm$ 0.057 &   9.118 $\pm$ 0.082 &  19.777 $\pm$ 0.108 \\
-ggTo4e    &  0.050 $\pm$ 0.001 &  0.048 $\pm$ 0.001 &  0.137 $\pm$ 0.003 &   0.203 $\pm$ 0.004 &   0.438 $\pm$ 0.005 \\
-ggTo2e2mu &  0.131 $\pm$ 0.004 &  0.128 $\pm$ 0.004 &  0.180 $\pm$ 0.005 &   0.253 $\pm$ 0.007 &   0.691 $\pm$ 0.010 \\
-ggTo4mu   &  0.088 $\pm$ 0.002 &  0.075 $\pm$ 0.001 &  0.202 $\pm$ 0.004 &   0.305 $\pm$ 0.006 &   0.671 $\pm$ 0.007 \\
-ZZZ       &  0.039 $\pm$ 0.011 &  0.018 $\pm$ 0.009 &  0.057 $\pm$ 0.015 &   0.066 $\pm$ 0.018 &   0.180 $\pm$ 0.027 \\
-WZZ       &  0.051 $\pm$ 0.020 &  0.051 $\pm$ 0.019 &  0.077 $\pm$ 0.028 &   0.120 $\pm$ 0.038 &   0.299 $\pm$ 0.055 \\
-WWZ       &  0.048 $\pm$ 0.048 &  0.046 $\pm$ 0.046 &  0.000 $\pm$ 0.000 &   0.000 $\pm$ 0.000 &   0.094 $\pm$ 0.067 \\
-TTZJets   &  0.046 $\pm$ 0.005 &  0.039 $\pm$ 0.004 &  0.144 $\pm$ 0.010 &   0.216 $\pm$ 0.014 &   0.444 $\pm$ 0.019 \\
-\midrule
-Total     &  3.008 $\pm$ 0.066 &  2.836 $\pm$ 0.061 &  7.776 $\pm$ 0.079 &  11.342 $\pm$ 0.111 &  24.962 $\pm$ 0.163 \\
-Data      & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{22} \\
-\bottomrule
-\end{tabular}
-}
+  \begin{tabular}{lccccc}
+    \toprule
+    {}                            & 2016preVFP         & 2016postVFP        & 2017               & 2018                & \Run2               \\
+    \midrule
+    $\PZ\PZ\PGg\to4\Pl\PGg$       &  0.302 $\pm$ 0.019 &  0.294 $\pm$ 0.017 &  0.837 $\pm$ 0.047 &   1.191 $\pm$ 0.064 &   2.623 $\pm$ 0.083 \\
+    $\PQq\PAQq\to\PZ\PZ\to4\Pl$   &  2.400 $\pm$ 0.033 &  2.283 $\pm$ 0.030 &  6.428 $\pm$ 0.058 &   9.507 $\pm$ 0.084 &  20.617 $\pm$ 0.111 \\
+    $\Pg\Pg\to\PZ\PZ\to4\Pe$      &  0.060 $\pm$ 0.001 &  0.059 $\pm$ 0.001 &  0.168 $\pm$ 0.003 &   0.258 $\pm$ 0.005 &   0.546 $\pm$ 0.006 \\
+    $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$ &  0.157 $\pm$ 0.004 &  0.158 $\pm$ 0.004 &  0.224 $\pm$ 0.005 &   0.322 $\pm$ 0.008 &   0.860 $\pm$ 0.011 \\
+    $\Pg\Pg\to\PZ\PZ\to4\PGm$     &  0.107 $\pm$ 0.002 &  0.092 $\pm$ 0.002 &  0.253 $\pm$ 0.004 &   0.385 $\pm$ 0.006 &   0.837 $\pm$ 0.008 \\
+    $\PZ\PZ\PZ$                   &  0.039 $\pm$ 0.011 &  0.025 $\pm$ 0.011 &  0.067 $\pm$ 0.016 &   0.069 $\pm$ 0.019 &   0.200 $\pm$ 0.030 \\
+    $\PW\PZ\PZ$                   &  0.064 $\pm$ 0.022 &  0.071 $\pm$ 0.023 &  0.120 $\pm$ 0.034 &   0.120 $\pm$ 0.038 &   0.376 $\pm$ 0.060 \\
+    $\PW\PW\PZ$                   &  0.048 $\pm$ 0.048 &  0.046 $\pm$ 0.046 &  0.000 $\pm$ 0.000 &   0.036 $\pm$ 0.036 &   0.131 $\pm$ 0.076 \\
+    $\PQt\PAQt\PZ$+jets           &  0.056 $\pm$ 0.006 &  0.050 $\pm$ 0.005 &  0.171 $\pm$ 0.011 &   0.253 $\pm$ 0.015 &   0.530 $\pm$ 0.020 \\
+    Fake leptons                  &  0.030 $\pm$ 0.052 &  0.051 $\pm$ 0.047 &  0.059 $\pm$ 0.092 &   0.050 $\pm$ 0.095 &   0.191 $\pm$ 0.149 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    Total                         &  3.263 $\pm$ 0.084 &  3.130 $\pm$ 0.078 &  8.327 $\pm$ 0.124 &  12.191 $\pm$ 0.154 &  26.911 $\pm$ 0.229 \\
+    Data                          &  5                 &  4                 &  7                 &  13                 &  29                 \\
+    \bottomrule
+  \end{tabular}
+  }
 \end{table}
 
 \begin{table}
 \caption{Yields in CR3P1F\_1P, one of the fake lepton application regions, with three leptons passing the tight selection, one passing only a loose selection, and a photon passing the cut-based ID.}
 \label{tab:yields_Run2_CR3P1F_1P}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrr}
-\toprule
-{} & \multicolumn{1}{c}{2016preVFP} & \multicolumn{1}{c}{2016postVFP} & \multicolumn{1}{c}{2017} & \multicolumn{1}{c}{2018} & \multicolumn{1}{c}{\Run2} \\
-\midrule
-ZZGTo4LG       &  0.126 $\pm$ 0.013 &  0.131 $\pm$ 0.011 &  0.369 $\pm$ 0.031 &  0.453 $\pm$ 0.039 &  1.080 $\pm$ 0.052 \\
-WZGTo3LNuG     &  0.203 $\pm$ 0.010 &  0.185 $\pm$ 0.008 &  0.392 $\pm$ 0.019 &  0.673 $\pm$ 0.030 &  1.453 $\pm$ 0.038 \\
-ZGToLLG        &  0.695 $\pm$ 0.280 &  0.000 $\pm$ 0.000 &  0.463 $\pm$ 0.388 &  0.492 $\pm$ 0.447 &  1.650 $\pm$ 0.654 \\
-ZZTo4l         &  0.179 $\pm$ 0.009 &  0.160 $\pm$ 0.008 &  0.412 $\pm$ 0.015 &  0.618 $\pm$ 0.021 &  1.368 $\pm$ 0.029 \\
-ggTo4e         &  0.008 $\pm$ 0.000 &  0.006 $\pm$ 0.000 &  0.017 $\pm$ 0.001 &  0.029 $\pm$ 0.002 &  0.061 $\pm$ 0.002 \\
-ggTo2e2mu      &  0.011 $\pm$ 0.001 &  0.009 $\pm$ 0.001 &  0.012 $\pm$ 0.001 &  0.018 $\pm$ 0.002 &  0.049 $\pm$ 0.003 \\
-ggTo4mu        &  0.003 $\pm$ 0.000 &  0.002 $\pm$ 0.000 &  0.006 $\pm$ 0.001 &  0.007 $\pm$ 0.001 &  0.019 $\pm$ 0.001 \\
-WZTo3LNu       &  0.359 $\pm$ 0.103 &  0.434 $\pm$ 0.093 &  0.500 $\pm$ 0.174 &  1.055 $\pm$ 0.316 &  2.348 $\pm$ 0.387 \\
-ZZZ            &  0.003 $\pm$ 0.003 &  0.000 $\pm$ 0.000 &  0.010 $\pm$ 0.006 &  0.007 $\pm$ 0.005 &  0.020 $\pm$ 0.008 \\
-WZZ            &  0.009 $\pm$ 0.009 &  0.000 $\pm$ 0.000 &  0.001 $\pm$ 0.012 &  0.012 $\pm$ 0.012 &  0.022 $\pm$ 0.019 \\
-TTZJets        &  0.035 $\pm$ 0.004 &  0.032 $\pm$ 0.004 &  0.060 $\pm$ 0.006 &  0.107 $\pm$ 0.010 &  0.235 $\pm$ 0.013 \\
-DYJetsToLL\_M50&  0.000 $\pm$ 0.000 &  0.000 $\pm$ 0.000 &  0.000 $\pm$ 0.000 &  0.680 $\pm$ 3.520 &  0.680 $\pm$ 3.520 \\
-\midrule
-Total          &  1.631 $\pm$ 0.299 &  0.960 $\pm$ 0.095 &  2.242 $\pm$ 0.427 &  4.152 $\pm$ 3.562 &  8.985 $\pm$ 3.602 \\
-Data & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{7} \\
-\bottomrule
-\end{tabular}
-}
+  \begin{tabular}{lccccc}
+  \toprule
+  {}                            & 2016preVFP          & 2016postVFP       & 2017               & 2018               & \Run2              \\
+  \midrule
+  $\PZ\PZ\PGg\to4\Pl\PGg$       &  0.143 $\pm$ 0.013 &  0.139 $\pm$ 0.011 &  0.390 $\pm$ 0.031 &  0.506 $\pm$ 0.041 &  1.178 $\pm$ 0.055 \\
+  $\PW\PZ\PGg\to3\Pl\PGnl\PGg$  &  0.213 $\pm$ 0.011 &  0.191 $\pm$ 0.008 &  0.415 $\pm$ 0.020 &  0.711 $\pm$ 0.030 &  1.530 $\pm$ 0.039 \\
+  $\PZ\PGg\to\Pl\Pl\PGg$        &  0.750 $\pm$ 0.285 &  0.000 $\pm$ 0.000 &  0.463 $\pm$ 0.388 &  0.492 $\pm$ 0.447 &  1.705 $\pm$ 0.657 \\
+  $\PQq\PAQq\to\PZ\PZ\to4\Pl$   &  0.103 $\pm$ 0.007 &  0.085 $\pm$ 0.006 &  0.235 $\pm$ 0.011 &  0.328 $\pm$ 0.016 &  0.751 $\pm$ 0.021 \\
+  $\Pg\Pg\to\PZ\PZ\to4\Pe$      &  0.011 $\pm$ 0.001 &  0.008 $\pm$ 0.000 &  0.022 $\pm$ 0.001 &  0.037 $\pm$ 0.002 &  0.078 $\pm$ 0.002 \\
+  $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$ &  0.012 $\pm$ 0.001 &  0.012 $\pm$ 0.001 &  0.016 $\pm$ 0.001 &  0.022 $\pm$ 0.002 &  0.062 $\pm$ 0.003 \\
+  $\Pg\Pg\to\PZ\PZ\to4\PGm$     &  0.003 $\pm$ 0.000 &  0.003 $\pm$ 0.000 &  0.007 $\pm$ 0.001 &  0.008 $\pm$ 0.001 &  0.020 $\pm$ 0.001 \\
+  $\PW\PZ\to3\Pl\PGn$           &  0.047 $\pm$ 0.027 &  0.035 $\pm$ 0.027 &  0.135 $\pm$ 0.087 &  1.101 $\pm$ 0.319 &  1.317 $\pm$ 0.333 \\
+  $\PZ\PZ\PZ$                   &  0.003 $\pm$ 0.003 &  0.000 $\pm$ 0.000 &  0.010 $\pm$ 0.006 &  0.007 $\pm$ 0.005 &  0.020 $\pm$ 0.008 \\
+  $\PW\PZ\PZ$                   &  0.009 $\pm$ 0.009 &  0.000 $\pm$ 0.000 &  0.001 $\pm$ 0.012 &  0.012 $\pm$ 0.012 &  0.022 $\pm$ 0.019 \\
+  $\PQt\PAQt\PZ$+jets           &  0.043 $\pm$ 0.005 &  0.039 $\pm$ 0.004 &  0.068 $\pm$ 0.007 &  0.114 $\pm$ 0.010 &  0.263 $\pm$ 0.014 \\
+  Drell-Yan + jets              &  0.000 $\pm$ 0.000 &  0.000 $\pm$ 0.000 &  0.000 $\pm$ 0.000 &  0.680 $\pm$ 3.520 &  0.680 $\pm$ 3.520 \\
+  \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+  Total                         &  1.337 $\pm$ 0.287 &  0.512 $\pm$ 0.031 &  1.760 $\pm$ 0.399 &  4.017 $\pm$ 3.563 &  7.625 $\pm$ 3.597 \\
+  Data                          &  1.000 $\pm$ 1.000 &  0.000 $\pm$ 0.000 &  2.000 $\pm$ 1.414 &  5.000 $\pm$ 2.236 &  8.000 $\pm$ 2.828 \\
+  \bottomrule
+  \end{tabular}
+  }
 \end{table}
 
 \begin{table}
 \caption{Yields in CR2P2F\_1P, one of the fake lepton application regions, with two leptons passing the tight selection, two passing only a loose selection, and a photon passing the cut-based ID.}
 \label{tab:yields_Run2_CR2P2F_1P}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrr}
-\toprule
-{} & \multicolumn{1}{c}{2016preVFP} & \multicolumn{1}{c}{2016postVFP} & \multicolumn{1}{c}{2017} & \multicolumn{1}{c}{2018} & \multicolumn{1}{c}{\Run2} \\
-\midrule
-ZZGTo4LG       &   0.008 $\pm$ 0.004 &   0.005 $\pm$ 0.002 &    0.006 $\pm$ 0.004 &    0.030 $\pm$ 0.010 &    0.050 $\pm$ 0.011 \\
-WZGTo3LNuG     &   0.022 $\pm$ 0.003 &   0.019 $\pm$ 0.003 &    0.032 $\pm$ 0.005 &    0.048 $\pm$ 0.008 &    0.121 $\pm$ 0.011 \\
-ZGToLLG        &   6.473 $\pm$ 0.786 &   0.000 $\pm$ 0.000 &   13.535 $\pm$ 1.451 &   20.784 $\pm$ 2.258 &   40.792 $\pm$ 2.796 \\
-ZZTo4l         &   0.013 $\pm$ 0.003 &   0.011 $\pm$ 0.002 &    0.017 $\pm$ 0.003 &    0.032 $\pm$ 0.005 &    0.074 $\pm$ 0.007 \\
-ggTo4e         &   0.000 $\pm$ 0.000 &   0.000 $\pm$ 0.000 &    0.000 $\pm$ 0.000 &    0.001 $\pm$ 0.000 &    0.001 $\pm$ 0.000 \\
-ggTo2e2mu      &   0.000 $\pm$ 0.000 &   0.000 $\pm$ 0.000 &    0.000 $\pm$ 0.000 &    0.000 $\pm$ 0.000 &    0.001 $\pm$ 0.000 \\
-WZTo3LNu       &   0.018 $\pm$ 0.035 &   0.052 $\pm$ 0.041 &    0.185 $\pm$ 0.108 &    0.238 $\pm$ 0.121 &    0.493 $\pm$ 0.171 \\
-TTZJets        &   0.020 $\pm$ 0.003 &   0.017 $\pm$ 0.003 &    0.029 $\pm$ 0.004 &    0.043 $\pm$ 0.006 &    0.110 $\pm$ 0.009 \\
-TZq            &   0.005 $\pm$ 0.007 &   0.000 $\pm$ 0.006 &    0.018 $\pm$ 0.009 &    0.021 $\pm$ 0.012 &    0.044 $\pm$ 0.018 \\
-tW             &   0.057 $\pm$ 0.057 &   0.000 $\pm$ 0.000 &    0.088 $\pm$ 0.099 &    0.000 $\pm$ 0.000 &    0.144 $\pm$ 0.114 \\
-DYJetsToLL\_M50 &   0.000 $\pm$ 0.000 &  11.019 $\pm$ 6.842 &  14.447 $\pm$ 10.750 &  29.521 $\pm$ 14.716 &  54.986 $\pm$ 19.467 \\
-ggTo4mu        &   0.000 $\pm$ 0.000 &   0.000 $\pm$ 0.000 &    0.000 $\pm$ 0.000 &    0.000 $\pm$ 0.000 &    0.000 $\pm$ 0.000 \\
-\midrule
-Total          &   6.616 $\pm$ 0.789 &  11.123 $\pm$ 6.842 &  28.359 $\pm$ 10.849 &  50.717 $\pm$ 14.889 &  96.814 $\pm$ 19.667 \\
-Data & \multicolumn{1}{c}{17} & \multicolumn{1}{c}{8} & \multicolumn{1}{c}{21} & \multicolumn{1}{c}{22} & \multicolumn{1}{c}{68} \\
-\bottomrule
-\end{tabular}
-}
+  \begin{tabular}{lccccc}
+    \toprule
+    {} & 2016preVFP & 2016postVFP & 2017 & 2018 & Run2 \\
+    \midrule
+    $\PZ\PZ\PGg\to4\Pl\PGg$      &   0.009 $\pm$ 0.004 &  0.005 $\pm$ 0.002 &   0.006 $\pm$ 0.004 &    0.034 $\pm$ 0.010 &    0.054 $\pm$ 0.012 \\
+    $\PW\PZ\PGg\to3\Pl\PGnl\PGg$ &   0.023 $\pm$ 0.003 &  0.020 $\pm$ 0.003 &   0.034 $\pm$ 0.006 &    0.053 $\pm$ 0.008 &    0.130 $\pm$ 0.011 \\
+    Drell-Yan + jets             &   6.231 $\pm$ 3.599 &  1.855 $\pm$ 1.855 &  15.810 $\pm$ 5.603 &  37.763 $\pm$ 15.469 &  61.659 $\pm$ 16.943 \\
+    $\PZ\PGg\to\Pl\Pl\PGg$       &   6.600 $\pm$ 0.799 &  0.000 $\pm$ 0.000 &  13.784 $\pm$ 1.461 &   22.222 $\pm$ 2.340 &   42.606 $\pm$ 2.872 \\
+    $\PQq\PAQq\to\PZ\PZ\to4\Pl$  &   0.009 $\pm$ 0.002 &  0.007 $\pm$ 0.002 &   0.015 $\pm$ 0.003 &    0.023 $\pm$ 0.004 &    0.054 $\pm$ 0.006 \\
+    $\PW\PZ\to3\Pl\PGnl$         &   0.002 $\pm$ 0.022 &  0.027 $\pm$ 0.019 &   0.123 $\pm$ 0.075 &    0.151 $\pm$ 0.136 &    0.302 $\pm$ 0.158 \\
+    $\PQt\PAQt\PZ$+jets          &   0.023 $\pm$ 0.004 &  0.020 $\pm$ 0.003 &   0.035 $\pm$ 0.005 &    0.055 $\pm$ 0.007 &    0.133 $\pm$ 0.010 \\
+    $\PQt\PZ\PQq$                &   0.005 $\pm$ 0.008 &  0.001 $\pm$ 0.006 &   0.018 $\pm$ 0.009 &    0.024 $\pm$ 0.013 &    0.048 $\pm$ 0.019 \\
+    $\PQt\PW$                    &   0.057 $\pm$ 0.057 &  0.000 $\pm$ 0.000 &   0.088 $\pm$ 0.099 &    0.000 $\pm$ 0.000 &    0.144 $\pm$ 0.114 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    Total                        &   6.616 $\pm$ 0.789 & 11.123 $\pm$ 6.842 & 28.359 $\pm$ 10.849 &  50.717 $\pm$ 14.889 &  96.814 $\pm$ 19.667 \\
+    Data                         &  17                 &  9                 & 23                  &  28                  &  77                  \\
+    \bottomrule
+  \end{tabular}
+  }
 \end{table}
 
 \begin{table}
@@ -122,19 +151,19 @@ Data & \multicolumn{1}{c}{17} & \multicolumn{1}{c}{8} & \multicolumn{1}{c}{21} &
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{lrrrrr}
     \toprule
-    {} & \multicolumn{1}{c}{2016preVFP} & \multicolumn{1}{c}{2016postVFP} & \multicolumn{1}{c}{2017} & \multicolumn{1}{c}{2018} & \multicolumn{1}{c}{\Run2} \\
+    {}                           & 2016preVFP         & 2016postVFP        & 2017               & 2018               & \Run2              \\
     \midrule
-    $\PZ\PZ\PGg\to4\Pl\PGg$      &  0.841 $\pm$ 0.031 &  0.728 $\pm$ 0.026 &  1.761 $\pm$ 0.066 &   5.864 $\pm$ 0.142 &   9.194 $\pm$ 0.162 \\
-    $\Pq\Pq\to\PZ\PZ\to4\Pl$     &  0.507 $\pm$ 0.015 &  0.447 $\pm$ 0.013 &  1.185 $\pm$ 0.025 &   4.733 $\pm$ 0.059 &   6.872 $\pm$ 0.067 \\
-    fake\_leptons                &  0.064 $\pm$ 0.066 &  0.000 $\pm$ 0.000 &  0.106 $\pm$ 0.115 &   0.117 $\pm$ 0.091 &   0.287 $\pm$ 0.160 \\
-    $\Pg\Pg\to\PZ\PZ\to4\PGm$    &  0.020 $\pm$ 0.001 &  0.016 $\pm$ 0.001 &  0.042 $\pm$ 0.002 &   0.192 $\pm$ 0.005 &   0.270 $\pm$ 0.005 \\
-    $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$&  0.021 $\pm$ 0.002 &  0.017 $\pm$ 0.001 &  0.023 $\pm$ 0.002 &   0.127 $\pm$ 0.005 &   0.189 $\pm$ 0.005 \\
-    $\Pg\Pg\to\PZ\PZ\to4\Pe$     &  0.009 $\pm$ 0.001 &  0.010 $\pm$ 0.000 &  0.024 $\pm$ 0.001 &   0.124 $\pm$ 0.003 &   0.166 $\pm$ 0.004 \\
-    $\PZ\PZ\PZ$                  &  0.004 $\pm$ 0.004 &  0.003 $\pm$ 0.003 &  0.014 $\pm$ 0.007 &   0.050 $\pm$ 0.014 &   0.071 $\pm$ 0.016 \\
-    $\PW\PZ\PZ$                  &  0.000 $\pm$ 0.000 &  0.014 $\pm$ 0.010 &  0.023 $\pm$ 0.017 &   0.088 $\pm$ 0.031 &   0.126 $\pm$ 0.037 \\
-    $\PW\PW\PZ$                  &  0.000 $\pm$ 0.000 &  0.000 $\pm$ 0.000 &  0.000 $\pm$ 0.000 &   0.082 $\pm$ 0.058 &   0.082 $\pm$ 0.058 \\
-    $\PQt\PAQt\PZ$+jets          &  0.005 $\pm$ 0.002 &  0.004 $\pm$ 0.001 &  0.022 $\pm$ 0.004 &   0.054 $\pm$ 0.007 &   0.086 $\pm$ 0.008 \\
-    Total                        &  1.470 $\pm$ 0.074 &  1.239 $\pm$ 0.031 &  3.201 $\pm$ 0.136 &  11.432 $\pm$ 0.191 &  17.343 $\pm$ 0.248 \\
+    $\PZ\PZ\PGg\to4\Pl\PGg$      &  0.841 $\pm$ 0.031 &  0.728 $\pm$ 0.026 &  1.761 $\pm$ 0.066 &  2.485 $\pm$ 0.093 &  5.815 $\pm$ 0.121 \\
+    $\PQq\PAQq\to\PZ\PZ\to4\Pl$  &  0.197 $\pm$ 0.010 &  0.167 $\pm$ 0.008 &  0.504 $\pm$ 0.016 &  0.701 $\pm$ 0.023 &  1.569 $\pm$ 0.031 \\
+    Fake leptons                 &  0.064 $\pm$ 0.066 &  0.000 $\pm$ 0.000 &  0.106 $\pm$ 0.115 &  0.102 $\pm$ 0.086 &  0.272 $\pm$ 0.157 \\
+    $\Pg\Pg\to\PZ\PZ\to4\PGm$    &  0.009 $\pm$ 0.001 &  0.010 $\pm$ 0.000 &  0.024 $\pm$ 0.001 &  0.036 $\pm$ 0.002 &  0.079 $\pm$ 0.002 \\
+    $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$&  0.021 $\pm$ 0.002 &  0.017 $\pm$ 0.001 &  0.023 $\pm$ 0.002 &  0.032 $\pm$ 0.002 &  0.094 $\pm$ 0.004 \\
+    $\Pg\Pg\to\PZ\PZ\to4\Pe$     &  0.020 $\pm$ 0.001 &  0.016 $\pm$ 0.001 &  0.042 $\pm$ 0.002 &  0.060 $\pm$ 0.003 &  0.137 $\pm$ 0.003 \\
+    $\PZ\PZ\PZ$                  &  0.004 $\pm$ 0.004 &  0.003 $\pm$ 0.003 &  0.014 $\pm$ 0.007 &  0.032 $\pm$ 0.011 &  0.052 $\pm$ 0.014 \\
+    $\PW\PZ\PZ$                  &  0.000 $\pm$ 0.000 &  0.014 $\pm$ 0.010 &  0.023 $\pm$ 0.017 &  0.068 $\pm$ 0.028 &  0.106 $\pm$ 0.034 \\
+    $\PQt\PAQt\PZ$+jets          &  0.005 $\pm$ 0.002 &  0.004 $\pm$ 0.001 &  0.022 $\pm$ 0.004 &  0.023 $\pm$ 0.005 &  0.055 $\pm$ 0.006 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    Total                        &  1.160 $\pm$ 0.073 &  0.959 $\pm$ 0.030 &  2.520 $\pm$ 0.135 &  3.539 $\pm$ 0.132 &  8.178 $\pm$ 0.205 \\
     \bottomrule
   \end{tabular}
   }
