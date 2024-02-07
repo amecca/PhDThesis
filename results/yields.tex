@@ -4,10 +4,18 @@ After the selections described in Section \ref{sec:event_selection}, the event y
 \subsection{Four lepton channel}
 The pre-fit yields for the signal and background processes for the signal region
 with four leptons passing the tight selection and a photon passing the cut-based ID (SR4P\_1P),
-can be seen in Table \ref{tab:Run2_SR4P_phoCR_lepCR}.
+can be seen in Table \ref{tab:Run2_SR4P_phoCR_lepCR} (Table~\ref{tab:Run2_SR4P_phoMC_lepCR})
+when using the data-driven (simulation) to estimate tha fake photon background.
+Alternatively, the expected yields obtained using the
+working point \texttt{wp90} of the MVA ID are shown in Table~\ref{tab:Run2_SR4P_phoMC_lepCR_wp90}.
+
 Additional tables, including also the observed number of data events, are provided
 for the fake photon application region (Table \ref{tab:yields_Run2_CR4P_1F_lepCR}),
 and for the fake lepton application regions (Tables \ref{tab:yields_Run2_CR3P1F_1P} and \ref{tab:yields_Run2_CR2P2F_1P}).
+
+The yields in the triboson fiducial region are shown
+in Table~\ref{tab:yield_SR4P_1P_FSRcut_Loose} for the Loose working point of the cut-based ID,
+and in Table~\ref{tab:yield_SR4P_1P_FSRcut_wp90} when using the \texttt{wp80} of the MVA ID instead.
 
 \begin{table}
   \caption{Yields from the signal region SR4P\_1P, with four leptons passing the tight selection and a photon passing the cut-based ID.
@@ -61,6 +69,35 @@ and for the fake lepton application regions (Tables \ref{tab:yields_Run2_CR3P1F_
     Total                         &  2.458 $\pm$ 0.082 &  2.164 $\pm$ 0.059 &  5.181 $\pm$ 0.164 &  7.557 $\pm$ 0.183 &  17.360 $\pm$ 0.266 \\
     \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
     Total                         &  3.488 $\pm$ 0.656 &  2.927 $\pm$ 0.512 &  5.759 $\pm$ 0.531 &  8.900 $\pm$ 0.709 &  21.074 $\pm$ 1.215 \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}
+  \caption{Yields from the signal region SR4P\_1P, with four leptons passing the tight selection
+  and a photon passing the \texttt{wp90} of the MVA based ID.
+  The \nonprompt and misidentified photons are taken from the simulation.
+  }
+  \label{tab:Run2_SR4P_phoMC_lepCR_wp90}
+  % Note: this is from the variable mZZGloose
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lccccc}
+    \toprule
+    {}                            & 2016preVFP          & 2016postVFP       & 2017               & 2018               & \Run2               \\
+    \midrule
+    $\PZ\PZ\PGg\to4\Pl\PGg$       &  2.026 $\pm$ 0.047 &  1.781 $\pm$ 0.041 &  4.294 $\pm$ 0.103 &  6.126 $\pm$ 0.143 & 14.227 $\pm$ 0.187 \\
+    $\PQq\PAQq\to\PZ\PZ\to4\Pl$   &  0.192 $\pm$ 0.009 &  0.158 $\pm$ 0.008 &  0.452 $\pm$ 0.015 &  0.652 $\pm$ 0.022 &  1.453 $\pm$ 0.029 \\
+    $\Pg\Pg\to\PZ\PZ\to4\Pe$      &  0.036 $\pm$ 0.001 &  0.034 $\pm$ 0.001 &  0.090 $\pm$ 0.002 &  0.120 $\pm$ 0.003 &  0.280 $\pm$ 0.004 \\
+    $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$ &  0.076 $\pm$ 0.003 &  0.068 $\pm$ 0.003 &  0.086 $\pm$ 0.003 &  0.131 $\pm$ 0.005 &  0.361 $\pm$ 0.007 \\
+    $\Pg\Pg\to\PZ\PZ\to4\PGm$     &  0.066 $\pm$ 0.001 &  0.053 $\pm$ 0.001 &  0.141 $\pm$ 0.003 &  0.189 $\pm$ 0.004 &  0.449 $\pm$ 0.006 \\
+    $\PZ\PZ\PZ$                   &  0.010 $\pm$ 0.006 &  0.003 $\pm$ 0.003 &  0.023 $\pm$ 0.009 &  0.040 $\pm$ 0.012 &  0.076 $\pm$ 0.016 \\
+    $\PQt\PAQt\PZ$+jets           &  0.014 $\pm$ 0.003 &  0.012 $\pm$ 0.002 &  0.045 $\pm$ 0.006 &  0.057 $\pm$ 0.007 &  0.129 $\pm$ 0.010 \\
+    Fake leptons                  &  0.045 $\pm$ 0.066 &  0.103 $\pm$ 0.117 &  0.107 $\pm$ 0.118 &  0.022 $\pm$ 0.081 &  0.276 $\pm$ 0.196 \\
+    $\PW\PZ\PZ$                   &  0.000 $\pm$ 0.000 &  0.020 $\pm$ 0.012 &  0.063 $\pm$ 0.022 &  0.076 $\pm$ 0.029 &  0.159 $\pm$ 0.038 \\
+    $\PW\PW\PZ$                   &  0.000 $\pm$ 0.000 &  0.000 $\pm$ 0.000 &  0.040 $\pm$ 0.040 &  0.080 $\pm$ 0.057 &  0.121 $\pm$ 0.070 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    Total                         &  2.464 $\pm$ 0.082 &  2.233 $\pm$ 0.124 &  5.342 $\pm$ 0.165 &  7.493 $\pm$ 0.178 & 17.532 $\pm$ 0.285 \\
     \bottomrule
   \end{tabular}
   }
@@ -168,6 +205,31 @@ and for the fake lepton application regions (Tables \ref{tab:yields_Run2_CR3P1F_
   \end{tabular}
   }
 \end{table}
+
+\begin{table}
+  \caption{Yields in the fiducial triboson region of the four lepton channel, using the \texttt{wp90} of the MVA ID selection for the photon.}
+  \label{tab:yield_SR4P_1P_FSRcut_wp90}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lrrrrr}
+    \toprule
+    {}                            & 2016preVFP         & 2016postVFP        & 2017               & 2018               & \Run2              \\
+    \midrule
+    $\PZ\PZ\PGg\to4\Pl\PGg$       &  0.804 $\pm$ 0.030 &  0.694 $\pm$ 0.025 &  1.703 $\pm$ 0.065 &  2.374 $\pm$ 0.089 &  5.576 $\pm$ 0.117 \\
+    $\PQq\PAQq\to\PZ\PZ\to4\Pl$   &  0.088 $\pm$ 0.006 &  0.066 $\pm$ 0.005 &  0.209 $\pm$ 0.010 &  0.292 $\pm$ 0.014 &  0.656 $\pm$ 0.019 \\
+    $\Pg\Pg\to\PZ\PZ\to4\Pe$      &  0.007 $\pm$ 0.000 &  0.007 $\pm$ 0.000 &  0.017 $\pm$ 0.001 &  0.025 $\pm$ 0.001 &  0.057 $\pm$ 0.002 \\
+    $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$ &  0.011 $\pm$ 0.001 &  0.010 $\pm$ 0.001 &  0.016 $\pm$ 0.001 &  0.024 $\pm$ 0.002 &  0.061 $\pm$ 0.003 \\
+    $\Pg\Pg\to\PZ\PZ\to4\PGm$     &  0.014 $\pm$ 0.001 &  0.012 $\pm$ 0.001 &  0.031 $\pm$ 0.001 &  0.043 $\pm$ 0.002 &  0.100 $\pm$ 0.003 \\
+    $\PZ\PZ\PZ$                   &  0.003 $\pm$ 0.003 &  0.003 $\pm$ 0.003 &  0.010 $\pm$ 0.006 &  0.024 $\pm$ 0.009 &  0.041 $\pm$ 0.012 \\
+    $\PQt\PAQt\PZ$+jets           &  0.006 $\pm$ 0.002 &  0.005 $\pm$ 0.002 &  0.019 $\pm$ 0.003 &  0.016 $\pm$ 0.004 &  0.047 $\pm$ 0.006 \\
+    Fake leptons                  &  0.063 $\pm$ 0.066 &  0.000 $\pm$ 0.000 &  0.109 $\pm$ 0.115 &  0.055 $\pm$ 0.078 &  0.227 $\pm$ 0.153 \\
+    $\PW\PZ\PZ$                   &  0.000 $\pm$ 0.000 &  0.007 $\pm$ 0.007 &  0.039 $\pm$ 0.018 &  0.044 $\pm$ 0.022 &  0.090 $\pm$ 0.029 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    Total                         &  0.997 $\pm$ 0.072 &  0.805 $\pm$ 0.027 &  2.153 $\pm$ 0.134 &  2.898 $\pm$ 0.122 &  6.853 $\pm$ 0.197 \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
 
 \begin{figure}
 \subfigure [2016preVFP ] {\includegraphics[width=.25\textwidth]{Figures/VVGammaAnalyzer/2016preVFP/lepCR/SR4P/ZZ_mass_pow.pdf}}%
