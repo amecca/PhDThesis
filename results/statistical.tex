@@ -52,11 +52,13 @@ The shape uncertainties of the second class are accounted for by interpolating t
 To quantify the statistical significance of an excess of events over the background-only hypothesis, the following test statistic is used:
 \begin{equation}
   \label{eq:test_statistic}
-  t_0 = -2\text{ln} \frac {\Likelihood(data\,|\,0,\widehat{\vec{\theta_0}}\,)} {\Likelihood(data\,|\,\hat\mu,\widehat{\vec\theta}\,)}\,,\quad \text{with}\, \hat\mu \ge 0
+  t_0 = -2\text{ln} \frac {\Likelihood(data\,|\,0,\widehat{\vec{\theta_0}}\,)} {\Likelihood(data\,|\,\hat\mu,\widehat{\vec\theta}_{\hat\mu})}\,,\quad \text{with}\, \hat\mu \ge 0
 \end{equation}
 
 The numerator is evaluated under the background-only hypothesis ($\mu$ = 0), and $\widehat{\vec{\theta_0}}$ is the set of values of nuisance parameters that maximizes it under this null hypothesis.
-The denominator is evaluated under the alternative signal + background hypothesis, and the values $\hat{\mu}$ and $\hat{\vec{\theta}}$ are those that maximize the likelihood in this hypothesis.
+The denominator is evaluated under the alternative signal + background hypothesis,
+and the values $\hat{\mu}$ and $\widehat{\vec{\theta}}_{\hat\mu}$
+are those that maximize the likelihood in this hypothesis.
 This quantity is positive for a signal-like excess ($\mu$ > 0) and becomes 0 in the absence of an excess ($\mu$ = 0).
 
 The significativity of an excess is expressed in terms of the local \textit{p-value}, which is the probability to obtain a value of the test statistic $t_0$ greater than or equal to the one observed in experimental data, under the background-only hypothesis:
