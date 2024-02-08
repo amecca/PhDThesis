@@ -10,8 +10,8 @@ This method was used by several analyses targeting a final state with four lepto
 and is described in detail in Reference~\cite{CMS-HIG-13-002} as the ``Method using opposite-sign (OS) leptons''.
 
 \paragraph{CR3P1F\\}
-In the first region, named CR3P1F, one of the leptons of the $\PZ_2$ must fail the tight selection,
-while the other three (both leptons from $\PZ_1$ and the other lepton from $\PZ_2$) must pass the tight identification and isolation criteria.
+In the first region, named CR3P1F, one of the leptons of the $\PZ_2$ must fail (1F) the tight selection,
+while the other three (both leptons from $\PZ_1$ and the other lepton from $\PZ_2$) must pass the tight identification and isolation criteria (3P).
 It is expected to be populated by $\PW\PZ$, with contributions from Drell-Yan and $\PZ\PGg$,
 along with a fraction of events from $(\PQq\PAQq/\Pg\Pg) \to \PZ\PZ$ where one of the prompt leptons fails the selection
 or falls outside the acceptance and a misidentified jet is reconstructed instead.
@@ -28,7 +28,7 @@ Distributions of a few interesting kinematic observables are shown in Figure~\re
 \end{figure}
 
 \paragraph{CR2P2F\\}
-In the second region, named CR2P2F, both leptons from the $\PZ_2$ fail the tight selection, while the leptons of the $\PZ_1$ pass the tight criteria.
+In the second region, named CR2P2F, both leptons from the $\PZ_2$ fail the tight selection (2F), while the leptons of the $\PZ_1$ pass the tight criteria (2P).
 This region is populated primarily by Drell-Yan events, with contributions from $\PZ\PGg$ and $\PQt\PAQt+X$.
 Some representative distributions for this region are shown in Figure~\ref{fig:CR2P2F_Run2}
 
@@ -53,32 +53,33 @@ The 3P1F and 2P2F components are given by the number of events in the respective
 \begin{subequations}
   \begin{align}
     \label{eq:lepFR_3P1Fto4P}
-    N^{from\ 3P1F}_{SR} &= \sum_{i \ins 3P1F} \frac{f_a^i}{1-f_a^i}, \quad where\ a = 3, 4
+    N^{\text{from 3P1F}}_{\text{SR}} &= \sum_{i \ins \text{3P1F}} \frac{f_a^i}{1-f_a^i}, \quad \text{where } a = 3 \text{ or } 4
     \\
     \label{eq:lepFR_2P2Fto4P}
-    N^{from\ 2P2F}_{SR} &= \sum_{j \ins 2P2F} \frac{f_3^j}{1-f_3^j} \frac{f_4^j}{1-f_4^j}
+    N^{\text{from 2P2F}}_{\text{SR}} &= \sum_{i \ins \text{2P2F}} \frac{f_3^i}{1-f_3^i} \frac{f_4^i}{1-f_4^i}
   \end{align}
 \end{subequations}
-where $f_3^j$ and $f_4^j$ correspond to the fake rates of the two loose leptons in the j-th event.
+where $f_3^i$ and $f_4^i$ correspond to the fake rates of the two loose leptons in the $i$-th event.
 
 However, the CR3P1F region itself has a contribution from fake lepton background events from the CR2P2F region.
 These are events with two genuine leptons and two fakes, where only one of the fakes passes the tight selection, thus winding up in the CR3P1F region.
-The expected number of background events in the CR3P1F region, $N^{from\ 2P2F}_{3P1F}$,
-can be computed from the number of events observed in the CR2P2F control region, $N^{bkg}_{2P2F}$,
+The expected number of background events in the CR3P1F region, $N^{\text{from 2P2F}}_{\text{3P1F}}$,
+can be computed from the number of events observed in the CR2P2F control region, $N^{\text{bkg}}_{\text{2P2F}}$,
 by weighting each event in the region with a factor dependent from the fake rates:
 \begin{equation}
   \label{eq:lepFR_N3P1F}
-  N^{from\ 2P2F}_{3P1F} = \sum_{i \ins 2P2F} \left( \frac{f_i}{1-f_i} + \frac{f_j}{1-f_j} \right)
+  N^{\text{from 2P2F}}_{\text{3P1F}} = \sum_{i \ins \text{2P2F}} \left( \frac{f_3^i}{1-f_3^i} + \frac{f_4^i}{1-f_4^j} \right)
 \end{equation}
 
 Summing all the contributions, one obtains for the signal region:
 \begin{equation}
   \begin{split}
     \label{eq:lepFR_4P}
-    N^{bkg}_{SR} &= \sum \frac{f^a_i}{1-f^a_i} \left( N_{3P1F} - N^{from\ 2P2F}_{3P1F} \right) + \sum_{j \ins 2P2F} \left( \frac{f_j}{1-f_j} \frac{f_j}{1-f_j} \right)
+    N^{\text{bkg}}_{\text{SR}} &= \sum_{i \ins \text{3P1F}} \frac{f_a^i}{1-f_a^i} \left( 1 - N^{\text{from 2P2F}}_{\text{3P1F}} \right)
+                               + \sum_{i \ins \text{2P2F}} \left( \frac{f_3^i}{1-f_3^i} \frac{f_4^i}{1-f_4^i} \right)
     \\
-                 &= \sum_{i \ins 3P1F} \frac{f^a_i}{1-f^a_i} - \sum_{j \ins 2P2F} \left( \frac{f_j}{1-f_j} \frac{f_j}{1-f_j} \right)
+                 &= \sum_{i \ins \text{3P1F}} \frac{f_a^i}{1-f_a^i} - \sum_{i \ins \text{2P2F}} \left( \frac{f_3^i}{1-f_3^i} \frac{f_4^i}{1-f_4^i} \right)
   \end{split}
 \end{equation}
 
-More details on the derivation of Equation~\ref{eq:lepFR_4P} can be found in Section~\ref{sec:leptonFR_details}.
+More details on the derivation of Equation~\ref{eq:lepFR_4P} can be found in Appendix~\ref{sec:leptonFR_details}.
