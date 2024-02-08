@@ -76,12 +76,14 @@ so the resolved topology is more probable than the merged one.
 \label{sec:evt_photon_selection}
 The photon selection is common to the three channels.
 Photons are required to have a transverse momentum $\pt^\PGg > 20 \GeV$
-and be in the acceptance region of the ECAL, excluding the overlap region, $|\eta^\PGg| < 1.442$ OR $1.566 < |\eta^\PGg| < 2.4$.
+and be in the acceptance region of the ECAL, excluding the overlap region, $|\eta^\PGg| < 1.442$ or $1.566 < |\eta^\PGg| < 2.4$.
 The minimum separation between a photon and any of the leptons must be $\DR(\PGg, \Pl) > 0.5$.
-Photons are required to pass the Conversion Safe Electron Veto.
+Photons are required to pass the Conversion Safe Electron Veto,
+which prohibits tracks pointing to the photon ECAL cluster,
+unless matched to a photon conversion vertex~\cite{CMS-EGM-17-001}.
 %% and the Pixel Seed veto
 
-Several photon IDs are compared in this analysis (see Section \ref{sec:photon_selection}):
+Several photon identification algorithms are compared in this analysis (see Section \ref{sec:photon_selection}):
 the Loose working point of the cut-based ID
 and the two working points \texttt{wp90} and \texttt{wp80} of the MVA-based ID.
 In case there is more than one photon passing the requirements, the one with the highest \pt is selected.
