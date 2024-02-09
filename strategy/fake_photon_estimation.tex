@@ -15,7 +15,7 @@ In case there is more than one photon passing the requirements, the one with the
 
 The main processes in the fake rate measurement region are Drell-Yan and $\PZ\PGg$, as can be seen in Figure \ref{fig:CRLFR_inclusive}.
 The latter contains prompt photons, which would bias the result of the measurement, and thus must be removed.
-Events in the $\PZ\PGg$ sample which have a generator level prompt photon that is matched within $\DR(\PGg^{GEN}, \PGg^{REC}) < 0.2$ are considered prompt.
+Events in the $\PZ\PGg$ sample which have a generator level prompt photon with $\pt^\PGg > 20\GeV$ and $|\eta^\PGg| < 2.4$ are considered prompt.
 Prompt events are subtracted from the data, in the appropriate bins of \pt and pseudorapidity of the photon,
 both from the numerator (photons that pass the selection, Figure~\ref{fig:CRLFR_lead_pass})
 and from the denominator, which is the sum of the passing and the failing (Figure~\ref{fig:CRLFR_lead_fail}) photons.
@@ -115,7 +115,8 @@ much smaller than the alternative, resulting in larger statistical uncertainties
 The trend for each $(p_{T}, |\eta|)$ bin for the different data-taking periods can be seen in Figure \ref{fig:phFR_time}.
 It appears that, within the uncertainties, the measurements for each bin are compatible across the years,
 and that a single rate for the whole \Run2 could be derived.
-However, the results presented in this analysis use separate fake rates for each data-taking year.
+However, the results presented in this analysis use separate fake rates for each data-taking year
+to minimize the correlation among the different periods.
 
 \begin{figure}
 \centering
@@ -172,9 +173,9 @@ This would make the assumption that the transfer factor is the same in the measu
 
 \begin{figure}
   \centering
-  \subfigure [$\pt   $ of $\PGg^{wp90 \land !wp80}$] {\includegraphics[width=.333333333\textwidth]{dataMC/Run2/lepCR/SR4P/lead_90not80_pt_pow.pdf}}%
-  \subfigure [$|\eta|$ of $\PGg^{wp90 \land !wp80}$] {\includegraphics[width=.333333333\textwidth]{dataMC/Run2/lepCR/SR4P/lead_90not80_aeta_pow.pdf}}%
-  \subfigure [$\sieie$ of $\PGg^{wp90 \land !wp80}$] {\includegraphics[width=.333333333\textwidth]{dataMC/Run2/lepCR/SR4P/lead_90not80_sieie_pow.pdf}}
+  \subfigure [$\pt   $ of $\PGg^{\tt{wp90} \land !\tt{wp80}}$] {\includegraphics[width=.333333333\textwidth]{dataMC/Run2/lepCR/SR4P/lead_90not80_pt_pow.pdf}}%
+  \subfigure [$|\eta|$ of $\PGg^{\tt{wp90} \land !\tt{wp80}}$] {\includegraphics[width=.333333333\textwidth]{dataMC/Run2/lepCR/SR4P/lead_90not80_aeta_pow.pdf}}%
+  \subfigure [$\sieie$ of $\PGg^{\tt{wp90} \land !\tt{wp80}}$] {\includegraphics[width=.333333333\textwidth]{dataMC/Run2/lepCR/SR4P/lead_90not80_sieie_pow.pdf}}
   \caption{Transverse momentum, pseudorapidity and \sieie of photons
     passing the \texttt{wp90} and failing the \texttt{wp80} working point of the MVA based ID
     in the region with four leptons passing the tight selection.
