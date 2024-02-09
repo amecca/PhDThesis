@@ -217,3 +217,17 @@ The subsequent decays of the \PZ and \PW bosons to electrons or muons are perfor
   \end{tabular}
   %% }
 \end{table}
+
+\paragraph{Overlap between samples\\}
+Among many other operations, the hadronizer also simulates the final state radiation
+of photons from charged leptons in the final state produced by the matrix element generator.
+In particular, for the three samples $\PQq\PAQq \to \PZ\PZ$, $\PW\PZ \to 3\Pl\PGnl$ and $\PZ$+jets
+this results in a partial overlap with $\PZ\PZ\PGg$, $\PW\PZ\PGg$ and $\PZ\PGg$ respectively.
+Indeed, for the second group of samples the matrix element generator configuration
+does not explicitly forbid that the photon is attached to a final-state lepton.
+
+To resolve this ambiguity, events of the sample $\PQq\PAQq \to \PZ\PZ$ that contain
+a generated prompt photon with $\pt^\PGg > 20\GeV$ and $|\eta^\PGg| < 2.4$ are removed.
+The same procedure is applied to $\PW\PZ \to 3\Pl\PGnl$ and $\PZ$+jets.
+Additionally, events in the $\PZ\PGg$ sample are required to have at least one photon
+passing the aforementioned requirements.
