@@ -14,6 +14,9 @@ First the statistical tools used for the extraction of the parameters of interes
 Then the expected result before unblinding is discussed, and the best strategy selected.
 Finally, the observed results are shown.
 
+\section{Yields and kinematic distributions}
+\input{results/yields.tex}
+
 \section{Statistical analysis}
 \input{results/statistical.tex}
 
@@ -85,22 +88,17 @@ Then, the best performing strategy is selected and the reasults are derived usin
 \label{sec:results_4L_inclusive}
 The first results pertain the measurement of the inclusive process $\Pp\Pp \to 4\Pl\PGg$ with $\Pl = \Pe,\,\PGm$.
 All of the selections detailed in Section~\ref{sec:event_selection} for the four lepton channel are applied,
-but the additional cut described in Section~\ref{sec:FSR_cut} is not.
+but the additional cut to suppress FSR is not.
 
 \subsubsection{Significance}
 \input{results/significance_table_inclusive.tex}
 The expected significances of the various strategies for the identification of the photon and the estimation of the fake photon background
 are illustrated in Table~\ref{tab:summary_significances_inclusive}.
-The best results are obtained using the MVA ID for the photon, in particular the \texttt{wp90}.
+The best results are obtained using the MVA ID for the photon, in particular the ``MVA shape''.
 The choice of the variable for the fit does not have a large effect.
 The cut-based selection results in a significance around 5\usep$\sigma$,
 except for the data-driven estimation of the \nonprompt photon background,
 while the MVA based ID results in an increase of around 0.5.
-
-The observed (expected) significance with the chosen strategy is
-$7.3 \usep\sigma$
-($5.5 \usep\sigma$).
-\note{This looks like a result from another famous general purpose experiment.}
 
 As discussed in Section~\ref{sec:likelihood_scans_inclusive}, the sensitivity is statistically limited
 which is in agreement with the observation that the various strategies have expected significances approximately in the same range.
@@ -159,6 +157,9 @@ $3.08 \usep\sigma$
 \subsubsection{Systematic impacts}
 \input{results/impacts_FSRcut.tex}
 
+\subsection{Unblinded results}
+\input{results/unblinded_4L.tex}
+
 \section{Three lepton channel}
 \label{sec:results_3L}
 The results reported in this section are the preliminary findings
@@ -201,6 +202,3 @@ $2.10 \sigma$.
 
 \subsubsection{Systematic impacts}
 \input{results/impacts_SR3P_inclusive.tex}
-
-\section{Yields and kinematic distributions}
-\input{results/yields.tex}
