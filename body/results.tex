@@ -11,8 +11,8 @@ The analysis strategy is to search for excess events over the estimated backgrou
 Different identification strategies for the photon and several kinematic distributions are explored.
 
 First the statistical tools used for the extraction of the parameters of interest and interpretation are described.
-Then the expected result before unblinding will be discussed, and the best strategy selected.
-Finally, the observed results will be reported.
+Then the expected result before unblinding is discussed, and the best strategy selected.
+Finally, the observed results are shown.
 
 \section{Statistical analysis}
 \input{results/statistical.tex}
@@ -26,7 +26,8 @@ targeting the inclusive process and a photon and triboson production respectivel
 Additionally, several event variables are tested for the final fit to the signal strength.
 
 The first is the invariant mass of the $\PZ\PZ\PGg$ system.
-It is expected to be higher for triboson events where the photon comes from the hard scattering than for FSR.
+It is expected to be higher for triboson events where the photon comes from
+initial state radiation or a triple or quartic gaude cupling than for FSR.
 Additionally, it is expected to be sensitive to Beyond Standard Model (BSM) contributions, especially in the high-energy tail.
 In the three lepton channel, the transverse mass of the $\PW\PZ\PGg$ system (see Equation~\ref{eq:transverse_mass}) is used instead.
 
@@ -49,27 +50,29 @@ This distribution is referred to as ``MVA shape''.
 \label{sec:results_4L}
 \input{results/caption-commands.tex} % Template captions for results
 This section reports the results obtained for the four lepton channel, which is the focus of this thesis.
+The data-driven estimate of the fake lepton background is employed in all cases,
+except when using the data-driven \nonprompt photon.
 In particular, the following choices of the aforementioned analysis strategy were tested:
 \begin{itemize}
 \item Data-driven estimate of fake photons,
   using the Loose working point of the cut-based ID to select the signal photon,
   and performing the analysis on the invariant mass spectrum of the $\PZ\PZ\PGg$ system.
-\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+\item Fake photon prediction taken from simulation,
   using the Loose working point of the cut-based ID to select the signal photon,
   and performing the analysis on the invariant mass spectrum of the $\PZ\PZ\PGg$ system.
-\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+\item Fake photon prediction taken from simulation,
   using the Loose working point of the cut-based ID to select the signal photon,
   and performing the analysis on the transverse momentum distribution of the photon.
-\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+\item Fake photon prediction taken from simulation,
   using the \texttt{wp90} working point of the MVA-based ID to select the signal photon,
   and performing the analysis on the invariant mass spectrum of the $\PZ\PZ\PGg$ system.
-\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+\item Fake photon prediction taken from simulation,
   using the \texttt{wp90} working point of the MVA-based ID to select the signal photon,
   and performing the analysis on the transverse momentum distribution of the photon.
-\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+\item Fake photon prediction taken from simulation,
   using the \texttt{wp80} working point of the MVA-based ID to select the signal photon,
   and performing the analysis on the invariant mass spectrum of the $\PZ\PZ\PGg$ system.
-\item Fake photon prediction taken from simulation and fake leptons estimated from data,
+\item Fake photon prediction taken from simulation,
   using the kinematic selection for the photons,
   and classifying events depending on which is the highest MVA working point passed by the photon.
 \end{itemize}
