@@ -1,35 +1,28 @@
 \label{sec:unblinded_4L_inclusive}
 
-The observed (expected) significance with the chosen strategy is
-$7.3 \usep\sigma$
-($5.5 \usep\sigma$).
-\note{This looks like a result from another famous general purpose experiment.}
+% Justify the choice of the strategy
+In the inclusive four lepton signal region, the data-driven estimate of the fake photon background is the most conservative.
+Its main uncertainty is due to the limited number of events in the application region CR4P\_1F.
 
+It is chosen for the unblinding also because of its model-independence.
+Indeed, the division of the $\PQq\PAQq \to \PZ\PZ \to 4\Pl$ sample
+based on the presence of a generated prompt photon
+may change with a different combination of the matrix element generator and the hadronizer or their configuration.
 
-\paragraph{Observed\\}
+The observed (expected) significance of the signal over the background-only hypothesis with the chosen strategy is
+$6.1 \usep\sigma$
+($4.5 \usep\sigma$).
+
 \begin{figure}
   \renewcommand{\dataMCblind}{}
   \renewcommand{\expobs}{observed}
   \centering
-  \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/lepCR/SR4P/SYS_mZZGwp90_central_pow\dataMCblind .pdf}
+  \includegraphics[height=.33\textheight]{Figures/dataMC/Run2/phoCR/SR4P/SYS_mZZGloose_central_pow\dataMCblind .pdf}
   \hfill
-  \includegraphics[height=.33\textheight]{Figures/combine/inclusive/scan_\expobs_Run2_SR4P_phoMC_lepCR_mZZGwp90.pdf}
-  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp90}}{MVA ID}{s}{not }}
+  \includegraphics[height=.33\textheight]{Figures/combine/inclusive/scan_\expobs_Run2_SR4P_phoCR_lepCR_mZZGloose.pdf}
+  \caption{\captionScan{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{s}{not }}
   \label{fig:scan_observed_inclusive_Run2_SR4P}
 \end{figure}
-
-\note{
-This is just a placeholder to dump the unblinded results for the inclusive region 4L, which will be inserted in the previous paragraph.}
-The strategy is: see the unblinded scan in Figure~\ref{fig:scan_observed_inclusive_Run2_SR4P} and the impacts in Figure~\ref{fig:impacts_observed_inclusive_Run2_SR4P}.
-
-The signal strength is $1.409{}^{+0.526}_{-0.454}$
-\\
-($1.409{}^{+0.044}_{-0.030}\lum {}^{+0.014}_{-0.013}\thy {}^{+0.097}_{-0.068}\syst {}^{+0.514}_{-0.447}\stat$).
-
-The measured cross section is
-$13.790{}^{+5.144}_{-4.440}$\usep fb
-\\
-($13.790{}^{+0.427}_{-0.290}\lum {}^{+0.138}_{-0.124}\thy {}^{+0.951}_{-0.662}\syst {}^{+5.033}_{-4.371}\stat$\usep fb).
 
 \begin{figure}
   \renewcommand{\dataMCblind}{}
@@ -42,3 +35,22 @@ $13.790{}^{+5.144}_{-4.440}$\usep fb
   \label{fig:impacts_observed_inclusive_Run2_SR4P}
 \end{figure}
 
+The maximum likelihood fit to the distribution of $m_{4\Pl\PGg}$ results in an expected signal strength of
+$1.38{}^{+0.55}_{-0.48}$
+($1.38{}^{+0.54}_{-0.47}\stat {}^{+0.01}_{-0.01}\thy {}^{+0.05}_{-0.03}\lum {}^{+0.12}_{-0.10}\syst$),
+as shown in Figure~\ref{fig:scan_observed_inclusive_Run2_SR4P}.
+The detailed breakdown of each source of systematic uncertainty is reported in
+Figure~\ref{fig:impacts_observed_inclusive_Run2_SR4P}
+
+The signal sample, which includes tau leptons in the final state,
+has a cross section of 22.02\usep fb, as reported in Table~\ref{tab:listofsamples}.
+Assuming that $\mathcal{B}(\PZ\to2\Pe) = \mathcal{B}(\PZ\to2\PGm) = \mathcal{B}(\PZ\to2\PGt)$
+and that the difference in the phase space due to the different mass of the leptons are negligible,
+it follows that $\frac{4}{9}$ of the events in the sample have a final state with four among electrons and muons,
+while $\frac{1}{9}$ have four tau leptons and $\frac{4}{9}$ have two tau leptons and two electrons or muons.
+Therefore the $\mathcal{B}(4\Pl)\times\sigma$, with $\Pl = \Pe, \PGm$, of the sample is 9.787\usep fb.
+
+Using the signal strength obtained, the measured cross section for the production of
+$\Pp\Pp \to 4\Pl\PGg$ ($\Pl = \Pe,\,\PGm$) at a centre-of-mass energy of $13\TeV$ is
+$13.52{}^{+5.38}_{-4.66}$\usep fb
+($13.52 {}^{+5.24}_{-4.55}\stat {}^{+0.05}_{-0.05}\thy {}^{+0.45}_{-0.31}\lum {}^{+1.15}_{-0.93}\syst$\usep fb).
