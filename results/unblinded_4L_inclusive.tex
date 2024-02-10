@@ -2,16 +2,18 @@
 
 % Justify the choice of the strategy
 In the inclusive four lepton signal region, the data-driven estimate of the fake photon background is the most conservative.
-Its main uncertainty is due to the limited number of events in the application region CR4P\_1F.
+Its main uncertainty is due to the limited number of events in the application region CR4P\_1F,
+as shown in Table~\ref{tab:yields_Run2_CR4P_1F_lepCR}.
 
 It is chosen for the unblinding also because of its model-independence.
 Indeed, the division of the $\PQq\PAQq \to \PZ\PZ \to 4\Pl$ sample
 based on the presence of a generated prompt photon
-may change with a different combination of the matrix element generator and the hadronizer or their configuration.
+may be subject to the particular combination of the matrix element generator and the hadronizer, and to their configuration.
 
+The post-fit event yields in the signal region are reported in Table~\ref{tab:yields_postfit_inclusive_Run2_SR4P}.
 The observed (expected) significance of the signal over the background-only hypothesis with the chosen strategy is
-$6.1 \usep\sigma$
-($4.5 \usep\sigma$).
+$6.09 \usep\sigma$
+($4.54 \usep\sigma$).
 
 \begin{figure}
   \renewcommand{\dataMCblind}{}
@@ -28,19 +30,50 @@ $6.1 \usep\sigma$
   \renewcommand{\dataMCblind}{}
   \renewcommand{\expobs}{observed}
   \centering
-  \includegraphics[height=0.33\textheight]{Figures/dataMC/Run2/lepCR/SR4P/SYS_mZZGwp90_central_pow\dataMCblind .pdf}
+  \includegraphics[height=0.33\textheight]{Figures/dataMC/Run2/phoCR/SR4P/SYS_mZZGloose_central_pow\dataMCblind .pdf}
   \hfill
-  \includegraphics[height=0.33\textheight]{Figures/combine/inclusive/impacts_\expobs_Run2_SR4P_phoMC_lepCR_mZZGwp90.pdf}
-  \caption{Observed \captionImpact{mass of the $\PZ\PZ\PGg$ system}{\texttt{wp90}}{MVA ID}{s}{not }}
+  \includegraphics[height=0.33\textheight]{Figures/combine/inclusive/impacts_\expobs_Run2_SR4P_phoCR_lepCR_mZZGloose.pdf}
+  \caption{Observed \captionImpact{mass of the $\PZ\PZ\PGg$ system}{Loose}{cut-based ID}{s}{not }}
   \label{fig:impacts_observed_inclusive_Run2_SR4P}
 \end{figure}
 
-The maximum likelihood fit to the distribution of $m_{4\Pl\PGg}$ results in an expected signal strength of
+\begin{table}
+  \caption{Post-fit yields in the inclusive signal region in the four lepton channel.}
+  \label{tab:yields_postfit_inclusive_Run2_SR4P}
+  \centering
+  \small
+  \providecommand{\headcell}[1]{\text{#1}} %{\makecell[c]{\text{#1}}}
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{>{$}l<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$}}
+    \toprule
+    \text{Process} & \headcell{2016postVFP} & \headcell{2016preVFP} & \headcell{2017} & \headcell{2018} & \headcell{\Run2} \\
+    \midrule
+    \PZ\PZ\PGg\to4\Pl\PGg       & 2.34 \pm 0.65 & 2.68 \pm 0.74 & 5.48 \pm 1.53 & 7.99 \pm 2.20 & 18.49 \pm 2.85 \\
+    \text{Fake photons}         & 0.95 \pm 0.37 & 1.27 \pm 0.50 & 1.16 \pm 0.41 & 2.18 \pm 0.70 & 5.57 \pm 1.02 \\
+    \Pg\Pg\to\PZ\PZ\to2\Pe2\PGm & 0.06 \pm 0.00 & 0.06 \pm 0.00 & 0.07 \pm 0.00 & 0.10 \pm 0.01 & 0.29 \pm 0.01 \\
+    \Pg\Pg\to\PZ\PZ\to4\Pe      & 0.03 \pm 0.00 & 0.03 \pm 0.00 & 0.07 \pm 0.01 & 0.10 \pm 0.01 & 0.24 \pm 0.01 \\
+    \Pg\Pg\to\PZ\PZ\to4\PGm     & 0.05 \pm 0.00 & 0.06 \pm 0.00 & 0.12 \pm 0.00 & 0.16 \pm 0.01 & 0.38 \pm 0.01 \\
+    \PQt\PAQt\PZ\text{+jets}    & 0.01 \pm 0.00 & 0.01 \pm 0.00 & 0.04 \pm 0.01 & 0.04 \pm 0.01 & 0.10 \pm 0.02 \\
+    \PW\PW\PZ                   & 0.04 \pm 0.01 & 0.00 \pm 0.00 & 0.04 \pm 0.01 & 0.08 \pm 0.01 & 0.16 \pm 0.01 \\
+    \PW\PZ\PZ                   & 0.01 \pm 0.01 & 0.00 \pm 0.00 & 0.02 \pm 0.01 & 0.06 \pm 0.01 & 0.08 \pm 0.02 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    \text{Total signal}         & 2.34 \pm 0.65 & 2.68 \pm 0.74 & 5.48 \pm 1.53 & 7.99 \pm 2.20 & 18.49 \pm 2.85 \\
+    \text{Total background}     & 1.15 \pm 0.38 & 1.44 \pm 0.50 & 1.53 \pm 0.41 & 2.75 \pm 0.70 & 6.87 \pm 1.02 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    \text{Total}                & 3.49 \pm 0.74 & 4.12 \pm 0.92 & 7.02 \pm 1.58 & 10.73 \pm 2.27 & 25.36 \pm 3.01 \\
+    \text{Data}                 & 4 & 3 & 6 & 11 & 24 \\
+    %% \text{Data}                 &\makecell[c]{4}&\makecell[c]{3}&\makecell[c]{6}&\makecell[c]{11}&\makecell[c]{24}\\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+The maximum likelihood fit to the distribution of $m_{4\Pl\PGg}$ results in a signal strength of
 $1.38{}^{+0.55}_{-0.48}$
 ($1.38{}^{+0.54}_{-0.47}\stat {}^{+0.01}_{-0.01}\thy {}^{+0.05}_{-0.03}\lum {}^{+0.12}_{-0.10}\syst$),
 as shown in Figure~\ref{fig:scan_observed_inclusive_Run2_SR4P}.
 The detailed breakdown of each source of systematic uncertainty is reported in
-Figure~\ref{fig:impacts_observed_inclusive_Run2_SR4P}
+Figure~\ref{fig:impacts_observed_inclusive_Run2_SR4P}.
 
 The signal sample, which includes tau leptons in the final state,
 has a cross section of 22.02\usep fb, as reported in Table~\ref{tab:listofsamples}.
@@ -48,7 +81,7 @@ Assuming that $\mathcal{B}(\PZ\to2\Pe) = \mathcal{B}(\PZ\to2\PGm) = \mathcal{B}(
 and that the difference in the phase space due to the different mass of the leptons are negligible,
 it follows that $\frac{4}{9}$ of the events in the sample have a final state with four among electrons and muons,
 while $\frac{1}{9}$ have four tau leptons and $\frac{4}{9}$ have two tau leptons and two electrons or muons.
-Therefore the $\mathcal{B}(4\Pl)\times\sigma$, with $\Pl = \Pe, \PGm$, of the sample is 9.787\usep fb.
+Therefore the $\mathcal{B}(\PZ_0,\PZ_1\to4\Pl)\times\sigma$, with $\Pl = \Pe, \PGm$, of the sample is 9.787\usep fb.
 
 Using the signal strength obtained, the measured cross section for the production of
 $\Pp\Pp \to 4\Pl\PGg$ ($\Pl = \Pe,\,\PGm$) at a centre-of-mass energy of $13\TeV$ is
