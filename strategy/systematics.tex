@@ -41,7 +41,8 @@ The uncertainties coming from the data-driven estimation of fake lepton and fake
 In both cases, the main contributions arise from the mismatch in background composition between the region in which the fake rate is measured and the regions where it its applied.
 Additionally, in the case of the photon fake rate, the application region itself is statistically limited, and this introduces an additional uncertainty on the normalisation of the fake photon process.
 
-The effects of the lepton and photon efficiencies, the \pileup weight and the L1 prefiring
+The effects of the lepton and photon efficiencies, the \pileup{} reweight (Section~\ref{sec:simulation})
+and the L1 prefiring (Section~\ref{sec:L1Prefiring})
 are determined by scaling up or down by one standard deviation the associated weight for each event,
 and evaluating the impact on the normalization.
 The effect of the variation of lepton and photon fake rates is propagated through the
@@ -57,6 +58,10 @@ produce an uncertainty in the yield of approximately~1.1--1.3\usep\%.
 The photon energy scale and resolution have negligible effects.
 The \Lone prefiring discussed in Section~\ref{sec:L1Prefiring}
 results in a normalisation effect of approximately 0.2\usep\%.
+
+No trigger-associated uncertainty is applied since the \pt selection applied for electrons and muons
+is harder than the online trigger threshold.
+This ensures that the charged leptons offline momentum is at the plateau of efficiency.
 The experimental systematics only affect the normalisation,
 except for the photon MVA efficiency scale factors for the variable ``MVA shape''.
 

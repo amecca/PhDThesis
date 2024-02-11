@@ -89,13 +89,14 @@ The used data sets are listed in Table~\ref{tab:datasamples}.%, along with the i
 
 \subsection{Simulation}
 \label{sec:simulation}
-\MGvATNLO 2.6.2 \cite{MGatNLO, Frederix_2018} is used to simulate the signal and most of the background contributions.
+The event generator \MGvATNLO~2.6.2~\cite{MGatNLO, Frederix_2018} is used to simulate the signal and most of the background contributions.
 The simulation of $\PQq \PQq / \PQq \Pg \to \PZ \PZ \to 4 \Pl$ is done with \POWHEG~\cite{Nason:2004rx, Frixione:2007vw, Alioli:2010xd, Alioli:2008gx},
 while $\Pg \Pg \to \PZ \PZ \to 4 \Pl$ is simulated with \MCFM~\cite{MCFM}.
 The simulation of the hadronization and parton shower is done by coupling the matrix element generators with \PYTHIA~8~\cite{Sjostrand:2015, bierlich2022comprehensive} using the \textsc{CP5}~tune~\cite{CMS-GEN-17-001}.
 The interaction of the particles with the CMS detector is simulated with \GEANTfour~\cite{GEANT}.
 All samples are generated with the NNPDF 3.0 (in 2016) or 3.1 (2017--18) parton distribution functions (PDFs)~\cite{NNPDF2015}.
-The MC samples are reweighed based on the per-event true number of interactions to match the level of \pileup{} observed in data as per standard practices.
+The simulations include additional interactions in the same and neighbouring bunch crossings, referred to as \pileup{}.
+The MC samples are reweighed based on the per-event true number of interactions to match the level of \pileup{} observed in data for each year.
 
 The full list of MC samples and their cross sections are shown in Table~\ref{tab:listofsamples}.
 %% It includes the ones detailed above as well as rare SM backgrounds that result in much smaller contributions to the signal regions.
@@ -104,7 +105,7 @@ All cross sections used in the analysis are those returned by the generator and 
 The MC samples are employed to optimize the event selection, evaluate the signal efficiency and acceptance and cross check the data-driven estimate of backgrounds.
 
 \subsubsection{Signal}
-The signal for this analysis is the production of a photon and two massive vector bosons, one of which is a $\Z$ that decays leptonically.
+The signal for this analysis is the production of a photon and two massive vector bosons, one of which is a $\Z$ boson that decays leptonically.
 The hard process of the signal is simulated with \MGvATNLO up to an additional jet at Next-to-Leading Order (NLO) with FxFx merging.
 
 The sample for the fully leptonic $\PZ\PZ\PGg \to 4\Pl\,\PGg$ is
@@ -130,35 +131,36 @@ with minor contribution from $\PZ\PZ$ production and $\PQt\PAQt$.
 The dominant backgrounds in the two lepton channel are Drell-Yan processes and $\PZ+\PGg$ production,
 with contributions from $\PW$+jets and $\PW+\PGg$.
 
-$\PQq\PAQq \to \PZ\PZ \to 4\Pl$, with \Pl = \Pe, \PGm, \PGt, is simulated with \POWHEG at NLO QCD (LO EW) up to one extra parton,
+The process $\PQq\PAQq \to \PZ\PZ \to 4\Pl$, with \Pl = \Pe, \PGm, \PGt, is simulated with \POWHEG at NLO QCD (LO EW) up to one extra parton,
 using dynamical QCD factorisation and renormalization scales.
 Although the fully differential cross section has already been computed at next-to-next-to-leading order (NNLO) \cite{Grazzini_2015},
 this computation is not yet available in a Monte Carlo generator.
 To account for this difference, the simulated events are reweighted by
-NNLO/NLO k-Factors that depend on $m_{\PZ\PZ}$.
+NNLO/NLO k-factors that depend on $m_{\PZ\PZ}$.
 Additional NLO electroweak corrections depending on the initial state quark flavour and kinematics
 are also applied in the region $m(ZZ) > 2m_{Z}$, where they have been computed.
 
 Aside from the dominant ZZ background mediated by the tree-level processes, there is also a gluon loop-induced ZZ production process,
 which is a NNLO diagram and therefore is not included in the nominal ZZ sample.
 Though suppressed by the two additional strong couplings, it nevertheless contributes to inclusive ZZ production at the 10\usep\% level.
-$\Pg \Pg \to \PZ\PZ$ is simulated, separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm, at LO with \MCFM~7.0~\cite{Campbell_2014}.
+The gluon-induced process $\Pg \Pg \to \PZ\PZ$ is simulated, separately for the three final states 4\Pe, 2\Pe\PGm and 4\PGm, at LO with \MCFM~7.0~\cite{Campbell_2014}.
 An exact calculation at NLO of this process is not yet available,
 but it was shown~\cite{Bonvini_2013} that its cross section is well described
 in the soft collinear approximation.
-Similarly to $\PQq\PAQq \to \PZ\PZ \to 4\Pl$, k-Factors are applied as function of $m(\PZ\PZ)$~\cite{Catani_2007,Melnikov_2015}.
+Similarly to $\PQq\PAQq \to \PZ\PZ \to 4\Pl$, k-factors are applied as function of $m(\PZ\PZ)$~\cite{Catani_2007,Melnikov_2015}.
 Additionally, the cross-section is scaled by a factor $1.7$.
 
-$\PW\PZ \to 3\Pl \PGn$, $\PZ \PGg \to 2\Pl \PGg$ and $\PZ \to \Pl \Pl$ (Drell-Yan), %with \Pl = \Pe, \PGm, \PGt,
+The diboson production $\PW\PZ \to 3\Pl \PGn$, $\PZ \PGg \to 2\Pl \PGg$ and the Drell-Yan process $\PZ \to \Pl \Pl$, %with \Pl = \Pe, \PGm, \PGt,
 are simulated at NLO with \MGvATNLO, including off-shell effects.
 For the first two, up to one additional parton is included in matrix element calculation,
 while for Drell-Yan the calculations include up to two additional partons.
 
-$\PQt\PAQt \to 2\Pl 2\PGnl + \text{jets}$, %with \Pl = \Pe, \PGm, \PGt,
+The production of a top-antitop pair $\PQt\PAQt \to 2\Pl 2\PGnl + \text{jets}$, %with \Pl = \Pe, \PGm, \PGt,
 is simulated using \POWHEG
 at NLO QCD (LO EW) up to 2 additional partons.
 
-$\PQt\PAQt\PW$ and $\PQt\PAQt\PZ$ with leptonic decays of the vector boson were simulated using \MGvATNLO,
+The associated production of top, antitop and a vector boson $\PQt\PAQt\PW$ and $\PQt\PAQt\PZ$,
+with leptonic decays of the vector boson, were simulated using \MGvATNLO,
 while $\PQt\PAQt\PZ\PZ$ and $\PQt\PAQt\PW\PW$ were simulated with inclusive decays at LO using \MADGRAPH.
 
 Massive triboson production in the channels $\PZ\PZ\PZ$, $\PW\PZ\PZ$, $\PW\PW\PZ$ and $\PW\PW\PW$ was simulated
