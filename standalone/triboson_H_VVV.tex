@@ -7,14 +7,14 @@
 \begin{document}
 \begin{tikzpicture}
   \begin{feynman}
-    \vertex                    (a);
-    \vertex [right=of a]       (b);
-    \vertex [below right=of b] (c);
-    \vertex [above left=of a]  (i1) {\(q\)};
-    \vertex [below left=of a]  (i2) {\(\bar{q}\)};
-    \vertex [above right=of b] (f1) {\(V_{1}\)};
-    \vertex [above right=of c] (f2) {\(V_{2}\)};
-    \vertex [below right=of c] (f3) {\(V_{3}\)};
+    \vertex (i1) at (0,3) {\(q\)};
+    \vertex (i2) at (0,0) {\(\bar{q}\)};
+    \vertex (a)  at (1,1.75);
+    \vertex [right=1 of a] (b);
+    \vertex (c) at (3,0.75);
+    \vertex (f1) at (4,3) {\(V_{1}\)};
+    \vertex [below=1.5 of f1] (f2) {\(V_{2}\)};
+    \vertex [below=1.5 of f2] (f3) {\(V_{3}\)};
 
     \diagram* {
       (i1) -- [fermion] (a) -- [fermion] (i2),
