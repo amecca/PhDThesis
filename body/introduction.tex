@@ -6,7 +6,8 @@ as excitations of the corresponding quantum fields.
 At its core, the Standard Model postulates a set of elementary particles, divided into fermions, with half-integer spin and bosons, with integer spin.
 It describes three of the four known fundamental interactions: electromagnetism, the weak nuclear force, and the strong nuclear force.
 
-The fundamental interactions obey a local gauge symmetry, which is associated to a Lie group $U(1)_Y \otimes SU(2)_T \otimes SU(3)_C$, where Y, T and C denote hypercharge, weak isospin and colour.
+The fundamental interactions obey a local gauge symmetry, which is associated to a Lie group $U(1)_Y \otimes SU(2)_T \otimes SU(3)_C$,
+where Y, T and C denote the quantum numbers hypercharge, weak isospin and colour.
 
 The interactions are mediated by gauge bosons such as the photon, the W and Z bosons and the gluons.
 The strong interaction is governed by quantum chromodynamics (QCD), a gauge field theory based on colour symmetry group $SU(3)_C$,
@@ -14,8 +15,10 @@ and its eight generators correspond to the gluons.
 The electroweak interaction is described by a gauge field theory that is invariant under both weak isospin $T_3$ and hypercharge $Y$,
 corresponding to the group $U(1)_Y$ $\otimes SU(2)_T$;
 the electroweak interaction encompasses both electromagnetic and weak nuclear interactions,
-mediated by the photon and by the W$^+$, W$^-$ and Z$^0$ boson respectively,
-which come from the mixing of the generators of the two groups, as explained later in Section \ref{EWSB}.
+mediated by the photon and by the \PWp, \PWm and \PZz boson respectively,
+which come from the mixing of the generators of the two groups
+occurring due to the electroweak symmetry breaking,
+as explained later in Section~\ref{EWSB}.
 The fundamental bosons all have spin 1, except for the Higgs Boson, which is the only known fundamental particle in the theory with spin 0.
 
 Matter is described in the SM by twelve fermion fields.
@@ -25,7 +28,7 @@ Fermions belonging to different generations have been observed to have different
 
 Quarks have colour charge, anti-quarks carry anti-colour, while leptons have no net colour charge, which is called ``white'' colour.
 %% Free particles must have a net colour charge of zero due to colour confinement, which is a property of the strong interaction.
-Gluons carry both a colour and an antu-colour charge, while all the other fundamental bosons, as well as bound states of quarks and anti-quarks are white.
+Gluons carry both a colour and an anti-colour charge, while all the other fundamental bosons, as well as bound states of quarks and anti-quarks are white.
 
 Colour charge can exist in three states, arbitrarily labelled blue, green, and red, complemented by an anti-colour, anti-blue, anti-green, and anti-red.
 
@@ -33,7 +36,7 @@ Only the W$^+$ and the W$^-$ bosons carry electromagnetic charge, while the othe
 Only left-handed fermions and right handed anti-fermions can be engaged in charged weak interactions, while the neutral weak interaction can involve both types, although with different couplings.
 
 The Standard Model has not only successfully described a wide range of experimental observations but has also guided the discovery of new particles, like the Higgs boson, which was observed at the Large Hadron Collider in 2012 \cite{ATLASHiggsDiscovery, CMSHiggsDiscovery}.
-This framework plays a pivotal role in our comprehension of the universe, spanning from the conditions just moments after the Big Bang to the inner workings of atomic nuclei.
+This framework plays a pivotal role in our understanding of the universe, spanning from the conditions just moments after the Big Bang to the inner workings of atomic nuclei.
 
 \begin{table}[tbh]
 	\centering
@@ -97,7 +100,9 @@ The EWSB causes also a mixing of the gauge boson fields, resulting in:
 \end{split}
 \end{equation}
 The only field that remains massless is the photon, while the other three become massive by interacting with three of the four components of the Higgs field $\psi$ through the Brout-Englert-Higgs Mechanism.
-The mass of the W and Z boson is not predicted by the theory, though a relation to them holds, and are determined experimentally.
+The mass of the W and Z boson is not predicted by the theory,
+though they are related by $m_\PW = m_\PZ \cos\theta_W$,
+and are determined experimentally.
 The W mass is approximately $80.38 \GeV$ and the Z mass $91.19 \GeV$~\cite{Workman:2022ynf}.
 From the broken symmetry a new particle emerges, corresponding to the fourth component of the Higgs field: the Higgs Boson.
 The remaining (unbroken) symmetry is $U(1)_Q \otimes SU(2)_L$.
@@ -108,7 +113,7 @@ Because of the mixing, the resulting electric charge of the fermions, that is th
 \subsection{Motivations}
 While most of the phenomenology predicted by the SM has already been tested and measured with great precision, the EWSB remains partially unexplored and its study, in the near future, will be of major interest for the particle physics experiments.
 
-Due to the non-Abelian nature of the SU(2) and SU(3) groups, there are triple and quartic self-interactions between their gauge fields.
+Due to the non-abelian nature of the SU(2) and SU(3) groups, there are triple and quartic self-interactions between their gauge fields.
 Indeed, while expanding the Yang-Mills Lagrangian of the gauge bosons:
 \begin{equation}
 \Lagrangian_{YM} = -\frac{1}{4} W^a_{\mu\nu} W_a^{\mu\nu}\,,
@@ -126,7 +131,7 @@ self-interaction terms appear, containing the structure constants of the symmetr
   \end{split}
 \end{equation}
 
-The measurement of triple and quartic gauge couplings (TGC, QGC) of electroweak vector bosons, shown in Figure \ref{fig:SMvertices} bottom left and centre, provides an insight into the non-Abelian gauge structure of the electroweak interaction and into the mechanism of the EWSB.
+The measurement of triple and quartic gauge couplings (TGC, QGC) of electroweak vector bosons, shown in Figure \ref{fig:SMvertices} bottom left and centre, provides an insight into the non-abelian gauge structure of the electroweak interaction and into the mechanism of the EWSB.
 %
 \begin{figure}
 	\centering
@@ -172,7 +177,8 @@ A few representative Feynman diagrams for triboson production are shown in Figur
   \caption{Representative Feynman diagrams for the production of three vector bosons. Diagrams \ref{fig:triboson_feynman:TGC} and \ref{fig:triboson_feynman:QGC} are sensitive to triple and quartic gauge couplings respectively.}
   \label{fig:triboson_feynman}
 \end{figure}
-It must be noted that not all final states are possible through such diagrams, since charge must be conserved at each vertex, the Higgs boson does not directly couple with photons and no fully neutral vertex is allowed in the SM.
+It must be noted that not all final states are possible through such diagrams, since electric charge must be conserved at each vertex,
+the Higgs boson does not directly couple with photons and that the \PZ boson does not interact with the photon, since it is electrically neutral.
 This means that no contribution from QGC (Figure \ref{fig:triboson_feynman:QGC}) is present at LO for fully neutral final states such as $\PZ\PZ\PZ$, $\PZ\PZ\PGg$, $\PZ\PGg\PGg$.
 
 It offers the opportunity to test the predictions of the Standard Model with unparalleled precision in a complementary way with respect to the study of the Higgs Boson.
@@ -352,7 +358,7 @@ respectively.
     Taus are excluded, meaning that $\Pl = \Pe, \PGm$.
   }
   \label{tab:xsection-exclusive}
-  \begin{tabular}{ l@{}l l r } % l -> divide intermediate and final state
+  \begin{tabular}{ l@{}l c c } % l -> divide intermediate and final state
     \toprule
     \multicolumn{2}{c}{Process} & Branching ratio & Cross section \\ %total x BR\\
     \midrule
