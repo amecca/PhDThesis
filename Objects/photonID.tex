@@ -17,7 +17,8 @@ and are difficult to distinguish from a single-photon incident on the calorimete
 Both a cut-based and a MVA-based ID are employed and compared in the analysis.
 Each has its own advantages and disadvantages.
 Due to its nature, the cut-based ID can be easily inverted by reversing only one or a few of its cuts.
-On the other hand, MVA-based ID is more effective at discriminating between signal and background, providing a higher signal-to-noise ratio.
+On the other hand, MVA-based ID is more effective at discriminating between signal and background,
+providing a higher signal purity.
 
 \subsubsection{Identification variables}
 One of the most efficient ways to reject photon backgrounds is the use of isolation energy sums,
@@ -64,7 +65,7 @@ In particular, the following two variables have high discriminating power.
 
 The hadronic over electromagnetic energy ratio ($H/E$) is defined as the ratio between the energy deposited in the HCAL in a cone of radius $\DR = 0.15$
 around the supercluster direction and the energy of the photon candidate.
-\sieie, the second moment of the log-weighted distribution of crystal energies in $\eta$,
+The second moment of the log-weighted distribution of crystal energies in $\eta$ (\sieie),
 calculated in the $5 \times 5$ matrix around the most energetic crystal in the SC and rescaled to units of crystal size.
 The mathematical expression is given below:
 \begin{equation}
@@ -130,7 +131,7 @@ This ratio is referred as Scale Factor (SF), and is applied to simulation to cor
   \subfigure [2016postVFP] {\includegraphics[width=.49\textwidth]{SF/phEffSF_2016postVFP.pdf}}\\
   \subfigure [2017]        {\includegraphics[width=.49\textwidth]{SF/phEffSF_2017.pdf}}
   \subfigure [2018]        {\includegraphics[width=.49\textwidth]{SF/phEffSF_2018.pdf}}
-  \caption{Photon efficiency scale factors for the cut-based Loose ID.}
+  \caption{Photon efficiency scale factors for the cut-based Loose ID for each data-taking period in \Run2.}
   \label{fig:phEffSF}
 \end{figure}
 
@@ -239,6 +240,8 @@ Scale Factors are measured for each year in different bins of \pt and $\eta$ for
 A comparison between the cut-based and the MVA-based IDs is shown in Figure~\ref{fig:PhotonIsoAUC}.
 It represent the background rejection as a function of the signal efficiency for the raw MVA discriminant
 and the three working points of the cut-based ID.
+The MVA based selection provides better background rejection than the cut-based ID
+for a given signal efficiency.
 
 \begin{figure}
 \centering
@@ -258,7 +261,7 @@ Photons must also pass a conversion safe electron veto (CSEV)~\cite{CMS-EGM-14-0
 with a hit in the innermost layer of the pixel detector not matched to a reconstructed conversion vertex, pointing to the photon cluster in the ECAL.
 Photons are also rejected in the presence of a seed in the pixel tracker consisting of at least two hits,
 which points to the ECAL within some window defined around the photon SC position.
-Photons that pass these selections are called \textbf{kinematic photons}, which is the loosest selection used in this analysis.
+Photons that pass these selections are labelled as \textbf{kinematic photons}, which is the loosest selection used in this analysis.
 
 Photons that also pass the cut thresholds of the Loose cut-based ID (see Table~\ref{tab:VPhotonID}) for H/E, the neutral ($I_n$) and photon ($I_\PGg$) isolations
 are defined \textbf{very loose} photons.
@@ -268,8 +271,8 @@ The photons that also pass the \sieie and charged isolation ($I_{ch}$), and thus
 which is the tight selection for the \nonprompt photon background,
 and the analysis selection for the results derived using the cut-based ID.
 
-Additionally, kinematic photons that pass the MVA-based working points wp90 and wp80 are also considered,
+Additionally, kinematic photons that pass the MVA-based working points \texttt{wp90} and \texttt{wp80} are also considered,
 given the improved performance of the MVA ID over the cut-based one.
-The drawback of this ID is that it is not possible to do a data-driven estimation of the \nonprompt background,
-due to the limited size of the application region defined by requiring a photon that passes the wp90 but fails the wp80,
+The drawback of this ID is that it is not possible to perform a data-driven estimation of the \nonprompt background,
+due to the limited size of the application region defined by requiring a photon that passes the \texttt{wp90} but fails the \texttt{wp80},
 as explained in Section~\ref{sec:fake_photons_background}.

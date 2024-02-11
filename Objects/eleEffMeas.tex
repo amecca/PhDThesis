@@ -18,9 +18,9 @@ For the bin between 7 and 20\GeV, additional criteria are required:
 \end{itemize}
 These cuts help cleaning the background and make the fits more reliable (and thus, the measurement more precise).
 
-Probe electrons only need to be reconstructed as GsfElectron while the FSR recovery algorithm is not applied.
+Probe electrons only need to be reconstructed with the Gaussian sum filter, while the FSR recovery algorithm is not applied.
 
-The nominal MC efficiencies are evaluated from the a Drell-Yan sample simulated with \MADGRAPH at Leading Order in QCD,
+The nominal simulation efficiencies are evaluated from the a Drell-Yan sample simulated with \MADGRAPH at Leading Order in QCD,
 using a template fit.
 The $m_{ee}$ signal shape of the passing and failing probes are taken from MC and convoluted with a Gaussian.
 The data is then fitted with the convoluted MC templates and a CMSShape (an Error-function with a one-sided exponential tail).

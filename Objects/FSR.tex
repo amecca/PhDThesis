@@ -19,10 +19,12 @@ I^{\PGg} \mathdefined \frac{1}{\pt^\PGg} \left( \sum{\pt^\PGg} + \sum_{i\, \in\,
 where $\sum{\pt^\PGg}$, $\sum_{i\, \in\, \mathrm{neutral}}{\pt^i}$ and $\sum_{j\, \in\, \mathrm{charged}}{\pt^j}$
 are the scalar sums of the transverse momenta of photons, neutral and charged hadrons inside a cone of radius $\mathrm{R} = 0.3$ around the photon,
 including \pileup{} contributions.
-It is required that the relative isolation is $I^{\PGg} < 1.8$~\cite{CMS-HIG-16-041}.
+It is required that the relative isolation is $I^{\PGg} < 1.8$,
+following the findings of Reference~\cite{CMS-HIG-16-041}.
 \pagebreak[4] % suggest that this is a good place
 
-The photons that passed these selections are associated to the closest lepton, among those that pass the loose ID and SIP cut (see Section \ref{sec:eleSIP}).
+The photons that passed these selections are associated to the closest lepton, among those that pass the loose identification
+and the cut on the significance of the impact parameter (see Section \ref{sec:eleSIP}).
 Because the electron reconstruction algorithm already recovers some of the FSR photons, we exclude those that have $\Delta R(e, \gamma) <$ 0.15 or $|\Delta\phi(e, \gamma)| <$ 2 and $|\Delta\eta(e, \gamma)| <$ 0.05 to avoid double counting.
 The FSR candidates are also discarded if they do not satisfy $\Delta R(\ell, \gamma) < 0.5$ with respect to the associated lepton.
 
@@ -33,8 +35,9 @@ and is accepted only if $\Delta R(\ell, \gamma)\, / E_{T,\gamma}^{2} < 0.012 \Ge
 Accepted FSR photons have their momentum added to the lepton and are excluded from the computation of its isolation.
 A detailed study on the optimization of the FSR recovery algorithm can be found in Reference~\cite{CMS-HIG-16-041}.
 
-Since our analysis selection requires signal photons to have at least $\Delta R(\ell, \gamma) > 0.5$ from any signal lepton, there is no risk of double counting photons.
-However thir kinematic distributions were studied, as well as their shower shape variables.
+The potential double counting of photons is avoided by requiring
+signal photons to have at least $\Delta R(\ell, \gamma) > 0.5$ from any signal lepton.
+However their kinematic distributions were studied, as well as their shower shape variables.
 For example, their \pt and $\eta$ distributions can be seen in Figure~\ref{fig:distributions_fsrPhotons}.
 
 \begin{figure}
