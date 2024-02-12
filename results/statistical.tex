@@ -1,5 +1,5 @@
 \label{sec:statistical_analysis}
-A statistical analysis is conducted in order to assess the presence of the signal process in the observed data,
+A statistical analysis is conducted to assess the presence of the signal process in the observed data,
 quantify the significance of the excess over background predictions and measure its cross section.
 The statistical inference is performed with the \textsc{Combine Tool} software package~\cite{CMS-NOTE-2011-005}.
 
@@ -61,12 +61,14 @@ and the values $\hat{\mu}$ and $\widehat{\vec{\theta}}_{\hat\mu}$
 are those that maximize the likelihood in this hypothesis.
 This quantity is positive for a signal-like excess ($\mu$ > 0) and becomes 0 in the absence of an excess ($\mu$ = 0).
 
-The significativity of an excess is expressed in terms of the local \textit{p-value}, which is the probability to obtain a value of the test statistic $t_0$ greater than or equal to the one observed in experimental data, under the background-only hypothesis:
+The significance of an excess is expressed in terms of the local \textit{p-value}, which is the probability to obtain a value of the test statistic $t_0$ greater than or equal to the one observed in experimental data, under the background-only hypothesis:
 \begin{equation}
   \label{eq:pvalue}
   p_0 = \Probability(t_0 \ge t_0^{obs}\, |\, \mu = 0)
 \end{equation}
-That is, $p_0$ is the probability that a local statistical fluctuation of the background resembles the signal at least as much as the observed data do.
+That is, $p_0$ is the probability that a local statistical fluctuation of the background yield
+is compatible with the observed data in the background only hypothesis,
+at least as much as the signal hypothesis.
 
 The p-value is usually expressed as a \textit{significance} $Z$ using the Gaussian one-sided integral:
 \begin{equation}
