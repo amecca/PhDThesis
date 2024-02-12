@@ -1,32 +1,5 @@
 % Likelihood scans with nuisance groups without the FSR cut
 \label{sec:likelihood_scans_inclusive}
-The extraction of the signal strength modifier $\mu$ proceeds through the maximisation of the likelihood,
-as described in Section~\ref{sec:statistical_analysis}.
-This procedure can be visualized by scanning the likelihood function for several values of the parameter $\mu$
-accounting for the systematic uncertainties affecting the measurement.
-For each value the best fit value of the nuisance parameters is computed,
-and the resulting value of the likelihood is stored.
-The corresponding points are then plotted as a function of $\mu$.
-
-Usually the auxiliary quantity $-2\Delta\ln\Likelihood$ (defined as $t_0$ in Equation~\ref{eq:test_statistic})
-is used instead of the likelihood itself.
-The width of the its profile is linked to the uncertainty on the estimate of $\mu$ from the fit.
-More precisely, the set of values $\{ \mu \mid -2\Delta\ln\Likelihood(\mu) < 1 (4) \}$ corresponds to the 68\usep\% (95\usep\%) confidence interval
-in the case of a one-dimensional likelihood fit.
-
-This procedure can also be performed by fixing the values of one or more nuisances instead of allowing them to be fitted by the algorithm.
-The effect of fixing the value of one or more parameters is a reduction in the overall width of the likelihood shape.
-This difference is ascribed to the effect of the \textit{frozen} parameters.
-
-Nuisance parameters are categorised as follows:
-\begin{itemize}
-\item \textbf{theory:} uncertainties on the QCD scale, proton PDFs and on the value of \alpS;
-%% \item \textbf{data-driven:} uncertainties related to the data-driven estimate of fake lepton or fake photon backgrounds;
-\item \textbf{luminosity:} the uncertainty on the integrated luminosity corresponding to the data collected by the CMS experiment;
-\item \textbf{experimental:} the other experimental uncertainties, such as the lepton or photon efficiency scale factors or the \pileup{} weight,
-      including the uncertainty on the data-driven background prediction;
-\item \textbf{statistical:} the remaining uncertainty after freezing all of the nuisances.
-\end{itemize}
 
 \begin{figure}
   \centering
