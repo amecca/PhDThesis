@@ -29,7 +29,7 @@ which is especially useful when the number of track is limited, \eg when restart
 
 \section{Track-based alignment}
 The track-based alignment consists in the determination of the correct alignment constants using the measured hits and reconstructed tracks.
-The alignment parameters $\vec{p}\,$ are fitted by minimising the following $\chi^2$ function:
+The alignment parameters $\vec{p}\,$ are fitted by minimizing the following $\chi^2$ function:
 
 \begin{equation}
   \chi^2(\vec{p}, \vec{q}\,) \sum_j^{\rm tracks} \sum_i^{\rm hits} \left( \frac{m_{ij} - f_{ij}(\vec{p}, \vec{q_j})}{\sigma_{ij}^{m}} \right)
@@ -52,7 +52,7 @@ leading to only 36 parameters.
 The fitting procedure extracts the best values for the $\vec{p}\,$ regardless of the (potentially millions of) track parameters $\vec{q_j}\,$,
 thus allowing alignment campaigns with large datasets and many degrees of freedom.
 This is achieved by linearising the $\chi^2(\vec{p_0}\,+\Delta p, \vec{q_0}\,+\Delta q)$ as deviations from a previous set of alignment parameters.
-Its minimisation can be expressed by a set of linear equations containing the measurements and the derivatives in the alignables or track parameters,
+Its minimization can be expressed by a set of linear equations containing the measurements and the derivatives in the alignables or track parameters,
 and treated like a matrix inversion problem:
 \begin{equation}
   \label{eq:alignment_full_matrix}

@@ -20,7 +20,7 @@ The global likelihood function is thus defined as:
   \Likelihood(data\, |\, \mu, \vec\theta\,) = \prod_c \Likelihood_c(data\, |\, \mu \cdot s(\vec\theta\,) + b(\vec\theta\,)) \cdot \prod_i p_i(\tilde{\theta_i}\, |\, \theta_i)
 \end{equation}
 where c runs over all the channels, which are the four data-taking periods (2016preVFP, 2016postVFP, 2017, 2018).
-The extraction of the signal strength proceeds through the maximisation of the complete likelihood function by varying the parameter of interest $\mu$ and the nuisances.
+The extraction of the signal strength proceeds through the maximization of the complete likelihood function by varying the parameter of interest $\mu$ and the nuisances.
 The $\Likelihood_c$ functions are the PDF of the binned distributions in each channel, and are given by the product of Poisson probabilities for every bin $j$ to observe $n_j$ events:
 \begin{equation}
   \label{eq:likelihood_bin}
@@ -36,7 +36,7 @@ Most of the uncertainties of the first class are parametrized with a log-normal 
 \end{equation}
 which is the distribution of a random variable whose logarithm is normally distributed, with mean $\mu$ = $\text{ln}(\theta_m)$ and standard deviation $\sigma$ = $\text{ln}(k)$.
 %% where the parameters $theta_s$ and $k$ can be defined in terms of the mean and standard deviation of a normally distributed variable: $\theta_m = e^{\mu}$ and $k = e^{\sigma}$.
-The log-normal is used instead of a Gaussian because it enforces the positive-definite normalisation for the nuisance modelled, which is usually multiplying an event yield and thus cannot be negative.
+The log-normal is used instead of a Gaussian because it enforces the positive-definite normalization for the nuisance modelled, which is usually multiplying an event yield and thus cannot be negative.
 
 The remaining systematics in the first class are those that represent a background coming from a statistically limited control region, such as the fake leptons and photons.
 These are dominated by the statistically uncertainty in the control region and are modelled with a Gamma distribution:
@@ -81,7 +81,7 @@ The conventional values of $Z$ = 3$\sigma$ and $Z$ = 5$\sigma$, corresponding to
 
 \subsection{Likelihood scans}
 \label{sec:likelihood_scans}
-The extraction of the signal strength modifier $\mu$ proceeds through the maximisation of the likelihood.
+The extraction of the signal strength modifier $\mu$ proceeds through the maximization of the likelihood.
 %% as described in Section~\ref{sec:statistical_analysis}.
 This procedure can be visualized by scanning the likelihood function for several values of the parameter $\mu$
 accounting for the systematic uncertainties affecting the measurement.
@@ -99,7 +99,7 @@ This procedure can also be performed by fixing the values of one or more nuisanc
 The effect of fixing the value of one or more parameters is a reduction in the overall width of the likelihood shape.
 This difference is ascribed to the effect of the \textit{frozen} parameters.
 
-Nuisance parameters are categorised as follows:
+Nuisance parameters are categorized as follows:
 \begin{itemize}
 \item \textbf{theory:} uncertainties on the QCD scale, proton PDFs and on the value of \alpS;
 %% \item \textbf{data-driven:} uncertainties related to the data-driven estimate of fake lepton or fake photon backgrounds;
