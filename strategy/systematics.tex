@@ -4,7 +4,7 @@ The imperfect knowledge of the detector response and of the experimental conditi
 The effects of these unknowns are accounted for as \textit{systematic uncertainties}, which are then included as nuisance parameter in the model used to perform the statistical analysis and extract the results (Section \ref{sec:statistical_analysis}).
 
 The systematic uncertainties can have different effects.
-\textit{Normalisation} uncertainties affect the normalisation of processes, changing the event yield.
+\textit{Normalization} uncertainties affect the normalization of processes, changing the event yield.
 \textit{Shape} uncertainties, in addition, modify the physical observables (\eg kinematics) of the events, and result in a different distribution of the event fraction in the histogram bins.
 
 Systematics can be divided, depending on their source, into \textit{theoretical} uncertainties, related to theory hypotheses and features of the numerical computations, and \textit{experimental} uncertainties, which depend on the knowledge of the detector response, running conditions, and include the data-driven estimation of background processes.
@@ -16,7 +16,7 @@ the uncertainty on the strong coupling constant $\alpha_s$ and
 the renormalization and factorisation QCD scales, which account for the missing higher order uncertainty in finite order perturbative calculations.
 The uncertainty on the PDF set has a shape effect on the transverse momentum of the photon
 and on the ``MVA shape'' described in Section~\ref{sec:strategy_description}.
-The effects of \alpS and of the missing higher orders are limited to the normalisation for all of the variables considered.
+The effects of \alpS and of the missing higher orders are limited to the normalization for all of the variables considered.
 
 The missing higher order uncertainty is estimated by considering, for each event, the effect
 of varying the renormalization and factorization scales, $\mu_R$ and $\mu_F$,
@@ -39,7 +39,7 @@ for each year of data-taking~\cite{CMS-LUM-17-004, CMS-LUM-18-002}.
 
 The uncertainties coming from the data-driven estimation of fake lepton and fake photons backgrounds are also considered.
 In both cases, the main contributions arise from the mismatch in background composition between the region in which the fake rate is measured and the regions where it its applied.
-Additionally, in the case of the photon fake rate, the application region itself is statistically limited, and this introduces an additional uncertainty on the normalisation of the fake photon process.
+Additionally, in the case of the photon fake rate, the application region itself is statistically limited, and this introduces an additional uncertainty on the normalization of the fake photon process.
 
 The effects of the lepton and photon efficiencies, the \pileup{} reweight (Section~\ref{sec:simulation})
 and the L1 prefiring (Section~\ref{sec:L1Prefiring})
@@ -57,18 +57,18 @@ The photon efficiency scale factors, both for the cut-based and the MVA IDs,
 produce an uncertainty in the yield of approximately~1.1--1.3\usep\%.
 The photon energy scale and resolution have negligible effects.
 The \Lone prefiring discussed in Section~\ref{sec:L1Prefiring}
-results in a normalisation effect of approximately 0.2\usep\%.
+results in a normalization effect of approximately 0.2\usep\%.
 
 No trigger-associated uncertainty is applied since the \pt selection applied for electrons and muons
 is harder than the online trigger threshold.
 This ensures that the charged leptons offline momentum is at the plateau of efficiency.
-The experimental systematics only affect the normalisation,
+The experimental systematics only affect the normalization,
 except for the photon MVA efficiency scale factors for the variable ``MVA shape''.
 
-A summary of the effect of the systematic uncertainties on the normalisation
+A summary of the effect of the systematic uncertainties on the normalization
 of the signal and main background samples in the four lepton channel is reported in Table~\ref{tab:syst_norm_effect}.
 Note that the table reports also the impact of theoretical uncertainties
-(\ie as QCD scale, PDF variation and \alpS) on the normalisation of the signal sample.
+(\ie as QCD scale, PDF variation and \alpS) on the normalization of the signal sample.
 However this effect must not be taken into account when the parameter of interest is the
 signal yield itself (or a proxy such as the signal strength modifier),
 and the values are reported merely for completeness.
@@ -76,7 +76,7 @@ and the values are reported merely for completeness.
 \begin{table}
   \caption{
     Effect of the various systematics (in \%)
-    on the normalisation of the signal and main background samples,
+    on the normalization of the signal and main background samples,
     as well as the \nonprompt lepton and photon data-driven estimates,
     in the signal region of the four lepton channel.
     The selection used for the photon is the Loose working point of the cut-based ID.
@@ -92,12 +92,12 @@ and the values are reported merely for completeness.
     L1 prefiring        & {-}0.51/{+}0.51\fn1 & {-}0.49/{+}0.49 & -               & - \\
     PDF variation       & {+}0.83/{-}3.17\fn1 & {+}2.58/{-}3.10 & -               & - \\
     QCDscale            & {+}9.91/{-}10.0\fn1 & {+}3.81/{-}3.91 & -               & - \\
-    \alpS               & -               & {+}0.72/{-}1.07 & -               & - \\
+    \alpS               &\text{negligible}\fn1& {+}0.72/{-}1.07 & -               & - \\
     Electron efficiency & {+}2.73/{-}2.73 & {+}2.74/{-}2.74 & {+}4.27/{-}4.27 & {+}1.42/{-}1.42 \\
     Electron fake rate  & -               & -               & {+}6.42/{-}6.42 & - \\
     Muon efficiency     & {+}0.60/{-}0.60 & {+}0.60/{-}0.60 & {+}0.35/{-}0.35 & {+}0.66/{-}0.66 \\
     Muon fake rate      & -               & -               & {+}5.83/{-}5.83 & - \\
-    Photon energy scale & {+}0.08/{-}0.13 & {+}0.15/{-}0.10 & -               & - \\
+    Photon energy scale & {+}0.08/{-}0.13 & {+}0.15/{-}0.10 &\text{negligible}&\text{negligible}\\
     Photon efficiency   & {+}1.26/{-}1.26 & {+}1.33/{-}1.33 & {+}0.97/{-}0.97 & - \\
     Photon fake rate    & -               & -               & -               & {+}13.0/{-}12.3\fn2 \\
     \Pileup{} weight    & {-}1.59/{+}2.48 & {-}1.61/{+}2.10 & -               & - \\
@@ -127,7 +127,7 @@ and the values are reported merely for completeness.
 \begin{table}
   \caption{
     Effect of the various systematics (in \%)
-    on the normalisation of the signal and main background samples,
+    on the normalization of the signal and main background samples,
     as well as the \nonprompt lepton and photon data-driven estimates,
     in the triboson fiducial region of the four lepton channel.
     The selection used for the photon is the Loose working point of the cut-based ID.
@@ -142,12 +142,12 @@ and the values are reported merely for completeness.
     L1 prefiring        & {-}0.58/{+}0.58 & {-}0.56/{+}0.56 & -               & - \\
     PDF variation       & {+}1.62/{-}3.12 & {+}2.70/{-}2.88 & -               & - \\
     QCDscale            & {+}9.45/{-}9.21 & {+}3.80/{-}3.84 & -               & - \\
-    \alpS               & -               & {+}0.50/{-}0.81 & -               & - \\
+    \alpS               &\text{negligible}& {+}0.50/{-}0.81 & -               & - \\
     Electron efficiency & {+}2.55/{-}2.55 & {+}2.47/{-}2.47 & {+}3.24/{-}3.24 & {+}1.07/{-}1.07 \\
     Electron fake rate  & -               & -               & {+}3.23/{-}3.23 & - \\
     Muon efficiency     & {+}0.57/{-}0.57 & {+}0.57/{-}0.57 & {+}0.43/{-}0.43 & {+}0.51/{-}0.51 \\
     Muon fake rate      & -               & -               & {+}3.00/{-}3.00 & - \\
-    Photon energy scale & {+}0.14/{-}0.07 & {+}0.07/{-}0.12 & -               & - \\
+    Photon energy scale & {+}0.14/{-}0.07 & {+}0.07/{-}0.12 &\text{negligible}&\text{negligible}\\
     Photon efficiency   & {+}1.19/{-}1.19 & {+}1.32/{-}1.32 & {+}1.00/{-}1.00 & - \\
     Photon fake rate    & -               & -               & -               & {+}13.24/{-}12.40 \\
     \Pileup{} weight    & {-}2.02/{+}2.70 & {-}1.38/{+}1.31 & -               & - \\
