@@ -33,14 +33,18 @@ The full results, including the impacts of each systematic uncertainty, are repo
 \end{table}
 
 Unlike the inclusive region of the four lepton channel,
-the data-driven estimate of \nonprompt photons is affected by the large uncertainty
+the data-driven estimate of \nonprompt photons is heavily affected by the large uncertainty
 due to the small number of events in the fake photon application region CR4P\_1F.
 As shown in Table~\ref{tab:yield_CR4P_1F_FSRcut},
 after the additional cut to suppress FSR, is expected to contain only
 $22.4 \pm 0.2$ events.
+Therefore, it cannot be used to estimate the \nonprompt photon background effectively.
 
-The second best strategy is the fit on $m_{\PZ\PZ\PGg}$ using the
+Among the strategies that use the simulation to estimate the fake photon background,
+the best results are expected from the fit on $m_{\PZ\PZ\PGg}$ using the
 \texttt{wp80} working point of the MVA based identification for the photon.
+Therefore it is chosen as reference for the statistical inference.
+
 The post-fit event yields in the signal region are reported in Table~\ref{tab:yields_postfit_FSRcut_Run2_SR4P}.
 The observed (expected) significance of the signal over the background-only hypothesis with this strategy is
 $3.00 \usep\sigma$
@@ -70,7 +74,9 @@ which is above the threshold for evidence, but insufficient to claim the observa
 \end{figure}
 
 \begin{table}
-  \caption{Post-fit yields in the triboson fiducial region in the four lepton channel.}
+  \caption{Post-fit yields in the triboson fiducial region in the four lepton channel,
+    using the \texttt{wp80} working point of the MVA-based ID to select the signal photon,
+    and estimating the \nonprompt photon background from simulation.}
   \label{tab:yields_postfit_FSRcut_Run2_SR4P}
   \centering
   \small
@@ -107,7 +113,7 @@ The detailed breakdown of the sources of systematic uncertainty is reported in
 Figure~\ref{fig:impacts_observed_FSRcut_Run2_SR4P}.
 
 As previously discussed, the cross section times branching ratio of the signal sample is
-$\sigma^{MC}(\Pp\Pp\to\PZ\PZ\PGg)\times\mathcal{B}(\PZ_0,\PZ_1\to\Pl\Pl) = 9.787\usep\text{fb}$, with $\Pl = \Pe, \PGm$.
+$\sigma^{MC}(\Pp\Pp\to\PZ\PZ\PGg)\times\mathcal{B}(\PZ_0,\PZ_1\to\Pl\Pl) = (9.787\pm0.009)\usep\text{fb}$, with $\Pl = \Pe, \PGm$.
 Furthermore, the study reported in Section~\ref{sec:signal_genstudy} demonstrates
 that the fraction of triboson events for the signal sample in the fiducial region is 52\usep\%.
 
