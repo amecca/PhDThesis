@@ -20,24 +20,21 @@ The full results, including the impacts of each systematic uncertainty, are repo
     Photon ID   & Loose (cut)    & Loose (cut)    & Loose (cut)   & wp90 (MVA)     & wp90 (MVA)    & wp80 (MVA)     & kinematic     \\
     Variable    &$m_{\PZ\PZ\PGg}$&$m_{\PZ\PZ\PGg}$& $\pt^\PGg$    &$m_{\PZ\PZ\PGg}$& $\pt^\PGg$    &$m_{\PZ\PZ\PGg}$& MVAcut        \\
     \midrule
-    $\mu$       & 1.000000       & 1.000000       & 1.000000      & 1.000000       & 1.000000      & 1.000000       & 1.000000      \\
-    total       & -0.424/+0.513  & -0.425/+0.503  & -0.431/+0.514 & -0.406/+0.480 & -0.414/+0.493  & -0.415/+0.496  & -0.404/+0.476 \\
+    $\mu$       & 1.00           & 1.00           & 1.00          & 1.00           & 1.00          & 1.00           & 1.00          \\
+    total       & {-}0.43/{+}0.56 & {-}0.46/{+}0.59 & {-}0.41/{+}0.52 & {-}0.45/{+}0.57 & {-}0.42/{+}0.54 & {-}0.42/{+}0.53 & {-}0.43/{+}0.55 \\
     \hline
-    data-driven & -0.037/+0.078  & -0.001/+0.001  & -0.001/+0.001 & -0.001/+0.001  & -0.001/+0.001 & -0.001/+0.001  & -0.002/+0.002 \\
-    luminosity  & -0.026/+0.046  & -0.028/+0.043  & -0.028/+0.043 & -0.027/+0.041  & -0.027/+0.042 & -0.026/+0.040  & -0.031/+0.047 \\
-    theory      & -0.030/+0.031  & -0.042/+0.040  & -0.040/+0.038 & -0.037/+0.034  & -0.037/+0.035 & -0.034/+0.031  & -0.050/+0.056 \\
-    syst        & -0.043/+0.081  & -0.053/+0.080  & -0.052/+0.080 & -0.050/+0.076  & -0.050/+0.076 & -0.048/+0.072  & -0.065/+0.095 \\
-    stat        & -0.419/+0.498  & -0.419/+0.493  & -0.425/+0.504 & -0.400/+0.471  & -0.409/+0.484 & -0.410/+0.488  & -0.394/+0.461 \\
+    statistical & {-}0.42/{+}0.55 & {-}0.45/{+}0.58 & {-}0.40/{+}0.51 & {-}0.44/{+}0.56 & {-}0.41/{+}0.54 & {-}0.41/{+}0.53 & {-}0.42/{+}0.55 \\
+    theory      & {-}0.00/{+}0.00 & {-}0.02/{+}0.02 & {-}0.03/{+}0.04 & {-}0.02/{+}0.02 & {-}0.01/{+}0.01 & {-}0.01/{+}0.01 & {-}0.01/{+}0.01 \\
+    luminosity  & {-}0.01/{+}0.03 & {-}0.02/{+}0.03 & {-}0.02/{+}0.04 & {-}0.02/{+}0.03 & {-}0.01/{+}0.03 & {-}0.01/{+}0.03 & {-}0.01/{+}0.03 \\
+    experimental& {-}0.07/{+}0.10 & {-}0.08/{+}0.09 & {-}0.05/{+}0.08 & {-}0.08/{+}0.09 & {-}0.04/{+}0.07 & {-}0.06/{+}0.08 & {-}0.06/{+}0.08 \\
     \bottomrule
   \end{tabular}
   }
 \end{table}
 
-In the triboson fiducial region of the four lepton channel,
-the strategy for which the highest sensitivity is expected is
-the one that uses the data-driven estimate for \nonprompt photons.
-However, it is affected by the large uncertainty due to the small number
-of events in the fake photon application region CR4P\_1F.
+Unlike the inclusive region of the four lepton channel,
+the data-driven estimate of \nonprompt photons is affected by the large uncertainty
+due to the small number of events in the fake photon application region CR4P\_1F.
 As shown in Table~\ref{tab:yield_CR4P_1F_FSRcut},
 after the additional cut to suppress FSR, is expected to contain only
 $22.4 \pm 0.2$ events.
@@ -46,8 +43,8 @@ The second best strategy is the fit on $m_{\PZ\PZ\PGg}$ using the
 \texttt{wp80} working point of the MVA based identification for the photon.
 The post-fit event yields in the signal region are reported in Table~\ref{tab:yields_postfit_FSRcut_Run2_SR4P}.
 The observed (expected) significance of the signal over the background-only hypothesis with this strategy is
-$3.09 \usep\sigma$
-($3.56 \usep\sigma$),
+$3.00 \usep\sigma$
+($3.46 \usep\sigma$),
 which is above the threshold for evidence, but insufficient to claim the observation.
 
 \begin{figure}
@@ -83,19 +80,19 @@ which is above the threshold for evidence, but insufficient to claim the observa
     \toprule
     \text{Process} & \headcell{2016postVFP} & \headcell{2016preVFP} & \headcell{2017} & \headcell{2018} & \headcell{\Run2} \\
     \midrule
-    \PQt\PAQt\PZ+jets           & 0.01 \pm 0.00 & 0.01 \pm 0.00 & 0.02 \pm 0.01 & 0.01 \pm 0.00 & 0.04 \pm 0.01 \\
-    \PW\PZ\PZ                   & 0.01 \pm 0.01 & 0.00 \pm 0.00 & 0.04 \pm 0.01 & 0.03 \pm 0.01 & 0.08 \pm 0.01 \\
-    \PZ\PZ\PGg\to4\Pl\PGg       & 0.65 \pm 0.33 & 0.76 \pm 0.38 & 1.60 \pm 0.81 & 2.23 \pm 1.13 & 5.24 \pm 1.48 \\
-    \qqZZnonpro                 & 0.07 \pm 0.00 & 0.09 \pm 0.01 & 0.21 \pm 0.01 & 0.29 \pm 0.02 & 0.65 \pm 0.02 \\
-    \PZ\PZ\PZ                   & 0.00 \pm 0.00 & 0.00 \pm 0.00 & 0.01 \pm 0.00 & 0.02 \pm 0.01 & 0.04 \pm 0.01 \\
-    \Pg\Pg\to\PZ\PZ\to2\Pe2\PGm & 0.01 \pm 0.00 & 0.01 \pm 0.00 & 0.02 \pm 0.00 & 0.02 \pm 0.00 & 0.06 \pm 0.00 \\
-    \Pg\Pg\to\PZ\PZ\to4\Pe      & 0.01 \pm 0.00 & 0.01 \pm 0.00 & 0.02 \pm 0.00 & 0.03 \pm 0.00 & 0.06 \pm 0.00 \\
-    \Pg\Pg\to\PZ\PZ\to4\PGm     & 0.01 \pm 0.00 & 0.01 \pm 0.00 & 0.03 \pm 0.00 & 0.04 \pm 0.00 & 0.10 \pm 0.00 \\
+    \PZ\PZ\PGg\to4\Pl\PGg       & 0.65 \pm 0.30 & 0.76 \pm 0.35 & 1.60 \pm 0.73 & 2.23 \pm 1.02 & 5.24 \pm 1.34 \\
+    \qqZZnonpro                 & 0.07 \pm 0.02 & 0.09 \pm 0.03 & 0.21 \pm 0.07 & 0.29 \pm 0.09 & 0.66 \pm 0.12 \\
+    \Pg\Pg\to\PZ\PZ\to2\Pe2\PGm & 0.01 \pm 0.00 & 0.01 \pm 0.00 & 0.02 \pm 0.01 & 0.02 \pm 0.01 & 0.06 \pm 0.01 \\
+    \Pg\Pg\to\PZ\PZ\to4\Pe      & 0.01 \pm 0.00 & 0.01 \pm 0.00 & 0.02 \pm 0.01 & 0.03 \pm 0.01 & 0.06 \pm 0.01 \\
+    \Pg\Pg\to\PZ\PZ\to4\PGm     & 0.01 \pm 0.00 & 0.01 \pm 0.00 & 0.03 \pm 0.01 & 0.04 \pm 0.01 & 0.10 \pm 0.02 \\
+    \PQt\PAQt\PZ+jets           & 0.01 \pm 0.00 & 0.01 \pm 0.00 & 0.02 \pm 0.01 & 0.01 \pm 0.01 & 0.04 \pm 0.01 \\
+    \PZ\PZ\PZ                   & 0.00 \pm 0.00 & 0.00 \pm 0.00 & 0.01 \pm 0.00 & 0.02 \pm 0.00 & 0.04 \pm 0.01 \\
+    \PW\PZ\PZ                   & 0.01 \pm 0.00 & 0.00 \pm 0.00 & 0.04 \pm 0.01 & 0.03 \pm 0.01 & 0.08 \pm 0.01 \\
     \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
-    \text{Total signal}         & 0.65 \pm 0.33 & 0.76 \pm 0.38 & 1.60 \pm 0.81 & 2.23 \pm 1.13 & 5.24 \pm 1.48 \\
-    \text{Total background}     & 0.11 \pm 0.01 & 0.19 \pm 0.02 & 0.45 \pm 0.04 & 0.51 \pm 0.03 & 1.26 \pm 0.06 \\
+    \text{Total signal}         & 0.65 \pm 0.30 & 0.76 \pm 0.35 & 1.60 \pm 0.73 & 2.23 \pm 1.02 & 5.24 \pm 1.34 \\
+    \text{Total background}     & 0.11 \pm 0.03 & 0.20 \pm 0.04 & 0.45 \pm 0.07 & 0.51 \pm 0.10 & 1.27 \pm 0.13 \\
     \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
-    \text{Total}                & 0.77 \pm 0.33 & 0.95 \pm 0.38 & 2.05 \pm 0.81 & 2.74 \pm 1.13 & 6.51 \pm 1.48 \\
+    \text{Total}                & 0.76 \pm 0.30 & 0.95 \pm 0.35 & 2.05 \pm 0.73 & 2.74 \pm 1.02 & 6.50 \pm 1.34 \\
     \text{Data}                 & 1 & 0 & 1 & 5 & 7 \\
     \bottomrule
   \end{tabular}
@@ -104,7 +101,7 @@ which is above the threshold for evidence, but insufficient to claim the observa
 
 The maximum likelihood fit in the fiducial triboson region results in a signal strength of
 $0.96{}^{+0.53}_{-0.41}$
-($0.96 {}^{+0.53}_{-0.41}\stat {}^{+0.01}_{-0.01}\thy {}^{+0.02}_{-0.02}\lum {}^{+0.06}_{-0.04}\syst$),
+($0.96 {}^{+0.52}_{-0.41}\stat {}^{+0.01}_{-0.01}\thy {}^{+0.03}_{-0.01}\lum {}^{+0.07}_{-0.05}\syst$),
 as displayed in Figure~\ref{fig:scan_observed_FSRcut_Run2_SR4P}.
 The detailed breakdown of the sources of systematic uncertainty is reported in
 Figure~\ref{fig:impacts_observed_FSRcut_Run2_SR4P}.
@@ -116,5 +113,5 @@ that the fraction of triboson events for the signal sample in the fiducial regio
 
 Using the signal strength obtained from the fit, the measured cross section
 for triboson production of $\PZ\PZ\PGg$ in the final state with four leptons, either electrons or muons, and a photon is
-$4.90{}^{+2.69}_{-2.08}\usep\text{fb}$
-($4.90 {}^{+2.67}_{-2.07}\stat {}^{+0.05}_{-0.06}\thy {}^{+0.12}_{-0.08}\lum {}^{+0.29}_{-0.18}\syst \usep\text{fb}$).
+$4.89{}^{+2.69}_{-2.08}\usep\text{fb}$
+($4.89 {}^{+2.67}_{-2.06}\stat {}^{+0.05}_{-0.06}\thy {}^{+0.13}_{-0.07}\lum {}^{+0.35}_{-0.26}\syst \usep\text{fb}$).
