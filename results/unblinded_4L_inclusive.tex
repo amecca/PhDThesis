@@ -3,13 +3,13 @@
 The likelihood scans and the study of the impact of each systematic uncertainty are performed
 using an Asimov dataset, under the hypothesis that the signal strength is exactly 1,
 for each of the strategies.
-The full results are reported in Appendix~\ref{sec:expected_4L_inclusive}.
 The breakdown of the total uncertainty on the signal strength between various groups of nuisances is
 summarized in Table~\ref{tab:scanl_SR4P_inclusive}.
+\pagebreak[3]
 
 \begin{table}
   \caption{
-  Summary of the likelihood scans using the Asimov dataset
+  Summary of the likelihood scans using the Asimov dataset, meaning that the signal strenght is set to 1,
   in the inclusive cross section region of the four lepton channel,
   highlighting contribution from each of the nuisance parameter groups to the total uncertainty on the signal strength.
   }
@@ -21,7 +21,7 @@ summarized in Table~\ref{tab:scanl_SR4P_inclusive}.
     Fake photon & $data-driven$   & $   MC      $   & $   MC      $   & $   MC      $   & $   MC      $   & $   MC      $   & $   MC      $ \\
     Fake lepton & $data-driven$   & $data-driven$   & $data-driven$   & $data-driven$   & $data-driven$   & $data-driven$   & $data-driven$ \\
     Photon ID   & $Loose (cut)$   & $Loose (cut)$   & $Loose (cut)$   & $wp90 (MVA) $   & $wp90 (MVA) $   & $wp80 (MVA) $   & $kinematic  $ \\
-    Variable    & m_{\PZ\PZ\PGg}  & m_{\PZ\PZ\PGg}  & \pt^\PGg        & m_{\PZ\PZ\PGg}  & \pt^\PGg        & m_{\PZ\PZ\PGg}  & MVAcut        \\
+    Variable    & m_{\PZ\PZ\PGg}  & m_{\PZ\PZ\PGg}  & \pt^\PGg        & m_{\PZ\PZ\PGg}  & \pt^\PGg        & m_{\PZ\PZ\PGg}  & \text{MVAcut} \\
     \midrule
     $\mu$       & 1.00            & 1.00            & 1.00            & 1.00            & 1.00            & 1.00            & 1.00            \\
     total       & {-}0.31/{+}0.36 & {-}0.29/{+}0.35 & {-}0.27/{+}0.32 & {-}0.29/{+}0.34 & {-}0.28/{+}0.34 & {-}0.28/{+}0.33 & {-}0.28/{+}0.33 \\
@@ -37,14 +37,14 @@ summarized in Table~\ref{tab:scanl_SR4P_inclusive}.
 
 % Justify the choice of the strategy
 The event yield in the fake photon application region CR4P\_1F is sufficiently large to
-ensure stability to the data-driven estimate of this background in the inclusive signal region SR4P,
+ensure stability to the data-driven estimate of this background in the inclusive signal region SR4P\_1P,
 as shown in Table~\ref{tab:yields_Run2_CR4P_1F_lepCR}.
 This estimation technique has the additional benefit of being independent of the modelling of
 \nonprompt photons by the matrix element generator and the parton shower,
 which could affect the division of the $\PQq\PAQq \to \PZ\PZ \to 4\Pl$ sample
 based on the presence of a generated prompt photon.
 
-For these reasons, it is chosen for the unblinding.
+For these reasons, it is chosen as reference strategy.
 The post-fit event yields in the signal region are reported in Table~\ref{tab:yields_postfit_inclusive_Run2_SR4P}.
 The observed (expected) significance of the signal over the background-only hypothesis with the chosen strategy is
 $6.09 \usep\sigma$
@@ -73,7 +73,9 @@ $6.09 \usep\sigma$
 \end{figure}
 
 \begin{table}
-  \caption{Post-fit yields in the inclusive signal region in the four lepton channel.}
+  \caption{Post-fit yields in the inclusive signal region in the four lepton channel
+  using the Loose working point of the cut-based ID to select the photon,
+  and employing the data-driven estimate of the \nonprompt photon background.}
   \label{tab:yields_postfit_inclusive_Run2_SR4P}
   \centering
   \small
@@ -103,21 +105,22 @@ $6.09 \usep\sigma$
 \end{table}
 
 The maximum likelihood fit to the distribution of $m_{4\Pl\PGg}$ results in a signal strength of
-$1.38{}^{+0.55}_{-0.48}$
-($1.38{}^{+0.54}_{-0.47}\stat {}^{+0.01}_{-0.01}\thy {}^{+0.05}_{-0.03}\lum {}^{+0.12}_{-0.10}\syst$),
+$1.38{}^{+0.54}_{-0.47}\stat {}^{+0.01}_{-0.01}\thy {}^{+0.05}_{-0.03}\lum {}^{+0.12}_{-0.10}\syst = 1.38{}^{+0.55}_{-0.48}$,
 as shown in Figure~\ref{fig:scan_observed_inclusive_Run2_SR4P}.
 The detailed breakdown of each source of systematic uncertainty is reported in
 Figure~\ref{fig:impacts_observed_inclusive_Run2_SR4P}.
 
 The signal sample, which includes tau leptons in the final state,
-has a cross section of 22.02\usep fb, as reported in Table~\ref{tab:listofsamples}.
+has a cross section of $(22.02 \pm 0.02) \usep\text{fb}$, as reported in Table~\ref{tab:listofsamples}.
 Assuming that $\mathcal{B}(\PZ\to2\Pe) = \mathcal{B}(\PZ\to2\PGm) = \mathcal{B}(\PZ\to2\PGt)$
 and that the difference in the phase space due to the different mass of the leptons is negligible,
 it follows that $\frac{4}{9}$ of the events in the sample have a final state with four among electrons and muons,
 while $\frac{1}{9}$ contain four tau leptons and $\frac{4}{9}$ contain two tau leptons and two electrons or muons.
-Therefore the $\mathcal{B}(\PZ_0,\PZ_1\to4\Pl)\times\sigma$, with $\Pl = \Pe, \PGm$, of the sample is 9.787\usep fb.
+Therefore the $\mathcal{B}(\PZ_0,\PZ_1\to4\Pl)\times\sigma$, with $\Pl = \Pe, \PGm$, of the sample is $(9.787 \pm 0.009)\usep\text{fb}$.
 
-Using the signal strength obtained, the measured cross section for the production of
-$\Pp\Pp \to 4\Pl\PGg$ ($\Pl = \Pe,\,\PGm$) at a centre-of-mass energy of $13\TeV$ is
-$13.52{}^{+5.38}_{-4.66}$\usep fb
-($13.52 {}^{+5.24}_{-4.55}\stat {}^{+0.05}_{-0.05}\thy {}^{+0.45}_{-0.31}\lum {}^{+1.15}_{-0.93}\syst$\usep fb).
+Using the obtained signal strength, the measured cross section for the production of
+$\Pp\Pp \to 4\Pl\PGg$ ($\Pl = \Pe,\,\PGm$) at a centre-of-mass energy of $13\TeV$ is \\
+$13.52 {}^{+5.24}_{-4.55}\stat {}^{+0.05}_{-0.05}\thy {}^{+0.45}_{-0.31}\lum {}^{+1.15}_{-0.93}\syst \usep\text{fb} = 13.52{}^{+5.38}_{-4.66} \usep\text{fb}$.
+
+The expected results for the other strategies, using the Asimov dataset,
+are reported in Appendix~\ref{sec:expected_4L_inclusive}.
