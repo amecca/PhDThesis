@@ -19,6 +19,9 @@ and for the fake lepton application regions (Tables \ref{tab:yields_Run2_CR3P1F_
 The yields in the triboson fiducial region are shown
 in Table~\ref{tab:yield_SR4P_1P_FSRcut_Loose} for the Loose working point of the cut-based ID,
 and in Table~\ref{tab:yield_SR4P_1P_FSRcut_wp80} when using the \texttt{wp80} of the MVA ID instead.
+The yields in the subset of the fake photon application region that passes the FSR-suppressing cut,
+are shown in Table~\ref{tab:yield_CR4P_1F_FSRcut}.
+This region is used for the estimate of the \nonprompt photon background in the triboson fiducial region.
 
 \begin{table}
   \caption{Yields from the signal region SR4P\_1P, with four leptons passing the tight selection and a photon passing the cut-based ID.
@@ -192,6 +195,31 @@ and in Table~\ref{tab:yield_SR4P_1P_FSRcut_wp80} when using the \texttt{wp80} of
 
 \begin{table}
   \caption{Yields in the fiducial triboson region of the four lepton channel, using the cut-based ID selection for the photon.
+  \Nonprompt and misidentified photons are estimated from data.}
+  \label{tab:yield_SR4P_1P_FSRcut_Loose_phoCR}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{l >{$}r<{$} >{$}r<{$} >{$}r<{$} >{$}r<{$} >{$}r<{$}}
+    \toprule
+    {} & \makecell[c]{\text{2016preVFP}} & \makecell[c]{\text{2016postVFP}} & \makecell[c]{\text{2017}} & \makecell[c]{\text{2018}} & \makecell[c]{\text{\Run2}}\\
+    \midrule
+    $\PZ\PZ\PGg\to4\Pl\PGg$       &  0.84 \pm 0.03  &  0.73 \pm 0.03  &  1.76 \pm 0.07  &  2.48 \pm 0.09  &  5.81 \pm 0.12 \\
+    $\Pg\Pg\to\PZ\PZ\to4\PGm$     &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.02 \pm 0.00  &  0.05 \pm 0.00 \\
+    $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$ &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.04 \pm 0.00 \\
+    $\Pg\Pg\to\PZ\PZ\to4\Pe$      &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.02 \pm 0.00  &  0.03 \pm 0.00  &  0.08 \pm 0.00 \\
+    $\PZ\PZ\PZ$                   &  0.00 \pm 0.00  &  0.00 \pm 0.00  &  0.01 \pm 0.01  &  0.01 \pm 0.01  &  0.03 \pm 0.01 \\
+    $\PQt\PAQt\PZ$+jets           &  0.01 \pm 0.00  &  0.00 \pm 0.00  &  0.02 \pm 0.00  &  0.02 \pm 0.00  &  0.04 \pm 0.01 \\
+    Fake photons                  &  1.06 \pm 0.59  &  0.00 \pm 0.00  &  0.00 \pm 0.00  &  2.24 \pm 0.66  &  3.30 \pm 0.88 \\
+    $\PW\PZ\PZ$                   &  0.00 \pm 0.00  &  0.01 \pm 0.01  &  0.00 \pm 0.01  &  0.05 \pm 0.02  &  0.05 \pm 0.03 \\
+    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
+    Total                         &  1.94 \pm 0.59  &  0.76 \pm 0.03  &  1.84 \pm 0.07  &  4.87 \pm 0.67  &  9.41 \pm 0.89 \\
+    Data                          & \makecell[c]{1} & \makecell[c]{0} & \makecell[c]{0} & \makecell[c]{6} & \makecell[c]{7}\\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}
+  \caption{Yields in the fiducial triboson region of the four lepton channel, using the cut-based ID selection for the photon.
   The fake photon background is estimated from simulation.}
   \label{tab:yield_SR4P_1P_FSRcut_Loose}
   \resizebox{\textwidth}{!}{%
@@ -210,31 +238,6 @@ and in Table~\ref{tab:yield_SR4P_1P_FSRcut_wp80} when using the \texttt{wp80} of
     $\PQt\PAQt\PZ$+jets           &  0.01 \pm 0.00  &  0.00 \pm 0.00  &  0.02 \pm 0.00  &  0.02 \pm 0.00  &  0.05 \pm 0.01 \\
     \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
     Total                         &  1.16 \pm 0.07  &  0.96 \pm 0.03  &  2.52 \pm 0.13  &  3.54 \pm 0.13  &  8.18 \pm 0.20 \\
-    Data                          & \makecell[c]{1} & \makecell[c]{0} & \makecell[c]{0} & \makecell[c]{6} & \makecell[c]{7}\\
-    \bottomrule
-  \end{tabular}
-  }
-\end{table}
-
-\begin{table}
-  \caption{Yields in the fiducial triboson region of the four lepton channel, using the cut-based ID selection for the photon.
-  \Nonprompt and misidentified photons are estimated from data.}
-  \label{tab:yield_SR4P_1P_FSRcut_Loose_phoCR}
-  \resizebox{\textwidth}{!}{%
-  \begin{tabular}{l >{$}r<{$} >{$}r<{$} >{$}r<{$} >{$}r<{$} >{$}r<{$}}
-    \toprule
-    {} & \makecell[c]{\text{2016preVFP}} & \makecell[c]{\text{2016postVFP}} & \makecell[c]{\text{2017}} & \makecell[c]{\text{2018}} & \makecell[c]{\text{\Run2}}\\
-    \midrule
-    $\PZ\PZ\PGg\to4\Pl\PGg$       &  0.84 \pm 0.03  &  0.73 \pm 0.03  &  1.76 \pm 0.07  &  2.48 \pm 0.09  &  5.81 \pm 0.12 \\
-    $\Pg\Pg\to\PZ\PZ\to4\PGm$     &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.02 \pm 0.00  &  0.05 \pm 0.00 \\
-    $\Pg\Pg\to\PZ\PZ\to2\Pe2\PGm$ &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.04 \pm 0.00 \\
-    $\Pg\Pg\to\PZ\PZ\to4\Pe$      &  0.01 \pm 0.00  &  0.01 \pm 0.00  &  0.02 \pm 0.00  &  0.03 \pm 0.00  &  0.08 \pm 0.00 \\
-    $\PZ\PZ\PZ$                   &  0.00 \pm 0.00  &  0.00 \pm 0.00  &  0.01 \pm 0.01  &  0.01 \pm 0.01  &  0.03 \pm 0.01 \\
-    $\PQt\PAQt\PZ$+jets           &  0.01 \pm 0.00  &  0.00 \pm 0.00  &  0.02 \pm 0.00  &  0.02 \pm 0.00  &  0.04 \pm 0.01 \\
-    Fake photons                  &  1.06 \pm 0.59  &  0.00 \pm 0.00  &  0.00 \pm 0.00  &  2.24 \pm 0.66  &  3.30 \pm 0.88 \\
-    $\PW\PZ\PZ$                   &  0.00 \pm 0.00  &  0.01 \pm 0.01  &  0.00 \pm 0.01  &  0.05 \pm 0.02  &  0.05 \pm 0.03 \\
-    \noalign{\vspace{.3ex}}\hline\noalign{\vspace{.3ex}}
-    Total                         &  1.94 \pm 0.59  &  0.76 \pm 0.03  &  1.84 \pm 0.07  &  4.87 \pm 0.67  &  9.41 \pm 0.89 \\
     Data                          & \makecell[c]{1} & \makecell[c]{0} & \makecell[c]{0} & \makecell[c]{6} & \makecell[c]{7}\\
     \bottomrule
   \end{tabular}
@@ -267,10 +270,13 @@ and in Table~\ref{tab:yield_SR4P_1P_FSRcut_wp80} when using the \texttt{wp80} of
 \end{table}
 
 \begin{table}
-  \caption{Yields in the fiducial triboson region of the four lepton channel, using the \texttt{wp80} of the MVA ID selection for the photon.}
+  \caption{Yields in the subset of the fake photon application region in the four lepton channel,
+    after the application of cut designed to suppress the FSR.
+  }
   \label{tab:yield_CR4P_1F_FSRcut}
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{l >{$}r<{$} >{$}r<{$} >{$}r<{$} >{$}r<{$} >{$}r<{$}}
+    {} &  \makecell[c]{\text{2016preVFP}} & \makecell[c]{\text{2016postVFP}} & \makecell[c]{\text{2017}} & \makecell[c]{\text{2018}} & \makecell[c]{\text{\Run2}}\\
     \toprule
     $\PZ\PZ\PGg\to4\Pl\PGg$       &  0.17 \pm 0.01 &  0.15 \pm 0.01 &  0.45 \pm 0.03 &   0.65 \pm 0.05 &   1.42 \pm 0.06 \\
     \qqZZnonpro                   &  2.12 \pm 0.03 &  2.03 \pm 0.03 &  5.72 \pm 0.05 &   8.44 \pm 0.08 &  18.31 \pm 0.10 \\
