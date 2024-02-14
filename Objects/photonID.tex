@@ -40,8 +40,9 @@ and $A_{eff}$ is the area of the isolation region weighted by a factor that acco
 of the \pileup{} transverse energy density on the object $\eta$~\cite{CMS-EGM-13-001}.
 The quantity $\rho A_{eff}$ is subtracted from the isolation quantities.
 
-The distributions of $I_\PGg$ before % after?
-the $\rho$ corrections are shown in Figure~\ref{fig:Iph_CR2P2F} for photons in the EB and EE.
+The distributions of $I_\PGg$, $I_{ch}$ and $I_{ne}$ before % after?
+the $\rho$ corrections are shown for photons in the EB and EE
+in Figures~\ref{fig:phIso_CR2P2F}, \ref{fig:chIso_CR2P2F} and~\ref{fig:neIso_CR2P2F} respectively.
 
 \begin{figure}
   \centering
@@ -53,7 +54,46 @@ the $\rho$ corrections are shown in Figure~\ref{fig:Iph_CR2P2F} for photons in t
 \caption{The PF photon isolation ($I_\PGg$), before the $\rho$ correction, in a cone defined by $\DR = 0.3$ for photons in the EB (left) and in the EE (right).
 The events belong to the leptonic control region CR2P2F (see Section \ref{sec:fake_leptons}).
 The lower panels display the ratio of the data to the simulation.}
-\label{fig:Iph_CR2P2F}
+\label{fig:phIso_CR2P2F}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \hfill
+  \subfigure [Barrel] {\includegraphics[width=.333333333\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_chIso_EB_pow.pdf}}
+  \hfill
+  \subfigure [Endcap] {\includegraphics[width=.333333333\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_chIso_EE_pow.pdf}}
+  \hfill\mbox{}
+\caption{The PF charged isolation ($I_{ch}$), before the $\rho$ correction, in a cone defined by $\DR = 0.3$ for photons in the EB (left) and in the EE (right).
+The events belong to the leptonic control region CR2P2F (see Section \ref{sec:fake_leptons}).
+The lower panels display the ratio of the data to the simulation.}
+\label{fig:chIso_CR2P2F}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \hfill
+  \subfigure [Barrel] {\includegraphics[width=.333333333\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_neIso_EB_pow.pdf}}
+  \hfill
+  \subfigure [Endcap] {\includegraphics[width=.333333333\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_neIso_EE_pow.pdf}}
+  \hfill\mbox{}
+\caption{The PF neutral isolation ($I_{ne}$), before the $\rho$ correction, in a cone defined by $\DR = 0.3$ for photons in the EB (left) and in the EE (right).
+The events belong to the leptonic control region CR2P2F (see Section \ref{sec:fake_leptons}).
+The lower panels display the ratio of the data to the simulation.}
+\label{fig:neIso_CR2P2F}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \hfill
+  \subfigure [Barrel] {\includegraphics[width=.333333333\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_HoverE_EB_pow.pdf}}
+  \hfill
+  \subfigure [Endcap] {\includegraphics[width=.333333333\textwidth]{Figures/VVGammaAnalyzer_noLFR/Run2/fullMC/CR2P2F/kinPh_HoverE_EE_pow.pdf}}
+  \hfill\mbox{}
+\caption{The ratio of the associated hadronic to electromagnetic energy deposits ($H/E$), for photons in the EB (left) and in the EE (right).
+The events belong to the leptonic control region CR2P2F (see Section \ref{sec:fake_leptons}).
+The lower panels display the ratio of the data to the simulation.}
+\label{fig:HoverE_CR2P2F}
 \end{figure}
 
 Another method to reject jets with high electromagnetic content exploits the shape of the electromagnetic shower in the ECAL.
@@ -65,7 +105,9 @@ In particular, the following two variables have high discriminating power.
 
 The hadronic over electromagnetic energy ratio ($H/E$) is defined as the ratio between the energy deposited in the HCAL in a cone of radius $\DR = 0.15$
 around the supercluster direction and the energy of the photon candidate.
-The second moment of the log-weighted distribution of crystal energies in $\eta$ (\sieie),
+Its distribution is shown in Figure~\ref{fig:chIso_CR2P2F} for photons in EB and EE separately.
+
+The other is the second moment of the log-weighted distribution of crystal energies in $\eta$ (\sieie),
 calculated in the $5 \times 5$ matrix around the most energetic crystal in the SC and rescaled to units of crystal size.
 The mathematical expression is given below:
 \begin{equation}
@@ -77,7 +119,7 @@ $\bar{\eta}_{5 \times 5}$ is the mean pseudorapidity of the $5 \times 5$ cells
 and $w_i$ is a weight defined as $w_i = \mathrm{max}(0,\, 4.7 + \mathrm{ln}(E_i/E_{5 \times 5}))$,
 which is nonzero if $E_i > 0.9\, \%\; E_{5 \times 5}$.
 Looking at the numerator in Equation \ref{eq:sieie}, it is clear that \sieie is proportional to the distance between adjacent crystals,
-which is 0.0175 in EB and varies from 0.0175 to 0.0 in EE.
+which is 0.0175 in EB and varies from 0.0175 to 0.05 in EE.
 Therefore, the spread of \sieie in EE is twice the one in EB.
 The \sieie distribution is expected to be narrow for isolated electrons or photons, and broad for two-photon showers from meson decays.
 The distributions of \sieie in one of the lepton control regions of the four lepton channel
