@@ -27,7 +27,10 @@ clean:
 	$(LATEX) -C --output-directory=$(outputdir) --aux-directory=$(outputdir)
 	-rm $(outputdir)/head/*aux
 	-rm $(outputdir)/body/*aux
-	# -cd standalone && $(MAKE) clean
+
+.PHONY: cleanall
+cleanall: clean
+	$(MAKE) -C standalone clean
 
 .PHONY: undefined-refs
 undefined-refs:
