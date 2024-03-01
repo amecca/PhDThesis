@@ -3,12 +3,20 @@
 %% FEYNMAN DIAGRAMS
 \usepackage[compat=1.1.0]{tikz-feynman}
 \tikzfeynmanset{warn luatex=false}
+%% CMS COMMANDS (slightly modified since I could not fix some ifthenelse with booleans)
+\usepackage{ptdr-definitions}
+\usepackage{heppennames2}
+% CUSTOM COMMANDS
+\input{../lib/definitions}
+% Reproducible builds
+\pdfinfoomitdate=1
+\pdftrailerid{}
 
 \begin{document}
 \begin{tikzpicture}
   \begin{feynman}
-    \vertex (i1) at (0,3) {\(q\)};
-    \vertex (i2) at (0,0) {\(\bar{q}\)};
+    \vertex (i1) at (0,3) {\(\PQq\)};
+    \vertex (i2) at (0,0) {\(\PAQq\)};
     \vertex (a)  at (1.25,1.5);
     \vertex [right=1.25 of a] (b);
     \vertex (f1) at (4,3) {\(V_{1}\)};

@@ -3,15 +3,23 @@
 %% FEYNMAN DIAGRAMS
 \usepackage[compat=1.1.0]{tikz-feynman}
 \tikzfeynmanset{warn luatex=false}
+%% CMS COMMANDS (slightly modified since I could not fix some ifthenelse with booleans)
+\usepackage{ptdr-definitions}
+\usepackage{heppennames2}
+% CUSTOM COMMANDS
+\input{../lib/definitions}
+% Reproducible builds
+\pdfinfoomitdate=1
+\pdftrailerid{}
 
 \begin{document}
 \begin{tikzpicture}
   \begin{feynman}
     \vertex (a);
-    \vertex [above left=of a](i1) {\(W^{+}\)};
-    \vertex [below left=of a] (i2) {\(W^{-}\)};
-    \vertex [above right=of a] (f1) {\(W^{+}\)};
-    \vertex [below right=of a] (f2) {\(W^{-}\)};
+    \vertex [above left=of a]  (i1) {\(\PWp\)};
+    \vertex [below left=of a]  (i2) {\(\PWm\)};
+    \vertex [above right=of a] (f1) {\(\PWp\)};
+    \vertex [below right=of a] (f2) {\(\PWm\)};
 
     \diagram* {
       (i1) -- [boson] (a) -- [boson] (i2),

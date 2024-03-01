@@ -3,12 +3,20 @@
 %% FEYNMAN DIAGRAMS
 \usepackage[compat=1.1.0]{tikz-feynman}
 \tikzfeynmanset{warn luatex=false}
+%% CMS COMMANDS (slightly modified since I could not fix some ifthenelse with booleans)
+\usepackage{ptdr-definitions}
+\usepackage{heppennames2}
+% CUSTOM COMMANDS
+\input{../lib/definitions}
+% Reproducible builds
+\pdfinfoomitdate=1
+\pdftrailerid{}
 
 \begin{document}
 \begin{tikzpicture}
   \begin{feynman}
-    \vertex (i1) at (0,3) {\(q\)};
-    \vertex (i2) at (0,0) {\(\bar{q}\)};
+    \vertex (i1) at (0,3) {\(\PQq\)};
+    \vertex (i2) at (0,0) {\(\PAQq\)};
     \vertex (a)  at (1,1.75);
     \vertex [right=1 of a] (b);
     \vertex (c) at (3,0.75);
@@ -19,7 +27,7 @@
     \diagram* {
       (i1) -- [fermion] (a) -- [fermion] (i2),
       (a) -- [boson, edge label=\(V^{*}\)] (b),
-      (b) -- [scalar, edge label=\(H\)] (c),
+      (b) -- [scalar, edge label=\(\PH\)] (c),
       (b) -- [boson] (f1),
       (c) -- [boson] (f2),
       (c) -- [boson] (f3),
