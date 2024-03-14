@@ -1,0 +1,32 @@
+\label{gg4l_normgroup}
+The normalization uncertainty on the three samples $\Pg\Pg \to 4\Pe$, $\Pg\Pg \to 2\Pe2\PGm$ and $\Pg\Pg \to 4\PGm$
+can be applied as a single nuisance parameter common to all of them
+or as three separate parameters that are determined separately in the fit.
+
+The difference between the two approaches, which is expected to be really small,
+is evaulated by comparing the expected significances, as shown in Table \ref{tab:grupnorm_cross_check_significance}.
+As anticipated, the changes are negligible, usually less than or equal to $0.1\usep\sigma$,
+except for the last strategy, where the expected significance changes by $\approx 0.2\usep\sigma$.
+
+\begin{table}
+  \caption{Expected significance with the various strategies,
+    when the uncertainty on the normalization of the $\Pg\Pg \to 4\Pl$ samples is
+    grouped into a single parameter or split into three, one for each final state.}
+  \label{tab:grupnorm_cross_check_significance}
+  \centering
+  \begin{tabular}{l l l c c}
+    \toprule
+    \multicolumn{3}{c}{Strategy} & \multirow{2}{*}{\shortstack{Significance\\(single)}} & \multirow{2}{*}{\shortstack{Significance\\(split)}}\\
+    \noalign{\vspace{.1ex}}\cline{1-3}\noalign{\vspace{.1ex}}
+    Photon ID & \nonprompt \PGg & Variable\\
+    \midrule
+    Cut-based Loose  & data-driven & $m_{\PZ\PZ\PGg}$ & 4.54 & 4.54 \\
+    Cut-based Loose  & simulation  & $m_{\PZ\PZ\PGg}$ & 4.60 & 4.65 \\
+    Cut-based Loose  & simulation  & $\pt^\PGg$       & 4.53 & 4.57 \\
+    MVA ({\tt wp90}) & simulation  & $m_{\PZ\PZ\PGg}$ & 5.06 & 5.13 \\
+    MVA ({\tt wp90}) & simulation  & $\pt^\PGg$       & 5.00 & 5.07 \\
+    MVA ({\tt wp80}) & simulation  & $m_{\PZ\PZ\PGg}$ & 5.20 & 5.30 \\
+    Kinematic        & simulation  & MVA score        & 5.34 & 5.55 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
