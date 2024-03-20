@@ -50,11 +50,20 @@ in the inclusive region of the four lepton channel.
 As stated in Section~\ref{sec:fake_photons_background}, the photon fake rate is derived separately for the four data-taking periods of \Run2.
 The alternative approach is to derive a single fake rate with a smaller statistical uncertainty,
 at the cost of increasing the correlation between the different periods.
+The resulting fake rate is shown in Figure~\ref{fig:phFR_Run2}.
+
 The effect is expected to be small due to the limited impact of the uncertainty on the fake rate,
 which is purely due to the amount of data in the measurement region.
 Indeed, using an unique fake rate correlated among the data-taking periods
 results in an increase of the expected significance with the data-driven approach
 of $\approx 0.036\usep\sigma$.
+
+\begin{figure}
+  \centering
+  \includegraphics[height=.333333\textheight]{Figures/PhFR/FR_VLtoL_pt-aeta_data-ZGToLLG_Run2.pdf}
+  \caption{Photon fake rate measured in the $\PZ+\rm{L}$ region combining events from the four data-taking periods of \Run2.}
+  \label{fig:phFR_Run2}
+\end{figure}
 
 \note{This is the comparison between ``uniqueFR'' and ``ARstat-restorePhFR-groupnorm''.
 Looking at [control-uniqFR], which is derived using a single FR while leaving the datacard entries \textbf{uncorrelated},
