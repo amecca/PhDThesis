@@ -1,21 +1,23 @@
 The electron isolation is archieved through the use of the Particle Flow relative isolation,
 which is defined as:
 \begin{equation}
-\text{RelPFiso} = (\sum_{\text{charged}} \ET + \sum^{\text{corr}}_{\text{neutral}} \ET)/\ET^{\text{e}}
+\text{RelPFiso} = (\sum_{\text{charged}} \ET + \sum^{\text{corr}}_{\text{neutral}} \ET)/\ET^{\,\Pe}
 \label{eqn:elepfrelisoeqn}
-\end{equation} 
-where the corrected neutral component of isolation is then computed using the formula:
+\end{equation}
+To mitigate the contribution from \pileup, only charged hadrons from the primary vertex are included,
+while the corrected neutral component of isolation is then computed using the formula:
 \begin{equation}
 \label{eqn:neutralea}
-  \sum^{\text{corr}}_{\text{neutral}} \ET = \text{max} \left( \sum^{\text{uncorr}}_{\text{neutral}} \ET - \ET^{PU},\, 0 \GeV \right)
+  \sum^{\text{corr}}_{\text{neutral}} \ET = \text{max} \left(0,\, \sum^{\text{uncorr}}_{\text{neutral}} \ET + \sum_{\text{photons}} \ET - \ET^\text{PU} \right)
 \end{equation}
-and the mean \pileup{} contribution to the isolation cone is obtained as :
+The contribution from neutral \pileup{} is estimated using:
 \begin{equation}
   \ET^{PU} =  \rho \times A_\text{eff}
 \label{eqn:purho}
 \end{equation}
-where $\rho$ is the mean energy density in the event and the effective area $A_{eff}$ is defined as the ratio
-between the slope of the average isolation and that of $\rho$ as a function of the number of vertices.
+where $\rho$ is the mean energy density, estimated as the median of the distribution of the transverse energy density per unit area of \pileup{} jets in the event, $\pt^\text{jet}/A_\text{jet}$,
+while the effective area $A_{\text{eff}}$ is the geometric area of the isolation cone,
+corrected by an $\eta$-dependent factor to account for the dependence of the \pileup{} energy density~\cite{CMS-EGM-13-001}.
 
 %% was optimized in Ref.~\cite{AN-15-277} and the electron isolation working was
 The threshold for the electron isolation,
