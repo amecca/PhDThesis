@@ -9,7 +9,7 @@ designed to be highly efficient, flexible and portable.
 The full list of observables used can be found in the Table~\ref{tab:ele_ID_input_variables}.
 
 \begin{table}[ht]
-  \caption{Overview of input variables to the identification classifier. Variables not used in the \RunII{} MVA are marked with  $(\mathord{\cdot})$.}
+  \caption{Overview of input variables to the multivariate classifier used to identity electrons.}
   \label{tab:ele_ID_input_variables}
   \small
   \centering
@@ -30,20 +30,9 @@ The full list of observables used can be found in the Table~\ref{tab:ele_ID_inpu
       & Energy-momentum agreement $E_{tot}/p_{in}$, $E_{ele}/p_{out}$, $1/E_{tot} - 1/p_{in}$ \\
       & Position matching $\Delta\eta_{in}$, $\Delta\varphi_{in}$, $\Delta\eta_{seed}$ \\
     \hline
-    \multirow{5}{*}{Tracking}
+    \multirow{2}{*}{Tracking}
       & Fractional momentum loss $f_{brem} = 1 - p_{out}/p_{in}$ \\
-      & Number of hits of the KF and GSF track $N_{KF}$, $N_{GSF}$ $(\mathord{\cdot})$ \\
       & Reduced $\chi^2$ of the KF and GSF track $\chi^{2}_{KF}$, $\chi^{2}_{\textrm{GSF}}$ \\
-      & Number of expected but missing inner hits $(\mathord{\cdot})$ \\
-      & Probability transform of conversion vertex fit $\chi^2$ $(\mathord{\cdot})$ \\
-    \hline
-    \multirow{3}{*}{Isolation}
-      & Particle Flow photon isolation sum $(\mathord{\cdot})$ \\
-      & Particle Flow charged hadrons isolation sum $(\mathord{\cdot})$ \\
-      & Particle Flow neutral hadrons isolation sum $(\mathord{\cdot})$ \\
-    \hline
-    \multirow{1}{*}{For PU-resilience}
-      & Mean energy density in the event: $\rho$ $(\mathord{\cdot})$ \\
     \bottomrule
   \end{tabular}
   }
