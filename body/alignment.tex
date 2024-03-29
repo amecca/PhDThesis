@@ -83,7 +83,7 @@ The algorithm consists of two steps:
     Calculates and stores the track residuals with errors and the derivatives of the
     track (local) and module (global) parameters.
     The track fitting method must fit all the hits simultaneously and provide the full covariance matrix.
-    The solution is based on the general broken lines method.
+    The solution is based on the general broken lines method~\cite{Blobel_2011}.
   \item[\textsc{Pede}] This is an independent Fortran program that solves the linear equation system needed for the alignment.
     It uses the \textsc{Mille} output to perform the local fits and construct the global matrix $C'$ from Equation~\ref{eq:alignment_reduced_matrix}.
     An overview of the solution methods that are implemented is given in Table~\ref{tab:MP_solvers}.
