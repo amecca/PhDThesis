@@ -54,14 +54,18 @@ Three bins are defined:
 The yield of the simulation in each bin is scaled according to the appropriate scale factors (see Section \ref{sec:photonID}).
 This distribution is referred to as ``MVA shape''.
 
-The data-driven estimate of the fake lepton background is employed in all cases,
-except when using the data-driven \nonprompt photon.
 As discussed in Section~\ref{sec:samples_overlap},
 only the events from the $\PQq\PAQq \to \PZ\PZ$ sample
 that do not contain a prompt generated photon are used,
 to avoid double counting with the signal sample $\PZ\PZ\PGg$.
 Additionally, when the data-driven estimate of fake photons is employed,
 events in $\PQq\PAQq \to \PZ\PZ$ and $\Pg\Pg \to \PZ\PZ$ that do not contain a prompt photon are excluded.
+
+The data-driven estimate of the fake lepton background is employed in all strategies,
+except when using the data-driven \nonprompt photons.
+In that case, the fake leptons are included in the data-driven estimate of \nonprompt photons,
+as discussed in Section~\ref{sec:backgrounds_in_SR},
+and therefore the estimate from the leptonic control regions CR3P1F and CR2P2F is not added to the total background.
 
 In particular, the following choices of the aforementioned analysis strategy were tested:
 \begin{itemize}
