@@ -75,15 +75,16 @@ This framework plays a pivotal role in our understanding of the universe, spanni
 
 \section{Electroweak Symmetry Breaking}
 \label{EWSB}
-Electromagnetic and weak interactions can be described as a unified electroweak interaction at high energies, mediated by massless bosons B, that generates U(1)$_Y$, and W$^{1, 2, 3}$, generators of SU(2)$_T$.
+Electromagnetic and weak interactions can be described as a unified electroweak interaction at high energies,
+mediated by the massless bosons $B$, that generates $\mathrm{U(1)}_Y$, and $W^{1, 2, 3}$, generators of $\mathrm{SU(2)}_T$.
 However, while experiments show that weak interactions are mediated by massive bosons, the inclusion of a mass term of the form $-\frac{1}{2} M^2 W^a_\mu W^{a\, \mu}$ violates the U(1) $\otimes$ SU(2) gauge invariance.
 Moreover, the addition in the Lagrangian of a mass term to fermions in the form $-m_q \bar\psi \psi$ would violate the SU(2) invariance, since the left and right handed components of the field $\psi$ behave differently under such gauge transformation.
 
-In the SM, the Electroweak Symmetry Breaking (EWSB), through the Brout-Englert-Higgs Mechanism, shortly called Higgs Mechanism, generates mass terms for gauge bosons while preserving gauge invariance.
-The core idea is the spontaneous symmetry breaking, a concept originally elaborated in condensed matter physics.
-
 In 1964 Brout and Englert \cite{PhysRevLett.13.321} and Higgs \cite{PhysRevLett.13.508, HIGGS1964132} indepently proposed
-that the spontaneous symmetry breaking could be the solution to this conundrum.
+that the spontaneous symmetry breaking, a concept originally elaborated in condensed matter physics, could be the solution to this conundrum.
+The Brout-Englert-Higgs Mechanism, shortly called Higgs Mechanism, generates mass terms for gauge bosons while preserving gauge invariance
+thought the Electroweak Symmetry Breaking (EWSB).
+
 A new scalar complex field $\Phi$, which is an isospin doublet (with hypercharge $Y_\Phi = 1$) and a colour singlet is introduced.
 The Lagrangian of the theory, which is invariant under an original hidden symmetry, is:
 \begin{equation}
@@ -91,13 +92,25 @@ The Lagrangian of the theory, which is invariant under an original hidden symmet
   \Lagrangian_{Higgs} = ( D^\mu \Phi )^\dagger ( D_\mu \Phi ) - V(\Phi^\dagger \Phi)\ ,\quad \Phi = \begin{pmatrix} \phi^+ \\ \phi^0 \end{pmatrix}
   %% \end{split}
 \end{equation}
+Here $V(\Phi^\dagger \Phi)$ is the potential of the field, which is chosen as:
+\begin{equation}
+  V(\Phi^\dagger \Phi) = \mu^2 \Phi^\dagger \Phi + \lambda (\Phi^\dagger \Phi)^2
+\end{equation}
+with $\mu^2 < 0$ and $\lambda > 0$, which results in a non-zero expectation value in the vacuum state,
+while the minimum is at $\abs{\Phi}^2 = -\frac{\mu^2}{2\lambda}$.
+
+The term $D^\mu$ is the covariant derivative of the electroweak Lagrangian:
+\begin{equation}
+  D^\mu = \partial^\mu + \frac{i g'}{2} B^\mu Y + \frac{i g}{2} T_a W^{a \mu}
+\end{equation}
+where $g$ and $g'$ are the coupling constants associated with the $\mathrm{U(1)}_Y$ and $\mathrm{SU(2)}_T$ groups respectively.
 
 The EWSB causes also a mixing of the gauge boson fields, resulting in:
 \begin{equation}
 \begin{split}
-  \PWpm &= \dfrac{1}{\sqrt{2}} \left( \PW^1 \mp \PW^2 \right)
+  \PWpm &= \dfrac{1}{\sqrt{2}} \left( W^1 \mp W^2 \right)
   \\
-  \begin{pmatrix} \PGg \\ \PZz \end{pmatrix} &= \begin{pmatrix} \cos\theta_W & \sin\theta_W \\ -\sin\theta_W & \cos\theta_W \end{pmatrix} \begin{pmatrix} \mathrm{B} \\ \PW^3\end{pmatrix}
+  \begin{pmatrix} \PGg \\ \PZz \end{pmatrix} &= \begin{pmatrix} \cos\theta_W & \sin\theta_W \\ -\sin\theta_W & \cos\theta_W \end{pmatrix} \begin{pmatrix} B \\ W^3\end{pmatrix}
 \end{split}
 \end{equation}
 The only field that remains massless is the photon, while the other three become massive by interacting with three of the four components of the Higgs field $\psi$ through the Brout-Englert-Higgs Mechanism.
@@ -105,6 +118,7 @@ The mass of the W and Z boson is not predicted by the theory,
 though they are related by $m_\PW = m_\PZ \cos\theta_W$,
 and are determined experimentally.
 The W mass is approximately $80.38 \GeV$ and the Z mass $91.19 \GeV$~\cite{Workman:2022ynf}.
+
 From the broken symmetry a new particle emerges, corresponding to the fourth component of the Higgs field: the Higgs Boson.
 The remaining (unbroken) symmetry is $U(1)_Q \otimes SU(2)_L$.
 
