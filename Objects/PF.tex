@@ -3,8 +3,9 @@ A robust linking procedure is used to combine information related to energy depo
 The PF sequence begins with identifying tracks of charged particles, followed by extrapolating these tracks to compatible calorimeter energy deposits.
 
 Neutral hadrons and photons are identified through \textit{Charged Hadron Subtraction}, which removes the energy deposits that can be linked to tracks from charged hadrons.
-The remaining deposits in ECAL and HCAL are attributed to photons and neutral hadrons,
-provided that the cluster energies of neutral hadron candidates exceed their track momentum, accounting for detector resolution effects.
+The remaining deposits in ECAL and HCAL are attributed to photons and neutral hadrons.
+For clusters linked to a track have calibrated energies exceeding the track momenta by an amount larger than the resolution,
+the excess energy is also attributed to photons and neutral hadrons.
 
 The CMS detector's exceptional performance with the PF algorithm is attributed to the high granularity of the electromagnetic calorimeter, hermeticity of the hadron calorimeter, and a large magnetic field integral.
 
