@@ -18,9 +18,12 @@ $(outputdir)/body:
 $(outputdir)/head:
 	mkdir -p $@
 
-$(outputdir)/$(AN).pdf: $(sources) $(bibliography) $(outputdir)/head $(outputdir)/body
+$(outputdir)/$(AN).pdf: $(sources) $(bibliography) bibliography/CMS_publications_pub.bib $(outputdir)/head $(outputdir)/body
 	$(MAKE) -C standalone
 	$(LATEX) $(LATEXOPT) $(AN).tex
+
+bibliography/CMS_publications_pub.bib:
+	wget -O $@ https://cms-results.web.cern.ch/cms-results/public-results/publications/CMS/CMS_publications_pub.bib
 
 .PHONY: clean
 clean:
