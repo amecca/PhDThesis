@@ -3,6 +3,8 @@ A statistical analysis is conducted to assess the presence of the signal process
 quantify the significance of the excess over background predictions and measure its cross section.
 The statistical inference is performed with the \textsc{Combine Tool} software package~\cite{CMS-NOTE-2011-005}.
 
+\providecommand{\poissonpdf}[2]{\ensuremath{ \frac{{#1}^{#2}}{#2!}e^{-#1} }}
+
 \subsection{Likelihood and nuisance parameters}
 The likelihood function is defined as the probability density function for a set of parameters of a model
 that quantifies the agreement with a certain set of experimental observables (data).
@@ -24,7 +26,8 @@ The extraction of the signal strength proceeds through the maximization of the c
 The $\Likelihood_c$ functions are the PDF of the binned distributions in each channel, and are given by the product of Poisson probabilities for every bin $j$ to observe $n_j$ events:
 \begin{equation}
   \label{eq:likelihood_bin}
-  \Likelihood_c(data\, |\, \mu \cdot s(\vec\theta\,) + b(\vec\theta\,)) = \prod_j \frac{\mu \cdot s_j(\vec\theta\,) + b_j(\vec\theta\,)}{n_j!} e^{-(\mu \cdot s_j(\vec\theta\,) + b_j(\vec\theta\,))}
+  \Likelihood_c(data\, |\, \mu \cdot s(\vec\theta\,) + b(\vec\theta\,)) =
+                       \prod_j \poissonpdf{\left( \mu \cdot s_j(\vec\theta\,) + b_j(\vec\theta\,) \right)}{n_j}
 \end{equation}
 
 \subsection{Treatment of nuisance parameters}
