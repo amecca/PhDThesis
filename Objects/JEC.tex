@@ -21,6 +21,8 @@ The JES corrections are calculated in the form of a multiplicative factor on the
 in order to match the measured energy of each jet to its true energy at the generator level.
 The measured jet transverse momentum response is defined as the ratio of the measured jet \pt at the reconstruction step to the generated jet at particle level.
 %% These corrections and the corresponding uncertainties are provided centrally by the CMS JetMet group
+The approach adopted within the CMS collaboration is to factorize the corrections into several levels, each targeting a different effect,
+which are applied sequentially and with a fixed order, shown in Figure~\ref{fig:JECoverview}, to the four-momenta of the jets.
 
 \Pileup{} offset corrections account for the measured energy of the jet in excess due to
 the presence of in-time (IT) and out-of-time (OOT) \pileup{}
@@ -29,8 +31,9 @@ and they are applied to both data and MC samples.
 
 Simulated response corrections compensate for the non-linear response in \pt and pseudorapidity
 from the calorimeters and tracker coverage and they are parametrized as a function of these jet kinematic variables.
+They are derived from simulation and applied to both data and simulation.
 
-Residual data to Monte Carlo corrections are applied to improve the agreement as a function of the jet $\eta$ and \pt.
+Residual data to Monte Carlo corrections are applied to data to improve the agreement as a function of the jet $\eta$ and \pt.
 The absolute scale of the measured jet \pt response is corrected in data using multi-jet and Drell-Yan plus jets events,
 which benefit from the high precision measurement of the \PZ boson and the photon energy in the ECAL.
 The residual $\eta$ correction is derived in di-jet events exploiting the \pt imbalance of the di-jet system.
