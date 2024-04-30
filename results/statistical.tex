@@ -11,7 +11,7 @@ that multiplies the production cross section of the signal process and leaves al
 Each independent source of systematic uncertainty described in Section \ref{sec:systematics} is assigned a nuisance parameter $\theta_i$, and the full set is denoted $\vec\theta$.
 They are of no direct interest for this analysis, but must be considered in the fitting procedure to extract correct results.
 They enter the model through their probability density function $p_i(\tilde{\theta_i}|\theta_i)$,
-which is the probability of measuring a certain value of the parameter given that the true value is $\theta_i$.
+which is the probability of measuring a certain value $\tilde{\theta_i}$ of the parameter given that the true value is $\theta_i$.
 Furthermore, the expected yields of background, $b$, and signal, $s$, depend on the value of the nuisance parameters.
 
 The global likelihood function is thus defined as:
@@ -39,12 +39,14 @@ which is the distribution of a random variable whose logarithm is normally distr
 The log-normal is used instead of a Gaussian because it enforces the positive-definite normalization for the nuisance modelled, which is usually multiplying an event yield and thus cannot be negative.
 
 The remaining systematics in the first class are those that represent a background coming from a statistically limited control region, such as the fake leptons and photons.
-These are dominated by the statistically uncertainty in the control region and are modelled with a Gamma distribution:
+These are dominated by the statistical uncertainty in the control region, which is modelled with a Gamma distribution:
 \begin{equation}
   \label{eq:gammadef}
-  \Probability(\theta\,|\,N\alpha) = \frac{1}{\Gamma(N) \alpha^N} \theta^{N-1} e^{-\theta/\alpha}
+  \Probability(\tilde{\theta}\,|\,N,\alpha) = \frac{1}{\Gamma(N) \alpha^N} \tilde{\theta}^{N-1} e^{-\tilde{\theta}/\alpha}
 \end{equation}
-where $N$ is the number of events in the control region, $\theta$ is the average transfer factor and $\Gamma(x)$ is the Gamma function.
+where $\Gamma(x)$ is the Gamma function,
+$N$ is the number of events in the control region and $\alpha$ is the average transfer factor,
+such that $N \alpha$ is the expected number of events in the signal region for that particular background.
 
 The shape uncertainties of the second class are accounted for by interpolating the event fraction for each bin of three histograms: the one obtained for the central value, and the two obtained by shifting the nuisance parameter up and down by one standard deviation.
 

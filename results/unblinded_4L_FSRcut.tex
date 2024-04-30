@@ -5,7 +5,7 @@ setting the expected signal strength at 1,
 to estimate the effect of the different groups of systematic uncertainties.
 
 Similarly to the inclusive selection, the measurement is statistically limited,
-with a symmetric impact on the signal strength ranging from 0.4 to 0.5.
+with a symmetric impact on the signal strength ranging from 0.4 to 0.6.
 The second most impacting group are the experimental uncertainties
 which range from around ${-}0.05/{+}0.08$ to ${-}0.07/{+}0.10$ depending on the strategy.
 The contributions from the theoretical uncertainties range from 0.03 to 0.05 and tend to have a symmetric effect on the signal uncertainty.
@@ -26,7 +26,7 @@ These results are summarized in Table~\ref{tab:scanl_SR4P_FSRcut}.
   \begin{tabular}{lccccccccc}
     \toprule
     Fake photon & data-driven    &    MC          &    MC         &    MC          &    MC         &    MC          &    MC         \\
-    Fake lepton & data-driven    & data-driven    & data-driven   & data-driven    & data-driven   & data-driven    & data-driven   \\
+    Fake lepton & -              & data-driven    & data-driven   & data-driven    & data-driven   & data-driven    & data-driven   \\
     Photon ID   & Loose (cut)    & Loose (cut)    & Loose (cut)   & wp90 (MVA)     & wp90 (MVA)    & wp80 (MVA)     & kinematic     \\
     Variable    &$m_{\PZ\PZ\PGg}$&$m_{\PZ\PZ\PGg}$& $\pt^\PGg$    &$m_{\PZ\PZ\PGg}$& $\pt^\PGg$    &$m_{\PZ\PZ\PGg}$& MVAcut        \\
     \midrule
@@ -51,9 +51,12 @@ $22.4 \pm 0.2$ events.
 Therefore, it cannot be used to estimate the \nonprompt photon background effectively.
 
 Among the strategies that use the simulation to estimate the fake photon background,
-the best results are expected from the fit on $m_{\PZ\PZ\PGg}$ using the
-\texttt{wp80} working point of the MVA based identification for the photon.
-Therefore it is chosen as reference for the statistical inference.
+the highest significances are expected from the fit on $m_{\PZ\PZ\PGg}$ using the
+\texttt{wp80} working point of the MVA based identification for the photon,
+and from the fit to the MVA score,
+as displayed in Table~\ref{tab:summary_significances_FSRcut}.
+The former is chosen as reference for the statistical inference,
+since the difference between the two is minimal, and the former is expected to be sensitive to BSM effects.
 
 The post-fit event yields in the signal region are reported in Table~\ref{tab:yields_postfit_FSRcut_Run2_SR4P}.
 The observed (expected) significance of the signal over the background-only hypothesis with this strategy is
@@ -116,8 +119,11 @@ which is above the threshold for evidence, but insufficient to claim the observa
 The maximum likelihood fit in the fiducial triboson region results in a signal strength of
 $0.96 {}^{+0.52}_{-0.41}\stat {}^{+0.01}_{-0.01}\thy {}^{+0.03}_{-0.01}\lum {}^{+0.07}_{-0.05}\syst = 0.96{}^{+0.53}_{-0.41}$,
 as displayed in Figure~\ref{fig:scan_observed_FSRcut_Run2_SR4P}.
+The sources of uncertainties that have the highest impacts are the normalization of \qqZZnonpro\footnotemark,
+the electron efficiency scale factors, the pileup weight and the photon efficiency scale factor for the MVA ID.
 The detailed breakdown of the sources of systematic uncertainty is reported in
 Figure~\ref{fig:impacts_observed_FSRcut_Run2_SR4P}.
+\footnotetext{This is the additional normalization uncertainty, discussed at the beginning of Section~\ref{sec:strategy_description}.}
 
 As previously discussed, the cross section times branching ratio of the signal sample is
 $\sigma^{MC}(\Pp\Pp\to\PZ\PZ\PGg)\times\mathcal{B}(\PZ_0,\PZ_1\to\Pl\Pl) = (9.787\pm0.009)\usep\text{fb}$, with $\Pl = \Pe, \PGm$.

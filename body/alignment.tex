@@ -83,7 +83,7 @@ The algorithm consists of two steps:
     Calculates and stores the track residuals with errors and the derivatives of the
     track (local) and module (global) parameters.
     The track fitting method must fit all the hits simultaneously and provide the full covariance matrix.
-    The solution is based on the general broken lines method.
+    The solution is based on the general broken lines method~\cite{Blobel_2011}.
   \item[\textsc{Pede}] This is an independent Fortran program that solves the linear equation system needed for the alignment.
     It uses the \textsc{Mille} output to perform the local fits and construct the global matrix $C'$ from Equation~\ref{eq:alignment_reduced_matrix}.
     An overview of the solution methods that are implemented is given in Table~\ref{tab:MP_solvers}.
@@ -172,15 +172,15 @@ and are caused by a lack of constraints in the alignment fit.
 While these shifts do not degrade the tracking performance,
 they may affect certain topologies and correlations among tracks that are important for physics measurements.
 
-\subsection{Validation of misaligments}
-To check the quality of a set of alignment constants and the effect of misaligments,
+\subsection{Validation of misalignments}
+To check the quality of a set of alignment constants and the effect of misalignments,
 measurements of several variables that have known values under perfectly aligned conditions are carried out.
 
 \subsubsection{Geometry comparison} % GC
 The geometry produced by the alignment is compared with a reference geometry,
 such as the one used as a starting point for the procedure or the ideal conditions.
 This serve as a guide to help visualize the effect of the procedure
-and may permit to notice certain known unphysical distortions.
+and may permit to notice certain known nonphysical distortions.
 
 The global shift and rotation of large structures are removed and the module displacements
 $\Delta z$, $\Delta r$ and $\Delta \phi$, as well as the rotations,
@@ -189,7 +189,7 @@ are plotted as function of $z$, $r$ and $\phi$.
 \subsubsection{Cosmic ray muon track} % MTS
 The upper and lower portions of cosmic ray muon tracks are reconstructed separately,
 and the two sets of track parameters are compared at the point of closest approach to the beamline.
-The two halves should have the same parameters, while systematic differences suggest a misaligment.
+The two halves should have the same parameters, while systematic differences suggest a misalignment.
 
 Cosmic ray and collision tracks have different topologies, so distortions that appear as
 weak modes in collision may be constrained with cosmic tracks.
@@ -201,7 +201,7 @@ this validation is and early tool in the commissioning of the detector before th
 \subsubsection{Dimuon validation} % Zmumu
 The reconstructed invariant mass of $X \to \PGm\PGm$ should not depend
 on the direction of the muons within the detector.
-Biases in the mass distribution of a known resonances suggest a sistematic misalignment. %% like $\PZ$ or $\JPsi$
+Biases in the mass distribution of a known resonances suggest a systematic misalignment. %% like $\PZ$ or $\JPsi$
 \PZ bosons are especially useful since they are often produced with a small boost
 resulting in two muons that cross opposite ends of the tracker.
 
@@ -210,13 +210,14 @@ The mass distribution of each bin is then fit with a Gaussian function and its m
 %% Profiles in $\eta$ and $\phi$ of the fitted mean invariant mass are constructed.
 Misalignment in the tracker may be detected if the mean reconstructed mass strays from the expected value of 91.2\GeV,
 either uniformly or as a function of $\eta$ and $\phi$.
-This validation requires a ufficiently large sample of $\PZ \to \PGm\PGm$ events
+This validation requires a sufficiently large sample of $\PZ \to \PGm\PGm$ events
 and is therefore useful in in stable operating conditions.
 
 \subsubsection{Track-vertex impact parameter} % PV
+\label{sec:TkAl_PV}
 The resolution of the reconstructed vertex position is driven by the pixel detector
 since it is the closest to the interaction point~\cite{CMS-TRK-11-002}.
-This method is based on the study the distance between the track and the vertex,
+This method is based on the study of the distance between the track and the vertex,
 the latter reconstructed without the track under scrutiny (unbiased track-vertex residual).
 The distribution of the unbiased track-vertex residuals in the transverse ($d_{xy}$) and longitudinal ($d_z$)
 plane is studied in bins of track azimuthal angle and pseudorapidity.
@@ -225,3 +226,37 @@ increasing the width of the distribution, but without biasing its mean.
 Systematic movements of the modules will bias the distribution
 in a way that depends on the nature and size of the misalignment and the selected tracks.
 
+\section{Personal contribution to the alignment group}
+As part of the Tracker Alignment group, I executed several alignment campaigns and validated their performance on observables of interest,
+both for the commissioning of the detector after the Long Shutdown 2 (2019--2022)
+and for routine alignment during the \Run3 data-taking.
+The derivation of the alignment conditions is always a group effort.
+Nevertheless, my contributions include the derivation of the alignment used for the re-reconstruction of the 2022 data and its validation,
+the alignment used for the 2022 Heavy Ion collisions,
+and the derivation of preliminary alignment candidates for the startup of proton-proton run in 2023.
+
+A representative result of the alignment effort is shown in Figure~\ref{fig:TkAl2023},
+which compares the performance of different geometries
+using the track-vertex impact parameter validation described in Section~\ref{sec:TkAl_PV}.
+The performance is evaulated using a sample of collision events collected by the CMS detector at full magnetic field (3.8\unit{T})
+during pp collisions data taking at $\sqrt{s} = 13.6\TeV$ in 2023, selected online through minimum bias triggers~\cite{CMS-DP-2023-039}.
+The dataset used in the validation is orthogonal to the one used for the derivation of the alignment constants.
+
+\begin{figure}
+\subfigure [] {\includegraphics[width=.5\textwidth]{Figures/TkAl2023/dxyPhiBiasCanvas.pdf}}%
+\subfigure [] {\includegraphics[width=.5\textwidth]{Figures/TkAl2023/dzPhiBiasCanvas.pdf}}
+\caption{The distance in the longitudinal ($d_{xy}$, left) and transversal ($d_z$, right) directions
+  of the tracks at their point of closest approach to a refit unbiased primary vertex is studied in bins of track azimuthal angle.
+  The performance of the alignment obtained using 3.8\unit{T} cosmic rays (green) is compared to the alignment constants
+  derived using cosmic ray and pp collision tracks collected at $\sqrt{s} = 900\GeV$ (blue) and $\sqrt{s} = 13.6\TeV$ (red).
+  The residual deviations from the ideal case (purple dashed line, mean of 0) show the typically achieved precision of the alignment.
+  Vertical error bars represent the statistical uncertainty due to the limited number of tracks, which can be smaller than the size of the markers~\cite{CMS-DP-2023-039}.
+}
+\label{fig:TkAl2023}
+\end{figure}
+
+I am also the maintainer of the software tool used to extract the position of the barycentre of the silicon pixel detector from a set of alignment constants.
+The usage of this tool, which is under my responsibility, is instrumental for
+the production of Monte Carlo samples of physics processes, since this point is the origin of the coordinate system in simulations,
+and to monitor the position of the interaction region of the LHC beams (beamspot),
+which is important to avoid excessive radiation-induced damage of the pixel detector itself.

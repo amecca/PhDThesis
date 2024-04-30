@@ -54,14 +54,18 @@ Three bins are defined:
 The yield of the simulation in each bin is scaled according to the appropriate scale factors (see Section \ref{sec:photonID}).
 This distribution is referred to as ``MVA shape''.
 
-The data-driven estimate of the fake lepton background is employed in all cases,
-except when using the data-driven \nonprompt photon.
 As discussed in Section~\ref{sec:samples_overlap},
 only the events from the $\PQq\PAQq \to \PZ\PZ$ sample
 that do not contain a prompt generated photon are used,
 to avoid double counting with the signal sample $\PZ\PZ\PGg$.
 Additionally, when the data-driven estimate of fake photons is employed,
 events in $\PQq\PAQq \to \PZ\PZ$ and $\Pg\Pg \to \PZ\PZ$ that do not contain a prompt photon are excluded.
+
+The data-driven estimate of the fake lepton background is employed in all strategies,
+except when using the data-driven \nonprompt photons.
+In that case, the fake leptons are included in the data-driven estimate of \nonprompt photons,
+as discussed in Section~\ref{sec:backgrounds_in_SR},
+and therefore the estimate from the leptonic control regions CR3P1F and CR2P2F is not added to the total background.
 
 In particular, the following choices of the aforementioned analysis strategy were tested:
 \begin{itemize}
@@ -87,6 +91,13 @@ In particular, the following choices of the aforementioned analysis strategy wer
   using the kinematic selection for the photons,
   and classifying events depending on which is the highest MVA working point passed by the photon.
 \end{itemize}
+
+For the strategies that do not use the data-driven estimate of \nonprompt photons,
+additional uncertainties of $\approx 40\usep\%$ on the normalization
+of the samples $\PQq\PAQq \to 4\Pl (\PGg_\text{NP})$ and $\Pg\Pg \to 4\Pl (\PGg_\text{NP})$ are added.
+This uncertainty, which accounts for the mismodelling of this instrumental background in the simulation,
+is implemented as a group of parameters scaling the normalization of the samples,
+that are constrained by a log-normal probability density function with width parameter equal to 1.3.
 
 First, expected results are derived for each strategy using an Asimov dataset~\cite{Cowan2011},
 and the expected significances, signal strength modifiers and impacts of the systematic uncertainties are evaluated.
@@ -200,3 +211,30 @@ which show different predictions for the background yields in the signal region.
 
 \subsubsection{Systematic impacts}
 \input{results/impacts_SR3P_inclusive.tex}
+
+\section{Outlook}
+The focus of my PhD work, which is reported in this thesis, is the design of the global strategy for the search of triboson production
+of $\PZ\PZ\PGg$ and $\PZ\PW\PGg$ %% of two \PZ bosons and a photon or one \PZ, one \PW and a photon,
+both in the fully leptonic and in the semileptonic final state,
+as well as the the derivation of the results for a specific channel, which is the four lepton one.
+
+Since the three lepton channel shares many similarities with the four lepton one,
+I was able to derive reasonable estimates for the expected sensitivity achievable with its inclusion.
+For the semileptonic channel, on the other hand, a non trivial amount of work is needed
+to achieve sensible and stable results.
+
+The main uncertainty is due to the very limited amount of data, especially in the four lepton channel.
+It is reasonable to expect that the inclusion of data from the ongoing \Run3 (2022--2025)
+will result in improvements scaling almost with the square root of the integrated luminosity,
+which translates to approximately a factor $\sqrt{2}$ according to the evolving LHC schedule.
+Cartainly the different centre-of-mass energy, detector conditions and improvements to reconstruction algorithm
+make this only a rough estimate.
+
+As previously mentioned, triboson processes are sensitive to several BSM scenarios,
+and can thus help in constraining the parameters of these models.
+For example, recent generator level results on the expected limits
+on Wilson coefficient of dimension-6 bosonic operators in the Standard Model Effective Field Theory
+suggest that these processes can provide constrains that are competitive with those from other electroweak processes,
+such as Vector Boson Scattering~\cite{Bellan_2023}.
+In particular, the semileptonic channel seems especially promising, considering that the main backgrounds are also affected by some of the bosonic operators,
+resulting in more stringent constraints.
