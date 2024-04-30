@@ -6,12 +6,18 @@ For non-isolated muons, such as those inside jets, the tight-muon selection~\cit
 It requires that a muon:
 is a global muon with $\chi^2/dof < 10$ on its global track fit;
 its tracker track must be matched to muon segments in at least two stations,
-must use more than 10 hits,
+must use more than 10 hits in the inner tracker,
 of which at least one from the Pixel,
-and have a $d_{xy} < 2~\text{mm}$ to the primary vertex.
+and have a transverse impact parameter\footnotemark $d_{xy} < 2\unit{mm}$ to the primary vertex.
 %% This selection suppresses muons from in-flight decays.
 Additionally, the muon must either have at least three matched segments in the muon detectors,
 or its associated calorimeter deposits must be compatible with the muon hypothesis.
+
+\footnotetext{
+The transverse ($d_{xy}$) and longitudinal ($d_z$) impact parameters are defined as
+the distance of closest approach of a track to the vertex from which the track originates,
+projected in the transverse plane and along the longitudial axis respectively.
+}
 
 Muons that fail the tight-muon selection are recovered if the standalone track is of high quality
 and has a sufficiently large number of hits in the muon detectors.
