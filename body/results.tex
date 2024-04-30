@@ -151,16 +151,25 @@ as shown in Table~\ref{tab:yield_SR4P_1P_FSRcut_Loose}.
 \label{sec:results_3L}
 The results reported in this section are the preliminary findings
 of the work dedicated to this channel.
-The variable chosen for the template fit is the transverse mass of the $\PW\PZ\PGg$ system,
-which is defined as:
+
+The reconstruction of the kinematics of the $\PW\PZ\PGg$ system is limited by the nueutrino, since its momentum is not measured directly.
+The the transverse component of the neutrino momentum can be inferred indirectly through the missing energy,
+but the longitudinal component can only be calculated by assuming that the \PW mass is exactly on the peak.
+This procedure involves solving a quadratic equation with coefficients dependent on the momentum of the charged lepton assigned to the \PW boson and the missing energy.
+The discriminant of this equation could be negative, and in this case the kinematics of the event cannot be solved,
+or it could be positive, meaning that there are two solutions for the longitudinal neutrino momentum.
+A possible approach would be to choose randomly one of the two values.
+However, this method does not provide an increase in sensitivity, and introduces the additional uncertainty due to the use of this methodology.
+
+An alternative approach is to use the transverse mass, which is defined as:
 \begin{equation}
   \label{eq:transverse_mass}
   \mT^2 \mathdefined E^2 - p_z^2 = m^2 + \ptvec^{\:2}
 \end{equation}
-This quantity is used instead of the invariant mass because only the transverse component of the neutrino momentum is measured,
-albeit indirectly through the missing energy.
-While it is possible to calculate the z-component of the neutrino momentum assuming that the \PW mass is exactly on the peak,
-this would introduce an additional bias with no benefit on the sensitivity.
+where $p_z$ and $\ptvec$ are the longitudinal and transverse component of the momentum.
+
+In particular, the transverse mass of the $\PW\PZ\PGg$ system is used in for the template fit in this channel,
+which is calculated on the sum of the momenta of the \PZ boson candidate, the photon, the lepton assigned to the \PW and the missing transverse energy.
 
 As discussed in Section~\ref{sec:samples_overlap},
 the events that contain a prompt generated photon from the
