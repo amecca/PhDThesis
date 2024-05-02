@@ -374,16 +374,16 @@ respectively.
   \centering
   \caption{
     Cross sections of triboson production and prediction of the number of events in a scenario where the integrated luminosity is 137 fb$^{-1}$.
-    These values are taken from the Monte Carlo samples used in the analysis,
-    which are produced with \MGvATNLO~\cite{MGatNLO, Frederix_2018} as described in Section~\ref{sec:simulation}.
+    These values are derived using \MGvATNLO~\cite{MGatNLO, Frederix_2018} at next-to-leading order.
+    The default kinematic selections are applied during the generation.
   }
   \label{tab:xsection-inclusive}
   \begin{tabular}{ l c c }
     \toprule
     Process & Cross section  & \renewcommand{\arraystretch}{1.}\begin{tabular}{@{}c@{}} Events \\ $\Lumi = 137 fb^{-1}$\end{tabular} \\
     \midrule
-    $\Pp\Pp \to \PZ\PZ\PGg$ & $22.02$\usep fb & $3\,016$ \\
-    $\Pp\Pp \to \PW\PZ\PGg$ & $34.06$\usep fb & $4\,666$ \\
+    $\Pp\Pp \to \PZ\PZ\PGg$ & $ 47.4$\usep fb & $ 6\,500$ \\
+    $\Pp\Pp \to \PW\PZ\PGg$ & $171.5$\usep fb & $23\,500$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -392,16 +392,18 @@ respectively.
   \centering
   \caption{Exclusive cross sections of triboson production in the leptonic and semileptonic final states.
     Taus are excluded, meaning that $\Pl = \Pe, \PGm$.
+    The values are computed using the cross sections from Table~\ref{tab:xsection-inclusive}
+    and the branching ratios from Table~\ref{tab:VB-BR}.
   }
   \label{tab:xsection-exclusive}
-  \begin{tabular}{ l@{}l c c } % l -> divide intermediate and final state
+  \begin{tabular}{ >{$}l<{$}@{}>{$}l<{$} >{$}c<{$} >{$}c<{$} } % l -> divide intermediate and final state
     \toprule
-    \multicolumn{2}{c}{Process} & Branching ratio & Cross section \\ %total x BR\\
+    \multicolumn{2}{c}{\text{Process}} & \text{Branching ratio}  & \text{Cross section} \\ %& Events
     \midrule
-    $\Pp\Pp \to \PZ\PZ\PGg$ & $\to 4\Pl \PGg$      & 0.444\usep\% & 0.098\usep fb\\ % $0.\overline{4}$\usep\% & 0.09786\usep fb
-    $\Pp\Pp \to \PW\PZ\PGg$ & $\to 3\Pl \PGn \PGg$ & 1.435\usep\% & 0.489\usep fb\\
-    $\Pp\Pp \to \PZ\PZ\PGg$ & $\to 2\Pl \PGg\ 2j$  & 9.408\usep\% & 2.072\usep fb\\
-    $\Pp\Pp \to \PW\PZ\PGg$ & $\to 2\Pl \PGg\ 2j$  & 4.536\usep\% & 1.545\usep fb\\
+    \Pp\Pp \to \PZ\PZ\PGg & \to 4\Pl \PGg      & 0.453\unit{\%} & 0.215\unit{fb} \\ %& 29.43
+    \Pp\Pp \to \PW\PZ\PGg & \to 3\Pl \PGn \PGg & 1.44 \unit{\%} & 2.46 \unit{fb} \\ %& 337.4
+    \Pp\Pp \to \PZ\PZ\PGg & \to 2\Pl \PGg\ 2j  & 9.41 \unit{\%} & 4.46 \unit{fb} \\ %& 611.5
+    \Pp\Pp \to \PW\PZ\PGg & \to 2\Pl \PGg\ 2j  & 4.54 \unit{\%} & 7.78 \unit{fb} \\ %& 1066
     \bottomrule
   \end{tabular}
 \end{table}
