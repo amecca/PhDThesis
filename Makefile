@@ -2,6 +2,8 @@ AN=thesis
 outputdir=output
 sources=$(shell find . -type d -name utils -prune -o -type d -name $(outputdir) -prune -o -type f -name "*.tex" -print)
 bibliography=$(shell find . -type d -name utils -prune -o -type d -name $(outputdir) -prune -o -type f -name "*.bib" -print)
+figures=$(shell grep Figures output/thesis.fls | cut -d " " -f 2 | xargs realpath | sort | uniq)
+tagged=$(outputdir)/$(AN)_$(shell git describe --tags).pdf
 LATEX=latexmk
 LATEXOPT=--pdf --pdflatex="pdflatex -interaction=nonstopmode -file-line-error -output-directory $(outputdir)" --output-directory=$(outputdir) --aux-directory=$(outputdir) --use-make --bibtex --quiet
 
@@ -24,6 +26,13 @@ $(outputdir)/$(AN).pdf: $(sources) $(bibliography) bibliography/CMS_publications
 
 bibliography/CMS_publications_pub.bib:
 	wget -O $@ https://cms-results.web.cern.ch/cms-results/public-results/publications/CMS/CMS_publications_pub.bib
+
+# Named version of the PDF using git tags
+$(tagged): $(outputdir)/$(AN).pdf
+	cp $< $@
+
+.PHONY: tagged
+tagged: $(tagged)
 
 .PHONY: clean
 clean:
