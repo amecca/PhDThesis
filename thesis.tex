@@ -15,14 +15,13 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{} 			%clears default header and footer
-\rhead{} 			%right head
-\lhead{ \leftmark} 	%left head
-\rfoot{\thepage}
+\fancyhead[LE,RO]{\leftmark}    %header
+\fancyfoot[LE,RO]{\thepage}     %footer
 %%consider using also chead, cfoot, lfoot
 %coherce the plain stile to this (e.g. the first page of every chapter)
 \fancypagestyle{plain}{
 	\fancyhf{}
-	\rfoot{\thepage}
+        \fancyfoot[LE,RO]{\thepage}
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
